@@ -7,9 +7,9 @@ class Task(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-    task_name = db.Column(db.String, nullable=False)
-    task_detail = db.Column(db.String, nullable=False)
-    task_reason= db.Column(db.String, nullable=False)
+    task_name = db.Column(db.String(255), nullable=False)
+    task_detail = db.Column(db.String(255), nullable=False)
+    task_reason= db.Column(db.String(500), nullable=False)
     weekly_or_monthly = db.Column(db.String, nullable=True)
     due_date = db.Column(db.Date, nullable=True)
     color_id = db.Column(db.Integer, db.ForeignKey('colors.id'), nullable=False)
@@ -35,6 +35,13 @@ class Task(db.Model):
     def to_dict(self):
         return {
             'id': self.id,
-            'username': self.username,
-            'email': self.email
-        }
+            'user_id': self.user_id,
+            'task_name': self.task_name,
+            'task_detail': self.task_detail,
+            'weekly_or_monthly': self.weekly_or_monthly,
+            'due_date': self.due_date,
+            'color_id': self.color_id,
+            'task_points': self.task_points,
+            'created_at': self.created_at,
+            'updated_at': self.updated_at,
+            }
