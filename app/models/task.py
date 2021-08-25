@@ -20,7 +20,7 @@ class Task(db.Model):
     rewards = db.relationship('Reward', back_populates='task')
     color = db.relationship('Color', back_populates='tasks')
     owner = db.relationship('User', back_populates='tasks')
-
+    logs = db.relationship('Log', back_populates='task')
     # def get_all_Tasks(self):
     #     def helper(n):
     #         for a in self.rewards:
