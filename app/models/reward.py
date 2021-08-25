@@ -1,6 +1,6 @@
 from .db import db
-from sqlalchemy.sql import func
-# from datetime import datetime
+# from sqlalchemy.sql import func
+from datetime import datetime
 
 class Reward(db.Model):
     __tablename__ = 'rewards'
@@ -11,8 +11,8 @@ class Reward(db.Model):
     reward_reason = db.Column(db.String(500), nullable=False)
     due_date = db.Column(db.Date, nullable=True)
     reward_points = db.Column(db.Integer, nullable=True)
-    created_at = db.Column(db.DateTime(timezone=True), server_default=func.now())
-    updated_at = db.Column(db.DateTime(timezone=True), server_default=func.now())
+    created_at = db.Column(db.DateTime, nullable=False, default=datetime.now().strftime("%m/%d/%Y, %H:%M:%S"))
+    updated_at = db.Column(db.DateTime, nullable=False, default=datetime.now().strftime("%m/%d/%Y, %H:%M:%S"))
 
     task = db.relationship('Task', back_populates='rewards')
 
