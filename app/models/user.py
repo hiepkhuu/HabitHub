@@ -13,9 +13,11 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
     birthday = db.Column(db.Date, nullable=False)
-    tasks = db.relationship('Task', back_populates='owner')
+    profile_image_url = db.Column(db.string(1000), nullable=True)
     created_at = db.Column(db.DateTime(timezone=True), server_default=func.now())
     updated_at = db.Column(db.DateTime(timezone=True), server_default=func.now())
+
+    tasks = db.relationship('Task', back_populates='owner')
 
     @property
     def password(self):
@@ -31,6 +33,13 @@ class User(db.Model, UserMixin):
     def to_dict(self):
         return {
             'id': self.id,
+            'first_name': self.first_name,
+            'last_name': self.last_name,
             'username': self.username,
-            'email': self.email
+            'email': self.email,
+            'profile_image_url': self.profile_image_url,
+            'birthday': self.birthday,
+            'tasks': [habit.to_dict() for habit in self.tasks],
+            'created_at': self.created_at,
+            'updated_at': self.updated_at
         }
