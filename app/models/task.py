@@ -70,7 +70,6 @@ class Task(db.Model):
             'task_name': self.task_name,
             'task_detail': self.task_detail,
             'dy_wk': self.dy_wk,
-            'due_date': self.due_date,
             'color_id': self.color_id,
             'task_points': self.task_points,
             'created_at': self.created_at,
