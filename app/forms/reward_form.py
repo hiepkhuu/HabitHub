@@ -2,7 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, IntegerField
 from wtforms.validators import DataRequired, NumberRange, Length
 
-class TaskForm(FlaskForm):
+class RewardForm(FlaskForm):
     task_id = StringField('task_id', validators=[DataRequired()])
     reward_name = StringField('reward_name', validators=[DataRequired('Reward needs a name'), Length(max=255, message='Name must be fewer than 255 characters!') ])
     reward_detail = StringField('reward_detail', validators=[Length(max=255, message='Details must be fewer than 255 characters!') ])
