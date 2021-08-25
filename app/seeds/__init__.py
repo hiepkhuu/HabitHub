@@ -3,7 +3,7 @@ from .users import seed_users, undo_users
 from .tasks import seed_tasks, undo_tasks
 from .colors import seed_colors, undo_colors
 from .rewards import seed_rewards, undo_rewards
-
+from .logs import seed_logs, undo_logs
 
 # Creates a seed group to hold our commands
 # So we can type `flask seed --help`
@@ -18,6 +18,7 @@ def seed():
     seed_colors()
     seed_tasks()
     seed_rewards()
+    seed_logs()
     # Add other seed functions here
 
 
@@ -29,4 +30,5 @@ def undo():
     undo_colors()
     undo_tasks()
     undo_rewards()
+    undo_logs()
     # Add other undo functions here
