@@ -10,8 +10,8 @@ class Task(db.Model):
     task_name = db.Column(db.String(255), nullable=False)
     task_detail = db.Column(db.String(255), nullable=False)
     task_reason= db.Column(db.String(500), nullable=False)
-    weekly_or_monthly = db.Column(db.String, nullable=True)
-    due_date = db.Column(db.Date, nullable=True)
+    target_num = db.Column(db.Integer, nullable=True)
+    dy_wk = db.Column(db.String, nullable=True)
     color_id = db.Column(db.Integer, db.ForeignKey('colors.id'), nullable=False)
     task_points = db.Column(db.Integer, nullable=True)
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.now().strftime("%m/%d/%Y, %H:%M:%S"))
@@ -69,7 +69,7 @@ class Task(db.Model):
             'user_id': self.user_id,
             'task_name': self.task_name,
             'task_detail': self.task_detail,
-            'weekly_or_monthly': self.weekly_or_monthly,
+            'dy_wk': self.dy_wk,
             'due_date': self.due_date,
             'color_id': self.color_id,
             'task_points': self.task_points,
