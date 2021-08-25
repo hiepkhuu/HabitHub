@@ -4,6 +4,7 @@ from .tasks import seed_tasks, undo_tasks
 from .colors import seed_colors, undo_colors
 from .rewards import seed_rewards, undo_rewards
 
+
 # Creates a seed group to hold our commands
 # So we can type `flask seed --help`
 seed_commands = AppGroup('seed')
