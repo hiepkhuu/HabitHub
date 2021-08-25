@@ -6,7 +6,7 @@ class Color(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     color_hue = db.Column(db.String(100), nullable=True)
 
-    habits = db.relationship('Habit', back_populates='color')
+    tasks = db.relationship('Task', back_populates='color')
 
     def to_dict(self):
         return {

@@ -1,6 +1,6 @@
 from .db import db
 from sqlalchemy.sql import func
-from datetime import datetime
+# from datetime import datetime
 
 class Reward(db.Model):
     __tablename__ = 'rewards'
@@ -10,9 +10,11 @@ class Reward(db.Model):
     reward_name = db.Column(db.String, nullable=False)
     reward_reason = db.Column(db.String, nullable=False)
     due_date = db.Column(db.Date, nullable=True)
-    reward_points = db.Column(db.Integer)
+    reward_points = db.Column(db.Integer, nullable=True)
     created_at = db.Column(db.DateTime(timezone=True), server_default=func.now())
     updated_at = db.Column(db.DateTime(timezone=True), server_default=func.now())
+
+    task = db.relationship('Task', back_populates='rewards')
 
     def to_dict(self):
       return {

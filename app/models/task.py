@@ -1,14 +1,25 @@
 from .db import db
-from 
-
-
-class User(db.Model, UserMixin):
-    __tablename__ = 'users'
+from sqlalchemy.sql import func
+from app.models import reward
+# from datetime import datetime
+class Task(db.Model):
+    __tablename__ = 'tasks'
 
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(40), nullable=False, unique=True)
-    email = db.Column(db.String(255), nullable=False, unique=True)
-    hashed_password = db.Column(db.String(255), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    task_name = db.Column(db.String, nullable=False)
+    task_detail = db.Column(db.String, nullable=False)
+    task_reason= db.Column(db.String, nullable=False)
+    weekly_or_monthly = db.Column(db.String, nullable=True)
+    due_date = db.Column(db.Date, nullable=True)
+    color_id = db.Column(db.Integer, db.ForeignKey('colors.id'), nullable=False)
+    task_points = db.Column(db.Integer, nullable=True)
+    created_at = db.Column(db.DateTime(timezone=True), server_default=func.now())
+    updated_at = db.Column(db.DateTime(timezone=True), server_default=func.now())
+
+    rewards = db.relationship('Reward', back_populates='task')
+    color = db.relationship('Color', back_populates='tasks')
+    owner = db.relationship('User', back_populates='tasks')
 
     @property
     def password(self):
