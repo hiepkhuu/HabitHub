@@ -20,7 +20,7 @@ const GreetingPage = () =>{
       <h1>greeting page</h1>
       <h1>greeting page</h1>
 
-      <NavLink to={`/${sessionUser?.username}/task-log`}>
+      <NavLink to={`/task-log`}>
         <button>go to task log</button>
       </NavLink>
 

@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import LoginForm from './components/auth/LoginForm/LoginForm';
 import SignUpForm from './components/auth/SignupForm/SignUpForm';
-import NavBar from './components/Navigation';
+import Navigation from './components/Navigation';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
@@ -27,48 +27,36 @@ function App() {
     return null;
   }
 
-  // let session;
-  // if(sessionUser) {
-  //   session = (
-  //     <>
-  //     <GreetingPage />
-
-  //     </>
-  //   )
-  // } else {
-  //   session = (
-  //     <>
-  //     <LoginForm />
-  //     </>
-  //   )
-  // }
 
   return (
     <>
     {/* if BrowserRouter ends up inside Navlink or Navigation, it will thorugh an error */}
     <BrowserRouter>
-      <NavBar isLoaded={isLoaded} />
-      <Switch>
-        <Route path={`/${sessionUser?.username}`} exact={true} >
-          <GreetingPage />
-        </Route>
-        <Route path='/login' exact={true}>
-          <LoginForm />
-        </Route>
-        <Route path='/sign-up' exact={true}>
-          <SignUpForm />
-        </Route>
+      <Navigation isLoaded={isLoaded} />
+      {isLoaded && (
+          <Switch>
+            <Route path='/login' exact={true}>
+              <LoginForm />
+            </Route>
+            <Route path='/sign-up' exact={true}>
+              <SignUpForm />
+            </Route>
+            <ProtectedRoute path={`/greeting`} exact={true} >
+              {/* don't put stuff here or else it will show up twice */}
+              <GreetingPage />
+            </ProtectedRoute>
+            <Route path={`/task-log`} exact={true}>
+              <TasksPage />
+            </Route>
+            {/* <ProtectedRoute path='/users' exact={true} >
+              <UsersList/>
+            </ProtectedRoute>
+            <ProtectedRoute path='/users/:userId' exact={true} >
+              <User />
+            </ProtectedRoute> */}
 
-        <Route path={`/${sessionUser?.username}/task-log`} exact={true}>
-          <TasksPage />
-        </Route>
-        {/* <ProtectedRoute path='/users' exact={true} >
-          <UsersList/>
-        </ProtectedRoute>
-        <ProtectedRoute path='/users/:userId' exact={true} >
-          <User />
-        </ProtectedRoute> */}
-      </Switch>
+          </Switch>
+     )}
     </BrowserRouter>
     </>
   );

@@ -7,7 +7,7 @@ import ProfileButton from './ProfileButton';
 import './NavBar.css'
 import GreetingPage from '../GreetingPage';
 
-const NavBar = ({ isLoaded }) => {
+const Navigation = ({ isLoaded }) => {
   const sessionUser = useSelector(state => state.session.user );
 
   let sessionLinks;
@@ -15,7 +15,7 @@ const NavBar = ({ isLoaded }) => {
     sessionLinks = (
        <>
           <div>
-            <NavLink to={`/${sessionUser?.username}`} exact={true} activeClassName='active'>
+            <NavLink to={`/greeting`} exact={true} activeClassName='active'>
               <div className='home-logo'></div>
               <button>greeting</button>
             </NavLink>
@@ -57,4 +57,4 @@ const NavBar = ({ isLoaded }) => {
   );
 }
 
-export default NavBar;
+export default Navigation;

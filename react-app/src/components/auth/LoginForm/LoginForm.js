@@ -27,7 +27,7 @@ const LoginForm = () => {
   };
 
   if (sessionUser) {
-    return <Redirect to={`/${sessionUser?.username}`} />;
+    return <Redirect to={'/greeting'} />;
   }
 
   return (
