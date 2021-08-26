@@ -45,7 +45,7 @@ function App() {
           <User />
         </ProtectedRoute> */}
         <ProtectedRoute path='/' exact={true} >
-          <GreetingPage />
+          {/* don't put stuff here or else it will show up twice */}
         </ProtectedRoute>
       </Switch>
       )}

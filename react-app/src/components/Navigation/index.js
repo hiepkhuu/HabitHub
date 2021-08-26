@@ -2,7 +2,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import LogoutButton from '../auth/LogoutButton';
+import LogoutButton from './ProfileButton/LogoutButton';
+import ProfileButton from './ProfileButton';
 import './NavBar.css'
 
 const NavBar = ({ isLoaded }) => {
@@ -15,13 +16,13 @@ const NavBar = ({ isLoaded }) => {
           <div>
             <NavLink to='/' exact={true} activeClassName='active'>
               <div className='home-logo'></div>
-              <h1>greeting</h1>
+              <button>greeting</button>
             </NavLink>
           </div>
 
-          {/* <div>
-                <ProfileButton user={sessionUser} />
-          </div> */}
+          <div>
+            <ProfileButton />
+          </div>
        </>
     )
 // user home page goes here
