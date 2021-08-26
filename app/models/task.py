@@ -68,6 +68,8 @@ class Task(db.Model):
             'user_id': self.user_id,
             'task_name': self.task_name,
             'task_detail': self.task_detail,
+            'task_reason': self.task_reason,
+            'target_num': self.target_num,
             'color_id': self.color_id,
             'task_points': self.task_points,
             'created_at': self.created_at,

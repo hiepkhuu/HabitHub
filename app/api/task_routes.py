@@ -1,30 +1,126 @@
-from flask import Blueprint, jsonify
+from sqlalchemy.orm import session
+from app.models import Task, User, db
+from app.forms import TaskForm
+from app.api.auth_routes import validation_errors_to_error_messages
+from flask import Blueprint, jsonify, request
 from flask_login import login_required
-from app.models import Task, User
+
+
 
 task_routes = Blueprint('tasks', __name__)
 
 
-@task_routes.route('/<int:userId>')
+@task_routes.route('users/<int:user_id>')
 # @login_required
-def get_tasks(userId):
+def get_tasks(user_id
+):
     """
     Get all the tasks for a single user
     """
-    tasks = Task.query.filter(Task.user_id == userId).all()
-    print('########TEST##########', tasks)
+    tasks = Task.query.filter(Task.user_id == user_id
+    ).all()
+    # print('########TEST##########', tasks)
     return {task.id: task.to_dict() for task in tasks}
 
 
-@task_routes.route('', methods=['POST'])
+@task_routes.route('/', methods=['POST'])
 def create_task():
   """
   Create a new task for user
   """
   form = TaskForm()
-  
-@task_routes.route('/<int:id>')
-# @login_required
-def task(id):
-    task = Task.query.get(id)
+  form['csrf_token'].data = request.cookies['csrf_token']
+  if form.validate_on_submit():
+      # task = Task(
+      #   user_id = form.user_id.data,
+      #   task_name = form.task_name.data,
+      #   task_detail = form.task_detail.data,
+      #   task_reason = form.task_reason.data,
+      #   target_num = form.target_num.data,
+      #   color_id = form.color_id.data,
+      #   task_points = form.task_points.data
+      # )
+      task = Task()
+      form.populate_obj(task)
+      db.session.add(task)
+      db.session.commit()
+
+      return task.to_dict()
+
+  return {'errors': validation_errors_to_error_messages(form.errors)}
+
+@task_routes.route('/<int:task_id>', methods=['GET', 'PUT', 'DELETE'])
+def edit_task_by_id(task_id):
+  """
+  change or delete a already created task for user
+  """
+  task = Task.query.get(task_id)
+  if request.method == 'GET':
     return task.to_dict()
+  elif request.method == 'PUT':
+    form = TaskForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+    if form.validate_on_submit():
+      form.populate_obj(task)
+      db.session.commit()
+      return task.to_dict()
+    return {'errors': validation_errors_to_error_messages(form.errors)}
+  elif request.method == 'DELETE':
+    db.session.delete(task)
+    db.session.commit()
+
+    return task.to_dict()
+  return task.to_dict()
+
+
+# @task_routes.route('/<int:id>')
+# # @login_required
+# def task(id):
+#     task = Task.query.get(id)
+#     return task.to_dict()
+
+
+###### test for posting a task ######
+# fetch('api/tasks/', {
+#    method: 'POST',
+#    headers: {
+#      'Content-Type': 'application/json'
+#    },
+#    body: JSON.stringify({
+#       user_id : 1,
+#       task_name : 'test-task',
+#       task_detail : 'detail-sfasfsfsdfsdfsdfsdfsdfs',
+#       task_reason : 'reason-asdfsdfsdfsdfsdfsdfsdfd',
+#       target_num : 7,
+#       color_id : 3,
+#       task_points : 2})
+#  }).then(res => res.json()).then(data => console.log(data))
+
+
+
+####### PUT single task ######
+# fetch('api/tasks/5', {
+#    method: 'PUT',
+#    headers: {
+#      'Content-Type': 'application/json'
+#    },
+#    body: JSON.stringify({
+#       user_id : 1,
+#       task_name : 'test-task-put',
+#       task_detail : 'detail-sfasfsfsdfsdfsdfsdfsdfs',
+#       task_reason : 'reason-asdfsdfsdfsdfsdfsdfsdfd',
+#       target_num : 7,
+#       color_id : 4,
+#       task_points : 2})
+#  }).then(res => res.json()).then(data => console.log(data))
+
+ ###### GET single task ######
+# fetch('api/tasks/5', {
+#    method: 'GET'
+#  }).then(res => res.json()).then(data => console.log(data))
+
+
+ ###### DELETE single task  ######
+# fetch('api/tasks/5', {
+#    method: 'DELETE'
+#  }).then(res => res.json()).then(data => console.log(data))

@@ -8,7 +8,7 @@ class Reward(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     task_id = db.Column(db.Integer, db.ForeignKey('tasks.id'), nullable=False)
     reward_name = db.Column(db.String(255), nullable=False)
-    reward_details = db.Column(db.String(255), nullable=True)
+    reward_detail = db.Column(db.String(255), nullable=True)
     reward_reason = db.Column(db.String(500), nullable=False)
     reward_points = db.Column(db.Integer, nullable=True)
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.now().strftime("%m/%d/%Y, %H:%M:%S"))
