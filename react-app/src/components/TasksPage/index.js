@@ -17,7 +17,8 @@ const TasksPage = () => {
   }, [])
 
   function convert(input) {
-    return moment(input, 'HH:mm:ss').format('h:mm:ss A');
+    return moment(input, 'HH:mm:ss').format('h:mm A');
+    // .format('h:mm:ss A')
   }
 
   function turnDateIntoReadable(date){
@@ -37,8 +38,6 @@ const TasksPage = () => {
           <p> {allTasks[task].target_num}</p>
           <p> {allTasks[task].task_points}</p>
           <p> {turnDateIntoReadable(allTasks[task].created_at)} </p>
-          {console.log('####3', convert(allTasks[task].created_at.split(' ')[4]))}
-          {console.log('@@@@@@@',new Date(allTasks[task].created_at))}
         </div>
 
       )
@@ -48,7 +47,7 @@ const TasksPage = () => {
 
   return (
     <div>
-      <h1>TaskPage</h1>
+      <h3>TaskList</h3>
       <div className='task-label-bar'>
         <div>Name</div>
         <div>Description</div>
@@ -58,6 +57,7 @@ const TasksPage = () => {
         <div>Created</div>
       </div>
       {grabTask()}
+      <button>Add Task</button>
     </div>
   )
 }
