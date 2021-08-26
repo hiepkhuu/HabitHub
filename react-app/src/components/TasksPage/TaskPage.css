@@ -1,0 +1,13 @@
+.task-bar{
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 3fr 1fr 1fr 2fr
+
+}
+.task-label-bar{
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 3fr 1fr 1fr 2fr
+}
+
+.task-bar p{
+  padding: 0px 5px;
+}

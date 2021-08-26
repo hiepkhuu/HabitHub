@@ -1,6 +1,8 @@
 import React, {useEffect} from 'react'
 import { useSelector , useDispatch} from 'react-redux'
 import {loadAllTasks} from '../../store/tasks'
+import './TaskPage.css'
+import moment from 'moment'
 
 const TasksPage = () => {
   const sessionUser = useSelector(state => state.session.user)
@@ -9,9 +11,19 @@ const TasksPage = () => {
   const dispatch = useDispatch()
   // console.log('#############',sessionUser.id)
   // console.log('#########', allTasks)
+
   useEffect(async () => {
    await dispatch(loadAllTasks(sessionUser.id))
   }, [])
+
+  function convert(input) {
+    return moment(input, 'HH:mm:ss').format('h:mm:ss A');
+  }
+
+  function turnDateIntoReadable(date){
+    const newDate = date.split(' ').slice(0,4).join(' ') + ' ' + convert(date.split(' ').slice(4,5))
+    return newDate
+  }
 
   const grabTask = () => {
     let taskList = []
@@ -24,7 +36,9 @@ const TasksPage = () => {
           <p> {allTasks[task].task_reason}</p>
           <p> {allTasks[task].target_num}</p>
           <p> {allTasks[task].task_points}</p>
-          <p> {allTasks[task].created_at}</p>
+          <p> {turnDateIntoReadable(allTasks[task].created_at)} </p>
+          {console.log('####3', convert(allTasks[task].created_at.split(' ')[4]))}
+          {console.log('@@@@@@@',new Date(allTasks[task].created_at))}
         </div>
 
       )
@@ -35,6 +49,14 @@ const TasksPage = () => {
   return (
     <div>
       <h1>TaskPage</h1>
+      <div className='task-label-bar'>
+        <div>Name</div>
+        <div>Description</div>
+        <div>Motivating Reason</div>
+        <div>Target</div>
+        <div>Value</div>
+        <div>Created</div>
+      </div>
       {grabTask()}
     </div>
   )

@@ -39,7 +39,7 @@ class User(db.Model, UserMixin):
             'email': self.email,
             'profile_image_url': self.profile_image_url,
             'birthday': self.birthday,
-            'tasks': [habit.to_dict() for habit in self.tasks],
+            'tasks': [task.to_dict() for task in self.tasks],
             'created_at': self.created_at,
             'updated_at': self.updated_at
         }
