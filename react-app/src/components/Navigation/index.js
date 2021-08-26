@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 import LogoutButton from './ProfileButton/LogoutButton';
 import ProfileButton from './ProfileButton';
 import './NavBar.css'
+import GreetingPage from '../GreetingPage';
 
 const NavBar = ({ isLoaded }) => {
   const sessionUser = useSelector(state => state.session.user );
@@ -14,7 +15,7 @@ const NavBar = ({ isLoaded }) => {
     sessionLinks = (
        <>
           <div>
-            <NavLink to='/' exact={true} activeClassName='active'>
+            <NavLink to={`/${sessionUser?.username}`} exact={true} activeClassName='active'>
               <div className='home-logo'></div>
               <button>greeting</button>
             </NavLink>
@@ -29,16 +30,12 @@ const NavBar = ({ isLoaded }) => {
   } else {
       sessionLinks = (
         <>
-          {/* <NavLink  to='/' exact={true} activeClassName='active'>
-              <div className='home-logo'></div>
-          </NavLink> */}
           <div className='entry'>
             <NavLink className='NavLink' to='/login' exact={true} activeClassName='active'>
               <div className='' >
                    <p className=''>Login</p>
               </div>
             </NavLink>
-
             <NavLink className='NavLink' to='/sign-up' exact={true} activeClassName='active'>
               <div className='entry logout' >
                   <p className='entry p'>Sign Up</p>
@@ -51,9 +48,12 @@ const NavBar = ({ isLoaded }) => {
 
 
   return (
+    <>
     <div className='navbar'>
         {isLoaded && sessionLinks}
     </div>
+
+    </>
   );
 }
 
