@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import LoginForm from './components/auth/LoginForm';
-import SignUpForm from './components/auth/SignUpForm';
+import LoginForm from './components/auth/LoginForm/LoginForm';
+import SignUpForm from './components/auth/SignupForm/SignUpForm';
 import NavBar from './components/NavBar';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
@@ -25,6 +25,8 @@ function App() {
   }
 
   return (
+    <>
+    {/* if BrowserRouter ends up inside Navlink or Navigation, it will thorugh an error */}
     <BrowserRouter>
       <NavBar />
       <Switch>
@@ -45,6 +47,7 @@ function App() {
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
+    </>
   );
 }
 

@@ -65,7 +65,7 @@ def edit_reward_by_id(reward_id):
       return reward.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}
   elif request.method == 'DELETE':
-    deleted_reward = reward
+    deleted_reward = reward ###do we really need to return what we delete?
     db.session.delete(reward)
     db.session.commit()
     return deleted_reward.to_dict()
