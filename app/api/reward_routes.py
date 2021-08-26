@@ -65,9 +65,10 @@ def edit_reward_by_id(reward_id):
       return reward.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}
   elif request.method == 'DELETE':
+    deleted_reward = reward
     db.session.delete(reward)
     db.session.commit()
-    return reward.to_dict()
+    return deleted_reward.to_dict()
   return reward.to_dict()
 
 

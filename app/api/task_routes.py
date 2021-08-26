@@ -66,10 +66,10 @@ def edit_task_by_id(task_id):
       return task.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}
   elif request.method == 'DELETE':
+    deleted_task = task
     db.session.delete(task)
     db.session.commit()
-
-    return task.to_dict()
+    return deleted_task.to_dict()
   return task.to_dict()
 
 
