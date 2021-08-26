@@ -7,7 +7,7 @@ import './ProfileButton.css'
 function ProfileButton() {
   const dispatch = useDispatch();
   const history = useHistory();
-  const sessionUser = useSelector(state => state.session.user );
+  const sessionUser = useSelector(state => state.session.user);
   const [showMenu, setShowMenu] = useState(false);
 
   const openMenu = () => {
@@ -36,33 +36,33 @@ function ProfileButton() {
 
 
   return (
-      <>
+    <>
       <div className='menu-container'>
         <div className="account-button">
-          <button  onClick={openMenu}>Profile</button>
+          <button onClick={openMenu}>Profile</button>
         </div>
 
-            {showMenu && (
-              // <div  className="profile-dropdown-container">
-                  <div>
-                    {/* <div className='triangle-dropdown'>hello</div> */}
-                    <div className="profile-dropdown">
-                      <div className='user-link-container'>
-                        <Link className='user-link' to={`/task-log`}>{sessionUser?.first_name}   {sessionUser?.last_name}</Link>
-                        {/* <p>{user.email}</p> */}
-                        <div>
+        {showMenu && (
+          // <div  className="profile-dropdown-container">
+          <div>
+            {/* <div className='triangle-dropdown'>hello</div> */}
+            <div className="profile-dropdown">
+              <div className='user-link-container'>
+                <Link className='user-link' to={`/hub`}>{sessionUser?.first_name}   {sessionUser?.last_name}</Link>
+                {/* <p>{user.email}</p> */}
+                <div>
 
-                        <button onClick={logout}>
-                          <Link className='logout-link' to='/'>Log Out</Link>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                 </div>
-          )}
+                  <button onClick={logout}>
+                    <Link className='logout-link' to='/'>Log Out</Link>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
 
       </div>
-      </>
+    </>
   );
 }
 

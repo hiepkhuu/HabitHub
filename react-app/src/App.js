@@ -12,12 +12,12 @@ import GreetingPage from './components/GreetingPage';
 import TasksPage from './components/TasksPage';
 
 function App() {
-  const sessionUser = useSelector(state=> state.user)
+  const sessionUser = useSelector(state => state.user)
   const [isLoaded, setisLoaded] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    (async() => {
+    (async () => {
       await dispatch(authenticate());
       setisLoaded(true);
     })();
@@ -30,10 +30,10 @@ function App() {
 
   return (
     <>
-    {/* if BrowserRouter ends up inside Navlink or Navigation, it will thorugh an error */}
-    <BrowserRouter>
-      <Navigation isLoaded={isLoaded} />
-      {isLoaded && (
+      {/* if BrowserRouter ends up inside Navlink or Navigation, it will thorugh an error */}
+      <BrowserRouter>
+        <Navigation isLoaded={isLoaded} />
+        {isLoaded && (
           <Switch>
             <Route path='/login' exact={true}>
               <LoginForm />
@@ -45,7 +45,7 @@ function App() {
               {/* don't put stuff here or else it will show up twice */}
               <GreetingPage />
             </ProtectedRoute>
-            <Route path={`/task-log`} exact={true}>
+            <Route path={`/hub`} exact={true}>
               <TasksPage />
             </Route>
             {/* <ProtectedRoute path='/users' exact={true} >
@@ -56,8 +56,8 @@ function App() {
             </ProtectedRoute> */}
 
           </Switch>
-     )}
-    </BrowserRouter>
+        )}
+      </BrowserRouter>
     </>
   );
 }

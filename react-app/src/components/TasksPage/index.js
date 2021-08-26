@@ -1,8 +1,9 @@
-import React, {useEffect} from 'react'
-import { useSelector , useDispatch} from 'react-redux'
-import {loadAllTasks} from '../../store/tasks'
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { loadAllTasks } from '../../store/tasks'
 import './TaskPage.css'
 import moment from 'moment'
+import AddNewHabitModal from '../../context/AddNewTask'
 
 const TasksPage = () => {
   const sessionUser = useSelector(state => state.session.user)
@@ -13,7 +14,7 @@ const TasksPage = () => {
   // console.log('#########', allTasks)
 
   useEffect(async () => {
-   await dispatch(loadAllTasks(sessionUser.id))
+    await dispatch(loadAllTasks(sessionUser.id))
   }, [])
 
   function convert(input) {
@@ -21,14 +22,14 @@ const TasksPage = () => {
     // .format('h:mm:ss A')
   }
 
-  function turnDateIntoReadable(date){
-    const newDate = date.split(' ').slice(0,4).join(' ') + ' ' + convert(date.split(' ').slice(4,5))
+  function turnDateIntoReadable(date) {
+    const newDate = date.split(' ').slice(0, 4).join(' ') + ' ' + convert(date.split(' ').slice(4, 5))
     return newDate
   }
 
   const grabTask = () => {
     let taskList = []
-    for (const task in allTasks){
+    for (const task in allTasks) {
 
       taskList.push(
         <div className='task-bar'>
@@ -47,7 +48,7 @@ const TasksPage = () => {
 
   return (
     <div>
-      <h3>TaskList</h3>
+      <h3>Habit List</h3>
       <div className='task-label-bar'>
         <div>Name</div>
         <div>Description</div>
@@ -57,7 +58,10 @@ const TasksPage = () => {
         <div>Created</div>
       </div>
       {grabTask()}
-      <button>Add Task</button>
+      <button>
+        <AddNewHabitModal />
+
+      </button>
     </div>
   )
 }
