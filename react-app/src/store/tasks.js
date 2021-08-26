@@ -36,15 +36,32 @@ export const loadAllTasks = (userId) => async (dispatch) => {
 
 }
 
+export const addNewTask = (task) => async (dispatch) => {
+  const res = await fetch('/api/tasks/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      task
+    }),
+  })
+
+  if (response.ok){
+    const newTask = await response.json()
+    dispatch(createTask(newTask))
+  }
+}
+
 
 
 let initialState = {}
 export default function reducer(state=initialState, action){
-  let newState = {}
+
   switch (action.type) {
-    case GET_TASKS: {
+    case GET_TASKS:
       return {...state,...action.payload}
-    }
+
     default:
       return state
   }

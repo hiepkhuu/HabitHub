@@ -11,7 +11,7 @@ const TasksPage = () => {
 
   const dispatch = useDispatch()
   // console.log('#############',sessionUser.id)
-  // console.log('#########', allTasks)
+  // console.log('#########', allTasks.tasks)
 
   useEffect(async () => {
     await dispatch(loadAllTasks(sessionUser.id))
@@ -27,24 +27,24 @@ const TasksPage = () => {
     return newDate
   }
 
-  const grabTask = () => {
-    let taskList = []
-    for (const task in allTasks) {
+  // const grabTask = () => {
+  //   let taskList = []
+  //   for (const task in allTasks) {
 
-      taskList.push(
-        <div className='task-bar'>
-          <p> {allTasks[task].task_name}</p>
-          <p> {allTasks[task].task_detail}</p>
-          <p> {allTasks[task].task_reason}</p>
-          <p> {allTasks[task].target_num}</p>
-          <p> {allTasks[task].task_points}</p>
-          <p> {turnDateIntoReadable(allTasks[task].created_at)} </p>
-        </div>
+  //     taskList.push(
+  //       <div className='task-bar'>
+  //         <p> {allTasks[task].task_name}</p>
+  //         <p> {allTasks[task].task_detail}</p>
+  //         <p> {allTasks[task].task_reason}</p>
+  //         <p> {allTasks[task].target_num}</p>
+  //         <p> {allTasks[task].task_points}</p>
+  //         <p> {turnDateIntoReadable(allTasks[task].created_at)} </p>
+  //       </div>
 
-      )
-    }
-    return taskList
-  }
+  //     )
+  //   }
+  //   return taskList
+  // }
 
   return (
     <div>
@@ -57,7 +57,17 @@ const TasksPage = () => {
         <div>Value</div>
         <div>Created</div>
       </div>
-      {grabTask()}
+      {/* {grabTask()} */}
+      {allTasks?.tasks?.map(task =>(
+        <div className='task-bar'>
+          <p>{task.task_name}</p>
+          <p>{task.task_detail}</p>
+          <p>{task.task_reason}</p>
+          <p>{task.target_num}</p>
+          <p>{task.task_points}</p>
+          <p>{turnDateIntoReadable(task.created_at)}</p>
+        </div>
+      ))}
       <button>
         <AddNewHabitModal />
 

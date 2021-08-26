@@ -20,7 +20,7 @@ def get_tasks(user_id
     tasks = Task.query.filter(Task.user_id == user_id
     ).all()
     # print('########TEST##########', tasks)
-    return {task.id: task.to_dict() for task in tasks}
+    return {'tasks': [task.to_dict() for task in tasks]}
 
 
 @task_routes.route('/', methods=['POST'])
