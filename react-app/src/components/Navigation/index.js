@@ -35,32 +35,13 @@ const NavBar = ({ isLoaded }) => {
           <div className='entry'>
             <NavLink className='NavLink' to='/login' exact={true} activeClassName='active'>
               <div className='' >
-
                    <p className=''>Login</p>
-                   <p className=''>Login</p>
-                   <p className=''>Login</p>
-                   <p className=''>Login</p>
-                   <p className=''>Login</p>
-                   <p className=''>Login</p>
-
-                   <p className=''>Login</p>
-
               </div>
             </NavLink>
 
             <NavLink className='NavLink' to='/sign-up' exact={true} activeClassName='active'>
               <div className='entry logout' >
-
                   <p className='entry p'>Sign Up</p>
-                  <p className='entry p'>Sign Up</p>
-                  <p className='entry p'>Sign Up</p>
-                  <p className='entry p'>Sign Up</p>
-                  <p className='entry p'>Sign Up</p>
-                  <p className='entry p'>Sign Up</p>
-                  <p className='entry p'>Sign Up</p>
-                  <p className='entry p'>Sign Up</p>
-
-
               </div>
             </NavLink>
           </div>
