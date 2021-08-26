@@ -18,7 +18,7 @@ const AddNewHabitModal = () => {
   const [taskReason, setTaskReason] = useState('')
   const [targetNum, setTargetNum] = useState('')
   const [taskPoints, setTaskPoints] = useState('')
-  const [colorHue, setColorHue] = useState('')
+  const [colorHue, setColorHue] = useState('#ffffff')
 
   useEffect(() => {
     if (!showModal) return;
@@ -50,10 +50,19 @@ const AddNewHabitModal = () => {
       task_detail:taskDetail ,
       task_reason: taskReason,
       target_num: targetNum,
-      color_id: colorHue,
+      color_hue: colorHue,
       task_points: taskPoints,
     }
-    await addNewTask(task)
+    await dispatch(addNewTask(task))
+
+    setTaskName('');
+    setTaskDetail('');
+    setTaskReason('');
+    setTargetNum('');
+    setColorHue('#ffffff');
+    setTaskPoints('');
+
+    setShowModal(false)
   }
 
   return (
@@ -67,35 +76,48 @@ const AddNewHabitModal = () => {
             <div className='edit-form-container'>
               <button onClick={cancel}>Cancel</button>
               <h3>Add Habit!</h3>
-              <form className='add-task-form'  >
+              <form className='add-task-form' onSubmit={submitTask} >
                 <div>What would you like to add to your life?</div>
                   <textarea
-                  type='textarea'
+                  type='text'
                   rows='1'
+                  value={taskName}
+                  onChange={e=> setTaskName(e.target.value)}
                   />
                 <div>Give a brief description of what you'll be doing.</div>
                   <textarea
-                  type='textarea'
+                  type='text'
                   rows='2'
-                  />
+                  value={taskDetail}
+                  onChange={e=> setTaskDetail(e.target.value)}
+                  ></textarea>
                 <div>A quick motivating reason why.</div>
                   <textarea
-                  type='textarea'
+                  type='text'
                   rows='2'
-                  />
+                  value={taskReason}
+                  onChange={e=> setTaskReason(e.target.value)}
+                  ></textarea>
                 <div>Target number of times per week.</div>
                   <input
                   type='number'
+                  value={targetNum}
+                  onChange={e=> setTargetNum(e.target.value)}
                   />
                 <div>Value you want to give this task</div>
                   <input
                   type='number'
+                  value={taskPoints}
+                  onChange={e=> setTaskPoints(e.target.value)}
                   />
                 <div>Color for this task</div>
                   <input
                   type='color'
+                  value={colorHue}
+                  onChange={e=> setColorHue(e.target.value)}
                   />
-                <button type='submit' >Save</button>
+                  {/* <div>{colorHue} look hrte</div> */}
+                <button  onClick={submitTask} >Save</button>
               </form>
 
             </div>

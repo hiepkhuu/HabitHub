@@ -11,13 +11,13 @@ class Task(db.Model):
     task_detail = db.Column(db.String(255), nullable=False)
     task_reason= db.Column(db.String(500), nullable=False)
     target_num = db.Column(db.Integer, nullable=True)
-    color_id = db.Column(db.Integer, db.ForeignKey('colors.id'), nullable=False)
+    color_hue = db.Column(db.String, nullable=False)
     task_points = db.Column(db.Integer, nullable=True)
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.now().strftime("%m/%d/%Y, %H:%M:%S"))
     updated_at = db.Column(db.DateTime, nullable=False, default=datetime.now().strftime("%m/%d/%Y, %H:%M:%S"))
 
     rewards = db.relationship('Reward', back_populates='task')
-    color = db.relationship('Color', back_populates='tasks')
+    # color = db.relationship('Color', back_populates='tasks')
     owner = db.relationship('User', back_populates='tasks')
     logs = db.relationship('Log', back_populates='task')
     # def get_all_Tasks(self):
@@ -70,7 +70,7 @@ class Task(db.Model):
             'task_detail': self.task_detail,
             'task_reason': self.task_reason,
             'target_num': self.target_num,
-            'color_id': self.color_id,
+            'color_hue': self.color_hue,
             'task_points': self.task_points,
             'created_at': self.created_at,
             'updated_at': self.updated_at,

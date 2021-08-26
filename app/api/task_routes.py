@@ -92,10 +92,9 @@ def edit_task_by_id(task_id):
 #       task_detail : 'detail-sfasfsfsdfsdfsdfsdfsdfs',
 #       task_reason : 'reason-asdfsdfsdfsdfsdfsdfsdfd',
 #       target_num : 7,
-#       color_id : 3,
+#       color_hue : '#ffffff',
 #       task_points : 2})
 #  }).then(res => res.json()).then(data => console.log(data))
-
 
 
 ####### PUT single task ######

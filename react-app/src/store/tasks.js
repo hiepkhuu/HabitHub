@@ -42,13 +42,13 @@ export const addNewTask = (task) => async (dispatch) => {
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({
+    body: JSON.stringify(
       task
-    }),
+    ),
   })
 
-  if (response.ok){
-    const newTask = await response.json()
+  if (res.ok){
+    const newTask = await res.json()
     dispatch(createTask(newTask))
   }
 }
@@ -61,7 +61,8 @@ export default function reducer(state=initialState, action){
   switch (action.type) {
     case GET_TASKS:
       return {...state,...action.payload}
-
+    case CREATE_TASK:
+      return {...state,...action.payload}
     default:
       return state
   }
