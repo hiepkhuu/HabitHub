@@ -29,12 +29,11 @@ const deleteTask = (listId) => ({
 
 ///////  THUNKS ///////
 export const loadAllTasks = (userId) => async (dispatch) => {
-  const res = await fetch('/api/tasks/user/userId')
+  const res = await fetch(`/api/tasks/users/${userId}`)
 
-  if (Response.ok) {
-    let data = await res.json();
-    dispatch(getTasksList(data))
-  }
+  let data = await res.json();
+  dispatch(getTasksList(data))
+
 }
 
 
@@ -44,7 +43,7 @@ export default function reducer(state=initialState, action){
   let newState = {}
   switch (action.type) {
     case GET_TASKS: {
-      return {...state, ...action.payload}
+      return {...state,...action.payload}
     }
     default:
       return state

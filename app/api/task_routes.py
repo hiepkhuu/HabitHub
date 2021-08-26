@@ -11,7 +11,7 @@ task_routes = Blueprint('tasks', __name__)
 
 
 @task_routes.route('users/<int:user_id>')
-# @login_required
+@login_required
 def get_tasks(user_id
 ):
     """
