@@ -97,21 +97,22 @@ def edit_task_by_id(task_id):
 #  }).then(res => res.json()).then(data => console.log(data))
 
 
-####### PUT single task ######
-# fetch('api/tasks/5', {
-#    method: 'PUT',
+# ####### PUT single task ######
+#  fetch('api/tasks/5', {
+#    method: 'POST',
 #    headers: {
 #      'Content-Type': 'application/json'
 #    },
 #    body: JSON.stringify({
 #       user_id : 1,
-#       task_name : 'test-task-put',
+#       task_name : 'test-task',
 #       task_detail : 'detail-sfasfsfsdfsdfsdfsdfsdfs',
 #       task_reason : 'reason-asdfsdfsdfsdfsdfsdfsdfd',
 #       target_num : 7,
-#       color_id : 4,
+#       color_hue : '#ffffff',
 #       task_points : 2})
 #  }).then(res => res.json()).then(data => console.log(data))
+
 
  ###### GET single task ######
 # fetch('api/tasks/5', {

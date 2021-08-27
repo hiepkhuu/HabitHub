@@ -58,16 +58,26 @@ export const deleteSingleTask = (taskId) => async(dispatch) => {
     method: 'DELETE',
   })
   if (res.ok){
-    const task = await Response.json()
+    const task = await res.json()
 
     dispatch(deleteTask(task))
   }
 }
 
-// # fetch('api/tasks/5', {
-//   #    method: 'DELETE'
-//   #  }).then(res => res.json()).then(data => console.log(data))
+export const updateSingleTask = (task) => async(dispatch) => {
+  const res = await fetch(`/api/tasks/${task.id}`,  {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(task)
+  })
+  if (res.ok){
+    const task = await res.json()
 
+    dispatch(updateTask(task))
+  }
+}
 let initialState = {}
 export default function reducer(state=initialState, action){
 
@@ -77,6 +87,8 @@ export default function reducer(state=initialState, action){
     case CREATE_TASK:
       return {...state,...action.payload}
     case DELETE_TASK:
+      return {...state,...action.payload}
+    case UPDATE_TASK:
       return {...state,...action.payload}
     default:
       return state
