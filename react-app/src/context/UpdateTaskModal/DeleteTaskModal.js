@@ -4,7 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 import { Modal } from '../Modal';
 import { deleteSingleTask } from "../../store/tasks";
 
-const DeleteTaskModal = ({setReloadTaskPage,taskId}) => {
+const DeleteTaskModal = ({setReloadTaskPage,taskId, setShowModal, taskName}) => {
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -25,18 +25,25 @@ const DeleteTaskModal = ({setReloadTaskPage,taskId}) => {
 
     await dispatch(deleteSingleTask(taskId))
     setReloadTaskPage(true)
+    setShowMenu(false)
+    setShowModal(false)
+  }
+
+  const cancel = (e) =>{
+    e.preventDefault()
+    setShowMenu(false)
   }
 
   return (
     <>
-    <button onclick={deleteTask}>Delete Task</button>
+    <button onClick={() => { setShowMenu (true) }}>Delete Task</button>
     <div>
       {showMenu && (
         <Modal>
              <div>
-                <p>Are you sure you want to delete this task?</p>
+                <p>Are you sure you want to delete {taskName}?</p>
                 <button onClick={deleteTask}>yes</button>
-                <button >no</button>
+                <button onClick={cancel}>no</button>
               </div>
         </Modal>
       )}

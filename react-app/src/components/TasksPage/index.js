@@ -19,6 +19,7 @@ const TasksPage = () => {
 
   useEffect(async () => {
     await dispatch(loadAllTasks(sessionUser.id))
+    setReloadTaskPage(false)
   }, [reloadTaskPage])
 
   function convert(input) {

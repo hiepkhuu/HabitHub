@@ -36,16 +36,16 @@ const UpdateTaskModal = ({setReloadTaskPage,taskId}) => {
   const [targetNum, setTargetNum] = useState(targetedTask[0].target_num || '')
   const [taskPoints, setTaskPoints] = useState(targetedTask[0].task_points || '')
   const [colorHue, setColorHue] = useState(targetedTask[0].color_hue || '#ffffff')
-  const [showDeleteMsg, setShowDeleteMsg] = useState(false);
+  // const [showDeleteMsg, setShowDeleteMsg] = useState(false);
 
   useEffect(async () => {
     // if(!showMenu) return;
     if (!showModal) return;
-    if (!showDeleteMsg) return;
+    // if (!showDeleteMsg) return;
 
 
     await dispatch(loadAllTasks(sessionUser.id))
-  }, [showModal, showDeleteMsg])
+  }, [showModal]) //[showDeleteMsg]
 
   if (!sessionUser) {
     return (
@@ -53,7 +53,8 @@ const UpdateTaskModal = ({setReloadTaskPage,taskId}) => {
     )
   }
 
-  const cancel = () =>{
+  const cancel = (e) =>{
+    e.preventDefault()
     setShowModal(false)
   }
 
@@ -109,7 +110,7 @@ const UpdateTaskModal = ({setReloadTaskPage,taskId}) => {
                 <button >no</button>
               </div>
             )} */}
-            <DeleteTaskModal setReloadTaskPage={setReloadTaskPage}/>
+            <DeleteTaskModal setReloadTaskPage={setReloadTaskPage} setShowModal={setShowModal} taskId={taskId} taskName={targetedTask[0].task_name}/>
             <button onClick={cancel}>Cancel</button>
             {/* <button onClick={deleteSingleTask}>Delete Task</button> */}
             <h3>Add Habit!</h3>
