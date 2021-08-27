@@ -1,10 +1,15 @@
-
-.habit-log{
-  width: 60%
+.task-log-board{
+  width: 800px
 }
-.task-bar{
+.task-log{
+  width: 100%;
   display: flex;
-  width:100%
+}
+.task-card{
+  display: flex;
+  flex-direction: column;
+  width:100%;
+  margin: 10px 25px;
 }
 .task-label-bar{
   display:flex;
@@ -13,39 +18,47 @@
 
 .task-label-bar div{
   margin: 5px 10px;
-  width:100%
-}
-
-.task-bar p{
-
-  padding: 0px;
-  margin: 0px 0px;
-  width:100%
-}
-.task-bar div{
-  margin: 0px 10px;
-  width:100%;
+  /* width:100%; */
   display:flex;
-  flex-wrap: wrap
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
+
+/* .task-bar div{
+  margin: 5px 10px;
+  /* width:100%; */
+  /* display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+} */
+
+.task-info{
+
+}
 .task-name{
-  width: 120px
+  width: 15%;
+  font-weight: bold;
 }
 
 .task-detail{
-  width: 200px
+  width: 15%
 }
 .task-reason{
-  width: 200px
+  width: 25%
 }
 
 .task-num{
-  width: 50px
+  width: 10%
 }
 .task-points{
-  width: 50px
+  width: 10%
 }
 .task-created{
-  width: 200px
+  width: 15%
+}
+
+.edit-button,
+.empty-div{
+  width: 10%
 }
