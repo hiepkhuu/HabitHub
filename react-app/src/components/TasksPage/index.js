@@ -67,11 +67,10 @@ const TasksPage = () => {
           {/* {grabTask()} */}
           {allTasks?.tasks?.map(task =>(
             <>
-            <div className='task-card'>
-              <div className='task-name'>
-                {task.task_name}
-              </div>
-              <div className='task-info'>
+              <div className='task-card'>
+                <div className='task-name'>
+                  {task.task_name}
+                </div>
                 <div className='task-detail'>
                   {task.task_detail}
                 </div>
@@ -90,7 +89,6 @@ const TasksPage = () => {
                 <div className='edit-button'>
                   <UpdateTaskModal setReloadTaskPage={setReloadTaskPage} taskId={task.id} />
                 </div>
-              </div>
             </div>
 
             </>
