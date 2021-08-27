@@ -5,7 +5,9 @@ import { Redirect, useHistory, useParams} from 'react-router-dom';
 
 import { updateSingleTask, loadAllTasks } from '../../store/tasks';
 
-const UpdateTaskModal = ({setReloadTaskPage}) => {
+const UpdateTaskModal = ({setReloadTaskPage,taskId}) => {
+
+  console.log('THISTHISHTIS', taskId)
   const dispatch = useDispatch();
   // const history = useHistory();
 
@@ -13,13 +15,18 @@ const UpdateTaskModal = ({setReloadTaskPage}) => {
   const sessionUser = useSelector(state => state.session.user)
   const allTasks = useSelector(state => state.tasks)
 
+  const targetedTask = allTasks.tasks.filter(task=> task.id === taskId)
+
+  // console.log('######', targetedTask[0])
+  // console.log('######', allTasks.tasks)
+
   const [showModal, setShowModal] = useState(false);
-  const [taskName, setTaskName] = useState(allTasks.taskName || '')
-  const [taskDetail, setTaskDetail] = useState(allTasks.task_detail || '')
-  const [taskReason, setTaskReason] = useState(allTasks.task_reason || '')
-  const [targetNum, setTargetNum] = useState(allTasks.target_num || '')
-  const [taskPoints, setTaskPoints] = useState(allTasks.task_points || '')
-  const [colorHue, setColorHue] = useState(allTasks.color_hue || '#ffffff')
+  const [taskName, setTaskName] = useState(targetedTask[0].task_name || '')
+  const [taskDetail, setTaskDetail] = useState(targetedTask[0].task_detail || '')
+  const [taskReason, setTaskReason] = useState(targetedTask[0].task_reason || '')
+  const [targetNum, setTargetNum] = useState(targetedTask[0].target_num || '')
+  const [taskPoints, setTaskPoints] = useState(targetedTask[0].task_points || '')
+  const [colorHue, setColorHue] = useState(targetedTask[0].color_hue || '#ffffff')
 
   useEffect(async () => {
     if (!showModal) return;
@@ -48,6 +55,7 @@ const UpdateTaskModal = ({setReloadTaskPage}) => {
       target_num: targetNum,
       color_hue: colorHue,
       task_points: taskPoints,
+      id:taskId
     }
     await dispatch(updateSingleTask(task))
 
@@ -64,7 +72,7 @@ const UpdateTaskModal = ({setReloadTaskPage}) => {
 
   return(
     <>
-    <span text='Edit Comment' onClick={() => { setShowModal(true) }} >Edit Habit</span>
+    <button text='Edit Comment' onClick={() => { setShowModal(true) }} >Edit Habit</button>
 
     <div >
 

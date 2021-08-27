@@ -66,7 +66,7 @@ export const deleteSingleTask = (taskId) => async(dispatch) => {
 
 export const updateSingleTask = (task) => async(dispatch) => {
   const res = await fetch(`/api/tasks/${task.id}`,  {
-    method: 'POST',
+    method: 'PUT',
     headers: {
       'Content-Type': 'application/json'
     },
@@ -78,6 +78,7 @@ export const updateSingleTask = (task) => async(dispatch) => {
     dispatch(updateTask(task))
   }
 }
+
 let initialState = {}
 export default function reducer(state=initialState, action){
 

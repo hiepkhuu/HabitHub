@@ -99,7 +99,7 @@ def edit_task_by_id(task_id):
 
 # ####### PUT single task ######
 #  fetch('api/tasks/5', {
-#    method: 'POST',
+#    method: 'PUT',
 #    headers: {
 #      'Content-Type': 'application/json'
 #    },

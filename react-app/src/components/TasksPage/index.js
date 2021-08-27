@@ -84,11 +84,11 @@ const TasksPage = () => {
               <div clasName='task-created'>
                 <p>{turnDateIntoReadable(task.created_at)}</p>
               </div>
+              <div>
+                <UpdateTaskModal setReloadTaskPage={setReloadTaskPage} taskId={task.id} />
+              </div>
+            </div>
 
-            </div>
-            <div>
-              <UpdateTaskModal setReloadTaskPage={setReloadTaskPage} />
-            </div>
             </>
 
           ))}
