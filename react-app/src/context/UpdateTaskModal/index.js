@@ -10,6 +10,12 @@ const UpdateTaskModal = ({setReloadTaskPage,taskId}) => {
   console.log('THISTHISHTIS', taskId)
   const dispatch = useDispatch();
   // const history = useHistory();
+  const [showMenu, setShowMenu] = useState(false);
+
+  const openMenu = () => {
+    if (showMenu) return;
+    setShowMenu(true);
+  };
 
 
   const sessionUser = useSelector(state => state.session.user)
@@ -30,6 +36,7 @@ const UpdateTaskModal = ({setReloadTaskPage,taskId}) => {
   const [showDeleteMsg, setShowDeleteMsg] = useState(false);
 
   useEffect(async () => {
+    if(!showMenu) return;
     if (!showModal) return;
     if (!showDeleteMsg) return;
 
@@ -47,13 +54,13 @@ const UpdateTaskModal = ({setReloadTaskPage,taskId}) => {
     setShowModal(false)
   }
 
-  //will use later
-  // const deleteTask = async (e) =>{
-  //   e.preventDefault()
 
-  //   await dispatch(deleteSingleTask(taskId))
-  //   setReloadTaskPage(true)
-  // }
+  const deleteTask = async (e) =>{
+    e.preventDefault()
+
+    await dispatch(deleteSingleTask(taskId))
+    setReloadTaskPage(true)
+  }
 
 
   const submitTask = async (e) => {
@@ -91,6 +98,14 @@ const UpdateTaskModal = ({setReloadTaskPage,taskId}) => {
       {showModal && (
         <Modal>
           <div className='edit-form-container'>
+            <button onClick={openMenu}>Delete Task</button>
+            {showMenu && (
+              <div>
+                <p>Are you sure you want to delete this task?</p>
+                <button onClick={deleteTask}>yes</button>
+                <button >no</button>
+              </div>
+            )}
             <button onClick={cancel}>Cancel</button>
             <button onClick={deleteSingleTask}>Delete Task</button>
             <h3>Add Habit!</h3>
