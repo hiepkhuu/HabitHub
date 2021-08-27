@@ -3,7 +3,7 @@ import { Modal } from '../Modal';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect, useHistory, useParams} from 'react-router-dom';
 
-import { updateSingleTask, loadAllTasks } from '../../store/tasks';
+import { updateSingleTask, loadAllTasks, deleteSingleTask } from '../../store/tasks';
 
 const UpdateTaskModal = ({setReloadTaskPage,taskId}) => {
 
@@ -27,11 +27,15 @@ const UpdateTaskModal = ({setReloadTaskPage,taskId}) => {
   const [targetNum, setTargetNum] = useState(targetedTask[0].target_num || '')
   const [taskPoints, setTaskPoints] = useState(targetedTask[0].task_points || '')
   const [colorHue, setColorHue] = useState(targetedTask[0].color_hue || '#ffffff')
+  const [showDeleteMsg, setShowDeleteMsg] = useState(false);
 
   useEffect(async () => {
     if (!showModal) return;
+    if (!showDeleteMsg) return;
+
+
     await dispatch(loadAllTasks(sessionUser.id))
-  }, [])
+  }, [showModal, showDeleteMsg])
 
   if (!sessionUser) {
     return (
@@ -42,6 +46,14 @@ const UpdateTaskModal = ({setReloadTaskPage,taskId}) => {
   const cancel = () =>{
     setShowModal(false)
   }
+
+  //will use later
+  // const deleteTask = async (e) =>{
+  //   e.preventDefault()
+
+  //   await dispatch(deleteSingleTask(taskId))
+  //   setReloadTaskPage(true)
+  // }
 
 
   const submitTask = async (e) => {
@@ -80,6 +92,7 @@ const UpdateTaskModal = ({setReloadTaskPage,taskId}) => {
         <Modal>
           <div className='edit-form-container'>
             <button onClick={cancel}>Cancel</button>
+            <button onClick={deleteSingleTask}>Delete Task</button>
             <h3>Add Habit!</h3>
             <form className='add-task-form' onSubmit={submitTask} >
               <div>What would you like to add to your life?</div>
