@@ -2,8 +2,9 @@
 import React, { useContext, useRef, useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import './Modal.css';
+import './UpdateTaskModal/UpdateTaskModal.css'
 
-import './AddNewTask/AddNewTask.css'
+import './AddNewTaskModal/AddNewTaskModal.css'
 
 const ModalContext = React.createContext();
 

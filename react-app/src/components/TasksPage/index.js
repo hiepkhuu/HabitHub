@@ -3,7 +3,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { loadAllTasks } from '../../store/tasks'
 import './TaskPage.css'
 import moment from 'moment'
-import AddNewHabitModal from '../../context/AddNewTask'
+import AddNewHabitModal from '../../context/AddNewTaskModal'
+import UpdateTaskModal from '../../context/UpdateTaskModal'
 // import {showModal} from '../../context/AddNewTask'
 
 const TasksPage = () => {
@@ -63,6 +64,7 @@ const TasksPage = () => {
           </div>
           {/* {grabTask()} */}
           {allTasks?.tasks?.map(task =>(
+            <>
             <div className='task-bar'>
               <div clasName='task-name'>
                 <p>{task.task_name}</p>
@@ -82,7 +84,12 @@ const TasksPage = () => {
               <div clasName='task-created'>
                 <p>{turnDateIntoReadable(task.created_at)}</p>
               </div>
+
             </div>
+            <div>
+              <UpdateTaskModal setReloadTaskPage={setReloadTaskPage} />
+            </div>
+            </>
 
           ))}
           <button>
