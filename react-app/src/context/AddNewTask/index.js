@@ -5,7 +5,7 @@ import { Redirect, useHistory, useParams } from 'react-router-dom';
 
 import { addNewTask } from '../../store/tasks'
 
-const AddNewHabitModal = () => {
+const AddNewHabitModal = ({setReloadTaskPage}) => {
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -63,6 +63,7 @@ const AddNewHabitModal = () => {
     setTaskPoints('');
 
     setShowModal(false)
+    setReloadTaskPage(true)
   }
 
   return (

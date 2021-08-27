@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { loadAllTasks } from '../../store/tasks'
 import './TaskPage.css'
 import moment from 'moment'
 import AddNewHabitModal from '../../context/AddNewTask'
+// import {showModal} from '../../context/AddNewTask'
 
 const TasksPage = () => {
   const sessionUser = useSelector(state => state.session.user)
@@ -13,9 +14,11 @@ const TasksPage = () => {
   // console.log('#############',sessionUser.id)
   // console.log('#########', allTasks.tasks)
 
+  const [reloadTaskPage, setReloadTaskPage] = useState(false)
+
   useEffect(async () => {
     await dispatch(loadAllTasks(sessionUser.id))
-  }, [])
+  }, [reloadTaskPage])
 
   function convert(input) {
     return moment(input, 'HH:mm:ss').format('h:mm A');
@@ -69,7 +72,7 @@ const TasksPage = () => {
         </div>
       ))}
       <button>
-        <AddNewHabitModal />
+        <AddNewHabitModal setReloadTaskPage={setReloadTaskPage}/>
 
       </button>
     </div>
