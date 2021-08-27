@@ -52,29 +52,45 @@ const TasksPage = () => {
   return (
     <div>
       <h3>Habit List</h3>
-      <div className='task-label-bar'>
-        <div>Name</div>
-        <div>Description</div>
-        <div>Motivating Reason</div>
-        <div>Target</div>
-        <div>Value</div>
-        <div>Created</div>
-      </div>
-      {/* {grabTask()} */}
-      {allTasks?.tasks?.map(task =>(
-        <div className='task-bar'>
-          <p>{task.task_name}</p>
-          <p>{task.task_detail}</p>
-          <p>{task.task_reason}</p>
-          <p>{task.target_num}</p>
-          <p>{task.task_points}</p>
-          <p>{turnDateIntoReadable(task.created_at)}</p>
-        </div>
-      ))}
-      <button>
-        <AddNewHabitModal setReloadTaskPage={setReloadTaskPage}/>
+      <div className='habit-log'>
+          <div className='task-label-bar'>
+            <div clasName='task-name'>Name</div>
+            <div clasName='task-detail'>Description</div>
+            <div clasName='task-reason'>Motivating Reason</div>
+            <div clasName='task-num'>Target</div>
+            <div clasName='task-points'>Value</div>
+            <div clasName='task-created'>Created</div>
+          </div>
+          {/* {grabTask()} */}
+          {allTasks?.tasks?.map(task =>(
+            <div className='task-bar'>
+              <div clasName='task-name'>
+                <p>{task.task_name}</p>
+              </div>
+              <div clasName='task-detail'>
+              <p>{task.task_detail}</p>
+              </div>
+              <div clasName='task-reason'>
+                <p>{task.task_reason}</p>
+              </div>
+              <div clasName='task-num'>
+              <p>{task.target_num}</p>
+              </div>
+              <div clasName='task-points'>
+                <p>{task.task_points}</p>
+              </div>
+              <div clasName='task-created'>
+                <p>{turnDateIntoReadable(task.created_at)}</p>
+              </div>
+            </div>
 
-      </button>
+          ))}
+          <button>
+            <AddNewHabitModal setReloadTaskPage={setReloadTaskPage}/>
+
+          </button>
+
+      </div>
     </div>
   )
 }

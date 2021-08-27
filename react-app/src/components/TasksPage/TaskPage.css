@@ -1,15 +1,51 @@
-.task-bar{
-  display: grid;
-  grid-template-columns: 1.5fr 1.5fr 3fr 1fr 1fr 2fr
 
+.habit-log{
+  width: 60%
+}
+.task-bar{
+  display: flex;
+  width:100%
 }
 .task-label-bar{
-  display: grid;
-  grid-template-columns: 1.5fr 1.5fr 3fr 1fr 1fr 2fr;
+  display:flex;
+  width:100%
+}
 
+.task-label-bar div{
+  margin: 5px 10px;
+  width:100%
 }
 
 .task-bar p{
-  padding: 0px 5px;
-  margin: 5px 0px;
+
+  padding: 0px;
+  margin: 0px 0px;
+  width:100%
+}
+.task-bar div{
+  margin: 0px 10px;
+  width:100%;
+  display:flex;
+  flex-wrap: wrap
+}
+
+.task-name{
+  width: 120px
+}
+
+.task-detail{
+  width: 200px
+}
+.task-reason{
+  width: 200px
+}
+
+.task-num{
+  width: 50px
+}
+.task-points{
+  width: 50px
+}
+.task-created{
+  width: 200px
 }
