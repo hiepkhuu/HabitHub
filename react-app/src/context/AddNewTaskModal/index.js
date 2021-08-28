@@ -68,7 +68,7 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
 
   return (
     <>
-      <span text='Edit Comment' onClick={() => { setShowModal(true) }} >Add Habit</span>
+      <button onClick={() => { setShowModal(true) }} >Add Habit</button>
 
       <div >
 
