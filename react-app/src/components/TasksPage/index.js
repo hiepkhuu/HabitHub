@@ -17,12 +17,16 @@ const TasksPage = () => {
   // console.log('#########', allTasks.tasks)
 
   const [reloadTaskPage, setReloadTaskPage] = useState(false)
+  const [color, setColor] = useState('')
 
   useEffect(async () => {
     await dispatch(loadAllTasks(sessionUser.id))
     setReloadTaskPage(false)
+    // const colorCircle = document.getElementById('task-log');
+    // colorCircle.style.backgroundColor = '#FF0000'
 
-
+    // const colorCircle = document.getElementById('color-circle');
+    // colorCircle.style.backgroundColor = '#FF0000'
   }, [reloadTaskPage])
 
   function convert(input) {
@@ -57,7 +61,7 @@ const TasksPage = () => {
   return (
     <div className='task-log-board'>
       <h3>Habit List</h3>
-      <div className='task-log'>
+      <div className='task-log' id='task-log'>
           {/* <div className='task-label-bar'>
             <div className='task-name'>Name</div>
             <div className='task-detail'>Description</div>
@@ -73,8 +77,12 @@ const TasksPage = () => {
               <div className='task-card'>
                 <div className='task-name'>
                   {task.task_name}
-                  <colorCircle task={task}/>
+                  {/* <colorCircle task={task}/> */}
+                  {/* <div id='color-circle' >o</div> */}
+
                 </div>
+                {/* <colorCircle /> */}
+                <div id='color-circle'>{task.color_hue}</div>
                 <div className='task-detail'>
                   {task.task_detail}
                 </div>
