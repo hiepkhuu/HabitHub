@@ -5,6 +5,7 @@ import './TaskPage.css'
 import moment from 'moment'
 import AddNewHabitModal from '../../context/AddNewTaskModal'
 import UpdateTaskModal from '../../context/UpdateTaskModal'
+import colorCircle from './colorCircle'
 // import {showModal} from '../../context/AddNewTask'
 
 const TasksPage = () => {
@@ -20,6 +21,8 @@ const TasksPage = () => {
   useEffect(async () => {
     await dispatch(loadAllTasks(sessionUser.id))
     setReloadTaskPage(false)
+
+
   }, [reloadTaskPage])
 
   function convert(input) {
@@ -70,6 +73,7 @@ const TasksPage = () => {
               <div className='task-card'>
                 <div className='task-name'>
                   {task.task_name}
+                  <colorCircle task={task}/>
                 </div>
                 <div className='task-detail'>
                   {task.task_detail}

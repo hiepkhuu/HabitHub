@@ -9,12 +9,11 @@
   display:flex;
   flex-wrap: nowrap;
   overflow-x:auto;
-
-
 }
 
 .task-log::-webkit-scrollbar {
-  display: none;  /* Safari and Chrome */
+  display: none;
+   /* Safari and Chrome */
 }
 
 .task-log div{
@@ -39,6 +38,10 @@
   font-size: 18px
 }
 
+.color-circl{
+  width:20px;
+  height: 20px;
+}
 .task-detail{
   width: 100%
 }
