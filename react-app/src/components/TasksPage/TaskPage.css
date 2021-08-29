@@ -7,8 +7,9 @@
 .task-log{
   width: 100%;
   display:flex;
-  flex-wrap: nowrap;
-  overflow-x:auto;
+  flex-wrap: wrap;
+  /* flex-wrap: nowrap; */
+  /* overflow-x:auto; */
 }
 
 .task-log::-webkit-scrollbar {
@@ -24,24 +25,37 @@
   flex-direction: column;
   box-shadow: 0px 0px 3px 3px rgb(214, 213, 213);
   margin: 10px 20px;
-  padding: 10px;
+  padding: 15px;
   border-radius: 3px;
+  width: 300px;
 }
 
 
 .task-info{
 
 }
+
+.habit-header{
+  display: flex;
+}
+.habit-header h3,
+.habit-header div{
+  margin:5px;
+  padding:0px;
+}
 .task-name{
-  width: 15%;
+  display: flex;
   font-weight: bold;
   font-size: 18px
 }
-
+.task-name div{
+  margin: 5px 10px
+}
 #color-circle{
-  width:20px;
-  height: 20px;
-  border:1px solid black
+  width:40px;
+  height: 15px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 2px 1px rgb(94, 94, 94);
 }
 .task-detail{
   width: 100%
@@ -62,4 +76,8 @@
 .edit-button,
 .empty-div{
   width:  100%
+}
+
+.task-log span{
+  font-weight: bold
 }

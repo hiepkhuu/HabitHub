@@ -56,7 +56,12 @@ const TasksPage = () => {
 
   return (
     <div className='task-log-board'>
-      <h3>Habit List</h3>
+      <div className='habit-header'>
+        <h3>Habit List</h3>
+        <div>
+          <AddNewHabitModal setReloadTaskPage={setReloadTaskPage}/>
+        </div>
+      </div>
       <div className='task-log' id='task-log'>
           {/* <div className='task-label-bar'>
             <div className='task-name'>Name</div>
@@ -73,27 +78,28 @@ const TasksPage = () => {
               <div className='task-card'>
                 <div className='task-name'>
                   {task.task_name}
-                </div>
-                {/* <ColorCircle taskColor={task.color_hue} /> */}
-                <div id='color-circle'
+                  <div id='color-circle'
                   style={{
                     backgroundColor: task.color_hue
                   }}
-                ></div>
+                  ></div>
+                </div>
+
+
                 <div className='task-detail'>
-                  {task.task_detail}
+                  <span>description: </span>{task.task_detail}
                 </div>
                 <div className='task-reason'>
-                  {task.task_reason}
+                  <span>motivation: </span>{task.task_reason}
                 </div>
                 <div className='task-num'>
-                  {task.target_num}
+                  <span>target/week: </span>{task.target_num}
                 </div>
                 <div className='task-points'>
-                  {task.task_points}
+                  <span>value: </span>{task.task_points} pts
                 </div>
                 <div className='task-created'>
-                  {turnDateIntoReadable(task.created_at)}
+                <span>created: </span>{turnDateIntoReadable(task.created_at)}
                 </div>
                 <div className='edit-button'>
                   <UpdateTaskModal setReloadTaskPage={setReloadTaskPage} taskId={task.id} />
@@ -103,10 +109,10 @@ const TasksPage = () => {
             </>
 
           ))}
-          <button>
+          {/* <div>
             <AddNewHabitModal setReloadTaskPage={setReloadTaskPage}/>
 
-          </button>
+          </div> */}
 
       </div>
     </div>
