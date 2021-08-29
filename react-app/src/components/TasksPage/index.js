@@ -5,7 +5,7 @@ import './TaskPage.css'
 import moment from 'moment'
 import AddNewHabitModal from '../../context/AddNewTaskModal'
 import UpdateTaskModal from '../../context/UpdateTaskModal'
-import colorCircle from './colorCircle'
+// import ColorCircle from './ColorCircle'
 // import {showModal} from '../../context/AddNewTask'
 
 const TasksPage = () => {
@@ -22,11 +22,7 @@ const TasksPage = () => {
   useEffect(async () => {
     await dispatch(loadAllTasks(sessionUser.id))
     setReloadTaskPage(false)
-    // const colorCircle = document.getElementById('task-log');
-    // colorCircle.style.backgroundColor = '#FF0000'
 
-    // const colorCircle = document.getElementById('color-circle');
-    // colorCircle.style.backgroundColor = '#FF0000'
   }, [reloadTaskPage])
 
   function convert(input) {
@@ -77,12 +73,13 @@ const TasksPage = () => {
               <div className='task-card'>
                 <div className='task-name'>
                   {task.task_name}
-                  {/* <colorCircle task={task}/> */}
-                  {/* <div id='color-circle' >o</div> */}
-
                 </div>
-                {/* <colorCircle /> */}
-                <div id='color-circle'>{task.color_hue}</div>
+                {/* <ColorCircle taskColor={task.color_hue} /> */}
+                <div id='color-circle'
+                  style={{
+                    backgroundColor: task.color_hue
+                  }}
+                ></div>
                 <div className='task-detail'>
                   {task.task_detail}
                 </div>
