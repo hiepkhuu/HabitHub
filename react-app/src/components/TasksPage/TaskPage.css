@@ -30,7 +30,7 @@
   width: 300px;
   background-color:#232b3f;
   opacity: 0.8;
-  color: rgb(163, 174, 197)
+  color: rgb(182, 191, 212)
 }
 
 
@@ -50,7 +50,7 @@
   display: flex;
   /* font-weight: bold; */
   font-size: 22px;
-  border-bottom: 1px solid rgb(140, 150, 172);
+  border-bottom: 1px solid rgb(53, 63, 83);
   margin: 5px 0px
 }
 .task-name div{
@@ -72,7 +72,7 @@
   width: 100%;
   color: rgb(102, 105, 131)
 }
-.task-detail{
+/* .task-detail{
   width: 100%
 }
 .task-reason{
@@ -84,7 +84,7 @@
 }
 .task-points{
   width: 100%
-}
+} */
 .task-created{
   width: 100%
 }
@@ -94,5 +94,5 @@
 }
 
 .task-log span{
-  /* font-weight: bold */
+  color:rgb(140, 150, 172)
 }

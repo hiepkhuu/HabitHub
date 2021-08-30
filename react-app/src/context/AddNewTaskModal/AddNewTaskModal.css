@@ -1,24 +1,19 @@
+
 .edit-form-container{
-  padding: 15px;
-  width:300px;
-  scroll-behavior: auto;
+  padding: 25px;
+  background-color: #232b3f;
+}
+ .edit-form-container textarea{
+  background-color: #232b3f;
+  color: rgb(182, 191, 212);
+  border: 2px solid #3f4452;
+ }
+.edit-form-container input{
+ background-color: #232b3f;
+ color: rgb(182, 191, 212);
+ border: 2px solid #3f4452;
 }
 
-.comment-edit-form{
-  display: flex;
-  flex-direction: column;
-  height: 50%;
-  width: 90%;
-
-
-}
-.comment-edit-form button{
-  align-self: flex-end;
-  width:80px;
-}
-
-.comment-edit-form button:hover{
-  background-color: rgb(45, 112, 42);
-  border-color: rgb(45, 112, 42);
-  color:white
+.edit-form-container div{
+  margin: 20px 0px 5px 0px
 }
