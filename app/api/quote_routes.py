@@ -15,5 +15,5 @@ def get_qoute():
     data = res.json()
     obj = {}
     obj['quote'] = data
-    print(data)
+    # print(data)
     return obj
