@@ -14,6 +14,6 @@ def get_qoute():
     res = requests.get('https://zenquotes.io/api/today')
     data = res.json()
     obj = {}
-    obj['quote'] = data
+    obj['quote'] = data[0]
     # print(data)
     return obj

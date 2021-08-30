@@ -7,20 +7,21 @@ const GreetingPage = () => {
   const dispatch = useDispatch()
 
   const sessionUser = useSelector(state => state.user)
-  const quote = useSelector(state => state.quotes.quote)
-
+  const quote = useSelector(state => state.quotes)
+  // const singleQuote = quote
+  console.log('singl', quote)
   useEffect(async() => {
     await dispatch(getSingleQuote())
-  }, [])
+  }, [dispatch])
 
 
 
   return (
     <>
-    
-      <h1>greeting page</h1>
 
-      <h1>{quote[0]?.q}</h1>
+      <h1>{sessionUser?.first_name}</h1>
+
+      <h1>{quote?.quote?.q}</h1>
 
       <NavLink to={`/dashboard`}>
         <button>go to task log</button>
