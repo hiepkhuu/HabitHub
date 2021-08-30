@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { loadAllTasks } from '../../store/tasks'
+import { getAllColors } from '../../store/colors'
 import './TaskPage.css'
 import moment from 'moment'
 import AddNewHabitModal from '../../context/AddNewTaskModal'
@@ -21,6 +22,7 @@ const TasksPage = () => {
 
   useEffect(async () => {
     await dispatch(loadAllTasks(sessionUser.id))
+    await dispatch(getAllColors())
     setReloadTaskPage(false)
 
   }, [reloadTaskPage])
@@ -34,6 +36,12 @@ const TasksPage = () => {
     const newDate = date.split(' ').slice(0, 4).join(' ') + ' ' + convert(date.split(' ').slice(4, 5))
     return newDate
   }
+
+  // const getColor = async (input) => {
+  //   const colorObj = await dispatch(getColorById(input))
+  //   console.log('###', colorObj)
+  //   return 'hi'
+  // }
 
   // const grabTask = () => {
   //   let taskList = []
@@ -83,8 +91,9 @@ const TasksPage = () => {
             <>
 
 
-            <div className='task-card'  style={{boxShadow:`0px 0px 1px 1px ${task.color_hue}`}}>
+            <div className='task-card'  style={{boxShadow:`0px 0px 1px 1px `}}>
                 {/* style={{border:`2px solid ${task.color_hue}`}} */}
+                {/* {getColor(task.id)} */}
                 <div className='task-name'>
                     <div className='task-name-header'>
                       {task.task_name}

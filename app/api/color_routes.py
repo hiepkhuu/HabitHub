@@ -12,9 +12,11 @@ color_routes = Blueprint('colors', __name__)
 
 @color_routes.route('/')
 @login_required
-def get_tasks():
+def get_tasks(color_id):
     """
-    Get all colors
+    Get all color
     """
+    # colors = Color.query.filter(Color.id == color_id).all()
     colors = Color.query.all()
     return {'colors': [color.to_dict() for color in colors]}
+    # return {'colors': colors[0].to_dict()}

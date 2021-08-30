@@ -2,12 +2,14 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import session from './session';
 import tasks from './tasks';
-import quotes from './quotes'
+import quotes from './quotes';
+import colors from './colors'
 
 const rootReducer = combineReducers({
   session,
   tasks,
-  quotes
+  quotes,
+  colors
 });
 
 

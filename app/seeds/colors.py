@@ -2,14 +2,14 @@ from app.models import db, Color
 
 
 def seed_colors():
-    color1 = Color(color_hue='#c4e17f')
-    color2 = Color(color_hue='#f7fdca')
-    color3 = Color(color_hue='#fad071')
-    color4 = Color(color_hue='#f0766b')
-    color5 = Color(color_hue='#db9dbe')
-    color6 = Color(color_hue='#c49cdf')
-    color7 = Color(color_hue='#6599e2')
-    color8 = Color(color_hue='#61c2e4')
+    color1 = Color(color_hue='#91ec7a')
+    color2 = Color(color_hue='#eceb86')
+    color3 = Color(color_hue='#fac371')
+    color4 = Color(color_hue='#eb6d61')
+    color5 = Color(color_hue='#e9a1c7')
+    color6 = Color(color_hue='#c093df ')
+    color7 = Color(color_hue='#6099e9')
+    color8 = Color(color_hue='#5fc5eb')
 
     colors = [
         color1,
@@ -20,7 +20,7 @@ def seed_colors():
         color6,
         color7,
         color8,
-      
+
     ]
     for color in colors:
         db.session.add(color)

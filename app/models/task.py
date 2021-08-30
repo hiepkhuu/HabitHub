@@ -71,6 +71,7 @@ class Task(db.Model):
             'task_reason': self.task_reason,
             'target_num': self.target_num,
             'color_id': self.color_id,
+            'color_hue': self.color.color_hue,
             'task_points': self.task_points,
             'created_at': self.created_at,
             'updated_at': self.updated_at,
