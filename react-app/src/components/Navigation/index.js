@@ -38,7 +38,7 @@ const Navigation = ({ isLoaded }) => {
         <>
           <div className='entry'>
             <NavLink className='NavLink' to='/login' exact={true} activeClassName='active'>
-              <div className='' >
+              <div className='entry logout' >
                    <p className=''>Login</p>
               </div>
             </NavLink>

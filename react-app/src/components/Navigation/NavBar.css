@@ -36,3 +36,15 @@
   background-size: 100% 10px;
   background-repeat:no-repeat;
 }
+.entry{
+  display:flex
+}
+.entry div{
+
+  color: rgb(217, 221, 238);
+  margin: 0px 10px 
+
+}
+.NavLink{
+  text-decoration: none;
+}
