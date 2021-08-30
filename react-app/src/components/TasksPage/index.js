@@ -75,14 +75,22 @@ const TasksPage = () => {
           {/* {grabTask()} */}
           {allTasks?.tasks?.map(task =>(
             <>
-              <div className='task-card'>
+
+
+            <div className='task-card'  style={{boxShadow:`0px 0px 2px 1px ${task.color_hue}`}}>
+                {/* style={{border:`2px solid ${task.color_hue}`}} */}
                 <div className='task-name'>
-                  {task.task_name}
-                  <div id='color-circle'
-                  style={{
-                    backgroundColor: task.color_hue
-                  }}
-                  ></div>
+                    <div className='task-name-header'>
+                      {task.task_name}
+                      <div id='color-circle'
+                      style={{
+                        backgroundColor: task.color_hue
+                      }}
+                      ></div>
+                    </div>
+                    <div className='edit-button'>
+                      <UpdateTaskModal setReloadTaskPage={setReloadTaskPage} taskId={task.id} />
+                    </div>
                 </div>
 
 
@@ -101,9 +109,7 @@ const TasksPage = () => {
                 <div className='task-created'>
                 <span>created: </span>{turnDateIntoReadable(task.created_at)}
                 </div>
-                <div className='edit-button'>
-                  <UpdateTaskModal setReloadTaskPage={setReloadTaskPage} taskId={task.id} />
-                </div>
+
             </div>
 
             </>

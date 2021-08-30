@@ -36,7 +36,9 @@ const DeleteTaskModal = ({setReloadTaskPage,taskId, setShowModal, taskName}) => 
 
   return (
     <>
-    <button onClick={() => { setShowMenu (true) }}>Delete Task</button>
+    <p  className='far fa-trash' onClick={() => { setShowMenu (true) }}>
+    {/* <i class="fas fa-trash"></i> */}
+    </p>
     <div>
       {showMenu && (
         <Modal>

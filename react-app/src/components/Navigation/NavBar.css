@@ -1,5 +1,5 @@
 .navbar{
-  background-color: #2a3246;
+  background-color:#2e3852;
   width: 100%;
   height: 60px;
   opacity: 0.8;
@@ -7,7 +7,7 @@
   z-index: 7;
   box-shadow: 0px 0px 1px 1px rgb(30, 31, 46);
 }
-.rainbow-bar{
+.rainbow-div{
   width: 100%;
   height: 30px;
   background-image: repeating-linear-gradient(to right,

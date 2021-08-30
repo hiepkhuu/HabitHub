@@ -1,0 +1,66 @@
+
+.edit-form-container{
+  padding: 25px;
+  background-color: #424a5f;
+
+
+}
+
+.edit-form-container span{
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer
+}
+
+.update-header{
+  display: flex
+}
+.edit-form-container p{
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 22px 0px 0px 10px
+}
+.add-task-form{
+  /* display: flex */
+
+}
+ .edit-form-container textarea{
+  background-color: #6475a0;
+  color: rgb(162, 173, 199);
+  border: 2px solid #3f4452;
+ }
+.edit-form-container input{
+ background-color: #6475a0;
+ color: rgb(162, 173, 199);
+ border: 2px solid #3f4452;
+}
+
+.edit-form-container div{
+  margin: 20px 0px 5px 0px
+}
+
+.edit-form-container button{
+  margin: 0px 5px;
+  height: 32px;
+  width: 100px;
+  cursor: pointer;
+  background-color:#6475a0;
+  border: 1px solid#6475a0;
+  border-radius: 5px;
+  color: rgb(234, 236, 240);
+}
+
+.edit-form-container button:hover{
+  background-color:#485575;
+}
+.update-delete-save{
+  display:flex;
+}
+
+.fa-edit{
+  cursor: pointer;
+
+
+}
+

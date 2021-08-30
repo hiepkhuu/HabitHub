@@ -95,7 +95,7 @@ const UpdateTaskModal = ({setReloadTaskPage,taskId}) => {
 
   return(
     <>
-    <button text='Edit Comment' onClick={() => { setShowModal(true) }} >Edit Habit</button>
+    <span text='Edit Comment' className='far fa-edit' onClick={() => { setShowModal(true) }} ></span>
 
     <div >
 
@@ -110,10 +110,14 @@ const UpdateTaskModal = ({setReloadTaskPage,taskId}) => {
                 <button >no</button>
               </div>
             )} */}
-            <DeleteTaskModal setReloadTaskPage={setReloadTaskPage} setShowModal={setShowModal} taskId={taskId} taskName={targetedTask[0].task_name}/>
-            <button onClick={cancel}>Cancel</button>
+
+            <span className='far fa-window-close' onClick={cancel}></span>
+
             {/* <button onClick={deleteSingleTask}>Delete Task</button> */}
-            <h3>Add Habit!</h3>
+            <div className='update-header'>
+              <h3>Update Habit</h3>
+              <DeleteTaskModal setReloadTaskPage={setReloadTaskPage} setShowModal={setShowModal} taskId={taskId} taskName={targetedTask[0].task_name}/>
+            </div>
             <form className='add-task-form' onSubmit={submitTask} >
               <div>What would you like to add to your life?</div>
                 <textarea
@@ -155,7 +159,11 @@ const UpdateTaskModal = ({setReloadTaskPage,taskId}) => {
                 onChange={e=> setColorHue(e.target.value)}
                 />
                 {/* <div>{colorHue} look hrte</div> */}
-              <button  onClick={submitTask} >Save</button>
+                <div className='update-delete-save'>
+                 <button onClick={submitTask} >Save Habit</button>
+
+                </div>
+
             </form>
 
           </div>
