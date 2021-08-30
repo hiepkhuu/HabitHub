@@ -25,14 +25,14 @@
   #6599e2 300px, #6599e2 350px,
   #61c2e4 350px, #61c2e4 400px); */
   background-image: repeating-linear-gradient(to right,
-  #c4e17f 0px, #c4e17f 50px,
-  #f7fdca 50px, #f7fdca 100px,
-  #fad071 100px, #fad071 150px,
-  #f0766b 150px, #f0766b 200px,
-  #db9dbe 200px, #db9dbe 250px,
-  #c49cdf 250px, #c49cdf 300px,
-  #6599e2 300px, #6599e2 350px,
-  #61c2e4 350px, #61c2e4 400px);
+  #caec7a 0px, #caec7a 50px,
+  #eceb86 50px, #eceb86 100px,
+  #fac371 100px, #fac371 150px,
+  #eb6d61 150px, #eb6d61 200px,
+  #e9a1c7 200px, #e9a1c7 250px,
+  #c093df 250px, #c093df 300px,
+  #6099e9 300px, #6099e9 350px,
+  #5fc5eb 350px, #5fc5eb 400px);
   background-size: 100% 10px;
   background-repeat:no-repeat;
 }

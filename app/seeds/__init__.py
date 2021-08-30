@@ -1,7 +1,7 @@
 from flask.cli import AppGroup
 from .users import seed_users, undo_users
 from .tasks import seed_tasks, undo_tasks
-# from .colors import seed_colors, undo_colors
+from .colors import seed_colors, undo_colors
 from .rewards import seed_rewards, undo_rewards
 from .logs import seed_logs, undo_logs
 
@@ -15,7 +15,7 @@ seed_commands = AppGroup('seed')
 def seed():
     seed_users()
 
-    # seed_colors()
+    seed_colors()
     seed_tasks()
     seed_rewards()
     seed_logs()
@@ -27,7 +27,7 @@ def seed():
 def undo():
     undo_users()
 
-    # undo_colors()
+    undo_colors()
     undo_tasks()
     undo_rewards()
     undo_logs()
