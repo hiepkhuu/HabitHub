@@ -14,14 +14,20 @@ const Navigation = ({ isLoaded }) => {
   if (sessionUser){
     sessionLinks = (
        <>
-          <div>
+          <div className='nav-links'>
             <NavLink to={`/greeting`} exact={true} activeClassName='active'>
               <div className='home-logo'></div>
               <button>greeting</button>
             </NavLink>
           </div>
+          <div className='nav-links'>
+            <NavLink to={`/rewards`} exact={true} activeClassName='active'>
+              <div className='home-logo'></div>
+              <button>Rewards</button>
+            </NavLink>
+          </div>
 
-          <div>
+          <div className='nav-links'>
             <ProfileButton />
           </div>
        </>

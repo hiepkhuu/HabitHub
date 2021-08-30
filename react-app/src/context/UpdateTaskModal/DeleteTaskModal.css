@@ -1,0 +1,30 @@
+.far.fa-trash{
+  font-size: 23px;
+}
+.far.fa-trash:hover{
+  color: #8191b9;
+}
+.delete-task-form{
+  background-color: #424a5f;
+  padding: 20px
+}
+.delete-task-form span{
+  font-weight: 500;
+  font-size: 20px;
+  color: white;
+  /* text-decoration: underline */
+}
+
+.delete-task-form button{
+  margin: 0px 5px;
+  height: 32px;
+  width: 100px;
+  cursor: pointer;
+  background-color:#6475a0;
+  border: 1px solid#6475a0;
+  border-radius: 5px;
+  color: rgb(234, 236, 240);
+}
+ .delete-task-form button:hover{
+  background-color:#485575;
+ }

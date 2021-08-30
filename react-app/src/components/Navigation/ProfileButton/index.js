@@ -48,7 +48,7 @@ function ProfileButton() {
             {/* <div className='triangle-dropdown'>hello</div> */}
             <div className="profile-dropdown">
               <div className='user-link-container'>
-                <Link className='user-link' to={`/hub`}>{sessionUser?.first_name}   {sessionUser?.last_name}</Link>
+                <Link className='user-link' to={`/dashboard`}>{sessionUser?.first_name}   {sessionUser?.last_name}</Link>
                 {/* <p>{user.email}</p> */}
                 <div>
 

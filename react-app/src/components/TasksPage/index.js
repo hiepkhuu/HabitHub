@@ -56,6 +56,12 @@ const TasksPage = () => {
 
   return (
     <div className='task-log-board'>
+      <div className='garden-container'>
+        <div className='grid'>
+          <div className='square'></div>
+        </div>
+        GARDEN GOES HERE
+      </div>
       <div className='habit-header'>
         <h3>Habit List</h3>
         <div>
@@ -77,7 +83,7 @@ const TasksPage = () => {
             <>
 
 
-            <div className='task-card'  style={{boxShadow:`0px 0px 2px 1px ${task.color_hue}`}}>
+            <div className='task-card'  style={{boxShadow:`0px 0px 1px 1px ${task.color_hue}`}}>
                 {/* style={{border:`2px solid ${task.color_hue}`}} */}
                 <div className='task-name'>
                     <div className='task-name-header'>
@@ -107,7 +113,7 @@ const TasksPage = () => {
                   <span>value: </span>{task.task_points} pts
                 </div>
                 <div className='task-created'>
-                <span>created: </span>{turnDateIntoReadable(task.created_at)}
+                <span>added: </span>{turnDateIntoReadable(task.created_at)}
                 </div>
 
             </div>

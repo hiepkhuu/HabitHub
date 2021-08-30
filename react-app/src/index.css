@@ -1,9 +1,10 @@
 /* TODO Add site wide styles */
 body {
   /* font-family: 'Nunito', sans-serif; */
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif !important;
   background-color: #21242b;
-  color: rgb(182, 191, 212);
-  margin: 0px
+
+  margin: 0px;
+  color: white;
 
 }

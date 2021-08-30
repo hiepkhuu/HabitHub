@@ -13,7 +13,8 @@
 }
 
 .update-header{
-  display: flex
+  display: flex;
+  margin-top: 0px !important;
 }
 .edit-form-container p{
   cursor: pointer;
@@ -25,15 +26,24 @@
   /* display: flex */
 
 }
+.far.fa-window-close{
+  font-size: 20px
+}
+.far.fa-window-close:hover{
+  color: #8191b9;
+
+}
  .edit-form-container textarea{
   background-color: #6475a0;
   color: rgb(162, 173, 199);
   border: 2px solid #3f4452;
+  width: 100%
  }
 .edit-form-container input{
  background-color: #6475a0;
  color: rgb(162, 173, 199);
  border: 2px solid #3f4452;
+ width:30%
 }
 
 .edit-form-container div{

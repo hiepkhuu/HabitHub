@@ -45,7 +45,7 @@ function App() {
               {/* don't put stuff here or else it will show up twice */}
               <GreetingPage />
             </ProtectedRoute>
-            <Route path={`/hub`} exact={true}>
+            <Route path={`/dashboard`} exact={true}>
               <TasksPage />
             </Route>
             {/* <ProtectedRoute path='/users' exact={true} >

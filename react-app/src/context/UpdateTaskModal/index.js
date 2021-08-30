@@ -102,20 +102,13 @@ const UpdateTaskModal = ({setReloadTaskPage,taskId}) => {
       {showModal && (
         <Modal>
           <div className='edit-form-container'>
-            {/* <button onClick={openMenu}>Delete Task</button> */}
-            {/* {showMenu && (
-              <div>
-                <p>Are you sure you want to delete this task?</p>
-                <button onClick={deleteTask}>yes</button>
-                <button >no</button>
-              </div>
-            )} */}
+
 
             <span className='far fa-window-close' onClick={cancel}></span>
 
-            {/* <button onClick={deleteSingleTask}>Delete Task</button> */}
+
             <div className='update-header'>
-              <h3>Update Habit</h3>
+              <h2>Update Habit</h2>
               <DeleteTaskModal setReloadTaskPage={setReloadTaskPage} setShowModal={setShowModal} taskId={taskId} taskName={targetedTask[0].task_name}/>
             </div>
             <form className='add-task-form' onSubmit={submitTask} >

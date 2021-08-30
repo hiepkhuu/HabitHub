@@ -68,32 +68,35 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
 
   return (
     <>
-      <button onClick={() => { setShowModal(true) }} >Add A Habit</button>
-
+      <div className='habit-add' onClick={() => { setShowModal(true) }} >
+        <span className='far fa-plus-square' > </span>
+        <span>Add New Habit</span>
+      </div>
       <div >
 
         {showModal && (
           <Modal>
             <div className='edit-form-container'>
-              <button onClick={cancel}>Cancel</button>
-              <h3>Add A New Habit!</h3>
+              <span text='Edit Comment' className='far fa-window-close' onClick={cancel} ></span>
+              {/* <button onClick={cancel}>Cancel</button> */}
+              <h2>Add A New Habit</h2>
               <form className='add-task-form' onSubmit={submitTask} >
                  <div>
-                    <div>What would you like to add to your life?</div>
+                    <div>Name of habit</div>
                       <textarea
                       type='text'
                       rows='1'
                       value={taskName}
                       onChange={e=> setTaskName(e.target.value)}
                       />
-                    <div>Give a brief description of what you'll be doing.</div>
+                    <div>Give a brief description of what you'll be doing</div>
                       <textarea
                       type='text'
                       rows='2'
                       value={taskDetail}
                       onChange={e=> setTaskDetail(e.target.value)}
                       ></textarea>
-                    <div>A quick motivating reason why.</div>
+                    <div>A quick motivating reason why</div>
                       <textarea
                       type='text'
                       rows='2'
@@ -102,7 +105,7 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
                       ></textarea>
                   </div>
                   <div>
-                    <div>Target number of times per week.</div>
+                    <div>Target number of times per week</div>
                       <input
                       type='number'
                       value={targetNum}
