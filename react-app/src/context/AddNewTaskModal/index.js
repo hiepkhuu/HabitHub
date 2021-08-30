@@ -68,7 +68,7 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
 
   return (
     <>
-      <button onClick={() => { setShowModal(true) }} >Add Habit</button>
+      <button onClick={() => { setShowModal(true) }} >Add A Habit</button>
 
       <div >
 
@@ -76,49 +76,53 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
           <Modal>
             <div className='edit-form-container'>
               <button onClick={cancel}>Cancel</button>
-              <h3>Add Habit!</h3>
+              <h3>Add A New Habit!</h3>
               <form className='add-task-form' onSubmit={submitTask} >
-                <div>What would you like to add to your life?</div>
-                  <textarea
-                  type='text'
-                  rows='1'
-                  value={taskName}
-                  onChange={e=> setTaskName(e.target.value)}
-                  />
-                <div>Give a brief description of what you'll be doing.</div>
-                  <textarea
-                  type='text'
-                  rows='2'
-                  value={taskDetail}
-                  onChange={e=> setTaskDetail(e.target.value)}
-                  ></textarea>
-                <div>A quick motivating reason why.</div>
-                  <textarea
-                  type='text'
-                  rows='2'
-                  value={taskReason}
-                  onChange={e=> setTaskReason(e.target.value)}
-                  ></textarea>
-                <div>Target number of times per week.</div>
-                  <input
-                  type='number'
-                  value={targetNum}
-                  onChange={e=> setTargetNum(e.target.value)}
-                  />
-                <div>Value you want to give this task</div>
-                  <input
-                  type='number'
-                  value={taskPoints}
-                  onChange={e=> setTaskPoints(e.target.value)}
-                  />
-                <div>Color for this task</div>
-                  <input
-                  type='color'
-                  value={colorHue}
-                  onChange={e=> setColorHue(e.target.value)}
-                  />
-                  {/* <div>{colorHue} look hrte</div> */}
-                <button  onClick={submitTask} >Save</button>
+                 <div>
+                    <div>What would you like to add to your life?</div>
+                      <textarea
+                      type='text'
+                      rows='1'
+                      value={taskName}
+                      onChange={e=> setTaskName(e.target.value)}
+                      />
+                    <div>Give a brief description of what you'll be doing.</div>
+                      <textarea
+                      type='text'
+                      rows='2'
+                      value={taskDetail}
+                      onChange={e=> setTaskDetail(e.target.value)}
+                      ></textarea>
+                    <div>A quick motivating reason why.</div>
+                      <textarea
+                      type='text'
+                      rows='2'
+                      value={taskReason}
+                      onChange={e=> setTaskReason(e.target.value)}
+                      ></textarea>
+                  </div>
+                  <div>
+                    <div>Target number of times per week.</div>
+                      <input
+                      type='number'
+                      value={targetNum}
+                      onChange={e=> setTargetNum(e.target.value)}
+                      />
+                    <div>Value you want to give this task</div>
+                      <input
+                      type='number'
+                      value={taskPoints}
+                      onChange={e=> setTaskPoints(e.target.value)}
+                      />
+                    <div>Color for this task</div>
+                      <input
+                      type='color'
+                      value={colorHue}
+                      onChange={e=> setColorHue(e.target.value)}
+                      />
+                      {/* <div>{colorHue} look hrte</div> */}
+                    <button  onClick={submitTask} >Save Habit</button>
+                  </div>
               </form>
 
             </div>

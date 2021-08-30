@@ -2,6 +2,12 @@
 .edit-form-container{
   padding: 25px;
   background-color: #232b3f;
+
+}
+
+.add-task-form{
+  /* display: flex */
+
 }
  .edit-form-container textarea{
   background-color: #232b3f;
@@ -16,4 +22,11 @@
 
 .edit-form-container div{
   margin: 20px 0px 5px 0px
+}
+
+.edit-form-container button{
+  margin: 0px 10px 0px 10px;
+  height: 32px;
+  width: 100px;
+  
 }

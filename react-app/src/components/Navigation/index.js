@@ -52,6 +52,7 @@ const Navigation = ({ isLoaded }) => {
     <div className='navbar'>
         {isLoaded && sessionLinks}
     </div>
+    <div className='rainbow-div'></div>
 
     </>
   );
