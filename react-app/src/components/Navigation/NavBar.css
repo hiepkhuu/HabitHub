@@ -25,14 +25,13 @@
   #6599e2 300px, #6599e2 350px,
   #61c2e4 350px, #61c2e4 400px); */
   background-image: repeating-linear-gradient(to right,
-  #91ec7a 0px, #91ec7a 50px,
-  #eceb86 50px, #eceb86 100px,
-  #fac371 100px, #fac371 150px,
-  #eb6d61 150px, #eb6d61 200px,
-  #e9a1c7 200px, #e9a1c7 250px,
-  #c093df 250px, #c093df 300px,
-  #6099e9 300px, #6099e9 350px,
-  #5fc5eb 350px, #5fc5eb 400px);
+  #FF9AA2 0px, #FF9AA2 50px,
+  #FFB7B2 50px, #FFB7B2 100px,
+  #FFDAC1 100px, #FFDAC1 150px,
+  #E2F0CB 150px, #E2F0CB 200px,
+  #B5EAD7 200px, #B5EAD7 250px,
+  #C7CEEA 250px, #C7CEEA 300px,
+  #bae1ff 300px, #bae1ff 350px);
   background-size: 100% 10px;
   background-repeat:no-repeat;
 }
