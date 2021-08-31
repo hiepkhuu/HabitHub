@@ -6,7 +6,7 @@ const getColors= (colors) => ({
 })
 
  export const getAllColors = () => async (dispatch) => {
-  const res = await fetch(`/api/color/`)
+  const res = await fetch(`/api/colors/`)
   let data = await res.json();
   dispatch(getColors(data))
 }

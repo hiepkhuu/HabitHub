@@ -12,7 +12,7 @@ color_routes = Blueprint('colors', __name__)
 
 @color_routes.route('/')
 @login_required
-def get_tasks(color_id):
+def get_tasks():
     """
     Get all color
     """

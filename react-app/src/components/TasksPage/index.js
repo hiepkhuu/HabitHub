@@ -90,41 +90,45 @@ const TasksPage = () => {
           {allTasks?.tasks?.map(task =>(
             <>
 
-
-            <div className='task-card'  style={{boxShadow:`0px 0px 1px 1px `}}>
-                {/* style={{border:`2px solid ${task.color_hue}`}} */}
-                {/* {getColor(task.id)} */}
+            <div className='task-card-container' style={{backgroundColor:`${task.color_hue}`}} >
                 <div className='task-name'>
                     <div className='task-name-header'>
                       {task.task_name}
-                      <div id='color-circle'
+                      {/* <div id='color-circle'
                       style={{
                         backgroundColor: task.color_hue
                       }}
-                      ></div>
+                      ></div> */}
                     </div>
                     <div className='edit-button'>
                       <UpdateTaskModal setReloadTaskPage={setReloadTaskPage} taskId={task.id} />
                     </div>
                 </div>
+            <div className='task-card'    >
+                {/* style={{border:`2px solid ${task.color_hue}`}} */}
+                {/* style={{boxShadow:`0px 0px 1px 1px ${task.color_hue} `}} */}
+                {/* {getColor(task.id)} */}
+
 
 
                 <div className='task-detail'>
-                  <span>description: </span>{task.task_detail}
+                  <span>Description: </span>{task.task_detail}
                 </div>
                 <div className='task-reason'>
-                  <span>motivation: </span>{task.task_reason}
+                  <span>Motivation: </span>{task.task_reason}
                 </div>
                 <div className='task-num'>
-                  <span>target/week: </span>{task.target_num}
+                <span className='fas fa-bullseye' style={{color:`${task.color_hue}`}}> </span> {task.target_num}/week
+                  {/* <span>target/week: </span>{task.target_num} */}
                 </div>
                 <div className='task-points'>
-                  <span>value: </span>{task.task_points} pts
+                  <span className="fas fa-heart " style={{color:`${task.color_hue}`}}></span> {task.task_points} pts
                 </div>
                 <div className='task-created'>
-                <span>added: </span>{turnDateIntoReadable(task.created_at)}
+                <span className='fas fa-calendar-day' style={{color:`${task.color_hue}`}}> </span> {turnDateIntoReadable(task.created_at)}
                 </div>
 
+            </div>
             </div>
 
             </>

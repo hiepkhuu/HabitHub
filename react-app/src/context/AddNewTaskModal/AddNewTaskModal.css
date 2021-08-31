@@ -1,20 +1,17 @@
 .habit-add{
-  background-color:#424a5f;
-  /* font-family: 'Roboto', sans-serif; */
 
-  border-radius: 10px;
-  cursor: pointer;
+
 
 }
 
-.habit-add:hover{
-  background-color:#343a49;
-}
+
 
 /* .fa-plus-square{
 
 } */
 
-.habit-add span{
-  padding:5px 10px;
+.fas.fa-plus-circle{
+  cursor: pointer;
+  color: blue;
+  font-size: 40px
 }

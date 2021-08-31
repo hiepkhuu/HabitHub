@@ -4,13 +4,14 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Redirect, useHistory, useParams } from 'react-router-dom';
 
 import { addNewTask } from '../../store/tasks'
+import { getAllColors} from '../../store/colors'
 
 const AddNewHabitModal = ({setReloadTaskPage}) => {
   const dispatch = useDispatch();
   const history = useHistory();
 
   const sessionUser = useSelector(state => state.session.user)
-
+  const colors = useSelector(state => state.session.colors?.colors)//mappable
 
   const [showModal, setShowModal] = useState(false);
   const [taskName, setTaskName] = useState('')
@@ -20,8 +21,9 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
   const [taskPoints, setTaskPoints] = useState('')
   const [colorHue, setColorHue] = useState('#ffffff')
 
-  useEffect(() => {
+  useEffect(async () => {
     if (!showModal) return;
+    await dispatch(getAllColors())
     // const closeMenu = () => {
     //   setShowModal(false)
     // }
@@ -69,8 +71,8 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
   return (
     <>
       <div className='habit-add' onClick={() => { setShowModal(true) }} >
-        <span className='far fa-plus-square' > </span>
-        <span>Add New Habit</span>
+        <span className='fas fa-plus-circle' > </span>
+        
       </div>
       <div >
 

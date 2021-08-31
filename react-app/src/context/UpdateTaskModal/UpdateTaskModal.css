@@ -68,8 +68,9 @@
   display:flex;
 }
 
-.fa-edit{
+.far.fa-edit{
   cursor: pointer;
+  color: white;
 
 
 }
