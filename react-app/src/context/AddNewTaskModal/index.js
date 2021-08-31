@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Modal } from '../Modal';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect, useHistory, useParams } from 'react-router-dom';
+import Select from 'react-select';
 
 import { addNewTask } from '../../store/tasks'
 import { getAllColors} from '../../store/colors'
@@ -11,16 +12,21 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
   const history = useHistory();
 
   const sessionUser = useSelector(state => state.session.user)
-  const colors = useSelector(state => state.session.colors?.colors)//mappable
-
+  const colors = useSelector(state => state.colors.colors)//mappable
+  console.log('jjjjjjjj',colors)
   const [showModal, setShowModal] = useState(false);
   const [taskName, setTaskName] = useState('')
   const [taskDetail, setTaskDetail] = useState('')
   const [taskReason, setTaskReason] = useState('')
   const [targetNum, setTargetNum] = useState('')
   const [taskPoints, setTaskPoints] = useState('')
-  const [colorHue, setColorHue] = useState('#ffffff')
+  const [colorId, setColorId] = useState('#ffffff')
 
+  const options = [
+    { value: 'chocolate', label: 'Chocolate' },
+    { value: 'strawberry', label: 'Strawberry' },
+    { value: 'vanilla', label: 'Vanilla' }
+  ]
   useEffect(async () => {
     if (!showModal) return;
     await dispatch(getAllColors())
@@ -52,7 +58,7 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
       task_detail:taskDetail ,
       task_reason: taskReason,
       target_num: targetNum,
-      color_hue: colorHue,
+      color_hue: colorId,
       task_points: taskPoints,
     }
     await dispatch(addNewTask(task))
@@ -61,7 +67,7 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
     setTaskDetail('');
     setTaskReason('');
     setTargetNum('');
-    setColorHue('#ffffff');
+    setColorId('#ffffff');
     setTaskPoints('');
 
     setShowModal(false)
@@ -72,7 +78,7 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
     <>
       <div className='habit-add' onClick={() => { setShowModal(true) }} >
         <span className='fas fa-plus-circle' > </span>
-        
+
       </div>
       <div >
 
@@ -120,12 +126,18 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
                       onChange={e=> setTaskPoints(e.target.value)}
                       />
                     <div>Color for this task</div>
-                      <input
-                      type='color'
-                      value={colorHue}
-                      onChange={e=> setColorHue(e.target.value)}
+                      <Select
+                      options={options}
+                      // value={colorId}
+                      // onChange={e=> setColorId(e.target.value)}
                       />
-                      {/* <div>{colorHue} look hrte</div> */}
+                      {/* <div className='color-circle-container'>
+                      {colors?.map(color=>(
+                        <div className='color-circle' style={{backgroundColor:`${color.color_hue}`}}></div>
+                      ))}
+                       </div> */}
+                      {/* <div>{colorId} look hrte</div> */}
+
                     <button  onClick={submitTask} >Save Habit</button>
                   </div>
               </form>
