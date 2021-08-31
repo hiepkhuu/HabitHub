@@ -1,12 +1,28 @@
 .navbar{
   width: 18%;
-  border-right: 1px solid black;
-  height: vh
+  /* border-right: 1px solid black; */
+  height: vh;
+  background-color: rgb(77, 105, 139);
+  color: white;
 }
 .nav-links.profile{
   height: 120px;
   display: flex;
   align-items: center;
   margin-bottom: 200px;
-  border-bottom: 1px solid black
+  border-bottom: 1px solid rgb(51, 70, 104)
+}
+.nav-links.btn{
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+
+}
+.home-logo{
+  padding: 15px 20px;
+  cursor: pointer;
+}
+.home-logo:hover{
+  background-color: rgb(236, 109, 109);
 }

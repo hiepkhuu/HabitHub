@@ -64,18 +64,19 @@ const TasksPage = () => {
 
   return (
     <div className='task-log-board'>
-      <div className='garden-container'>
+      <div className='habit-list-container'>
         <div className='grid'>
           <div className='square'></div>
         </div>
-        GARDEN GOES HERE
-      </div>
-      <div className='habit-header'>
-        <h3>Habit List</h3>
-        <div>
-          <AddNewHabitModal setReloadTaskPage={setReloadTaskPage}/>
+        habit list
+        <div className='habit-header'>
+          <h3>Habit List</h3>
+          <div>
+            <AddNewHabitModal setReloadTaskPage={setReloadTaskPage}/>
+          </div>
         </div>
       </div>
+
       <div className='task-log' id='task-log'>
           {/* <div className='task-label-bar'>
             <div className='task-name'>Name</div>

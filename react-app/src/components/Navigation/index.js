@@ -18,15 +18,23 @@ const Navigation = ({ isLoaded }) => {
             <ProfileButton />
           </div>
           <div className='nav-links'>
+            <NavLink  className='nav-links btn' to={`/dashboard`} exact={true} activeClassName='active'>
+              <div className='home-logo'>
+              <span>habit dashboard</span>
+              </div>
+            </NavLink>
+          </div>
+          {/* <div className='nav-links'>
             <NavLink to={`/greeting`} exact={true} activeClassName='active'>
               <div className='home-logo'></div>
               <button>greeting</button>
             </NavLink>
-          </div>
+          </div> */}
           <div className='nav-links'>
-            <NavLink to={`/rewards`} exact={true} activeClassName='active'>
-              <div className='home-logo'></div>
-              <button>Rewards</button>
+            <NavLink className='nav-links btn' to={`/rewards`} exact={true} activeClassName='active'>
+              <div className='home-logo'>
+              <span>Rewards</span>
+              </div>
             </NavLink>
           </div>
 

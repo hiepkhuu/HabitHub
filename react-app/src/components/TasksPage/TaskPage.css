@@ -1,8 +1,13 @@
 .task-log-board{
   /* width: 800px */
   display:flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+}
+.habit-list-container{
+  width: 50%;
+  border-right: 1px solid black;
+  height: 100%
 }
 .task-log{
   width: 100%;
