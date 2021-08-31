@@ -10,7 +10,7 @@ from flask_login import login_required
 task_routes = Blueprint('tasks', __name__)
 
 
-@task_routes.route('users/<int:user_id>')
+@task_routes.route('/users/<int:user_id>')
 @login_required
 def get_tasks(user_id
 ):

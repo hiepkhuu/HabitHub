@@ -14,6 +14,9 @@ const Navigation = ({ isLoaded }) => {
   if (sessionUser){
     sessionLinks = (
        <>
+          <div className='nav-links profile'>
+            <ProfileButton />
+          </div>
           <div className='nav-links'>
             <NavLink to={`/greeting`} exact={true} activeClassName='active'>
               <div className='home-logo'></div>
@@ -27,9 +30,7 @@ const Navigation = ({ isLoaded }) => {
             </NavLink>
           </div>
 
-          <div className='nav-links'>
-            <ProfileButton />
-          </div>
+
        </>
     )
 // user home page goes here

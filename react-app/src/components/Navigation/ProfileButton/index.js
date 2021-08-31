@@ -39,7 +39,12 @@ function ProfileButton() {
     <>
       <div className='menu-container'>
         <div className="account-button">
-          <button onClick={openMenu}>Profile</button>
+          <div onClick={openMenu}>
+            <div className='profile-image'>
+
+            </div>
+            <span>name goes here</span>
+          </div>
         </div>
 
         {showMenu && (

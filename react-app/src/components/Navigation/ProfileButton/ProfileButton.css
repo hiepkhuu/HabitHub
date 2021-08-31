@@ -1,0 +1,19 @@
+.profile-image{
+  border: 1px solid black;
+  height: 60px;
+  width: 60px;
+  margin-right: 20px;
+}
+.account-button{
+  width: auto;
+
+}
+.account-button div{
+  
+  display:flex;
+  border-bottom: 1px solid black
+
+}
+.menu-container{
+  width: 100%
+}

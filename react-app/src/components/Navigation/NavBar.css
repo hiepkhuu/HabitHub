@@ -1,0 +1,10 @@
+.navbar{
+  width: 18%;
+  border-right: 1px solid black
+
+}
+.nav-links.profile{
+  height: 120px;
+  display: flex;
+  align-items: center;
+}
