@@ -3,17 +3,55 @@
   height: 60px;
   width: 60px;
   margin-right: 20px;
-}
-.account-button{
-  width: auto;
+  display: flex;
 
 }
+.account-button{
+  width: 100%;
+  align-items: center;
+  justify-content: center
+
+}
+
+.account-username{
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 20px;
+}
 .account-button div{
-  
+
   display:flex;
-  border-bottom: 1px solid black
+  /* border-bottom: 1px solid black */
 
 }
 .menu-container{
   width: 100%
+
+}
+.profile-dropdown{
+  position:fixed;
+  /* border: 1px solid black; */
+  /* padding: 20px; */
+  margin: 20px;
+  box-shadow: 0px 0px 15px 1px rgb(184, 182, 182);
+  border-radius: 5px
+
+}
+.profile-dropdown div{
+  padding: 15px 20px;
+  border-bottom: 1px solid lightgray
+}
+.profile-link{
+  text-decoration: none;
+}
+.fas.fa-user{
+  margin-right: 10px;
+  font-size: 25px
+}
+.fas.fa-sign-out-alt{
+  margin-right: 10px;
+  font-size: 25px
+}
+.far.fa-smile{
+  font-size: 50px
 }

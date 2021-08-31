@@ -41,9 +41,9 @@ function ProfileButton() {
         <div className="account-button">
           <div onClick={openMenu}>
             <div className='profile-image'>
-
+              <span className='far fa-smile'></span>
             </div>
-            <span>name goes here</span>
+            <span className='account-username'>{sessionUser.username}</span>
           </div>
         </div>
 
@@ -52,16 +52,16 @@ function ProfileButton() {
           <div>
             {/* <div className='triangle-dropdown'>hello</div> */}
             <div className="profile-dropdown">
-              <div className='user-link-container'>
-                <Link className='user-link' to={`/dashboard`}>{sessionUser?.first_name}   {sessionUser?.last_name}</Link>
-                {/* <p>{user.email}</p> */}
+              {/* <div className='user-link-container'> */}
                 <div>
-
-                  <button onClick={logout}>
-                    <Link className='logout-link' to='/'>Log Out</Link>
-                  </button>
+                  <span className='fas fa-user'></span>
+                  <Link className='profile-link' to='/profile/setting'><span >Profile Settings</span></Link>
                 </div>
-              </div>
+                <div onClick={logout}>
+                  <span className='fas fa-sign-out-alt'></span>
+                  <Link className='profile-link' to='/'>Log Out</Link>
+                </div>
+              {/* </div> */}
             </div>
           </div>
         )}
