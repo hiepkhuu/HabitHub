@@ -9,21 +9,36 @@ display:flex;
 
 }
 
-.color-circle{
+/* .color-circle{
   width: 20px;
   height: 20px;
   border-radius: 50px;
   margin: 29px;
   cursor: pointer;
-}
+} */
 
 /* .fa-plus-square{
 
 } */
 
-.fas.fa-plus-circle{
+/* .fas.fa-plus-circle{
   cursor: pointer;
   color: blue;
   font-size: 40px
+} */
+Select{
+height: 20px
 }
 
+.Select-value{
+  border: 1px solid darkgray !important;
+}
+
+.Select-value-icon {
+  display: none !important;
+}
+
+.Select-value-label {
+  background-color: white;
+  color: #111;
+}

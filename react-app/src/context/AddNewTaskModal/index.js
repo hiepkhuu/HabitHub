@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Modal } from '../Modal';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect, useHistory, useParams } from 'react-router-dom';
-import Select from 'react-select';
+import Select, {components} from 'react-select';
 
 import { addNewTask } from '../../store/tasks'
 import { getAllColors} from '../../store/colors'
@@ -20,13 +20,57 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
   const [taskReason, setTaskReason] = useState('')
   const [targetNum, setTargetNum] = useState('')
   const [taskPoints, setTaskPoints] = useState('')
-  const [colorId, setColorId] = useState('#ffffff')
+  const [colorId, setColorId] = useState(1)
 
+  const Option = props => {
+    return (
+      <div style={{ backgroundColor: props.data.menuColor }}>
+        <components.Option {...props} />
+      </div>
+    );
+  };
+
+  const customStyles = {
+    option: (provided, state) => ({
+      ...provided,
+      // borderBottom: '1px dotted pink',
+      // color: state.isSelected ? 'rgb(255,255,255,0.1)' : 'rgb(255,255,255,0.1)',
+      padding: 10,
+    }),
+  }
   const options = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' }
+    { value: 1, label: 'Salmon Pink', menuColor: '#FF9AA2' },
+    { value: 2, label: 'Melon' ,menuColor: '#FFB7B2'},
+    { value: 3, label: 'Pale Orange' ,menuColor: '#FFDAC1'},
+    { value: 4, label: 'Pale LightGreen' ,menuColor: '#E2F0CB'},
+    { value: 5, label: 'Magin Mint',menuColor: ' #B5EAD7' },
+    { value: 6, label: 'Periwinkle',menuColor: ' #C7CEEA' },
+    { value: 7, label: 'Cotton Blue' ,menuColor: '#bae1ff'},
+
   ]
+
+  // const customStyles = {
+  //   menu: (provided, state) => ({
+  //     ...provided,
+  //     width: state.selectProps.width,
+  //     borderBottom: '1px dotted pink',
+  //     color: state.selectProps.menuColor,
+  //     padding: 20,
+  //   }),
+
+  //   control: (_, { selectProps: { width }}) => ({
+  //     width: width
+  //   }),
+
+  //   singleValue: (provided, state) => {
+  //     const opacity = state.isDisabled ? 0.5 : 1;
+  //     const transition = 'opacity 300ms';
+
+  //     return { ...provided, opacity, transition };
+  //   }
+  // }
+
+
   useEffect(async () => {
     if (!showModal) return;
     await dispatch(getAllColors())
@@ -67,7 +111,7 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
     setTaskDetail('');
     setTaskReason('');
     setTargetNum('');
-    setColorId('#ffffff');
+    setColorId(1);
     setTaskPoints('');
 
     setShowModal(false)
@@ -126,11 +170,20 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
                       onChange={e=> setTaskPoints(e.target.value)}
                       />
                     <div>Color for this task</div>
-                      <Select
-                      options={options}
+                    <Select
+
+                                styles={customStyles}
+                                width='200px'
+                                components={{ Option }}
+
+
+                                options={options}
+                              />
+
+                      {/* // options={options}
                       // value={colorId}
                       // onChange={e=> setColorId(e.target.value)}
-                      />
+                      // /> */}
                       {/* <div className='color-circle-container'>
                       {colors?.map(color=>(
                         <div className='color-circle' style={{backgroundColor:`${color.color_hue}`}}></div>
