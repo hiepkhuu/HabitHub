@@ -20,8 +20,19 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
   const [taskReason, setTaskReason] = useState('')
   const [targetNum, setTargetNum] = useState('')
   const [taskPoints, setTaskPoints] = useState('')
-  const [colorId, setColorId] = useState(1)
+  const [colorId, setColorId] = useState('')
+  console.log('name', taskName,'detail', taskDetail, 'reason',taskReason,'num', targetNum, 'pts', taskPoints, 'id', colorId)
 
+  const colorsList =  [
+    { value: 1, label: 'Salmon Pink', menuColor: '#FF9AA2' },
+    { value: 2, label: 'Melon' ,menuColor: '#FFB7B2'},
+    { value: 3, label: 'Pale Orange' ,menuColor: '#FFDAC1'},
+    { value: 4, label: 'Pale LightGreen' ,menuColor: '#E2F0CB'},
+    { value: 5, label: 'Magin Mint',menuColor: ' #B5EAD7' },
+    { value: 6, label: 'Periwinkle',menuColor: ' #C7CEEA' },
+    { value: 7, label: 'Cotton Blue' ,menuColor: '#bae1ff'},
+
+  ]
   const Option = props => {
     return (
       <div style={{ backgroundColor: props.data.menuColor }}>
@@ -33,6 +44,7 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
   const customStyles = {
     option: (provided, state) => ({
       ...provided,
+      width:'400px',
       // borderBottom: '1px dotted pink',
       // color: state.isSelected ? 'rgb(255,255,255,0.1)' : 'rgb(255,255,255,0.1)',
       padding: 10,
@@ -102,7 +114,7 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
       task_detail:taskDetail ,
       task_reason: taskReason,
       target_num: targetNum,
-      color_hue: colorId,
+      color_id: colorId,
       task_points: taskPoints,
     }
     await dispatch(addNewTask(task))
@@ -111,7 +123,7 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
     setTaskDetail('');
     setTaskReason('');
     setTargetNum('');
-    setColorId(1);
+    setColorId('');
     setTaskPoints('');
 
     setShowModal(false)
@@ -131,66 +143,77 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
             <div className='edit-form-container'>
               <span text='Edit Comment' className='far fa-window-close' onClick={cancel} ></span>
               {/* <button onClick={cancel}>Cancel</button> */}
-              <h2>Add A New Habit</h2>
+              <h2>New Habit</h2>
               <form className='add-task-form' onSubmit={submitTask} >
                  <div>
-                    <div>Name of habit</div>
-                      <textarea
+                    <div>NAME</div>
+                      <input
                       type='text'
                       rows='1'
                       value={taskName}
                       onChange={e=> setTaskName(e.target.value)}
                       />
-                    <div>Give a brief description of what you'll be doing</div>
-                      <textarea
-                      type='text'
-                      rows='2'
-                      value={taskDetail}
-                      onChange={e=> setTaskDetail(e.target.value)}
-                      ></textarea>
-                    <div>A quick motivating reason why</div>
-                      <textarea
+                    <div className='section'>
+                        <div>
+                            <div>GOAL</div>
+                              <input
+                              type='text'
+                              rows='2'
+                              value={taskDetail}
+                              onChange={e=> setTaskDetail(e.target.value)}
+                              ></input>
+                        </div>
+                        <div>
+                            <div>TARGET WEEKLY</div>
+                              <input
+                              type='number'
+                              value={targetNum}
+                              onChange={e=> setTargetNum(e.target.value)}
+                              />
+                        </div>
+                     </div>
+                    <div className='section'>
+                        <div>
+                            <div>Value</div>
+                              <input
+                              type='number'
+                              value={taskPoints}
+                              onChange={e=> setTaskPoints(e.target.value)}
+                              />
+                        </div>
+                        <div>
+                            <div>COLOR</div>
+                            {/* <Select
+
+                                // styles={customStyles}
+
+                                // components={{ Option }}
+
+                                onChange={e=> setColorId(e.target.value)}
+                                options={options}
+                              /> */}
+                              <select
+                              onChange={e=>setColorId(e.target.value)}
+                              >
+                                {colorsList.map(item => (
+                                  <option
+                                    key={item.value}
+                                    value={item.value}
+
+                                  >
+                                    {item.label}
+                                  </option>
+                                ))}
+                              </select>
+                        </div>
+                      </div>
+                      <div>MOTIVATING REMINDER</div>
+                      <input
                       type='text'
                       rows='2'
                       value={taskReason}
                       onChange={e=> setTaskReason(e.target.value)}
-                      ></textarea>
-                  </div>
-                  <div>
-                    <div>Target number of times per week</div>
-                      <input
-                      type='number'
-                      value={targetNum}
-                      onChange={e=> setTargetNum(e.target.value)}
-                      />
-                    <div>Value you want to give this task</div>
-                      <input
-                      type='number'
-                      value={taskPoints}
-                      onChange={e=> setTaskPoints(e.target.value)}
-                      />
-                    <div>Color for this task</div>
-                    <Select
-
-                                styles={customStyles}
-                                width='200px'
-                                components={{ Option }}
-
-
-                                options={options}
-                              />
-
-                      {/* // options={options}
-                      // value={colorId}
-                      // onChange={e=> setColorId(e.target.value)}
-                      // /> */}
-                      {/* <div className='color-circle-container'>
-                      {colors?.map(color=>(
-                        <div className='color-circle' style={{backgroundColor:`${color.color_hue}`}}></div>
-                      ))}
-                       </div> */}
-                      {/* <div>{colorId} look hrte</div> */}
-
+                      ></input>
                     <button  onClick={submitTask} >Save Habit</button>
                   </div>
               </form>
