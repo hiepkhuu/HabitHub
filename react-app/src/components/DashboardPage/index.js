@@ -87,7 +87,7 @@ const DashboardPage = () => {
             </div>
           </div>
         </div>
-        <div>
+        <div className='right-dashboard'>
         {showHabitInfo ?
             <>
               <div></div>
@@ -97,7 +97,7 @@ const DashboardPage = () => {
             <GreetingPage />
 
         }
-      </div>
+        </div>
   </>
   )
 }

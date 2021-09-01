@@ -1,13 +1,23 @@
 .greeting{
-
+  display: flex;
+  justify-content: center;
   font-family: 'Cantarell', sans-serif;
-  width: 600px;
+  width: 500px;
   margin: 30px 30px 60px 30px;
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(222, 240, 248);
 
   padding: 20px;
   /* box-shadow: 0px 0px 10px 1px rgb(88, 88, 88); */
   border-radius: 5px;
+
+}
+
+.greet-image{
+  background-image: url('./mrs-sun.png');
+  background-position:cover;
+  background-size: cover;
+  height:200px;
+  width: 200px;
 
 }
 .greet-card{
@@ -16,6 +26,7 @@
   align-items: center;
   flex-direction: column;
   color:rgb(0, 0, 0);
+  width: 100%
 }
 .greet-card h1{
   /* box-shadow: 0px 0px 20px 3px rgb(2, 2, 2); */
@@ -24,7 +35,8 @@
 }
 
 .greet-card h2{
-  color: black !important
+  color: black !important;
+  font-weight: 100
 }
 .greet-card button{
   background-color: rgb(71, 74, 85);
