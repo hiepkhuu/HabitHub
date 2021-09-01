@@ -8,6 +8,6 @@ class TaskForm(FlaskForm):
     task_detail = StringField('task_detail', validators=[Length(max=255, message='Details must be fewer than 255 characters!') ])
     task_reason = StringField('task_reason', validators=[Length(max=255, message='Reasons must be fewer than 255 characters!') ])
     target_num = IntegerField('target_num', validators=[DataRequired('Enter a weekly target'), NumberRange(min=1, message='Must be greater than 1!')])
-    color_hue = StringField('color_hue')
+    color_id = IntegerField('color_id')
     task_points = IntegerField('task_points', validators=[DataRequired('Enter how much points each completion is worth'), NumberRange(min=1,max=20, message='Must be greater than 1 and less than 20! Don\'t make it too hard or too easy!')])
 

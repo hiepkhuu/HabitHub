@@ -3,13 +3,15 @@ import thunk from 'redux-thunk';
 import session from './session';
 import tasks from './tasks';
 import quotes from './quotes';
-import colors from './colors'
+import colors from './colors';
+import singleTask from './singletask'
 
 const rootReducer = combineReducers({
   session,
   tasks,
   quotes,
-  colors
+  colors,
+  singleTask
 });
 
 

@@ -1,22 +1,30 @@
-.greet-card div{
-  color:rgb(54, 54, 66);
+.greeting{
+
   font-family: 'Cantarell', sans-serif;
   width: 600px;
   margin: 30px 30px 60px 30px;
-  background-color: aliceblue;
+  background-color: rgb(240, 240, 240);
 
   padding: 20px;
-  box-shadow: 0px 0px 30px 3px rgb(0, 0, 0);
+  /* box-shadow: 0px 0px 10px 1px rgb(88, 88, 88); */
+  border-radius: 5px;
+
 }
 .greet-card{
   display:flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column
+  flex-direction: column;
+  color:rgb(0, 0, 0);
 }
 .greet-card h1{
-  box-shadow: 0px 0px 20px 3px rgb(2, 2, 2);
-  padding: 10px
+  /* box-shadow: 0px 0px 20px 3px rgb(2, 2, 2); */
+  padding: 10px;
+
+}
+
+.greet-card h2{
+  color: black !important
 }
 .greet-card button{
   background-color: rgb(71, 74, 85);

@@ -1,32 +1,40 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { loadAllTasks } from '../../store/tasks'
+import { loadAllTasks} from '../../store/tasks'
+import { loadSingleTask } from '../../store/singletask'
 import { getAllColors } from '../../store/colors'
 import './DashboardPage.css'
 import moment from 'moment'
 import AddNewHabitModal from '../../context/AddNewTaskModal'
 import UpdateTaskModal from '../../context/UpdateTaskModal'
-// import HabitListCard from '../HabitList'
+import HabitListCard from '../HabitList'
+import GreetingPage from '../GreetingPage'
 // import ColorCircle from './ColorCircle'
 // import {showModal} from '../../context/AddNewTask'
 
 const DashboardPage = () => {
   const sessionUser = useSelector(state => state.session.user)
   const allTasks = useSelector(state => state.tasks)
-
+  // const singleTask = useSelector(state => state.singleTask)
   const dispatch = useDispatch()
-  // console.log('#############',sessionUser.id)
-  // console.log('#########', allTasks.tasks)
+
 
   const [reloadTaskPage, setReloadTaskPage] = useState(false)
   const [color, setColor] = useState('')
+  const [showHabitInfo, setShowHabitInfo] = useState(false)
+  const [habitId, setHabitId] = useState('')
 
   useEffect(async () => {
+
     await dispatch(loadAllTasks(sessionUser.id))
     await dispatch(getAllColors())
+    await dispatch(loadSingleTask(habitId))
     setReloadTaskPage(false)
 
-  }, [reloadTaskPage])
+    // if (!showHabitInfo) return;
+    // setShowHabitInfo(false)
+
+  }, [reloadTaskPage, habitId])
 
   function convert(input) {
     return moment(input, 'HH:mm:ss').format('h:mm A');
@@ -41,64 +49,56 @@ const DashboardPage = () => {
 
 
   return (
-    <div className='task-log-board'>
-      <div className='habit-list-container'>
-        {/* <div className='grid'>
-          <div className='square'></div>
-        </div> */}
+    <>
+        <div className='task-log-board'>
+          <div className='habit-list-container'>
+            <div className='habit-header'>
+              <h3>Habit List</h3><button onClick={() => {  setShowHabitInfo(false) }} >show dashboard</button>
+            </div>
+            <div className='task-log' id='task-log'>
+                    {allTasks?.tasks?.map(task => (
+                      <>
+                        <div onClick={()=> {setHabitId(task.id)}}>
+                        <div className='task-card-container'
+                            // onClick={() => { showHabitInfo? setShowHabitInfo(false): setShowHabitInfo(true) }}
+                            onClick={() => {  setShowHabitInfo(true) }}
+                            // onClick={() => {  setShowHabitInfo(false) }}
+                            style={{ backgroundColor: `${task.color_hue}` }}
 
-        <div className='habit-header'>
-          <h3>Habit List</h3>
+                            >
+                          <div className='task-name'>
+                            <div className='task-name-header'>
+                              {task.task_name}
 
+                            </div>
+                            <div className='edit-button'>
+                              <UpdateTaskModal setReloadTaskPage={setReloadTaskPage} taskId={task.id} />
+                            </div>
+                          </div>
+
+                        </div>
+                        </div>
+                      </>
+
+                    ))}
+              </div>
+            <div className='add-habit-button'>
+              <AddNewHabitModal setReloadTaskPage={setReloadTaskPage} />
+            </div>
+          </div>
         </div>
-        <div className='task-log' id='task-log'>
-                {allTasks?.tasks?.map(task => (
-                  <>
+        <div>
+        {showHabitInfo ?
+            <>
+              <div></div>
+              <HabitListCard habitId ={habitId} setShowHabitInfo={setShowHabitInfo}/>
+            </>
+            :
+            <GreetingPage />
 
-                    <div className='task-card-container' style={{ backgroundColor: `${task.color_hue}` }} >
-                      <div className='task-name'>
-                        <div className='task-name-header'>
-                          {task.task_name}
-
-                        </div>
-                        <div className='edit-button'>
-                          <UpdateTaskModal setReloadTaskPage={setReloadTaskPage} taskId={task.id} />
-                        </div>
-                      </div>
-                      <div className='task-card'    >
-
-                        <div className='task-detail'>
-                          <span>GOAL: </span>{task.task_detail}
-                        </div>
-                        <div className='task-reason'>
-                          <span>MOTIVATION: </span>{task.task_reason}
-                        </div>
-                        <div className='task-num'>
-                          <span className='fas fa-bullseye' style={{ color: `${task.color_hue}` }}> </span> {task.target_num}/week
-
-                        </div>
-                        <div className='task-points'>
-                          <span className="fas fa-heart " style={{ color: `${task.color_hue}` }}></span> {task.task_points} pts
-                        </div>
-                        <div className='task-created'>
-                          <span className='fas fa-calendar-day' style={{ color: `${task.color_hue}` }}> </span> {turnDateIntoReadable(task.created_at)}
-                        </div>
-
-                      </div>
-                    </div>
-
-                  </>
-
-                ))}
-           </div>
-        <div className='add-habit-button'>
-          <AddNewHabitModal setReloadTaskPage={setReloadTaskPage} />
-        </div>
+        }
       </div>
-
-
-
-    </div>
+  </>
   )
 }
 

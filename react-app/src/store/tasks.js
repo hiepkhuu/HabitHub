@@ -1,4 +1,5 @@
 const GET_TASKS = 'tasks/GET_TASKS';
+
 const UPDATE_TASK = 'tasks/UPDATE_TASK';
 const DELETE_TASK = 'tasks/DELETE_TASK';
 const CREATE_TASK = 'tasks/CREATE_TASK';
@@ -8,6 +9,7 @@ const getTasksList = (userId) => ({
   type: GET_TASKS,
   payload: userId
 })
+
 
 //Create single task
 const updateTask = (listId) => ({

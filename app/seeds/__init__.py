@@ -4,6 +4,7 @@ from .tasks import seed_tasks, undo_tasks
 from .colors import seed_colors, undo_colors
 from .rewards import seed_rewards, undo_rewards
 from .logs import seed_logs, undo_logs
+from .habit_quotes import seed_quotes, undo_quotes
 
 # Creates a seed group to hold our commands
 # So we can type `flask seed --help`
@@ -19,6 +20,7 @@ def seed():
     seed_tasks()
     seed_rewards()
     seed_logs()
+    seed_quotes()
     # Add other seed functions here
 
 
@@ -31,4 +33,5 @@ def undo():
     undo_tasks()
     undo_rewards()
     undo_logs()
+    undo_quotes()
     # Add other undo functions here

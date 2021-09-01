@@ -15,22 +15,23 @@ const GreetingPage = () => {
   console.log(sessionUser)
   useEffect(async() => {
     await dispatch(getSingleQuote())
-  }, [dispatch])
+  }, [])
 
 
 
   return (
     <div className='greet-card'>
-
       <h1>Hey {sessionUser.first_name}, You've Got This!</h1>
+      <div className='greeting'>
+
       <div>
         <h2>"{quote?.quote?.q}"</h2>
         <h2>- {quote?.quote?.a}</h2>
       </div>
-      <NavLink to={`/dashboard`}>
+      {/* <NavLink to={`/dashboard`}>
         <button>Habit Dashboard =></button>
-      </NavLink>
-
+  </NavLink>*/}
+      </div>
     </div>
   )
 }

@@ -1,0 +1,86 @@
+0000000000000000000000000000000000000000 08bd1ebb99477049a2fa4e98a5c3c3ba2e4b028e hiep <hiephkhuu@gmail.com> 1629824297 -0700	commit (initial): first
+08bd1ebb99477049a2fa4e98a5c3c3ba2e4b028e 08bd1ebb99477049a2fa4e98a5c3c3ba2e4b028e hiep <hiephkhuu@gmail.com> 1629824301 -0700	Branch: renamed refs/heads/master to refs/heads/main
+08bd1ebb99477049a2fa4e98a5c3c3ba2e4b028e 8e075ab16e87cf895e16894489fe70e57eab42ea hiep <hiephkhuu@gmail.com> 1629838570 -0700	commit: downloaded pip
+8e075ab16e87cf895e16894489fe70e57eab42ea f9c5a193c84a168aeb1a667438a87233012966ff hiep <hiephkhuu@gmail.com> 1629847008 -0700	commit: added secret keys
+f9c5a193c84a168aeb1a667438a87233012966ff 8e73d57b21d31165145e7c3fc29ec5d56cfbf1bd hiep <hiephkhuu@gmail.com> 1629848028 -0700	commit: added color model
+8e73d57b21d31165145e7c3fc29ec5d56cfbf1bd e67c88b1446dd706b71151145b20d2d7011a528b hiep <hiephkhuu@gmail.com> 1629849453 -0700	commit: add table.py
+e67c88b1446dd706b71151145b20d2d7011a528b d4cda14dfe2c99c3a3a8b31b6beb1bcf47b7f82c hiep <hiephkhuu@gmail.com> 1629850646 -0700	commit: add associations
+d4cda14dfe2c99c3a3a8b31b6beb1bcf47b7f82c d9347169f6a3bb9cd797264216b3abfc08ed0198 hiep <hiephkhuu@gmail.com> 1629851558 -0700	commit: updated model
+d9347169f6a3bb9cd797264216b3abfc08ed0198 b205d7114846290152e4424530957fac81c54bd8 hiep <hiephkhuu@gmail.com> 1629852034 -0700	commit: updated users model
+b205d7114846290152e4424530957fac81c54bd8 fcfceb11a1a310dbbfc31f589be75718d86a80e1 hiep <hiephkhuu@gmail.com> 1629859635 -0700	commit: add all table models
+fcfceb11a1a310dbbfc31f589be75718d86a80e1 9021825c2475fa74c35c947fab0a6dd37c93ef9b hiep <hiephkhuu@gmail.com> 1629866007 -0700	commit: seeded data
+9021825c2475fa74c35c947fab0a6dd37c93ef9b 4d374b19cd85b6ff3fc8df786fc35265a83b29a6 hiep <hiephkhuu@gmail.com> 1629914544 -0700	commit: create log model
+4d374b19cd85b6ff3fc8df786fc35265a83b29a6 7e0cdcb500f1aa8cbd97ee121a74de0ced4cf613 hiep <hiephkhuu@gmail.com> 1629914694 -0700	commit: add log file
+7e0cdcb500f1aa8cbd97ee121a74de0ced4cf613 899907706283a60ed680ce594972f4e8a0a31ca8 hiep <hiephkhuu@gmail.com> 1629916015 -0700	commit: fixed seeding
+899907706283a60ed680ce594972f4e8a0a31ca8 1a318779a742e8e4d464f191f9ebce00604101fb hiep <hiephkhuu@gmail.com> 1629916846 -0700	commit: fixed logs
+1a318779a742e8e4d464f191f9ebce00604101fb 32a87af482ab0a637b0a182884b5734051023256 hiep <hiephkhuu@gmail.com> 1629923764 -0700	commit: create seed
+32a87af482ab0a637b0a182884b5734051023256 3816785f67f2174bd28323c49c1381b9a9dba996 hiep <hiephkhuu@gmail.com> 1629924792 -0700	commit: added task_routes
+3816785f67f2174bd28323c49c1381b9a9dba996 239538dd84dfcb9b4616692a6e30cbdb62dadde5 hiep <hiephkhuu@gmail.com> 1629926464 -0700	commit: added task form
+239538dd84dfcb9b4616692a6e30cbdb62dadde5 1d6c9a91bd51c7e34cb175c113230ac232f1d621 hiep <hiephkhuu@gmail.com> 1629926729 -0700	commit: added color form
+1d6c9a91bd51c7e34cb175c113230ac232f1d621 305c52f8dcaca56d65475031a656289ffe270d0e hiep <hiephkhuu@gmail.com> 1629926848 -0700	commit: update task form
+305c52f8dcaca56d65475031a656289ffe270d0e da12b56cd4c45f96c12d17126138a5ee58d5d7ae hiep <hiephkhuu@gmail.com> 1629927324 -0700	commit: add reward form
+da12b56cd4c45f96c12d17126138a5ee58d5d7ae 7872c946ad5e98d68fbae8c9a7b8be5a1151c628 hiep <hiephkhuu@gmail.com> 1629927458 -0700	commit: add log form
+7872c946ad5e98d68fbae8c9a7b8be5a1151c628 d01db10ffee4ea7487a92c6c39f2b9c8b1a0550e hiep <hiephkhuu@gmail.com> 1629927960 -0700	commit: finished forms
+d01db10ffee4ea7487a92c6c39f2b9c8b1a0550e 483030fa47b6dc6ebcb8cfc6d74f7b61039321e6 hiep <hiephkhuu@gmail.com> 1629937940 -0700	commit: checked task_routes and reward_routes
+483030fa47b6dc6ebcb8cfc6d74f7b61039321e6 dbbd87fc015aed96df2331f58757ccf5dd88acef hiep <hiephkhuu@gmail.com> 1629938341 -0700	commit: fixed delete bug
+dbbd87fc015aed96df2331f58757ccf5dd88acef e17689dcb7971107591b2caad4368fdb96e77ecb hiep <hiephkhuu@gmail.com> 1629949847 -0700	commit: rearranged protected routes
+e17689dcb7971107591b2caad4368fdb96e77ecb e48392bdd7ab7587e5c4a66c4ab442bb59de41d5 hiep <hiephkhuu@gmail.com> 1629950672 -0700	commit: created greeting page
+e48392bdd7ab7587e5c4a66c4ab442bb59de41d5 6c980ad06c8ba7b803db0b5b3eb2fc69e2ab0cfa hiep <hiephkhuu@gmail.com> 1629953290 -0700	commit: add profile button
+6c980ad06c8ba7b803db0b5b3eb2fc69e2ab0cfa eccc4b8b4804677888c6404189d6af76b1c44d57 hiep <hiephkhuu@gmail.com> 1629954706 -0700	commit: add task store
+eccc4b8b4804677888c6404189d6af76b1c44d57 9d483470744fef0143fc2dd9115a1be8c21e14fc hiep <hiephkhuu@gmail.com> 1629957496 -0700	commit: created greet page and task-log page
+9d483470744fef0143fc2dd9115a1be8c21e14fc 7a4969b8e37515fbc9c83cec5ecaf387dcb8ac3a hiep <hiephkhuu@gmail.com> 1629959535 -0700	commit: shows greeeting page
+7a4969b8e37515fbc9c83cec5ecaf387dcb8ac3a 10015b7b147e5edbccd032e96d9264d5e1a92ec1 hiep <hiephkhuu@gmail.com> 1630003505 -0700	commit: succesfully grabbed tasks
+10015b7b147e5edbccd032e96d9264d5e1a92ec1 c4007d0b9d17938eae16961ef7c6ebefa65f9f6e hiep <hiephkhuu@gmail.com> 1630005558 -0700	commit: rendered user's tasks
+c4007d0b9d17938eae16961ef7c6ebefa65f9f6e 2a49aa8b94347684b1200d3ffd7cd0d2fff292b2 hiep <hiephkhuu@gmail.com> 1630009962 -0700	commit: converted GMT date to readable time
+2a49aa8b94347684b1200d3ffd7cd0d2fff292b2 448c34422e44fec8c7f26b7e4ceb15f3b903134a hiep <hiephkhuu@gmail.com> 1630011407 -0700	commit: add post task
+448c34422e44fec8c7f26b7e4ceb15f3b903134a 017f7d4f3defe762331623d7642e1fe138766404 hiep <hiephkhuu@gmail.com> 1630011955 -0700	commit: created habit modal
+017f7d4f3defe762331623d7642e1fe138766404 8dc3fa004b9a993fda1aa7f793fbc45736811786 hiep <hiephkhuu@gmail.com> 1630017059 -0700	commit: added post for task
+8dc3fa004b9a993fda1aa7f793fbc45736811786 707ddd9ead8861ee54d320ba4d160c462795ca85 hiep <hiephkhuu@gmail.com> 1630021225 -0700	commit: got post to workfor habit
+707ddd9ead8861ee54d320ba4d160c462795ca85 969b31ec79ce78410402f2fe36a9059c3b0ee748 hiep <hiephkhuu@gmail.com> 1630022447 -0700	commit: got task page to rerender
+969b31ec79ce78410402f2fe36a9059c3b0ee748 db635e170f9d04dc69d7aeb0a9e1efc160b04b6a hiep <hiephkhuu@gmail.com> 1630024027 -0700	commit: add styling
+db635e170f9d04dc69d7aeb0a9e1efc160b04b6a 66f8fecfd82b06aca3ec11cdc8677829f33d9749 hiep <hiephkhuu@gmail.com> 1630035060 -0700	commit: add update task in reducer
+66f8fecfd82b06aca3ec11cdc8677829f33d9749 a17f6e62892b2aeff2cd0a1603c967d0997a98fe hiep <hiephkhuu@gmail.com> 1630036221 -0700	commit: added update task modal
+a17f6e62892b2aeff2cd0a1603c967d0997a98fe e90ff4f9bff3efd01a6f622edf49b2c99ceb5f40 hiep <hiephkhuu@gmail.com> 1630038057 -0700	commit: sussessfully update task
+e90ff4f9bff3efd01a6f622edf49b2c99ceb5f40 22f7331621c9783ed0ad46f6ea3d5cd065e2a5db hiep <hiephkhuu@gmail.com> 1630038519 -0700	commit: create delete modal
+22f7331621c9783ed0ad46f6ea3d5cd065e2a5db 69293abd8771513e5dc2df1422413087bdb5103e hiep <hiephkhuu@gmail.com> 1630094792 -0700	commit: added delete modal
+69293abd8771513e5dc2df1422413087bdb5103e 39d50189bf81f085df54167cf9e9a5847ad24179 hiep <hiephkhuu@gmail.com> 1630095109 -0700	commit: added delete menu
+39d50189bf81f085df54167cf9e9a5847ad24179 0f591e9f8bf4f91cf0c2e588a9dd9f02b3b66eb2 hiep <hiephkhuu@gmail.com> 1630095976 -0700	commit: fixed delete modal
+0f591e9f8bf4f91cf0c2e588a9dd9f02b3b66eb2 e107bf32e4ed68f9a69c4ad31af268d39b687a18 hiep <hiephkhuu@gmail.com> 1630096986 -0700	commit: added async rerender and showed task name on delete form
+e107bf32e4ed68f9a69c4ad31af268d39b687a18 1d97a0cd2d5849846214cb9e01f831ef1a611f7f hiep <hiephkhuu@gmail.com> 1630102909 -0700	commit: added styling
+1d97a0cd2d5849846214cb9e01f831ef1a611f7f fb808bc068705b362ffcaf2a3e760346d6413a56 hiep <hiephkhuu@gmail.com> 1630105500 -0700	commit: changed styling
+fb808bc068705b362ffcaf2a3e760346d6413a56 a2514e085b71af3bc8ad5e136700b70840097be5 hiep <hiephkhuu@gmail.com> 1630191032 -0700	commit: fixed add habit but
+a2514e085b71af3bc8ad5e136700b70840097be5 608eedda1f0bb146346f65011dde9777bf87c99f hiep <hiephkhuu@gmail.com> 1630192344 -0700	commit: add color circle
+608eedda1f0bb146346f65011dde9777bf87c99f 02618170910dd2134e9a72051801ec427c8a6eeb hiep <hiephkhuu@gmail.com> 1630193177 -0700	commit: added styling
+02618170910dd2134e9a72051801ec427c8a6eeb ace0e8e160d0a9999ed0f6aee4bbd3af128771aa hiep <hiephkhuu@gmail.com> 1630195270 -0700	commit: css styling for color box
+ace0e8e160d0a9999ed0f6aee4bbd3af128771aa 62ee40d2ceed1b9f23f7efcbe1d7972cad27f00f hiep <hiephkhuu@gmail.com> 1630198839 -0700	commit: added styling
+62ee40d2ceed1b9f23f7efcbe1d7972cad27f00f 073323198732572210afd4edf899a06eb9d0ea58 hiep <hiephkhuu@gmail.com> 1630201940 -0700	commit: body style
+073323198732572210afd4edf899a06eb9d0ea58 be18c4d88eac46a11fc8e29a1ed227776446cb11 hiep <hiephkhuu@gmail.com> 1630287807 -0700	commit: added styling to task form
+be18c4d88eac46a11fc8e29a1ed227776446cb11 39ae8473691750c8bd193b6eaa6ebc9c19919579 hiep <hiephkhuu@gmail.com> 1630289537 -0700	commit: added styling
+39ae8473691750c8bd193b6eaa6ebc9c19919579 602cb029d80eef8e0ab9fff727bf12164b8da015 hiep <hiephkhuu@gmail.com> 1630300540 -0700	commit: added styling
+602cb029d80eef8e0ab9fff727bf12164b8da015 bd3085d160d48ad64e741506881049954825ecbc hiep <hiephkhuu@gmail.com> 1630306420 -0700	commit: add nav links
+bd3085d160d48ad64e741506881049954825ecbc 033e7f63394c609bcdec1902244097dd83c26401 hiep <hiephkhuu@gmail.com> 1630306647 -0700	commit: style buttons
+033e7f63394c609bcdec1902244097dd83c26401 41a3371115c69a82531316a095ab2f92ef725013 hiep <hiephkhuu@gmail.com> 1630307192 -0700	commit: added greeting page
+41a3371115c69a82531316a095ab2f92ef725013 8f59ae1c32bc17f40ede16d137ba1963b493050f hiep <hiephkhuu@gmail.com> 1630343868 -0700	commit: back end for quote
+8f59ae1c32bc17f40ede16d137ba1963b493050f acdeac0baf209b287be49889bc45eb49199fdbdf hiep <hiephkhuu@gmail.com> 1630344085 -0700	commit: created quote store
+acdeac0baf209b287be49889bc45eb49199fdbdf 0d6848d7342a098201983eea50f40e7be639e946 hiep <hiephkhuu@gmail.com> 1630345744 -0700	commit: success rendering quotes
+0d6848d7342a098201983eea50f40e7be639e946 a5f7e0bb21e0b6bb66e201b217d7e4bd5c5e9177 hiep <hiephkhuu@gmail.com> 1630346965 -0700	commit: rendered greeting
+a5f7e0bb21e0b6bb66e201b217d7e4bd5c5e9177 7555becefc0adfff7d7136da6c3afaf6f54246c1 hiep <hiephkhuu@gmail.com> 1630358833 -0700	commit: styling for greeting page
+7555becefc0adfff7d7136da6c3afaf6f54246c1 87089f85eb39435843eeefff7f535b8446a5a7ff hiep <hiephkhuu@gmail.com> 1630359995 -0700	commit: added colors table
+87089f85eb39435843eeefff7f535b8446a5a7ff b698f9729a1c3272857116745487bc709fdb6814 hiep <hiephkhuu@gmail.com> 1630360901 -0700	commit: created color route
+b698f9729a1c3272857116745487bc709fdb6814 afa62889fdea85a601e2b58deaf6d297113b5cc1 hiep <hiephkhuu@gmail.com> 1630362779 -0700	commit: add new color choices
+afa62889fdea85a601e2b58deaf6d297113b5cc1 6b048a9327293984bb9f18a58805b33281e375f1 hiep <hiephkhuu@gmail.com> 1630383006 -0700	commit: push to main
+6b048a9327293984bb9f18a58805b33281e375f1 ace3717fad2dc27bcc9a3d597311e7c65899f9b4 hiep <hiephkhuu@gmail.com> 1630383626 -0700	pull: Fast-forward
+ace3717fad2dc27bcc9a3d597311e7c65899f9b4 23f2a7fdfca24f12198e3839a926749f28a94bf5 hiep <hiephkhuu@gmail.com> 1630386685 -0700	commit: add
+23f2a7fdfca24f12198e3839a926749f28a94bf5 cc558837b035b2145257b3e471e6781a5e31f827 hiep <hiephkhuu@gmail.com> 1630386778 -0700	commit: add
+cc558837b035b2145257b3e471e6781a5e31f827 9ab64bfaca313878f083c79c7e5f105ece9bffd2 hiep <hiephkhuu@gmail.com> 1630387014 -0700	commit: installed moment
+9ab64bfaca313878f083c79c7e5f105ece9bffd2 c37d4011cb1f33c5b0523a03e041a3995ae87030 hiep <hiephkhuu@gmail.com> 1630389551 -0700	commit: hello
+c37d4011cb1f33c5b0523a03e041a3995ae87030 c973c6d268411e29f49fbc935c4dcb8862e4be4e hiep <hiephkhuu@gmail.com> 1630389813 -0700	commit: -
+c973c6d268411e29f49fbc935c4dcb8862e4be4e 5b9e0174bff69a8de059799562e24c39625224a1 hiep <hiephkhuu@gmail.com> 1630390639 -0700	commit: db redo
+5b9e0174bff69a8de059799562e24c39625224a1 87caa51d82da154dabf5b6f95092b7114cbedf0c hiep <hiephkhuu@gmail.com> 1630434358 -0700	commit: restyling
+87caa51d82da154dabf5b6f95092b7114cbedf0c 4ec22f024b69f135e6d1ef9e512f2d3eb47cc2b1 hiep <hiephkhuu@gmail.com> 1630445330 -0700	commit: profile styling
+4ec22f024b69f135e6d1ef9e512f2d3eb47cc2b1 3ce496b095a7190b6d616952bc02a21dee989e67 hiep <hiephkhuu@gmail.com> 1630447434 -0700	commit: more styling for navbar
+3ce496b095a7190b6d616952bc02a21dee989e67 13c5a6a9667cd47409f5fc09ee1729f3169c3979 hiep <hiephkhuu@gmail.com> 1630451600 -0700	commit: added color menu
+13c5a6a9667cd47409f5fc09ee1729f3169c3979 2618556174a6772a07b4af5b4c1e318f6775192b hiep <hiephkhuu@gmail.com> 1630455510 -0700	commit: menu color change
+2618556174a6772a07b4af5b4c1e318f6775192b 162b817f3baa4a626a894b41d8da4e2aa2d53b4f hiep <hiephkhuu@gmail.com> 1630459294 -0700	commit: solved color bug
+162b817f3baa4a626a894b41d8da4e2aa2d53b4f 2250ee191d4636d5ff3ec8e18ef07deb2bb1f4ae hiep <hiephkhuu@gmail.com> 1630473651 -0700	commit: fixed delte bug
+2250ee191d4636d5ff3ec8e18ef07deb2bb1f4ae c58bec6d365f4add0259477cf166f1cacca41073 hiep <hiephkhuu@gmail.com> 1630476267 -0700	commit: changed navbar

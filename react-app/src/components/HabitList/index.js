@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { loadAllTasks } from '../../store/tasks'
+// import { loadAllTasks } from '../../store/tasks'
+import { loadSingleTask } from '../../store/singletask';
 import { getAllColors } from '../../store/colors'
 
 import moment from 'moment'
@@ -9,20 +10,18 @@ import UpdateTaskModal from '../../context/UpdateTaskModal'
 import './HabitListCard.css'
 
 
-const HabitListCard = () => {
+const HabitListCard = ({habitId, setShowHabitInfo}) => {
   const sessionUser = useSelector(state => state.session.user)
-  const allTasks = useSelector(state => state.tasks)
+  const singleTask = useSelector(state => state.singleTask)
 
   const dispatch = useDispatch()
-  // console.log('#############',sessionUser.id)
-  // console.log('#########', allTasks.tasks)
 
   const [reloadTaskPage, setReloadTaskPage] = useState(false)
   const [color, setColor] = useState('')
-  const [showInfo, setShowInfo] = useState(false)
+
 
   useEffect(async () => {
-    await dispatch(loadAllTasks(sessionUser.id))
+    await dispatch(loadSingleTask(habitId))
     await dispatch(getAllColors())
     setReloadTaskPage(false)
 
@@ -38,71 +37,47 @@ const HabitListCard = () => {
     return newDate
   }
 
-  // const getColor = async (input) => {
-  //   const colorObj = await dispatch(getColorById(input))
-  //   console.log('###', colorObj)
-  //   return 'hi'
-  // }
 
-  // const grabTask = () => {
-  //   let taskList = []
-  //   for (const task in allTasks) {
 
-  //     taskList.push(
-  //       <div className='task-bar'>
-  //         <p> {allTasks[task].task_name}</p>
-  //         <p> {allTasks[task].task_detail}</p>
-  //         <p> {allTasks[task].task_reason}</p>
-  //         <p> {allTasks[task].target_num}</p>
-  //         <p> {allTasks[task].task_points}</p>
-  //         <p> {turnDateIntoReadable(allTasks[task].created_at)} </p>
-  //       </div>
-
-  //     )
-  //   }
-  //   return taskList
-  // }
 
   return (
     <>
-        {allTasks?.tasks?.map(task => (
-          <>
+    <div>sdfasdf</div>
+       <div className='task-card-container'
+                  // onClick={() => { showHabitInfo? setShowHabitInfo(false): setShowHabitInfo(true) }}
+                  style={{ backgroundColor: `${singleTask.color_hue}` }}
+                  // onClick={()=> {setHabitId(singleTask.id)}}
+                  >
+                  <div className='task-name'>
+                    <div className='task-name-header'>
+                      {singleTask.task_name}
 
-            <div className='task-card-container' style={{ backgroundColor: `${task.color_hue}` }} >
-              <div className='task-name'>
-                <div className='task-name-header'>
-                  {task.task_name}
+                    </div>
+                    <div className='edit-button'>
+                      {/* <UpdateTaskModal setReloadTaskPage={setReloadTaskPage} taskId={singleTask.id} /> */}
+                    </div>
+                  </div>
+                  <div className='task-card'    >
 
-                </div>
-                <div className='edit-button'>
-                  <UpdateTaskModal setReloadTaskPage={setReloadTaskPage} taskId={task.id} />
-                </div>
-              </div>
-              <div className='task-card'    >
+                    <div className='task-detail'>
+                      <span>GOAL: </span>{singleTask.task_detail}
+                    </div>
+                    <div className='task-reason'>
+                      <span>MOTIVATION: </span>{singleTask.task_reason}
+                    </div>
+                    <div className='task-num'>
+                      <span className='fas fa-bullseye' style={{ color: `${singleTask.color_hue}` }}> </span> {singleTask.target_num}/week
 
-                <div className='task-detail'>
-                  <span>GOAL: </span>{task.task_detail}
-                </div>
-                <div className='task-reason'>
-                  <span>MOTIVATION: </span>{task.task_reason}
-                </div>
-                <div className='task-num'>
-                  <span className='fas fa-bullseye' style={{ color: `${task.color_hue}` }}> </span> {task.target_num}/week
-                  {/* <span>target/week: </span>{task.target_num} */}
-                </div>
-                <div className='task-points'>
-                  <span className="fas fa-heart " style={{ color: `${task.color_hue}` }}></span> {task.task_points} pts
-                </div>
-                <div className='task-created'>
-                  <span className='fas fa-calendar-day' style={{ color: `${task.color_hue}` }}> </span> {turnDateIntoReadable(task.created_at)}
-                </div>
-
-              </div>
+                    </div>
+                    <div className='task-points'>
+                      <span className="fas fa-heart " style={{ color: `${singleTask.color_hue}` }}></span> {singleTask.task_points} pts
+                    </div>
+                    <div className='task-created'>
+                      <span className='fas fa-calendar-day' style={{ color: `${singleTask.color_hue}` }}> </span>
+                      {/* {turnDateIntoReadable(singleTask.created_at)} */}
+                    </div>
+                  </div>
             </div>
-
-          </>
-
-        ))}
      </>
   )
 }
