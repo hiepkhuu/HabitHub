@@ -5,20 +5,12 @@ import { Redirect, useHistory, useParams} from 'react-router-dom';
 
 import { updateSingleTask, loadAllTasks, deleteSingleTask } from '../../store/tasks';
 import DeleteTaskModal from './DeleteTaskModal'
-
+import CancelButton from '../AddNewTaskModal/CancelButton';
 
 const UpdateTaskModal = ({setReloadTaskPage,taskId}) => {
 
   console.log('THISTHISHTIS', taskId)
   const dispatch = useDispatch();
-  // const history = useHistory();
-
-  // const [showMenu, setShowMenu] = useState(false);
-
-  // const openMenu = () => {
-  //   if (showMenu) return;
-  //   setShowMenu(true);
-  // };
 
 
   const sessionUser = useSelector(state => state.session.user)
@@ -35,9 +27,41 @@ const UpdateTaskModal = ({setReloadTaskPage,taskId}) => {
   const [taskReason, setTaskReason] = useState(targetedTask[0].task_reason || '')
   const [targetNum, setTargetNum] = useState(targetedTask[0].target_num || '')
   const [taskPoints, setTaskPoints] = useState(targetedTask[0].task_points || '')
-  const [colorHue, setColorHue] = useState(targetedTask[0].color_hue || '#ffffff')
+  const [colorId, setColorId] = useState(targetedTask[0].color_id || '')
   // const [showDeleteMsg, setShowDeleteMsg] = useState(false);
 
+
+  const colorsList =  [
+    { value: '', label: 'Change Color', menuColor: 'darkgray' },
+    { value: 1, label: 'Salmon Pink', menuColor: '#FF9AA2' },
+    { value: 2, label: 'Melon' ,menuColor: '#FFB7B2'},
+    { value: 3, label: 'Pale Orange' ,menuColor: '#FFDAC1'},
+    { value: 4, label: 'Pastel Green' ,menuColor: '#E2F0CB'},
+    { value: 5, label: 'Magic Mint',menuColor: ' #B5EAD7' },
+    { value: 6, label: 'Periwinkle',menuColor: ' #C7CEEA' },
+    { value: 7, label: 'Cotton Blue' ,menuColor: '#bae1ff'},
+
+  ]
+
+
+  const colorHex ={
+    1:'#FF9AA2' ,
+    2: '#FFB7B2',
+    3:'#FFDAC1' ,
+    4: '#E2F0CB',
+    5:' #B5EAD7' ,
+    6: ' #C7CEEA' ,
+    7: '#bae1ff',
+  }
+  const colorName ={
+    1:'Salmon Pink' ,
+    2: 'Melon',
+    3:'Pale Orange' ,
+    4: 'Pastel Green',
+    5:'Magic Mint' ,
+    6: 'Periwinkle' ,
+    7: 'Cotton Blue',
+  }
   useEffect(async () => {
     // if(!showMenu) return;
     if (!showModal) return;
@@ -76,7 +100,7 @@ const UpdateTaskModal = ({setReloadTaskPage,taskId}) => {
       task_detail:taskDetail ,
       task_reason: taskReason,
       target_num: targetNum,
-      color_hue: colorHue,
+      color_id: colorId,
       task_points: taskPoints,
       id:taskId
     }
@@ -86,7 +110,7 @@ const UpdateTaskModal = ({setReloadTaskPage,taskId}) => {
     setTaskDetail('');
     setTaskReason('');
     setTargetNum('');
-    setColorHue('#ffffff');
+    setColorId('');
     setTaskPoints('');
 
     setShowModal(false)
@@ -102,64 +126,92 @@ const UpdateTaskModal = ({setReloadTaskPage,taskId}) => {
       {showModal && (
         <Modal>
           <div className='edit-form-container'>
-
-
-            <span className='far fa-window-close' onClick={cancel}></span>
-
-
-            <div className='update-header'>
-              <h2>Update Habit</h2>
-              <DeleteTaskModal setReloadTaskPage={setReloadTaskPage} setShowModal={setShowModal} taskId={taskId} taskName={targetedTask[0].task_name}/>
-            </div>
+          <DeleteTaskModal setReloadTaskPage={setReloadTaskPage} setShowModal={setShowModal} taskId={taskId} taskName={targetedTask[0].task_name} />
+            {/* <button onClick={cancel}>Cancel</button> */}
+            <h2>Upadate Habit</h2>
             <form className='add-task-form' onSubmit={submitTask} >
-              <div>What would you like to add to your life?</div>
-                <textarea
-                type='text'
-                rows='1'
-                value={taskName}
-                onChange={e=> setTaskName(e.target.value)}
-                />
-              <div>Give a brief description of what you'll be doing.</div>
-                <textarea
-                type='text'
-                rows='2'
-                value={taskDetail}
-                onChange={e=> setTaskDetail(e.target.value)}
-                ></textarea>
-              <div>A quick motivating reason why.</div>
-                <textarea
-                type='text'
-                rows='2'
-                value={taskReason}
-                onChange={e=> setTaskReason(e.target.value)}
-                ></textarea>
-              <div>Target number of times per week.</div>
-                <input
-                type='number'
-                value={targetNum}
-                onChange={e=> setTargetNum(e.target.value)}
-                />
-              <div>Value you want to give this task</div>
-                <input
-                type='number'
-                value={taskPoints}
-                onChange={e=> setTaskPoints(e.target.value)}
-                />
-              <div>Color for this task</div>
-                <input
-                type='color'
-                value={colorHue}
-                onChange={e=> setColorHue(e.target.value)}
-                />
-                {/* <div>{colorHue} look hrte</div> */}
-                <div className='update-delete-save'>
-                 <button onClick={submitTask} >Save Habit</button>
+              <div>
+                  <div>NAME</div>
+                    <input
+                    type='text'
+                    rows='1'
+                    value={taskName}
+                    onChange={e=> setTaskName(e.target.value)}
+                    />
+                  <div className='section'>
+                      <div>
+                          <div>GOAL</div>
+                            <input
+                            type='text'
+                            rows='2'
+                            value={taskDetail}
+                            onChange={e=> setTaskDetail(e.target.value)}
+                            ></input>
+                      </div>
+                      <div>
+                          <div>TARGET WEEKLY</div>
+                            <input
+                            type='number'
+                            value={targetNum}
+                            onChange={e=> setTargetNum(e.target.value)}
+                            />
+                      </div>
+                  </div>
+                  <div className='section'>
+                      <div>
+                          <div>VALUE</div>
+                            <input
+                            type='number'
+                            value={taskPoints}
+                            onChange={e=> setTaskPoints(e.target.value)}
+                            />
+                      </div>
+                      <div>
+                          <div>COLOR</div>
+                          {/* <Select
+
+                              // styles={customStyles}
+
+                              // components={{ Option }}
+
+                              onChange={e=> setColorId(e.target.value)}
+                              options={options}
+                            /> */}
+                            <select
+                            onChange={e=>setColorId(e.target.value)}
+
+                            style={{backgroundColor:`${colorHex[colorId]}`}}
+                            // label={colorName[colorId]}
+                            >
+
+                              {colorsList.map(item => (
+                                <option
+                                  key={item.value}
+                                  value={item.value}
+
+                                  style={{backgroundColor:`${item.menuColor}`}}
+
+                                >
+                                  {item.label}
+                                </option>
+                              ))}
+                            </select>
+                      </div>
+                    </div>
+                    <div>MOTIVATING REMINDER</div>
+                    <input
+                    type='text'
+                    rows='2'
+                    value={taskReason}
+                    onChange={e=> setTaskReason(e.target.value)}
+                    ></input>
+                    <CancelButton setShowModal={setShowModal}/>
+                  <button  onClick={submitTask} >Save</button>
 
                 </div>
-
             </form>
 
-          </div>
+            </div>
         </Modal>
       )}
     </div>

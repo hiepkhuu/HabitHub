@@ -9,28 +9,28 @@ display:flex;
 
 }
 
-/* .color-circle{
-  width: 20px;
-  height: 20px;
+
+
+.button-circle{
+  cursor: pointer;
+  background-color: rgb(114, 161, 250);
+  font-size: 70px;
+  height: 70px;
+  width: 70px;
   border-radius: 50px;
-  margin: 29px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
   cursor: pointer;
-} */
-
-/* .fa-plus-square{
-
-} */
-
-/* .fas.fa-plus-circle{
-  cursor: pointer;
-  color: blue;
-  font-size: 40px
-} */
-Select{
-height: 20px
 }
 
-.Select-value{
+.button-circle:hover{
+  background-color: rgb(103, 146, 226);
+}
+
+
+/* .Select-value{
   border: 1px solid darkgray !important;
 }
 
@@ -41,4 +41,22 @@ height: 20px
 .Select-value-label {
   background-color: white;
   color: #111;
+} */
+option{
+  width: 250px;
+  height: 45px;
+  color:white;
+  text-shadow: 2px 2px 2px black;
+}
+/* option:hover{
+  background-color: rgb(153, 196, 233)
+} */
+select{
+  height: 45px;
+  font-size: 20px;
+  width: 280px;
+  margin-top: 5px;
+  border: 1px solid rgb(67, 110, 138);
+  border-radius: 5px;
+
 }

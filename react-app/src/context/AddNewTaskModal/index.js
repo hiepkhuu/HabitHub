@@ -6,6 +6,7 @@ import Select, {components} from 'react-select';
 
 import { addNewTask } from '../../store/tasks'
 import { getAllColors} from '../../store/colors'
+import CancelButton from './CancelButton';
 
 const AddNewHabitModal = ({setReloadTaskPage}) => {
   const dispatch = useDispatch();
@@ -13,7 +14,7 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
 
   const sessionUser = useSelector(state => state.session.user)
   const colors = useSelector(state => state.colors.colors)//mappable
-  console.log('jjjjjjjj',colors)
+  // console.log('jjjjjjjj',colors)
   const [showModal, setShowModal] = useState(false);
   const [taskName, setTaskName] = useState('')
   const [taskDetail, setTaskDetail] = useState('')
@@ -21,66 +22,63 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
   const [targetNum, setTargetNum] = useState('')
   const [taskPoints, setTaskPoints] = useState('')
   const [colorId, setColorId] = useState('')
+  const [selectColor, setSelectColor] = useState('')
   console.log('name', taskName,'detail', taskDetail, 'reason',taskReason,'num', targetNum, 'pts', taskPoints, 'id', colorId)
 
   const colorsList =  [
+    { value: '', label: 'Choose here', menuColor: 'darkgray' },
     { value: 1, label: 'Salmon Pink', menuColor: '#FF9AA2' },
     { value: 2, label: 'Melon' ,menuColor: '#FFB7B2'},
     { value: 3, label: 'Pale Orange' ,menuColor: '#FFDAC1'},
-    { value: 4, label: 'Pale LightGreen' ,menuColor: '#E2F0CB'},
-    { value: 5, label: 'Magin Mint',menuColor: ' #B5EAD7' },
+    { value: 4, label: 'Pastel Green' ,menuColor: '#E2F0CB'},
+    { value: 5, label: 'Magic Mint',menuColor: ' #B5EAD7' },
     { value: 6, label: 'Periwinkle',menuColor: ' #C7CEEA' },
     { value: 7, label: 'Cotton Blue' ,menuColor: '#bae1ff'},
 
   ]
-  const Option = props => {
-    return (
-      <div style={{ backgroundColor: props.data.menuColor }}>
-        <components.Option {...props} />
-      </div>
-    );
-  };
 
-  const customStyles = {
-    option: (provided, state) => ({
-      ...provided,
-      width:'400px',
-      // borderBottom: '1px dotted pink',
-      // color: state.isSelected ? 'rgb(255,255,255,0.1)' : 'rgb(255,255,255,0.1)',
-      padding: 10,
-    }),
+  const colorHex ={
+    1:'#FF9AA2' ,
+    2: '#FFB7B2',
+    3:'#FFDAC1' ,
+    4: '#E2F0CB',
+    5:' #B5EAD7' ,
+    6: ' #C7CEEA' ,
+    7: '#bae1ff',
   }
-  const options = [
-    { value: 1, label: 'Salmon Pink', menuColor: '#FF9AA2' },
-    { value: 2, label: 'Melon' ,menuColor: '#FFB7B2'},
-    { value: 3, label: 'Pale Orange' ,menuColor: '#FFDAC1'},
-    { value: 4, label: 'Pale LightGreen' ,menuColor: '#E2F0CB'},
-    { value: 5, label: 'Magin Mint',menuColor: ' #B5EAD7' },
-    { value: 6, label: 'Periwinkle',menuColor: ' #C7CEEA' },
-    { value: 7, label: 'Cotton Blue' ,menuColor: '#bae1ff'},
+  // console.log('thisthisthisthisthisthis', selectColor)
 
-  ]
+  // const selectStyle = () =>{
+  //   console.log(colorHex[colorId])
+  // }
+
+  // const Option = props => {
+  //   return (
+  //     <div style={{ backgroundColor: props.data.menuColor }}>
+  //       <components.Option {...props} />
+  //     </div>
+  //   );
+  // };
 
   // const customStyles = {
-  //   menu: (provided, state) => ({
+  //   option: (provided, state) => ({
   //     ...provided,
-  //     width: state.selectProps.width,
-  //     borderBottom: '1px dotted pink',
-  //     color: state.selectProps.menuColor,
-  //     padding: 20,
+  //     width:'400px',
+  //     // borderBottom: '1px dotted pink',
+  //     // color: state.isSelected ? 'rgb(255,255,255,0.1)' : 'rgb(255,255,255,0.1)',
+  //     padding: 10,
   //   }),
-
-  //   control: (_, { selectProps: { width }}) => ({
-  //     width: width
-  //   }),
-
-  //   singleValue: (provided, state) => {
-  //     const opacity = state.isDisabled ? 0.5 : 1;
-  //     const transition = 'opacity 300ms';
-
-  //     return { ...provided, opacity, transition };
-  //   }
   // }
+  // const options = [
+  //   { value: 1, label: 'Salmon Pink', menuColor: '#FF9AA2' },
+  //   { value: 2, label: 'Melon' ,menuColor: '#FFB7B2'},
+  //   { value: 3, label: 'Pale Orange' ,menuColor: '#FFDAC1'},
+  //   { value: 4, label: 'Pale LightGreen' ,menuColor: '#E2F0CB'},
+  //   { value: 5, label: 'Magin Mint',menuColor: ' #B5EAD7' },
+  //   { value: 6, label: 'Periwinkle',menuColor: ' #C7CEEA' },
+  //   { value: 7, label: 'Cotton Blue' ,menuColor: '#bae1ff'},
+
+  // ]
 
 
   useEffect(async () => {
@@ -101,9 +99,7 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
     )
   }
 
-  const cancel = () =>{
-    setShowModal(false)
-  }
+
 
   const submitTask = async (e) => {
     e.preventDefault()
@@ -133,7 +129,7 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
   return (
     <>
       <div className='habit-add' onClick={() => { setShowModal(true) }} >
-        <span className='fas fa-plus-circle' > </span>
+        <div className='button-circle' > +</div>
 
       </div>
       <div >
@@ -141,7 +137,7 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
         {showModal && (
           <Modal>
             <div className='edit-form-container'>
-              <span text='Edit Comment' className='far fa-window-close' onClick={cancel} ></span>
+
               {/* <button onClick={cancel}>Cancel</button> */}
               <h2>New Habit</h2>
               <form className='add-task-form' onSubmit={submitTask} >
@@ -174,7 +170,7 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
                      </div>
                     <div className='section'>
                         <div>
-                            <div>Value</div>
+                            <div>VALUE</div>
                               <input
                               type='number'
                               value={taskPoints}
@@ -194,13 +190,20 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
                               /> */}
                               <select
                               onChange={e=>setColorId(e.target.value)}
+                              placeholder='select a color'
+
+                              style={{backgroundColor:`${colorHex[colorId]}`}}
                               >
+
                                 {colorsList.map(item => (
                                   <option
                                     key={item.value}
                                     value={item.value}
+                                    // color={item.menuColor}
+                                    style={{backgroundColor:`${item.menuColor}`}}
 
                                   >
+                                    {/* {getColorHex(item.value)} */}
                                     {item.label}
                                   </option>
                                 ))}
@@ -214,7 +217,8 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
                       value={taskReason}
                       onChange={e=> setTaskReason(e.target.value)}
                       ></input>
-                    <button  onClick={submitTask} >Save Habit</button>
+                      <CancelButton setShowModal={setShowModal}/>
+                    <button  onClick={submitTask} >Save</button>
                   </div>
               </form>
 

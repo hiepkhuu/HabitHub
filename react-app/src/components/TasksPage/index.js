@@ -68,12 +68,13 @@ const TasksPage = () => {
         <div className='grid'>
           <div className='square'></div>
         </div>
-        habit list
+
         <div className='habit-header'>
           <h3>Habit List</h3>
-          <div>
+
+        </div>
+        <div className='add-habit-button'>
             <AddNewHabitModal setReloadTaskPage={setReloadTaskPage}/>
-          </div>
         </div>
       </div>
 
@@ -95,28 +96,19 @@ const TasksPage = () => {
                 <div className='task-name'>
                     <div className='task-name-header'>
                       {task.task_name}
-                      {/* <div id='color-circle'
-                      style={{
-                        backgroundColor: task.color_hue
-                      }}
-                      ></div> */}
+
                     </div>
                     <div className='edit-button'>
                       <UpdateTaskModal setReloadTaskPage={setReloadTaskPage} taskId={task.id} />
                     </div>
                 </div>
             <div className='task-card'    >
-                {/* style={{border:`2px solid ${task.color_hue}`}} */}
-                {/* style={{boxShadow:`0px 0px 1px 1px ${task.color_hue} `}} */}
-                {/* {getColor(task.id)} */}
-
-
 
                 <div className='task-detail'>
-                  <span>Description: </span>{task.task_detail}
+                  <span>GOAL: </span>{task.task_detail}
                 </div>
                 <div className='task-reason'>
-                  <span>Motivation: </span>{task.task_reason}
+                  <span>MOTIVATION: </span>{task.task_reason}
                 </div>
                 <div className='task-num'>
                 <span className='fas fa-bullseye' style={{color:`${task.color_hue}`}}> </span> {task.target_num}/week
@@ -141,6 +133,7 @@ const TasksPage = () => {
           </div> */}
 
       </div>
+
     </div>
   )
 }
