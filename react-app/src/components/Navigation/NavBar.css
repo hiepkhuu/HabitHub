@@ -1,8 +1,9 @@
 .navbar{
-  width: 18%;
+  /* width: 18%; */
+  width: 270px;
   /* border-right: 1px solid black; */
-  height: vh;
-  background-color: rgb(77, 105, 139);
+  height: 100vh;
+  background-color: rgb(60, 74, 104);
   color: white;
 }
 .nav-links.profile{

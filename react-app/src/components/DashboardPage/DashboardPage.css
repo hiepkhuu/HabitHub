@@ -1,25 +1,26 @@
 .task-log-board{
-  /* width: 800px */
+
   display:flex;
   flex-direction: row;
   align-items: center;
 }
+
 .habit-list-container{
-  width: 50%;
+  width: 600px;
   border-right: 1px solid black;
   height: 100%
 }
+
 .task-log{
   width: 100%;
   display:flex;
   flex-wrap: wrap;
-  /* flex-wrap: nowrap; */
-  /* overflow-x:auto; */
+
 }
 
 .task-log::-webkit-scrollbar {
   display: none;
-   /* Safari and Chrome */
+
 }
 
 .task-log div{
@@ -79,7 +80,7 @@ border-radius: 15px;
   font-weight: bold;
   justify-content: space-between;
   font-size: 25px;
-  /* border-bottom: 1px solid rgb(51, 57, 68); */
+
   padding: 10px;
   text-shadow: 1px 1px 1px rgb(87, 86, 86);
 }
@@ -107,18 +108,13 @@ border-radius: 15px;
   width: 100%;
   color: rgb(49, 49, 49)
 }
-/* .task-detail{
-  width: 100%
-}
-.task-reason{
-  width:  100%
-}
+
 
 
 
 .task-points{
   margin-top: 10px
-}*/
+}
 .task-created{
   width: 100%
 }
@@ -126,16 +122,10 @@ border-radius: 15px;
 .task-num{
   margin-top: 15px !important
 }
-/* .edit-button{
-  display: flex;
-justify-self: flex-end
-} */
 
 .task-log span{
   color:rgb(0, 0, 0);
   font-weight: 600
 }
 
-.fas.fa-heart{
-  color: red
-}
+
