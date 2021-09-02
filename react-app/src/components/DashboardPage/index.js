@@ -72,7 +72,7 @@ const DashboardPage = () => {
 
                             </div>
                             <div className='edit-button'>
-                              <UpdateTaskModal setReloadTaskPage={setReloadTaskPage} taskId={task.id} />
+                              <UpdateTaskModal reloadTaskPage={reloadTaskPage} setReloadTaskPage={setReloadTaskPage} taskId={task.id} />
                             </div>
                           </div>
 
@@ -83,7 +83,7 @@ const DashboardPage = () => {
                     ))}
               </div>
             <div className='add-habit-button'>
-              <AddNewHabitModal setReloadTaskPage={setReloadTaskPage} />
+              <AddNewHabitModal setReloadTaskPage={setReloadTaskPage} reloadTaskPage={reloadTaskPage}/>
             </div>
           </div>
         </div>

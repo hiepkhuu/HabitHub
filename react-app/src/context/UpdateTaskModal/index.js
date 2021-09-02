@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Modal } from '../Modal';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect, useHistory, useParams} from 'react-router-dom';
+import { loadSingleTask } from '../../store/singletask';
 
 import { updateSingleTask, loadAllTasks, deleteSingleTask } from '../../store/tasks';
 import DeleteTaskModal from './DeleteTaskModal'
 import CancelButton from '../AddNewTaskModal/CancelButton';
 
-const UpdateTaskModal = ({setReloadTaskPage,taskId}) => {
+const UpdateTaskModal = ({setReloadTaskPage, reloadTaskPage, taskId}) => {
 
   console.log('THISTHISHTIS', taskId)
   const dispatch = useDispatch();
@@ -16,18 +17,18 @@ const UpdateTaskModal = ({setReloadTaskPage,taskId}) => {
   const sessionUser = useSelector(state => state.session.user)
   const allTasks = useSelector(state => state.tasks)
 
-  const targetedTask = allTasks.tasks.filter(task=> task.id === taskId)
-
-  // console.log('######', targetedTask[0])
+  // const singleTask = allTasks.tasks.filter(task=> task.id === taskId)
+  const singleTask = useSelector(state=> state.singleTask)
+  console.log('######', singleTask)
   // console.log('######', allTasks.tasks)
 
   const [showModal, setShowModal] = useState(false);
-  const [taskName, setTaskName] = useState(targetedTask[0].task_name || '')
-  const [taskDetail, setTaskDetail] = useState(targetedTask[0].task_detail || '')
-  const [taskReason, setTaskReason] = useState(targetedTask[0].task_reason || '')
-  const [targetNum, setTargetNum] = useState(targetedTask[0].target_num || '')
-  const [taskPoints, setTaskPoints] = useState(targetedTask[0].task_points || '')
-  const [colorId, setColorId] = useState(targetedTask[0].color_id || '')
+  const [taskName, setTaskName] = useState(singleTask.task_name)
+  const [taskDetail, setTaskDetail] = useState(singleTask.task_detail)
+  const [taskReason, setTaskReason] = useState(singleTask.task_reason)
+  const [targetNum, setTargetNum] = useState(singleTask.target_num)
+  const [taskPoints, setTaskPoints] = useState(singleTask.task_points)
+  const [colorId, setColorId] = useState(singleTask.color_id)
   // const [showDeleteMsg, setShowDeleteMsg] = useState(false);
 
 
@@ -67,9 +68,9 @@ const UpdateTaskModal = ({setReloadTaskPage,taskId}) => {
     if (!showModal) return;
     // if (!showDeleteMsg) return;
 
-
+    await dispatch(loadSingleTask(taskId))
     await dispatch(loadAllTasks(sessionUser.id))
-  }, [showModal]) //[showDeleteMsg]
+  }, [showModal, taskId]) //[showDeleteMsg]
 
   if (!sessionUser) {
     return (
@@ -126,11 +127,12 @@ const UpdateTaskModal = ({setReloadTaskPage,taskId}) => {
       {showModal && (
         <Modal>
           <div className='edit-form-container'>
-          <DeleteTaskModal setReloadTaskPage={setReloadTaskPage} setShowModal={setShowModal} taskId={taskId} taskName={targetedTask[0].task_name} />
+          <DeleteTaskModal setReloadTaskPage={setReloadTaskPage} setShowModal={setShowModal} taskId={taskId} taskName={singleTask.task_name} />
             {/* <button onClick={cancel}>Cancel</button> */}
             <h2>Upadate Habit</h2>
             <form className='add-task-form' onSubmit={submitTask} >
               <div>
+
                   <div>NAME</div>
                     <input
                     type='text'
