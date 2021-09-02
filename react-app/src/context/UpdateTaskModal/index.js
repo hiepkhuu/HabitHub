@@ -142,7 +142,8 @@ const UpdateTaskModal = ({setReloadTaskPage, reloadTaskPage, habitId}) => {
   return(
     <>
     {/* <div onClick={() => { setReloadUpdate(true) }}> */}
-    <span text='Edit Comment' className='far fa-edit' onClick={() => { setShowModal(true) }} ></span>
+    <p text='Edit Comment' style={{ backgroundColor: `${singleTask.color_hue}` }}
+       className='update-dots' onClick={() => { setShowModal(true) }} ><span>...</span></p>
     {/* </div> */}
     <div >
 

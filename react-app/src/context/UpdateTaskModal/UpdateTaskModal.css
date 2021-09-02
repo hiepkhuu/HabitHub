@@ -77,11 +77,30 @@
   display:flex;
 }
 
-.far.fa-edit{
+/* .far.fa-ellipsis-h{
   cursor: pointer;
-  color: rgb(0, 0, 0);
+  color: rgb(3, 3, 3) !important;
+  padding: 5px;
+  border-radius: 50px;
 
 
+} */
+.update-dots{
+  cursor: pointer;
+  color: rgb(3, 3, 3) !important;
+  padding: 5px;
+  border-radius: 50px;
+  display:flex;
+  align-items: center;
+  font-size: 40px;
+  height:25px;
+  width:25px;
+  margin:0px;
+  padding:5px 6px 5px 4px;
+}
+.update-dots span{
+  margin:0px 0px 25px 0px;
+  padding:0px
 }
 .section div,
 .section input{

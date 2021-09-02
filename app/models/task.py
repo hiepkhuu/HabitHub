@@ -9,7 +9,7 @@ class Task(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     task_name = db.Column(db.String(255), nullable=False)
     task_detail = db.Column(db.String(255), nullable=False)
-    task_reason= db.Column(db.String(500), nullable=False)
+    task_reason= db.Column(db.String(500), nullable=True)
     target_num = db.Column(db.Integer, nullable=True)
     color_id = db.Column(db.Integer, db.ForeignKey('colors.id') ,nullable=False)
     task_points = db.Column(db.Integer, nullable=True)

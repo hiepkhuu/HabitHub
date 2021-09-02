@@ -43,11 +43,8 @@ const HabitListCard = ({habitId, setShowHabitInfo, setReloadTaskPage}) => {
   return (
     <>
 
-       <div className='task-card-container'
-                  // style={{ border: `4px solid ${singleTask.color_hue}` }}
-                  >
-                  <div className='task-name'>
-                    <div className='task-name-header' s>
+        <div className='task-name'>
+                    <div className='task-name-header' >
                       {singleTask.task_name}
 
                     </div>
@@ -55,6 +52,10 @@ const HabitListCard = ({habitId, setShowHabitInfo, setReloadTaskPage}) => {
                       <UpdateTaskModal setReloadTaskPage={setReloadTaskPage} habitId={habitId} />
                     </div>
                   </div>
+          <div className='task-info-box'>
+            <div className='task-card-container'
+                  // style={{ border: `4px solid ${singleTask.color_hue}` }}
+                  >
                   <div className='task-card'    >
 
                     <div className='task-detail'>
@@ -75,7 +76,7 @@ const HabitListCard = ({habitId, setShowHabitInfo, setReloadTaskPage}) => {
                         {turnDateIntoReadable(`${singleTask.created_at}`)}
                     </div>
                   </div>
-        </div>
+           </div>
         <div className='task-streak-container'>
             <div>
               CURRENT STREAK
@@ -83,6 +84,7 @@ const HabitListCard = ({habitId, setShowHabitInfo, setReloadTaskPage}) => {
             <div>
                 THIS WEEK: {`${singleTask.target_num}`} TIMES
             </div>
+        </div>
         </div>
      </>
   )

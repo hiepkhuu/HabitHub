@@ -44,12 +44,13 @@ function ProfileButton() {
               <span className='far fa-smile'></span>
             </div>
             <span className='account-username'>{sessionUser.username}</span>
+            <span className='fas fa-chevron-down'></span>
           </div>
         </div>
 
         {showMenu && (
 
-          <div>
+          <div className='profile-dropdown-container'>
 
             <div className="profile-dropdown">
 
@@ -61,7 +62,7 @@ function ProfileButton() {
                   <span className='fas fa-sign-out-alt'></span>
                   <Link className='profile-link' to='/'>Log Out</Link>
                 </div>
-     
+
             </div>
           </div>
         )}

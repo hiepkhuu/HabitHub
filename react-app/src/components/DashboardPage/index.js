@@ -53,7 +53,7 @@ const DashboardPage = () => {
         <div className='left-dashboard'>
           <div className='habit-list-container'>
             <div className='habit-header'>
-              <h3>Active Goals</h3><button onClick={() => {  setShowHabitInfo(true) }} >show dashboard</button>
+              <h3>Active Goals</h3><span onClick={() => {  setShowHabitInfo(false) }} >greeting ➜</span>
             </div>
             <div className='habit-log'>
                     {allTasks?.tasks?.map(task => (

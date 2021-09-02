@@ -1,5 +1,7 @@
 .profile-image{
   /* border: 1px solid black; */
+  /* position: fixed; */
+  /* position: relative; */
   height: 60px;
   width: 60px;
   margin: 0px 20px;
@@ -9,7 +11,9 @@
   justify-content: center;
   /* box-shadow: 0px 0px 15px 1px rgb(39, 46, 66); */
   background-color: white;
-  color: black
+  color: black;
+  /* z-index: -1; */
+  /* position:relative; */
 }
 .account-button{
   width: 100%;
@@ -19,44 +23,80 @@
 }
 
 .account-username{
-  margin-top: 10px;
+  margin: 15px 35px 10px 10px;
   font-weight: bold;
   font-size: 20px;
+}
+/* .arrow-down{
+  margin-top: 15px;
+  font-size: 22px;
+
+} */
+.fas.fa-chevron-down{
+  margin-top: 15px;
+  font-size: 22px;
 }
 .account-button div{
 
   display:flex;
+  cursor: pointer;
   /* border-bottom: 1px solid black */
 
 }
 .menu-container{
-  width: 100%
+  width: 100%;
 
 }
+
+.profile-dropdown-container{
+  z-index: 1;
+  position: fixed
+}
 .profile-dropdown{
-  position:fixed;
+  /* position:fixed; */
   /* border: 1px solid black; */
   /* padding: 20px; */
-  margin: 20px;
-  box-shadow: 0px 0px 15px 1px rgb(184, 182, 182);
-  border-radius: 5px
-
+  margin: 40px 20px;
+  box-shadow: 0px 0px 15px 1px rgb(95, 95, 95);
+  border-radius: 5px;
+  background-color: white;
+  width: 300px;
+  /* z-index: 7; */
+  /* /* z-index: -1; */
+  /* position: absolute  */
+  /* position:relative; */
 }
 .profile-dropdown div{
   padding: 15px 20px;
-  border-bottom: 1px solid lightgray
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  /* border-bottom: 1px solid lightgray */
 }
+
+.profile-dropdown div:hover{
+  background-color: rgb(206, 229, 255);
+  border-radius: 5px
+}
+
 .profile-link{
   text-decoration: none;
+  color: rgb(59, 59, 59);
+  font-weight: bold
 }
+
+
 .fas.fa-user{
   margin-right: 10px;
-  font-size: 25px
+  font-size: 25px;
+  color:rgb(59, 59, 59)
 }
 .fas.fa-sign-out-alt{
   margin-right: 10px;
-  font-size: 25px
+  font-size: 25px;
+  color:rgb(59, 59, 59)
 }
 .far.fa-smile{
   font-size: 50px
 }
+
