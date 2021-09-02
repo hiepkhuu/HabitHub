@@ -11,7 +11,7 @@ reward_routes = Blueprint('rewards', __name__)
 
 
 @reward_routes.route('users/<int:user_id>')
-# @login_required
+@login_required
 def get_rewards(user_id
 ):
     """
@@ -19,7 +19,7 @@ def get_rewards(user_id
     """
     rewards = Reward.query.filter(Reward.user_id == user_id).all()
     # print('########TEST##########', rewards)
-    return {reward.id: reward.to_dict() for reward in rewards}
+    return {'rewards': [reward.to_dict() for reward in rewards]}
 
 
 @reward_routes.route('/', methods=['POST'])
@@ -28,8 +28,8 @@ def create_reward():
   Create a new reward for user
   """
   form = RewardForm()
-  # form['csrf_token'].data = request.cookies['csrf_token']
-  # if form.validate_on_submit():
+  form['csrf_token'].data = request.cookies['csrf_token']
+  if form.validate_on_submit():
       # reward = Reward(
       #   user_id = form.user_id.data,
       #   reward_name = form.reward_name.data,
@@ -39,14 +39,14 @@ def create_reward():
       #   color_id = form.color_id.data,
       #   reward_points = form.reward_points.data
       # )
-  reward = Reward()
-  form.populate_obj(reward)
-  db.session.add(reward)
-  db.session.commit()
+    reward = Reward()
+    form.populate_obj(reward)
+    db.session.add(reward)
+    db.session.commit()
 
   return reward.to_dict()
 
-  # return {'errors': validation_errors_to_error_messages(form.errors)}
+  return {'errors': validation_errors_to_error_messages(form.errors)}
 
 @reward_routes.route('/<int:reward_id>', methods=['GET', 'PUT', 'DELETE'])
 def edit_reward_by_id(reward_id):
