@@ -55,9 +55,6 @@ background-color: rgb(245, 245, 245)
   width: 5px
 }
 
-.task-card{
-
-}
 
 .task-card div{
   margin: 3px;
@@ -65,9 +62,6 @@ background-color: rgb(245, 245, 245)
 }
 
 
-.task-info{
-
-}
 
 .habit-header{
   display: flex;
@@ -96,13 +90,7 @@ background-color: rgb(245, 245, 245)
 .task-name div{
   margin: 5px 10px
 }
-/* #color-circle{
-  width:40px;
-  height: 15px;
-  border-radius: 20px;
-  box-shadow: 0px 0px 1px 1px rgb(100, 102, 128);
-  opacity: 0.8
-} */
+
 
 .task-detail,
 .task-reason,
@@ -138,4 +126,17 @@ background-color: rgb(245, 245, 245)
 font-size: 20px;
 margin-right: 5px;
 text-shadow:  0px 1px 1px rgb(87, 86, 86);
+}
+
+.task-streak-container{
+  margin:40px ;
+  width:40%;
+}
+.task-streak-container div{
+  background-color: rgb(245, 245, 245);
+  height: 30%;
+  padding:20px;
+  color: rgb(100, 100, 100);
+  margin-bottom: 30px;
+  font-size: 15px;
 }

@@ -44,9 +44,7 @@ const HabitListCard = ({habitId, setShowHabitInfo, setReloadTaskPage}) => {
     <>
 
        <div className='task-card-container'
-
                   // style={{ border: `4px solid ${singleTask.color_hue}` }}
-
                   >
                   <div className='task-name'>
                     <div className='task-name-header' s>
@@ -80,10 +78,10 @@ const HabitListCard = ({habitId, setShowHabitInfo, setReloadTaskPage}) => {
         </div>
         <div className='task-streak-container'>
             <div>
-              STREAK
+              CURRENT STREAK
             </div>
             <div>
-                HOW MANY TIMES THIS WEEK
+                THIS WEEK: {`${singleTask.target_num}`} TIMES
             </div>
         </div>
      </>
