@@ -89,7 +89,7 @@ const DashboardPage = () => {
         </div>
         <div className='right-dashboard'>
         {showHabitInfo ?
-            <div>
+            <div className='info-board'>
               <div></div>
               <HabitListCard habitId ={habitId} setShowHabitInfo={setShowHabitInfo} setReloadTaskPage={setReloadTaskPage}/>
             </div>

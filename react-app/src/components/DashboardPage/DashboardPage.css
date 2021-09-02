@@ -47,7 +47,12 @@
   width:60%;
   height: 100vh;
 
+
 }
+.info-board{
+  display: flex
+}
+
 .greeting-dashboard{
   /* width:100%; */
   height: 100vh;
