@@ -27,35 +27,41 @@
 
 .task-card-container{
 /* box-shadow: 0px 0px 15px 1px rgb(190, 190, 190); */
-margin: 10px 20px;
-border-radius: 15px;
-width: 40%
 
+margin: 40px 20px;
+/* border-radius: 15px; */
+width: 40%;
+padding: 15px;
+background-color: rgb(245, 245, 245)
 
 }
 .task-card{
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  width: 300px;
-  background-color:#ffffff;
+  padding: 0px 20px 20px 20px;
+  /* width: 100%; */
+  background-color: rgb(245, 245, 245);
   color: black;
   border: 2px;
   height: auto;
   overflow-y: auto;
   overflow-x: hidden;
-  height: 200px;
-  border-bottom-right-radius: 15px;
-  border-bottom-left-radius: 15px
+  height:100%;
+  /* border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px */
 
 }
 .task-card::-webkit-scrollbar {
   width: 5px
 }
 
+.task-card{
+
+}
 
 .task-card div{
-  margin: 3px
+  margin: 3px;
+
 }
 
 
@@ -78,9 +84,9 @@ width: 40%
   font-weight: bold;
   justify-content: space-between;
   font-size: 25px;
-
+  /* margin-top: 30px; */
   padding: 10px;
-  text-shadow: 1px 1px 1px rgb(87, 86, 86);
+  text-shadow:  0px 1px 1px rgb(87, 86, 86);
 }
 .task-name-header{
   display:flex
@@ -121,8 +127,15 @@ width: 40%
   margin-top: 15px !important
 }
 
-.task-log span{
+.task-card-container span{
   color:rgb(0, 0, 0);
-  font-weight: 600
+  font-weight: bolder
 }
 
+.fas.fa-heart,
+.fas.fa-bullseye,
+.fas.fa-calendar-day{
+font-size: 20px;
+margin-right: 5px;
+text-shadow:  0px 1px 1px rgb(87, 86, 86);
+}

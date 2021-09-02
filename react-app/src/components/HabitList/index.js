@@ -42,14 +42,14 @@ const HabitListCard = ({habitId, setShowHabitInfo, setReloadTaskPage}) => {
 
   return (
     <>
-    <div>sdfasdf</div>
+
        <div className='task-card-container'
 
-                  style={{ backgroundColor: `${singleTask.color_hue}` }}
+                  // style={{ border: `4px solid ${singleTask.color_hue}` }}
 
                   >
                   <div className='task-name'>
-                    <div className='task-name-header'>
+                    <div className='task-name-header' s>
                       {singleTask.task_name}
 
                     </div>
@@ -74,10 +74,13 @@ const HabitListCard = ({habitId, setShowHabitInfo, setReloadTaskPage}) => {
                     </div>
                     <div className='task-created'>
                       <span className='fas fa-calendar-day' style={{ color: `${singleTask.color_hue}` }}> </span>
-
+                        {turnDateIntoReadable(`${singleTask.created_at}`)}
                     </div>
                   </div>
-            </div>
+        </div>
+        <div className='task-streak-container'>
+
+        </div>
      </>
   )
 }

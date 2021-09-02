@@ -13,6 +13,8 @@
 
 .habit-header{
   display: flex;
+  margin: 30px 15px 30px 15px;
+  justify-content: space-between
 }
 .habit-header h3,
 .habit-header div{
