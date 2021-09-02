@@ -15,7 +15,7 @@ import GreetingPage from '../GreetingPage'
 const DashboardPage = () => {
   const sessionUser = useSelector(state => state.session.user)
   const allTasks = useSelector(state => state.tasks)
-  // const singleTask = useSelector(state => state.singleTask)
+  const singleTask = useSelector(state => state.singleTask)
   const dispatch = useDispatch()
 
 
@@ -50,29 +50,29 @@ const DashboardPage = () => {
 
   return (
     <>
-        <div className='task-log-board'>
+        <div className='left-dashboard'>
           <div className='habit-list-container'>
             <div className='habit-header'>
-              <h3>Habit List</h3><button onClick={() => {  setShowHabitInfo(false) }} >show dashboard</button>
+              <h3>Habit List</h3><button onClick={() => {  setShowHabitInfo(true) }} >show dashboard</button>
             </div>
-            <div className='task-log' id='task-log'>
+            <div className='habit-log'>
                     {allTasks?.tasks?.map(task => (
                       <>
                         <div onClick={()=> {setHabitId(task.id)}}>
-                        <div className='task-card-container'
+                        <div className='habit-card-container'
                             // onClick={() => { showHabitInfo? setShowHabitInfo(false): setShowHabitInfo(true) }}
                             onClick={() => {  setShowHabitInfo(true) }}
                             // onClick={() => {  setShowHabitInfo(false) }}
                             style={{ backgroundColor: `${task.color_hue}` }}
 
                             >
-                          <div className='task-name'>
-                            <div className='task-name-header'>
+                          <div className='habit-name'>
+                            <div className='habit-name-header'>
                               {task.task_name}
 
                             </div>
                             <div className='edit-button'>
-                              <UpdateTaskModal reloadTaskPage={reloadTaskPage} setReloadTaskPage={setReloadTaskPage} taskId={task.id} />
+                              {/* <UpdateTaskModal reloadTaskPage={reloadTaskPage} setReloadTaskPage={setReloadTaskPage} taskId={task.id} /> */}
                             </div>
                           </div>
 
@@ -89,13 +89,14 @@ const DashboardPage = () => {
         </div>
         <div className='right-dashboard'>
         {showHabitInfo ?
-            <>
+            <div>
               <div></div>
-              <HabitListCard habitId ={habitId} setShowHabitInfo={setShowHabitInfo}/>
-            </>
+              <HabitListCard habitId ={habitId} setShowHabitInfo={setShowHabitInfo} setReloadTaskPage={setReloadTaskPage}/>
+            </div>
             :
+            <div className='greeting-dashboard'>
             <GreetingPage />
-
+            </div>
         }
         </div>
   </>

@@ -8,27 +8,64 @@ import { updateSingleTask, loadAllTasks, deleteSingleTask } from '../../store/ta
 import DeleteTaskModal from './DeleteTaskModal'
 import CancelButton from '../AddNewTaskModal/CancelButton';
 
-const UpdateTaskModal = ({setReloadTaskPage, reloadTaskPage, taskId}) => {
-
-  console.log('THISTHISHTIS', taskId)
-  const dispatch = useDispatch();
-
-
+const UpdateTaskModal = ({setReloadTaskPage, reloadTaskPage, habitId}) => {
   const sessionUser = useSelector(state => state.session.user)
   const allTasks = useSelector(state => state.tasks)
+ const singleTask = useSelector(state=> state.singleTask)
 
-  // const singleTask = allTasks.tasks.filter(task=> task.id === taskId)
-  const singleTask = useSelector(state=> state.singleTask)
-  console.log('######', singleTask)
+  console.log('THISTHISHTIS', singleTask)
+  const dispatch = useDispatch();
+  const [showModal, setShowModal] = useState(false);
+  const [taskName, setTaskName] = useState()
+  const [taskDetail, setTaskDetail] = useState()
+  const [taskReason, setTaskReason] = useState()
+  const [targetNum, setTargetNum] = useState()
+  const [taskPoints, setTaskPoints] = useState()
+  const [colorId, setColorId] = useState()
+  const [reloadUpdate, setReloadUpdate] = useState(false)
+  useEffect(async () => {
+
+    await dispatch(loadSingleTask(habitId))
+    await dispatch(loadAllTasks(sessionUser.id))
+    if (!showModal) return;
+
+    setTaskName(singleTask.task_name)
+    setTaskDetail(singleTask.task_detail)
+    setTaskReason(singleTask.task_reason)
+    setTargetNum(singleTask.target_num)
+    setTaskPoints(singleTask.task_points)
+    setColorId(singleTask.color_id)
+    // const render = () => {
+    //   dispatch(loadSingleTask(habitId))
+    // }
+    // document.addEventListener('click', render)
+    // return () => document.removeEventListener('click',render  )
+
+
+  }, [showModal, reloadUpdate, habitId]) //[showDeleteMsg]
+
+
+  // const singleTask = allTasks?.tasks.filter(task=> task.id === taskId)
+  // const singleTask = useSelector(state=> state.singleTask)
+  // console.log('######', singleTask)
   // console.log('######', allTasks.tasks)
 
-  const [showModal, setShowModal] = useState(false);
-  const [taskName, setTaskName] = useState(singleTask.task_name)
-  const [taskDetail, setTaskDetail] = useState(singleTask.task_detail)
-  const [taskReason, setTaskReason] = useState(singleTask.task_reason)
-  const [targetNum, setTargetNum] = useState(singleTask.target_num)
-  const [taskPoints, setTaskPoints] = useState(singleTask.task_points)
-  const [colorId, setColorId] = useState(singleTask.color_id)
+
+
+
+  // const [taskName, setTaskName] = useState(singleTask[0]?.task_name)
+  // const [taskDetail, setTaskDetail] = useState(singleTask[0]?.task_detail)
+  // const [taskReason, setTaskReason] = useState(singleTask[0]?.task_reason)
+  // const [targetNum, setTargetNum] = useState(singleTask[0]?.target_num)
+  // const [taskPoints, setTaskPoints] = useState(singleTask[0]?.task_points)
+  // const [colorId, setColorId] = useState(singleTask[0]?.color_id)
+
+  // const [taskName, setTaskName] = useState(singleTask?.task_name || "")
+  // const [taskDetail, setTaskDetail] = useState(singleTask?.task_detail)
+  // const [taskReason, setTaskReason] = useState(singleTask?.task_reason)
+  // const [targetNum, setTargetNum] = useState(singleTask?.target_num)
+  // const [taskPoints, setTaskPoints] = useState(singleTask?.task_points)
+  // const [colorId, setColorId] = useState(singleTask?.color_id)
   // const [showDeleteMsg, setShowDeleteMsg] = useState(false);
 
 
@@ -63,14 +100,7 @@ const UpdateTaskModal = ({setReloadTaskPage, reloadTaskPage, taskId}) => {
     6: 'Periwinkle' ,
     7: 'Cotton Blue',
   }
-  useEffect(async () => {
-    // if(!showMenu) return;
-    if (!showModal) return;
-    // if (!showDeleteMsg) return;
 
-    await dispatch(loadSingleTask(taskId))
-    await dispatch(loadAllTasks(sessionUser.id))
-  }, [showModal, taskId]) //[showDeleteMsg]
 
   if (!sessionUser) {
     return (
@@ -83,15 +113,6 @@ const UpdateTaskModal = ({setReloadTaskPage, reloadTaskPage, taskId}) => {
     setShowModal(false)
   }
 
-
-  // const deleteTask = async (e) =>{
-  //   e.preventDefault()
-
-  //   await dispatch(deleteSingleTask(taskId))
-  //   setReloadTaskPage(true)
-  // }
-
-
   const submitTask = async (e) => {
     e.preventDefault()
 
@@ -103,7 +124,7 @@ const UpdateTaskModal = ({setReloadTaskPage, reloadTaskPage, taskId}) => {
       target_num: targetNum,
       color_id: colorId,
       task_points: taskPoints,
-      id:taskId
+      id:singleTask.id
     }
     await dispatch(updateSingleTask(task))
 
@@ -115,19 +136,20 @@ const UpdateTaskModal = ({setReloadTaskPage, reloadTaskPage, taskId}) => {
     setTaskPoints('');
 
     setShowModal(false)
-    setReloadTaskPage(true)
+    reloadTaskPage ? setReloadTaskPage(false) : setReloadTaskPage(true)
   }
 
   return(
     <>
+    {/* <div onClick={() => { setReloadUpdate(true) }}> */}
     <span text='Edit Comment' className='far fa-edit' onClick={() => { setShowModal(true) }} ></span>
-
+    {/* </div> */}
     <div >
 
       {showModal && (
         <Modal>
           <div className='edit-form-container'>
-          <DeleteTaskModal setReloadTaskPage={setReloadTaskPage} setShowModal={setShowModal} taskId={taskId} taskName={singleTask.task_name} />
+          <DeleteTaskModal setReloadTaskPage={setReloadTaskPage} setShowModal={setShowModal} taskId={singleTask.id} taskName={singleTask.task_name} />
             {/* <button onClick={cancel}>Cancel</button> */}
             <h2>Upadate Habit</h2>
             <form className='add-task-form' onSubmit={submitTask} >

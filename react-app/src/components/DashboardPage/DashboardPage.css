@@ -1,68 +1,14 @@
-.task-log-board{
-
+.left-dashboard{
+  width: 45%;
   display:flex;
   flex-direction: row;
   align-items: center;
 }
 
 .habit-list-container{
-  width: 600px;
+  width: 100%;
   border-right: 1px solid black;
   height: 100%
-}
-
-.task-log{
-  width: 100%;
-  display:flex;
-  flex-wrap: wrap;
-
-}
-
-.task-log::-webkit-scrollbar {
-  display: none;
-
-}
-
-.task-log div{
-  flex: 0 0 auto;
-}
-
-.task-card-container{
-box-shadow: 0px 0px 15px 1px rgb(190, 190, 190);
-margin: 10px 20px;
-border-radius: 15px;
-
-
-
-}
-.task-card{
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  width: 300px;
-  background-color:#ffffff;
-  color: black;
-  border: 2px;
-  height: auto;
-  overflow-y: auto;
-  overflow-x: hidden;
-  height: 200px;
-  border-bottom-right-radius: 15px;
-  border-bottom-left-radius: 15px
-
-}
-.task-card::-webkit-scrollbar {
-  width: 5px
-}
-
-
-.task-card div{
-  margin: 3px
-}
-
-
-.task-info{
-
 }
 
 .habit-header{
@@ -74,63 +20,34 @@ border-radius: 15px;
   padding:0px;
 }
 
+.habit-card-container{
+  margin: 10px;
+}
 
-.task-name{
-  display: flex;
+
+.habit-name{
+  height: 60px;
+  display:flex;
+  font-size: 20px;
   font-weight: bold;
-  justify-content: space-between;
-  font-size: 25px;
+  align-items: center;
 
-  padding: 10px;
-  text-shadow: 1px 1px 1px rgb(87, 86, 86);
-}
-.task-name-header{
-  display:flex
 }
 
 
-.task-name div{
-  margin: 5px 10px
-}
-#color-circle{
-  width:40px;
-  height: 15px;
-  border-radius: 20px;
-  box-shadow: 0px 0px 1px 1px rgb(100, 102, 128);
-  opacity: 0.8
+.habit-name-header{
+  padding-left: 20px;
 }
 
-.task-detail,
-.task-reason,
-.task-num,
-.task-points,
-.task-created {
-  width: 100%;
-  color: rgb(49, 49, 49)
-}
-
-
-
-
-.task-points{
-  margin-top: 10px
-}
-.task-created{
-  width: 100%
-}
-
-.task-num{
-  margin-top: 15px !important
-}
-
-.task-log span{
-  color:rgb(0, 0, 0);
-  font-weight: 600
-}
 
 
 .right-dashboard{
-  width:100%;
+  width:60%;
+  height: 100vh;
+
+}
+.greeting-dashboard{
+  /* width:100%; */
   height: 100vh;
   display:flex;
   justify-content: center;

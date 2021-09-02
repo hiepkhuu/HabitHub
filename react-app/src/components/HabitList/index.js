@@ -10,22 +10,22 @@ import UpdateTaskModal from '../../context/UpdateTaskModal'
 import './HabitListCard.css'
 
 
-const HabitListCard = ({habitId, setShowHabitInfo}) => {
+const HabitListCard = ({habitId, setShowHabitInfo, setReloadTaskPage}) => {
   const sessionUser = useSelector(state => state.session.user)
   const singleTask = useSelector(state => state.singleTask)
 
   const dispatch = useDispatch()
 
-  const [reloadTaskPage, setReloadTaskPage] = useState(false)
+  // const [reloadTaskPage, setReloadTaskPage] = useState(false)
   const [color, setColor] = useState('')
 
 
   useEffect(async () => {
     await dispatch(loadSingleTask(habitId))
     await dispatch(getAllColors())
-    setReloadTaskPage(false)
+    // setReloadTaskPage(false)
 
-  }, [reloadTaskPage])
+  }, [])
 
   function convert(input) {
     return moment(input, 'HH:mm:ss').format('h:mm A');
@@ -44,9 +44,9 @@ const HabitListCard = ({habitId, setShowHabitInfo}) => {
     <>
     <div>sdfasdf</div>
        <div className='task-card-container'
-                  // onClick={() => { showHabitInfo? setShowHabitInfo(false): setShowHabitInfo(true) }}
+
                   style={{ backgroundColor: `${singleTask.color_hue}` }}
-                  // onClick={()=> {setHabitId(singleTask.id)}}
+
                   >
                   <div className='task-name'>
                     <div className='task-name-header'>
@@ -54,7 +54,7 @@ const HabitListCard = ({habitId, setShowHabitInfo}) => {
 
                     </div>
                     <div className='edit-button'>
-                      {/* <UpdateTaskModal setReloadTaskPage={setReloadTaskPage} taskId={singleTask.id} /> */}
+                      <UpdateTaskModal setReloadTaskPage={setReloadTaskPage} habitId={habitId} />
                     </div>
                   </div>
                   <div className='task-card'    >
@@ -74,7 +74,7 @@ const HabitListCard = ({habitId, setShowHabitInfo}) => {
                     </div>
                     <div className='task-created'>
                       <span className='fas fa-calendar-day' style={{ color: `${singleTask.color_hue}` }}> </span>
-                      {/* {turnDateIntoReadable(singleTask.created_at)} */}
+
                     </div>
                   </div>
             </div>
