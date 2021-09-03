@@ -6,6 +6,7 @@ class Reward(db.Model):
     __tablename__ = 'rewards'
 
     id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     task_id = db.Column(db.Integer, db.ForeignKey('tasks.id'), nullable=False)
     reward_name = db.Column(db.String(255), nullable=False)
     reward_detail = db.Column(db.String(255), nullable=True)
@@ -19,11 +20,13 @@ class Reward(db.Model):
     def to_dict(self):
       return {
         'id': self.id,
+        'user_id': self.user_id,
         'task': self.task.task_name,
         'task_id': self.task_id,
-        'color': self.task.color_hue,
+        'color_id': self.task.color_id,
         'reward_name': self.reward_name,
         'reward_reason': self.reward_reason,
+        'reward_points': self.reward_points,
         'created_at': self.created_at,
         'updated_at': self.updated_at
       }

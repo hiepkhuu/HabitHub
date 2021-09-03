@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 568bc2be87bb
+Revision ID: 1c0ee6d307ae
 Revises: 
-Create Date: 2021-09-01 15:20:35.868253
+Create Date: 2021-09-02 17:00:07.420292
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '568bc2be87bb'
+revision = '1c0ee6d307ae'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -25,7 +25,7 @@ def upgrade():
     )
     op.create_table('quotes',
     sa.Column('id', sa.Integer(), nullable=False),
-    sa.Column('quote', sa.String(length=100), nullable=True),
+    sa.Column('quote', sa.String(length=1000), nullable=True),
     sa.Column('author', sa.String(length=100), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
@@ -49,7 +49,7 @@ def upgrade():
     sa.Column('user_id', sa.Integer(), nullable=False),
     sa.Column('task_name', sa.String(length=255), nullable=False),
     sa.Column('task_detail', sa.String(length=255), nullable=False),
-    sa.Column('task_reason', sa.String(length=500), nullable=False),
+    sa.Column('task_reason', sa.String(length=500), nullable=True),
     sa.Column('target_num', sa.Integer(), nullable=True),
     sa.Column('color_id', sa.Integer(), nullable=False),
     sa.Column('task_points', sa.Integer(), nullable=True),
@@ -69,14 +69,16 @@ def upgrade():
     )
     op.create_table('rewards',
     sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('user_id', sa.Integer(), nullable=False),
     sa.Column('task_id', sa.Integer(), nullable=False),
     sa.Column('reward_name', sa.String(length=255), nullable=False),
     sa.Column('reward_detail', sa.String(length=255), nullable=True),
-    sa.Column('reward_reason', sa.String(length=500), nullable=False),
+    sa.Column('reward_reason', sa.String(length=500), nullable=True),
     sa.Column('reward_points', sa.Integer(), nullable=True),
     sa.Column('created_at', sa.DateTime(), nullable=False),
     sa.Column('updated_at', sa.DateTime(), nullable=False),
     sa.ForeignKeyConstraint(['task_id'], ['tasks.id'], ),
+    sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
     # ### end Alembic commands ###

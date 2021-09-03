@@ -5,13 +5,15 @@ import tasks from './tasks';
 import quotes from './quotes';
 import colors from './colors';
 import singleTask from './singletask'
+import rewards from './rewards'
 
 const rootReducer = combineReducers({
   session,
   tasks,
   quotes,
   colors,
-  singleTask
+  singleTask,
+  rewards
 });
 
 

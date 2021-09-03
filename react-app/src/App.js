@@ -10,6 +10,8 @@ import User from './components/User';
 import { authenticate } from './store/session';
 import GreetingPage from './components/GreetingPage';
 import DashboardPage from './components/DashboardPage';
+import RewardsPage from './components/RewardsPage';
+
 
 function App() {
   const sessionUser = useSelector(state => state.user)
@@ -47,6 +49,9 @@ function App() {
             </ProtectedRoute>
             <Route path={`/dashboard`} exact={true}>
               <DashboardPage />
+            </Route>
+            <Route path='/rewards' exact={true}>
+              <RewardsPage />
             </Route>
             {/* <ProtectedRoute path='/users' exact={true} >
               <UsersList/>

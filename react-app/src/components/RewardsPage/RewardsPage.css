@@ -1,0 +1,59 @@
+.rewards-log-container{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 20px 20px;
+}
+.rewards-log-container div{
+  /* margin-left: 20px; */
+}
+.rewards-card-container{
+  display: flex;
+  flex-direction: row
+}
+.reward-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 280px;
+  height: 160px;
+  /* border: 1px solid black; */
+  margin:20px 20px 20px 0px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 1px rgb(175, 175, 175);
+}
+
+.fas.fa-medal{
+  font-size: 40px;
+  margin-right: 20px;
+}
+
+.reward-card div{
+  display: flex
+}
+.reward-info{
+  display:flex;
+  flex-direction:column;
+  margin-top: -5px
+
+}
+.reward-header{
+  font-size: 25px;
+  font-weight: bold;
+
+}
+/* .reward-header span{
+  margin-top: -2px;
+  padding: 0px
+} */
+.rewards-progress{
+  /* border: 1px solid black; */
+  margin: 20px 0px 0px 0px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(240, 240, 240);
+  border-radius: 5px
+}
