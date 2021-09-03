@@ -59,9 +59,9 @@ const RewardsPage = () => {
               <>
                 <div className='reward-card'>
                   <div>
-                    <div>
+                    <div className='reward-icon-container'>
                         <div className='fas fa-medal' style={{color:`${colorHex[reward.color_id]}`}}></div>
-
+                        <span> {getDaysElapsed(`${reward.created_at}`)} days ago</span>
                     </div>
                     <div className='reward-info'>
                       <span className='reward-header'>{reward.reward_name}</span>

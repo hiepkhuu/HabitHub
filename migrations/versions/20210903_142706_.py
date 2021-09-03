@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 1c0ee6d307ae
+Revision ID: cbe0b9a9a01b
 Revises: 
-Create Date: 2021-09-02 17:00:07.420292
+Create Date: 2021-09-03 14:27:06.260703
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '1c0ee6d307ae'
+revision = 'cbe0b9a9a01b'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -47,9 +47,9 @@ def upgrade():
     op.create_table('tasks',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('user_id', sa.Integer(), nullable=False),
-    sa.Column('task_name', sa.String(length=255), nullable=False),
-    sa.Column('task_detail', sa.String(length=255), nullable=False),
-    sa.Column('task_reason', sa.String(length=500), nullable=True),
+    sa.Column('task_name', sa.String(length=32), nullable=False),
+    sa.Column('task_detail', sa.String(length=32), nullable=False),
+    sa.Column('task_reason', sa.String(length=32), nullable=True),
     sa.Column('target_num', sa.Integer(), nullable=True),
     sa.Column('color_id', sa.Integer(), nullable=False),
     sa.Column('task_points', sa.Integer(), nullable=True),
@@ -71,9 +71,9 @@ def upgrade():
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('user_id', sa.Integer(), nullable=False),
     sa.Column('task_id', sa.Integer(), nullable=False),
-    sa.Column('reward_name', sa.String(length=255), nullable=False),
-    sa.Column('reward_detail', sa.String(length=255), nullable=True),
-    sa.Column('reward_reason', sa.String(length=500), nullable=True),
+    sa.Column('reward_name', sa.String(length=32), nullable=False),
+    sa.Column('reward_detail', sa.String(length=32), nullable=True),
+    sa.Column('reward_reason', sa.String(length=32), nullable=True),
     sa.Column('reward_points', sa.Integer(), nullable=True),
     sa.Column('created_at', sa.DateTime(), nullable=False),
     sa.Column('updated_at', sa.DateTime(), nullable=False),

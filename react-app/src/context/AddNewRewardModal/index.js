@@ -4,10 +4,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Redirect, useHistory, useParams } from 'react-router-dom';
 import Select, {components} from 'react-select';
 
-import { addNewTask, loadAllTasks,  } from '../../store/tasks'
+import {  loadAllTasks,  } from '../../store/tasks'
 import {loadSingleTask} from '../../store/singletask'
 import { getAllColors} from '../../store/colors'
 import CancelButton from './CancelButton';
+import { addNewReward } from '../../store/rewards';
 
 const AddNewRewardModal = ({setReloadTaskPage}) => {
   const dispatch = useDispatch();
@@ -16,7 +17,7 @@ const AddNewRewardModal = ({setReloadTaskPage}) => {
   const sessionUser = useSelector(state => state.session.user)
   const colors = useSelector(state => state.colors.colors)//mappable
   const singleTask = useSelector(state => state.singleTask)
-
+  const allTasks = useSelector(state => state.tasks)
   const rewards = useSelector(state => state.rewards.rewards)
   // console.log('jjjjjjjj',colors)
   const [showModal, setShowModal] = useState(false);
@@ -27,7 +28,7 @@ const AddNewRewardModal = ({setReloadTaskPage}) => {
   const [rewardPoints, setRewardPoints] = useState('')
   const [taskId, setTaskId] = useState('')
   // const [selectColor, setSelectColor] = useState('')
-  // console.log('name', rewardName,'detail', rewardDetail, 'reason',rewardReason,'num', targetNum, 'pts', rewardPoints, 'id', taskId)
+  console.log('name', rewardName,'detail', rewardDetail, 'reason',rewardReason, 'pts', rewardPoints, 'taskid', taskId)
 
   const colorsList =  [
     { value: '', label: 'Choose here', menuColor: 'darkgray' },
@@ -77,10 +78,10 @@ const AddNewRewardModal = ({setReloadTaskPage}) => {
 
 
 
-  const submitTask = async (e) => {
+  const submitReward = async (e) => {
     e.preventDefault()
 
-    const task = {
+    const reward = {
       user_id: sessionUser.id,
       task_id: taskId,
       reward_name: rewardName,
@@ -89,7 +90,7 @@ const AddNewRewardModal = ({setReloadTaskPage}) => {
       reward_points: rewardPoints,
 
     }
-    await dispatch(addNewTask(task))
+    await dispatch(addNewReward(reward))
 
     setRewardName('');
     setRewardDetail('');
@@ -116,7 +117,7 @@ const AddNewRewardModal = ({setReloadTaskPage}) => {
 
               {/* <button onClick={cancel}>Cancel</button> */}
               <h2>New Reward</h2>
-              <form className='add-task-form' onSubmit={submitTask} >
+              <form className='add-task-form' onSubmit={submitReward} >
                  <div>
                     <div>NAME</div>
                       <input
@@ -179,16 +180,16 @@ const AddNewRewardModal = ({setReloadTaskPage}) => {
                               style={{backgroundColor:`${singleTask.color_hue}`}}
                               >
 
-                                {rewards.map(item => (
+                                {allTasks?.tasks?.map(item => (
                                   <option
-                                    key={item.task_id}
-                                    value={item.task_id}
+                                    key={item.id}
+                                    value={item.id}
                                     // color={item.menuColor}
-                                    style={{backgroundColor:`${colorHex[item.color_id]}`}}
+                                    style={{backgroundColor:`${item.color_hue}`}}
                                     // onClick={()=> setSelectColor(item.color_id)}
                                   >
                                     {/* {getColorHex(item.value)} */}
-                                    {item.task}
+                                    {item.task_name}
                                   </option>
                                 ))}
                               </select>
@@ -202,7 +203,7 @@ const AddNewRewardModal = ({setReloadTaskPage}) => {
                       onChange={e=> setRewardReason(e.target.value)}
                       ></input>
                       <CancelButton setShowModal={setShowModal}/>
-                    <button  onClick={submitTask} >Save</button>
+                    <button  onClick={submitReward} >Save</button>
                   </div>
               </form>
 
