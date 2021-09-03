@@ -5,6 +5,7 @@ import './Modal.css';
 import './UpdateTaskModal/UpdateTaskModal.css'
 import './UpdateTaskModal/DeleteTaskModal.css'
 import './AddNewTaskModal/AddNewTaskModal.css'
+import './AddNewRewardModal/AddNewRewardModal.css'
 
 const ModalContext = React.createContext();
 

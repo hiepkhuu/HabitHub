@@ -1,17 +1,10 @@
 
-/* .color-circle-container{
-display:flex;
-
-} */
-
-
-
 .button-circle{
   cursor: pointer;
-  background-color: rgb(114, 161, 250);
-  font-size: 70px;
-  height: 70px;
-  width: 70px;
+  background-color: rgb(114, 250, 132);
+  font-size: 50px;
+  height: 50px;
+  width: 50px;
   border-radius: 50px;
   display:flex;
   align-items: center;
@@ -19,24 +12,10 @@ display:flex;
   color: white;
   cursor: pointer;
 }
-
 .button-circle:hover{
-  background-color: rgb(103, 146, 226);
+  background-color: rgb(103, 226, 124);
 }
 
-
-/* .Select-value{
-  border: 1px solid darkgray !important;
-}
-
-.Select-value-icon {
-  display: none !important;
-}
-
-.Select-value-label {
-  background-color: white;
-  color: #111;
-} */
 option{
   width: 250px;
   height: 45px;

@@ -27,6 +27,7 @@ class Reward(db.Model):
         'reward_name': self.reward_name,
         'reward_reason': self.reward_reason,
         'reward_points': self.reward_points,
+        'reward_detail': self.reward_detail,
         'created_at': self.created_at,
         'updated_at': self.updated_at
       }

@@ -1,27 +1,45 @@
 .rewards-log-container{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 80%;
-  margin: 20px 20px;
+  margin: 0px 20px 0px 20px;
+
 }
-.rewards-log-container div{
-  /* margin-left: 20px; */
+
+.rewards-left-container{
+  display:flex;
+  flex-direction: column;
+  width: 90%;
+  margin-right: 20px;
+  border-right: 1px solid rgb(226, 226, 226)
 }
+
+.rewards-headers{
+  display: flex;
+}
+
+.rewards-right-container{
+  display:flex;
+  flex-direction: column;
+  width: 90%
+
+}
+
 .rewards-card-container{
   display: flex;
-  flex-direction: row
+  flex-direction: column
 }
 .reward-card{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 280px;
+  width: 500px;
   height: 160px;
   /* border: 1px solid black; */
   margin:20px 20px 20px 0px;
   padding: 20px;
   border-radius: 5px;
-  box-shadow: 0px 0px 10px 1px rgb(175, 175, 175);
+  box-shadow: 0px 0px 10px 1px rgb(206, 204, 204);
 }
 
 .fas.fa-medal{
@@ -39,7 +57,7 @@
 
 }
 .reward-header{
-  font-size: 25px;
+  font-size: 22px;
   font-weight: bold;
 
 }
@@ -57,3 +75,8 @@
   background-color: rgb(240, 240, 240);
   border-radius: 5px
 }
+/* .rewards-progress span{
+  color: gray;
+  margin-left: 5px;
+  font-size: 13px
+} */
