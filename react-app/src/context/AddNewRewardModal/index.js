@@ -24,9 +24,9 @@ const AddNewRewardModal = ({setReloadTaskPage}) => {
   const [rewardName, setRewardName] = useState('')
   const [rewardDetail, setRewardDetail] = useState('')
   const [rewardReason, setRewardReason] = useState('')
-  // const [targetNum, setTargetNum] = useState('')
   const [rewardPoints, setRewardPoints] = useState('')
-  const [taskId, setTaskId] = useState('')
+  const [taskId, setTaskId] = useState(1)
+  const [errors, setErrors] = useState([])
   // const [selectColor, setSelectColor] = useState('')
   console.log('name', rewardName,'detail', rewardDetail, 'reason',rewardReason, 'pts', rewardPoints, 'taskid', taskId)
 
@@ -41,7 +41,8 @@ const AddNewRewardModal = ({setReloadTaskPage}) => {
     { value: 7, label: 'Cotton Blue' ,menuColor: '#bae1ff'},
 
   ]
-
+  // const blankTask = {id: '', task_name: 'Choose a Task', color_hue:'#FFFFFF'}
+  // allTasks?tasks?.unshift(blankTask)
 
 
   const colorHex ={
@@ -61,12 +62,7 @@ const AddNewRewardModal = ({setReloadTaskPage}) => {
     await dispatch(getAllColors())
     await dispatch(loadAllTasks(sessionUser.id))
     await dispatch(loadSingleTask(taskId))
-    // const closeMenu = () => {
-    //   setShowModal(false)
-    // }
-    // document.addEventListener('click', closeMenu);
-
-    // return () => document.removeEventListener('click', closeMenu)
+ 
   }, [showModal, taskId])
 
 
@@ -90,17 +86,23 @@ const AddNewRewardModal = ({setReloadTaskPage}) => {
       reward_points: rewardPoints,
 
     }
-    await dispatch(addNewReward(reward))
 
-    setRewardName('');
-    setRewardDetail('');
-    setRewardReason('');
-    // setTargetNum('');
-    setTaskId('');
-    setRewardPoints('');
+    const data = await dispatch(addNewReward(reward))
+    if (data) {
+      setErrors(data);
+    } else{
+      setRewardName('');
+      setRewardDetail('');
+      setRewardReason('');
+      // setTargetNum('');
+      setTaskId('');
+      setRewardPoints('');
 
-    setShowModal(false)
-    setReloadTaskPage(true)
+      setShowModal(false)
+      setReloadTaskPage(true)
+    }
+
+
   }
 
   return (
@@ -117,14 +119,21 @@ const AddNewRewardModal = ({setReloadTaskPage}) => {
 
               {/* <button onClick={cancel}>Cancel</button> */}
               <h2>New Reward</h2>
+              <div>
+                {errors.map((error, ind) => (
+                  <div key={ind}>{error}</div>
+                ))}
+              </div>
               <form className='add-task-form' onSubmit={submitReward} >
                  <div>
                     <div>NAME</div>
                       <input
                       type='text'
                       rows='1'
+                      placeholder='Alexander Steak House Dinner'
                       value={rewardName}
                       onChange={e=> setRewardName(e.target.value)}
+                      required={true}
                       />
                     <div className='section'>
                         <div>
@@ -132,6 +141,7 @@ const AddNewRewardModal = ({setReloadTaskPage}) => {
                               <input
                               type='text'
                               rows='2'
+                              placeholder='on the weekend'
                               value={rewardDetail}
                               onChange={e=> setRewardDetail(e.target.value)}
                               ></input>
@@ -140,42 +150,21 @@ const AddNewRewardModal = ({setReloadTaskPage}) => {
                             <div>POINTS</div>
                               <input
                               type='number'
+                              placeholder='66'
                               value={rewardPoints}
                               onChange={e=> setRewardPoints(e.target.value)}
                               />
                         </div>
-                        {/* <div>
-                            <div>TARGET WEEKLY</div>
-                              <input
-                              type='number'
-                              value={targetNum}
-                              onChange={e=> setTargetNum(e.target.value)}
-                              />
-                        </div> */}
+
                      </div>
                     <div className='section'>
-                        {/* <div>
-                            <div>POINTS</div>
-                              <input
-                              type='number'
-                              value={rewardPoints}
-                              onChange={e=> setRewardPoints(e.target.value)}
-                              />
-                        </div> */}
+
                         <div>
                             <div>TASK</div>
-                            {/* <Select
 
-                                // styles={customStyles}
-
-                                // components={{ Option }}
-
-                                onChange={e=> setTaskId(e.target.value)}
-                                options={options}
-                              /> */}
                               <select
                               onChange={e=>setTaskId(e.target.value)}
-                              placeholder='select a task'
+
 
                               style={{backgroundColor:`${singleTask.color_hue}`}}
                               >
@@ -184,11 +173,11 @@ const AddNewRewardModal = ({setReloadTaskPage}) => {
                                   <option
                                     key={item.id}
                                     value={item.id}
-                                    // color={item.menuColor}
+                                    placeholder='select a task'
                                     style={{backgroundColor:`${item.color_hue}`}}
-                                    // onClick={()=> setSelectColor(item.color_id)}
+
                                   >
-                                    {/* {getColorHex(item.value)} */}
+
                                     {item.task_name}
                                   </option>
                                 ))}
@@ -202,7 +191,7 @@ const AddNewRewardModal = ({setReloadTaskPage}) => {
                       value={rewardReason}
                       onChange={e=> setRewardReason(e.target.value)}
                       ></input>
-                      <CancelButton setShowModal={setShowModal}/>
+                      <CancelButton setShowModal={setShowModal} setRewardDetail={setRewardDetail} setRewardName={setRewardName} setRewardPoints={setRewardPoints} setTaskId={setTaskId} setRewardReason={setRewardReason} setErrors={setErrors}/>
                     <button  onClick={submitReward} >Save</button>
                   </div>
               </form>

@@ -1,7 +1,7 @@
 from sqlalchemy.orm import session
 from app.models import Reward, User, db
 from app.forms import RewardForm
-from app.api.auth_routes import validation_errors_to_error_messages
+# from app.api.auth_routes import validation_errors_to_error_messages
 from flask import Blueprint, jsonify, request
 from flask_login import login_required
 
@@ -9,6 +9,15 @@ from flask_login import login_required
 
 reward_routes = Blueprint('rewards', __name__)
 
+def validation_errors_to_error_messages(validation_errors):
+    """
+    Simple function that turns the WTForms validation errors into a simple list
+    """
+    errorMessages = []
+    for field in validation_errors:
+        for error in validation_errors[field]:
+            errorMessages.append(f'{error}')
+    return errorMessages
 
 @reward_routes.route('users/<int:user_id>')
 @login_required
@@ -43,10 +52,8 @@ def create_reward():
     form.populate_obj(reward)
     db.session.add(reward)
     db.session.commit()
-
-  return reward.to_dict()
-
-  return {'errors': validation_errors_to_error_messages(form.errors)}
+    return reward.to_dict()
+  return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 @reward_routes.route('/<int:reward_id>', methods=['GET', 'PUT', 'DELETE'])
 def edit_reward_by_id(reward_id):
@@ -63,7 +70,7 @@ def edit_reward_by_id(reward_id):
       form.populate_obj(reward)
       db.session.commit()
       return reward.to_dict()
-    return {'errors': validation_errors_to_error_messages(form.errors)}
+    return {'errors': validation_errors_to_error_messages(form.errors)}, 401
   elif request.method == 'DELETE':
     deleted_reward = reward ###do we really need to return what we delete?
     db.session.delete(reward)

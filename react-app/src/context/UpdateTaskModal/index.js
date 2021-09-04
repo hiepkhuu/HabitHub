@@ -23,6 +23,7 @@ const UpdateTaskModal = ({setReloadTaskPage, reloadTaskPage, habitId}) => {
   const [taskPoints, setTaskPoints] = useState()
   const [colorId, setColorId] = useState()
   const [reloadUpdate, setReloadUpdate] = useState(false)
+  const [errors, setErrors] = useState([])
   useEffect(async () => {
 
     await dispatch(loadSingleTask(habitId))
@@ -126,17 +127,22 @@ const UpdateTaskModal = ({setReloadTaskPage, reloadTaskPage, habitId}) => {
       task_points: taskPoints,
       id:singleTask.id
     }
-    await dispatch(updateSingleTask(task))
+    const data = await dispatch(updateSingleTask(task))
 
-    setTaskName('');
-    setTaskDetail('');
-    setTaskReason('');
-    setTargetNum('');
-    setColorId('');
-    setTaskPoints('');
+    if (data) {
+      setErrors(data);
+    } else {
+      setTaskName('');
+      setTaskDetail('');
+      setTaskReason('');
+      setTargetNum('');
+      setColorId('');
+      setTaskPoints('');
 
-    setShowModal(false)
-    reloadTaskPage ? setReloadTaskPage(false) : setReloadTaskPage(true)
+      setShowModal(false)
+      reloadTaskPage ? setReloadTaskPage(false) : setReloadTaskPage(true)
+    }
+
   }
 
   return(
@@ -153,6 +159,11 @@ const UpdateTaskModal = ({setReloadTaskPage, reloadTaskPage, habitId}) => {
           <DeleteTaskModal setReloadTaskPage={setReloadTaskPage} setShowModal={setShowModal} taskId={singleTask.id} taskName={singleTask.task_name} />
             {/* <button onClick={cancel}>Cancel</button> */}
             <h2>Upadate Habit</h2>
+            <div>
+              {errors.map((error, ind) => (
+                <div key={ind}>{error}</div>
+              ))}
+            </div>
             <form className='add-task-form' onSubmit={submitTask} >
               <div>
 
@@ -162,6 +173,7 @@ const UpdateTaskModal = ({setReloadTaskPage, reloadTaskPage, habitId}) => {
                     rows='1'
                     value={taskName}
                     onChange={e=> setTaskName(e.target.value)}
+                    required={true}
                     />
                   <div className='section'>
                       <div>
@@ -171,6 +183,7 @@ const UpdateTaskModal = ({setReloadTaskPage, reloadTaskPage, habitId}) => {
                             rows='2'
                             value={taskDetail}
                             onChange={e=> setTaskDetail(e.target.value)}
+                            required={true}
                             ></input>
                       </div>
                       <div>
@@ -206,6 +219,7 @@ const UpdateTaskModal = ({setReloadTaskPage, reloadTaskPage, habitId}) => {
                             onChange={e=>setColorId(e.target.value)}
 
                             style={{backgroundColor:`${colorHex[colorId]}`}}
+                            required={true}
                             // label={colorName[colorId]}
                             >
 

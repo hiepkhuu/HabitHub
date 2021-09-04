@@ -23,6 +23,7 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
   const [taskPoints, setTaskPoints] = useState('')
   const [colorId, setColorId] = useState('')
   const [selectColor, setSelectColor] = useState('')
+  const [errors, setErrors] = useState([])
   console.log('name', taskName,'detail', taskDetail, 'reason',taskReason,'num', targetNum, 'pts', taskPoints, 'id', colorId)
 
   const colorsList =  [
@@ -113,17 +114,21 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
       color_id: colorId,
       task_points: taskPoints,
     }
-    await dispatch(addNewTask(task))
+    const data = await dispatch(addNewTask(task))
+    if (data) {
+      setErrors(data);
+    } else {
+      setTaskName('');
+      setTaskDetail('');
+      setTaskReason('');
+      setTargetNum('');
+      setColorId('');
+      setTaskPoints('');
 
-    setTaskName('');
-    setTaskDetail('');
-    setTaskReason('');
-    setTargetNum('');
-    setColorId('');
-    setTaskPoints('');
+      setShowModal(false)
+      setReloadTaskPage(true)
+    }
 
-    setShowModal(false)
-    setReloadTaskPage(true)
   }
 
   return (
@@ -140,6 +145,11 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
 
               {/* <button onClick={cancel}>Cancel</button> */}
               <h2>New Habit</h2>
+              <div>
+                {errors.map((error, ind) => (
+                  <div key={ind}>{error}</div>
+                ))}
+              </div>
               <form className='add-task-form' onSubmit={submitTask} >
                  <div>
                     <div>NAME</div>
@@ -148,6 +158,7 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
                       rows='1'
                       value={taskName}
                       onChange={e=> setTaskName(e.target.value)}
+                      required={true}
                       />
                     <div className='section'>
                         <div>
@@ -157,6 +168,7 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
                               rows='2'
                               value={taskDetail}
                               onChange={e=> setTaskDetail(e.target.value)}
+                              required={true}
                               ></input>
                         </div>
                         <div>
@@ -179,19 +191,11 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
                         </div>
                         <div>
                             <div>COLOR</div>
-                            {/* <Select
-
-                                // styles={customStyles}
-
-                                // components={{ Option }}
-
-                                onChange={e=> setColorId(e.target.value)}
-                                options={options}
-                              /> */}
+                          
                               <select
                               onChange={e=>setColorId(e.target.value)}
                               placeholder='select a color'
-
+                              required={true}
                               style={{backgroundColor:`${colorHex[colorId]}`}}
                               >
 
@@ -217,7 +221,15 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
                       value={taskReason}
                       onChange={e=> setTaskReason(e.target.value)}
                       ></input>
-                      <CancelButton setShowModal={setShowModal}/>
+                      <CancelButton setShowModal={setShowModal}
+                      setTaskName={setTaskName}
+                      setTaskDetail={setTaskDetail}
+                      setTaskReason={setTaskReason}
+                      setTargetNum={setTargetNum}
+                      setTaskPoints={setTaskPoints}
+                      setErrors={setErrors}
+                      setColorId={setColorId}
+                      />
                     <button  onClick={submitTask} >Save</button>
                   </div>
               </form>

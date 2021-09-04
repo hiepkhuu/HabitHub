@@ -49,9 +49,17 @@ export const addNewReward = (reward) => async (dispatch) => {
     ),
   })
 
-  if (res.ok){
-    const newReward = await res.json()
-    dispatch(createReward(newReward))
+  if (res.ok) {
+    const data = await res.json();
+    dispatch(createReward(data))
+    return null;
+  } else if (res.status < 500) {
+    const data = await res.json();
+    if (data.errors) {
+      return data.errors;
+    }
+  } else {
+    return ['An error occurred. Please try again.']
   }
 }
 
@@ -63,6 +71,14 @@ export const deleteSingleReward = (rewardId) => async(dispatch) => {
     const reward = await res.json()
 
     dispatch(deleteReward(reward))
+    return null;
+  }else if (res.status < 500) {
+    const data = await res.json();
+    if (data.errors) {
+      return data.errors;
+    }
+  } else {
+    return ['An error occurred. Please try again.']
   }
 }
 
@@ -78,6 +94,14 @@ export const updateSingleReward = (reward) => async(dispatch) => {
     const reward = await res.json()
 
     dispatch(updateReward(reward))
+    return null;
+  }else if (res.status < 500) {
+    const data = await res.json();
+    if (data.errors) {
+      return data.errors;
+    }
+  } else {
+    return ['An error occurred. Please try again.']
   }
 }
 

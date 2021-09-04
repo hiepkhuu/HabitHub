@@ -9,6 +9,15 @@ from flask_login import login_required
 
 task_routes = Blueprint('tasks', __name__)
 
+def validation_errors_to_error_messages(validation_errors):
+    """
+    Simple function that turns the WTForms validation errors into a simple list
+    """
+    errorMessages = []
+    for field in validation_errors:
+        for error in validation_errors[field]:
+            errorMessages.append(f'{error}')
+    return errorMessages
 
 @task_routes.route('users/<int:user_id>')
 @login_required
@@ -47,7 +56,7 @@ def create_task():
 
       return task.to_dict()
 
-  return {'errors': validation_errors_to_error_messages(form.errors)}
+  return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 @task_routes.route('/<int:task_id>', methods=['GET', 'PUT', 'DELETE'])
 def edit_task_by_id(task_id):
@@ -64,7 +73,7 @@ def edit_task_by_id(task_id):
       form.populate_obj(task)
       db.session.commit()
       return task.to_dict()
-    return {'errors': validation_errors_to_error_messages(form.errors)}
+    return {'errors': validation_errors_to_error_messages(form.errors)}, 401
   elif request.method == 'DELETE':
     deleted_task = task ###do we really need to return what we delete?
     db.session.delete(task)

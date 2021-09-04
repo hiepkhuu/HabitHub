@@ -18,6 +18,7 @@ display:flex;
   justify-content: center;
   color: white;
   cursor: pointer;
+
 }
 
 .button-circle:hover{
@@ -25,18 +26,7 @@ display:flex;
 }
 
 
-/* .Select-value{
-  border: 1px solid darkgray !important;
-}
 
-.Select-value-icon {
-  display: none !important;
-}
-
-.Select-value-label {
-  background-color: white;
-  color: #111;
-} */
 option{
   width: 250px;
   height: 45px;

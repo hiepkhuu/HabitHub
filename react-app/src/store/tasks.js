@@ -52,6 +52,15 @@ export const addNewTask = (task) => async (dispatch) => {
   if (res.ok){
     const newTask = await res.json()
     dispatch(createTask(newTask))
+    return null;
+  }else if (res.status < 500) {
+    const data = await res.json();
+
+    if (data.errors) {
+      return data.errors;
+    }
+  } else {
+    return ['An error occurred. Please try again.']
   }
 }
 
@@ -63,6 +72,14 @@ export const deleteSingleTask = (taskId) => async(dispatch) => {
     const task = await res.json()
 
     dispatch(deleteTask(task))
+    return null;
+  }else if (res.status < 500) {
+    const data = await res.json();
+    if (data.errors) {
+      return data.errors;
+    }
+  } else {
+    return ['An error occurred. Please try again.']
   }
 }
 
@@ -78,6 +95,14 @@ export const updateSingleTask = (task) => async(dispatch) => {
     const task = await res.json()
 
     dispatch(updateTask(task))
+    return null;
+  }else if (res.status < 500) {
+    const data = await res.json();
+    if (data.errors) {
+      return data.errors;
+    }
+  } else {
+    return ['An error occurred. Please try again.']
   }
 }
 

@@ -48,10 +48,16 @@ const RewardsPage = () => {
   return (
     <>
 
-    <div className='rewards-log-container'>
+    {/* <div className='rewards-log-container'> */}
         <div className='rewards-left-container'>
             <div className='rewards-header'>
+                <div>
                 <h2>In Progress</h2>
+                </div>
+                <div className='add-habit-button'>
+                    {/* <AddNewHabitModal setReloadTaskPage={setReloadTaskPage} reloadTaskPage={reloadTaskPage}/> */}
+                    <AddNewRewardModal setReloadTaskPage={setReloadTaskPage} reloadTaskPage={reloadTaskPage}/>
+                </div>
             </div>
 
             <div className='rewards-card-container'>
@@ -83,10 +89,7 @@ const RewardsPage = () => {
                 </div>
               </>
             ))}
-            <div className='add-habit-button'>
-                    {/* <AddNewHabitModal setReloadTaskPage={setReloadTaskPage} reloadTaskPage={reloadTaskPage}/> */}
-                    <AddNewRewardModal setReloadTaskPage={setReloadTaskPage} reloadTaskPage={reloadTaskPage}/>
-            </div>
+
        </div>
      </div>
      <div className='rewards-right-container'>
@@ -98,19 +101,26 @@ const RewardsPage = () => {
                 <>
                 <div className='reward-card'>
                   <div>
-                    <div className='fas fa-medal' style={{color:`${colorHex[reward.color_id]}`}}></div>
+                    <div className='reward-icon-container'>
+                        <div className='fas fa-medal' style={{color:`${colorHex[reward.color_id]}`}}></div>
+                        <span> {getDaysElapsed(`${reward.created_at}`)} days ago</span>
+                    </div>
                     <div className='reward-info'>
                       <span className='reward-header'>{reward.reward_name}</span>
-                      <span></span> {reward.reward_detail}
+                      <span>{reward.task}</span>
+                      <span>Details: {reward.reward_detail}</span>
+                      <span>Motivation: {reward.reward_reason}</span>
+
+
+
 
                     </div>
                   </div>
 
-                      <span> </span> {reward.reward_reason}
+                  <div className='rewards-progress'>
+                    <p>{reward.reward_points} pts</p>
 
-                      <span>{getDaysElapsed(`${reward.created_at}`)} days</span>
-
-                  <div className='rewards-progress'><span>{reward.reward_points} pts</span></div>
+                  </div>
 
                 </div>
               </>
@@ -119,7 +129,7 @@ const RewardsPage = () => {
 
        </div>
 
-    </div>
+    {/* </div> */}
     </>
   )
 }
