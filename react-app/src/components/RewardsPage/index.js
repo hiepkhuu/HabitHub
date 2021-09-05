@@ -75,10 +75,12 @@ const RewardsPage = () => {
                         <span> {getDaysElapsed(`${reward.created_at}`)} days ago</span>
                     </div>
                     <div className='reward-info'>
-                      <span className='reward-header'>{reward.reward_name}</span>
-                      <div onClick={() => setRewardId(reward.id)}className='edit-button'>
-                        <UpdateRewardModal setReloadTaskPage={setReloadTaskPage} rewardId={rewardId} />
-                      {/* <UpdateTaskModal setReloadTaskPage={setReloadTaskPage} habitId={habitId} /> */}
+                      <div className='reward-header-container'>
+                          <span className='reward-header'>{reward.reward_name}</span>
+                          <div onClick={() => setRewardId(reward.id)}className='edit-button'>
+                            <UpdateRewardModal setReloadTaskPage={setReloadTaskPage} rewardId={rewardId} rewardColor={reward.color_id} />
+                          {/* <UpdateTaskModal setReloadTaskPage={setReloadTaskPage} habitId={habitId} /> */}
+                          </div>
                       </div>
                       <div>
                       <span className='fas fa-th-list' style={{color: colorHex[`${reward.color_id}`]}}></span>

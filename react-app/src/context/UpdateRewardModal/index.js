@@ -12,7 +12,7 @@ import { getAllColors} from '../../store/colors'
 import CancelButton from './CancelButton';
 import {updateSingleReward } from '../../store/rewards';
 import DeleteTaskModal from './DeleteRewardModal';
-const UpdateRewardModal = ({setReloadTaskPage, reloadTaskPage, rewardId}) => {
+const UpdateRewardModal = ({setReloadTaskPage, reloadTaskPage, rewardId, rewardColor}) => {
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -28,7 +28,7 @@ const UpdateRewardModal = ({setReloadTaskPage, reloadTaskPage, rewardId}) => {
   const targetedReward = rewards.filter(reward => reward.id === rewardId)
 
   // const targetedTask = allTasks.filter(task => task.id === targetedReward[0].task_id)
-  // console.log(targetedReward,'herherehehehehe')
+  console.log(targetedReward,'herherehehehehe')
   // console.log('jjjjjjjj',targetedTask)
   const [showModal, setShowModal] = useState(false);
   const [rewardName, setRewardName] = useState('')
@@ -124,7 +124,7 @@ const UpdateRewardModal = ({setReloadTaskPage, reloadTaskPage, rewardId}) => {
 
   return (
     <>
-     <p text='Edit Comment' style={{ backgroundColor: `${singleTask.color_hue}` }}
+     <p text='Edit Comment' style={{ backgroundColor: colorHex[`${rewardColor}`] }}
        className='update-reward-dots' onClick={() => { setShowModal(true) }} ><span>...</span></p>
       <div >
 

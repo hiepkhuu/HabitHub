@@ -23,7 +23,10 @@
   display: none;
 
 }
-
+.reward-header-container {
+  display: flex;
+  justify-content: space-between
+}
 .rewards-header{
   display: flex;
   justify-content: space-between;
