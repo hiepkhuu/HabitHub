@@ -51,9 +51,9 @@ const RewardsPage = () => {
     {/* <div className='rewards-log-container'> */}
         <div className='rewards-left-container'>
             <div className='rewards-header'>
-                <div>
+                
                 <h2>In Progress</h2>
-                </div>
+
                 <div className='add-habit-button'>
                     {/* <AddNewHabitModal setReloadTaskPage={setReloadTaskPage} reloadTaskPage={reloadTaskPage}/> */}
                     <AddNewRewardModal setReloadTaskPage={setReloadTaskPage} reloadTaskPage={reloadTaskPage}/>

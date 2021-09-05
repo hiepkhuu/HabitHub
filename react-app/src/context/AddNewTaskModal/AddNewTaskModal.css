@@ -3,8 +3,31 @@
 display:flex;
 
 } */
+/*
+for all error messages!!! */
+.error-message{
+  background-color:  rgb(250, 216, 216);
 
 
+
+
+
+  padding:10px;
+ border-radius: 5px;
+
+
+
+
+
+
+
+
+
+
+  margin-bottom:10px;
+
+  color: rgb(238, 29, 29);
+}
 
 .button-circle{
   cursor: pointer;
@@ -18,6 +41,8 @@ display:flex;
   justify-content: center;
   color: white;
   cursor: pointer;
+  margin-top:20px
+
 
 }
 

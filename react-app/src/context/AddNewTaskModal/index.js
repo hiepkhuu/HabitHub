@@ -145,14 +145,14 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
 
               {/* <button onClick={cancel}>Cancel</button> */}
               <h2>New Habit</h2>
-              <div>
+              <div >
                 {errors.map((error, ind) => (
-                  <div key={ind}>{error}</div>
+                  <div className='error-message' key={ind}>{error}</div>
                 ))}
               </div>
               <form className='add-task-form' onSubmit={submitTask} >
                  <div>
-                    <div>NAME</div>
+                    <div>NAME *</div>
                       <input
                       type='text'
                       rows='1'
@@ -172,7 +172,7 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
                               ></input>
                         </div>
                         <div>
-                            <div>TARGET WEEKLY</div>
+                            <div>TARGET WEEKLY *</div>
                               <input
                               type='number'
                               value={targetNum}
@@ -182,7 +182,7 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
                      </div>
                     <div className='section'>
                         <div>
-                            <div>VALUE</div>
+                            <div>POINTS *</div>
                               <input
                               type='number'
                               value={taskPoints}
@@ -190,8 +190,8 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
                               />
                         </div>
                         <div>
-                            <div>COLOR</div>
-                          
+                            <div>COLOR *</div>
+
                               <select
                               onChange={e=>setColorId(e.target.value)}
                               placeholder='select a color'

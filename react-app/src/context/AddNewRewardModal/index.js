@@ -62,7 +62,7 @@ const AddNewRewardModal = ({setReloadTaskPage}) => {
     await dispatch(getAllColors())
     await dispatch(loadAllTasks(sessionUser.id))
     await dispatch(loadSingleTask(taskId))
- 
+
   }, [showModal, taskId])
 
 
@@ -119,14 +119,14 @@ const AddNewRewardModal = ({setReloadTaskPage}) => {
 
               {/* <button onClick={cancel}>Cancel</button> */}
               <h2>New Reward</h2>
-              <div>
+              <div >
                 {errors.map((error, ind) => (
-                  <div key={ind}>{error}</div>
+                  <div className='error-message' key={ind}>{error}</div>
                 ))}
               </div>
               <form className='add-task-form' onSubmit={submitReward} >
                  <div>
-                    <div>NAME</div>
+                    <div>NAME *</div>
                       <input
                       type='text'
                       rows='1'
@@ -147,7 +147,7 @@ const AddNewRewardModal = ({setReloadTaskPage}) => {
                               ></input>
                         </div>
                         <div>
-                            <div>POINTS</div>
+                            <div>POINTS *</div>
                               <input
                               type='number'
                               placeholder='66'
@@ -160,7 +160,7 @@ const AddNewRewardModal = ({setReloadTaskPage}) => {
                     <div className='section'>
 
                         <div>
-                            <div>TASK</div>
+                            <div>TASK *</div>
 
                               <select
                               onChange={e=>setTaskId(e.target.value)}

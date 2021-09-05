@@ -26,7 +26,7 @@
   align-items: center;
   flex-direction: column;
   color:rgb(0, 0, 0);
-  width: 100%
+  width: 80%
 }
 .greet-card h1{
   /* box-shadow: 0px 0px 20px 3px rgb(2, 2, 2); */

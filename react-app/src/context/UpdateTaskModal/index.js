@@ -159,15 +159,15 @@ const UpdateTaskModal = ({setReloadTaskPage, reloadTaskPage, habitId}) => {
           <DeleteTaskModal setReloadTaskPage={setReloadTaskPage} setShowModal={setShowModal} taskId={singleTask.id} taskName={singleTask.task_name} />
             {/* <button onClick={cancel}>Cancel</button> */}
             <h2>Upadate Habit</h2>
-            <div>
+            <div >
               {errors.map((error, ind) => (
-                <div key={ind}>{error}</div>
+                <div className='error-message' key={ind}>{error}</div>
               ))}
             </div>
             <form className='add-task-form' onSubmit={submitTask} >
               <div>
 
-                  <div>NAME</div>
+                  <div>NAME *</div>
                     <input
                     type='text'
                     rows='1'
@@ -187,7 +187,7 @@ const UpdateTaskModal = ({setReloadTaskPage, reloadTaskPage, habitId}) => {
                             ></input>
                       </div>
                       <div>
-                          <div>TARGET WEEKLY</div>
+                          <div>TARGET WEEKLY *</div>
                             <input
                             type='number'
                             value={targetNum}
@@ -197,7 +197,7 @@ const UpdateTaskModal = ({setReloadTaskPage, reloadTaskPage, habitId}) => {
                   </div>
                   <div className='section'>
                       <div>
-                          <div>VALUE</div>
+                          <div>POINTS *</div>
                             <input
                             type='number'
                             value={taskPoints}
@@ -205,7 +205,7 @@ const UpdateTaskModal = ({setReloadTaskPage, reloadTaskPage, habitId}) => {
                             />
                       </div>
                       <div>
-                          <div>COLOR</div>
+                          <div>COLOR *</div>
                           {/* <Select
 
                               // styles={customStyles}
