@@ -125,7 +125,7 @@ const UpdateRewardModal = ({setReloadTaskPage, reloadTaskPage, rewardId}) => {
   return (
     <>
      <p text='Edit Comment' style={{ backgroundColor: `${singleTask.color_hue}` }}
-       className='update-dots' onClick={() => { setShowModal(true) }} ><span>...</span></p>
+       className='update-reward-dots' onClick={() => { setShowModal(true) }} ><span>...</span></p>
       <div >
 
         {showModal && (

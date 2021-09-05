@@ -36,3 +36,22 @@ select{
   border-radius: 5px;
 
 }
+.update-reward-dots{
+  cursor: pointer;
+  color: rgb(3, 3, 3) !important;
+  padding: 5px;
+  border-radius: 50px;
+  display:flex;
+  align-items: center;
+  font-size: 20px;
+  height:10px;
+  width:10px;
+  margin:0px;
+  padding:4px 5px 4px 3px;
+  box-shadow: 0px 1px 2px 0.5px rgb(114, 114, 114);
+}
+.update-reward-dots span{
+  margin:0px;
+  padding-bottom: 11px;
+
+}
