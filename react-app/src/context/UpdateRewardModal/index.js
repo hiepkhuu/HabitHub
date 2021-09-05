@@ -4,13 +4,15 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Redirect, useHistory, useParams } from 'react-router-dom';
 import Select, {components} from 'react-select';
 
-import {  loadAllTasks,  } from '../../store/tasks'
-import {loadSingleTask} from '../../store/singletask'
+
+import { loadAllRewards } from '../../store/rewards';
+import { loadAllTasks } from '../../store/tasks';
+import { loadSingleTask } from '../../store/singletask';
 import { getAllColors} from '../../store/colors'
 import CancelButton from './CancelButton';
-import { addNewReward } from '../../store/rewards';
+import {updateSingleReward } from '../../store/rewards';
 
-const AddNewRewardModal = ({setReloadTaskPage, reloadTaskPage}) => {
+const UpdateRewardModal = ({setReloadTaskPage, reloadTaskPage, rewardId}) => {
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -19,13 +21,21 @@ const AddNewRewardModal = ({setReloadTaskPage, reloadTaskPage}) => {
   let singleTask = useSelector(state => state.singleTask)
   // singleTask = {id: '', task_name: 'Choose a Task', color_hue:'#FFFFFF'}
   const allTasks = useSelector(state => state.tasks)
+
+
   const rewards = useSelector(state => state.rewards.rewards)
-  // console.log('jjjjjjjj',colors)
+
+  const targetedReward = rewards.filter(reward => reward.id === rewardId)
+
+  // const targetedTask = allTasks.filter(task => task.id === targetedReward[0].task_id)
+  // console.log(targetedReward,'herherehehehehe')
+  // console.log('jjjjjjjj',targetedTask)
   const [showModal, setShowModal] = useState(false);
   const [rewardName, setRewardName] = useState('')
   const [rewardDetail, setRewardDetail] = useState('')
   const [rewardReason, setRewardReason] = useState('')
   const [rewardPoints, setRewardPoints] = useState('')
+  const [colorId, setColorId] = useState('')
   const [taskId, setTaskId] = useState('')
   const [errors, setErrors] = useState([])
   // const [selectColor, setSelectColor] = useState('')
@@ -42,8 +52,6 @@ const AddNewRewardModal = ({setReloadTaskPage, reloadTaskPage}) => {
     { value: 7, label: 'Cotton Blue' ,menuColor: '#bae1ff'},
 
   ]
-  // const blankTask = {id: '', task_name: 'Choose a Task', color_hue:'#FFFFFF'}
-  // allTasks?.tasks?.unshift(blankTask)
 
 
   const colorHex ={
@@ -61,12 +69,17 @@ const AddNewRewardModal = ({setReloadTaskPage, reloadTaskPage}) => {
   useEffect(async () => {
     if (!showModal) return;
     await dispatch(getAllColors())
+    await dispatch(loadAllRewards(sessionUser.id))
     await dispatch(loadAllTasks(sessionUser.id))
-    await dispatch(loadSingleTask(taskId))
+    await setRewardName(targetedReward[0].reward_name || '')
+    await setRewardDetail(targetedReward[0].reward_detail || '')
+    await setRewardReason(targetedReward[0].reward_reason || '')
+    await setRewardPoints(targetedReward[0].reward_points || '')
+    await setTaskId(targetedReward[0].task_id)
+    await setColorId(targetedReward[0].color_id)
 
-    // const blankTask = {id: '', task_name: 'Choose a Task', color_hue:'#FFFFFF'}
-    // allTasks?.tasks?.unshift(blankTask)
-  }, [showModal, taskId])
+
+  }, [showModal, rewardId])
 
 
   if (!sessionUser) {
@@ -81,6 +94,7 @@ const AddNewRewardModal = ({setReloadTaskPage, reloadTaskPage}) => {
     e.preventDefault()
 
     const reward = {
+      id: rewardId,
       user_id: sessionUser.id,
       task_id: taskId,
       reward_name: rewardName,
@@ -90,7 +104,7 @@ const AddNewRewardModal = ({setReloadTaskPage, reloadTaskPage}) => {
 
     }
 
-    const data = await dispatch(addNewReward(reward))
+    const data = await dispatch(updateSingleReward(reward))
     if (data) {
       setErrors(data);
     } else{
@@ -110,10 +124,8 @@ const AddNewRewardModal = ({setReloadTaskPage, reloadTaskPage}) => {
 
   return (
     <>
-      <div className='habit-add' onClick={() => { setShowModal(true) }} >
-        <div className='button-circle' > +</div>
-
-      </div>
+     <p text='Edit Comment' style={{ backgroundColor: `${singleTask.color_hue}` }}
+       className='update-dots' onClick={() => { setShowModal(true) }} ><span>...</span></p>
       <div >
 
         {showModal && (
@@ -169,8 +181,9 @@ const AddNewRewardModal = ({setReloadTaskPage, reloadTaskPage}) => {
                               onChange={e=>setTaskId(e.target.value)}
                               select='select a task'
 
-                              style={{backgroundColor:`${singleTask.color_hue}`}}
+                              // style={{backgroundColor:colorHex[`${colorId}`]}}
                               >
+                                {/* {targetedReward[0].task} */}
 
                                 {allTasks?.tasks?.map(item => (
                                   <option
@@ -208,4 +221,4 @@ const AddNewRewardModal = ({setReloadTaskPage, reloadTaskPage}) => {
   );
 }
 
-export default AddNewRewardModal;
+export default UpdateRewardModal;

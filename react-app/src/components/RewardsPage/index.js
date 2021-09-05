@@ -5,8 +5,9 @@ import './RewardsPage.css'
 
 import { loadAllRewards } from '../../store/rewards'
 import { getAllColors } from '../../store/colors'
-import AddNewHabitModal from '../../context/AddNewTaskModal'
+// import AddNewHabitModal from '../../context/AddNewTaskModal'
 import AddNewRewardModal from '../../context/AddNewRewardModal'
+import UpdateRewardModal from '../../context/UpdateRewardModal'
 
 
 const RewardsPage = () => {
@@ -15,7 +16,7 @@ const RewardsPage = () => {
   const allRewards = useSelector(state => state.rewards)
 
   const [reloadTaskPage, setReloadTaskPage] = useState(false)
-
+  const [rewardId, setRewardId] = useState('')
 
   useEffect(async() => {
     await dispatch(loadAllRewards(sessionUser.id))
@@ -32,6 +33,7 @@ const RewardsPage = () => {
     5:' #B5EAD7' ,
     6: ' #C7CEEA' ,
     7: '#bae1ff',
+    8: '#F0E68C'
   }
 
 
@@ -68,11 +70,16 @@ const RewardsPage = () => {
                 <div className='reward-card'>
                   <div>
                     <div className='reward-icon-container'>
+                        {/* <div className='fas fa-medal' style={{color:`${colorHex[reward.color_id]}`}}></div> */}
                         <div className='fas fa-medal' style={{color:`${colorHex[reward.color_id]}`}}></div>
                         <span> {getDaysElapsed(`${reward.created_at}`)} days ago</span>
                     </div>
                     <div className='reward-info'>
                       <span className='reward-header'>{reward.reward_name}</span>
+                      <div onClick={() => setRewardId(reward.id)}className='edit-button'>
+                        <UpdateRewardModal setReloadTaskPage={setReloadTaskPage} rewardId={rewardId} />
+                      {/* <UpdateTaskModal setReloadTaskPage={setReloadTaskPage} habitId={habitId} /> */}
+                      </div>
                       <div>
                       <span className='fas fa-th-list' style={{color: colorHex[`${reward.color_id}`]}}></span>
                       <span> {reward.task}</span>

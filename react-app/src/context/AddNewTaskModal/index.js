@@ -49,48 +49,12 @@ const AddNewHabitModal = ({setReloadTaskPage, reloadTaskPage}) => {
   }
   // console.log('thisthisthisthisthisthis', selectColor)
 
-  // const selectStyle = () =>{
-  //   console.log(colorHex[colorId])
-  // }
-
-  // const Option = props => {
-  //   return (
-  //     <div style={{ backgroundColor: props.data.menuColor }}>
-  //       <components.Option {...props} />
-  //     </div>
-  //   );
-  // };
-
-  // const customStyles = {
-  //   option: (provided, state) => ({
-  //     ...provided,
-  //     width:'400px',
-  //     // borderBottom: '1px dotted pink',
-  //     // color: state.isSelected ? 'rgb(255,255,255,0.1)' : 'rgb(255,255,255,0.1)',
-  //     padding: 10,
-  //   }),
-  // }
-  // const options = [
-  //   { value: 1, label: 'Salmon Pink', menuColor: '#FF9AA2' },
-  //   { value: 2, label: 'Melon' ,menuColor: '#FFB7B2'},
-  //   { value: 3, label: 'Pale Orange' ,menuColor: '#FFDAC1'},
-  //   { value: 4, label: 'Pale LightGreen' ,menuColor: '#E2F0CB'},
-  //   { value: 5, label: 'Magin Mint',menuColor: ' #B5EAD7' },
-  //   { value: 6, label: 'Periwinkle',menuColor: ' #C7CEEA' },
-  //   { value: 7, label: 'Cotton Blue' ,menuColor: '#bae1ff'},
-
-  // ]
 
 
   useEffect(async () => {
     if (!showModal) return;
     await dispatch(getAllColors())
-    // const closeMenu = () => {
-    //   setShowModal(false)
-    // }
-    // document.addEventListener('click', closeMenu);
 
-    // return () => document.removeEventListener('click', closeMenu)
   }, [showModal])
 
 
