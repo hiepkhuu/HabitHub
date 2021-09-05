@@ -23,7 +23,7 @@ const RewardsPage = () => {
     await dispatch(getAllColors())
     setReloadTaskPage(false)
 
-  },[])
+  },[reloadTaskPage])
 
   const colorHex ={
     1:'#FF9AA2' ,

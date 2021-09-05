@@ -11,7 +11,7 @@ import { loadSingleTask } from '../../store/singletask';
 import { getAllColors} from '../../store/colors'
 import CancelButton from './CancelButton';
 import {updateSingleReward } from '../../store/rewards';
-
+import DeleteTaskModal from './DeleteRewardModal';
 const UpdateRewardModal = ({setReloadTaskPage, reloadTaskPage, rewardId}) => {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -130,8 +130,11 @@ const UpdateRewardModal = ({setReloadTaskPage, reloadTaskPage, rewardId}) => {
 
         {showModal && (
           <Modal>
-            <div className='edit-form-container'>
 
+
+
+            <div className='edit-form-container'>
+            <DeleteTaskModal setReloadTaskPage={setReloadTaskPage} reloadTaskPage={reloadTaskPage} setShowModal={setShowModal} rewardId={rewardId} rewardName={targetedReward[0].reward_name} />
               {/* <button onClick={cancel}>Cancel</button> */}
               <h2>New Reward</h2>
               <div >
