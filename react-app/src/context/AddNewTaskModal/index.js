@@ -8,7 +8,7 @@ import { addNewTask } from '../../store/tasks'
 import { getAllColors} from '../../store/colors'
 import CancelButton from './CancelButton';
 
-const AddNewHabitModal = ({setReloadTaskPage}) => {
+const AddNewHabitModal = ({setReloadTaskPage, reloadTaskPage}) => {
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -126,7 +126,7 @@ const AddNewHabitModal = ({setReloadTaskPage}) => {
       setTaskPoints('');
 
       setShowModal(false)
-      setReloadTaskPage(true)
+      reloadTaskPage ? setReloadTaskPage(false): setReloadTaskPage(true)
     }
 
   }

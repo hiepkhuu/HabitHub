@@ -5,25 +5,31 @@
   color: #8191b9;
 }
 .delete-task-form{
-  background-color: #424a5f;
-  padding: 20px
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 25px
+}
+.delete-task-form p{
+  font-size: 18px;
 }
 .delete-task-form span{
   font-weight: 500;
   font-size: 20px;
-  color: white;
+  color: rgb(2, 2, 2);
   /* text-decoration: underline */
 }
 
-.delete-button{
-  margin: 0px 5px;
-  height: 32px;
-  width: 100px;
+.delete-task-form button{
+  margin: 20px 5px 0px 0px;
+  height: 50px;
+  width: 120px;
   cursor: pointer;
-  background-color:#a07764;
+  background-color:#6485a0;
   border: 1px solid#6475a0;
   border-radius: 5px;
-  color: rgb(234, 236, 240);
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  box-shadow: 0px 1px 1px 1px rgb(106, 106, 106)
 }
  .delete-task-form button:hover{
   background-color:#485575;

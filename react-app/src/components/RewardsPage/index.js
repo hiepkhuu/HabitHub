@@ -45,13 +45,15 @@ const RewardsPage = () => {
     return (diffInTime / (1000 * 3600 * 24)).toFixed(0)
   }
 
+
+
   return (
     <>
 
     {/* <div className='rewards-log-container'> */}
         <div className='rewards-left-container'>
             <div className='rewards-header'>
-                
+
                 <h2>In Progress</h2>
 
                 <div className='add-habit-button'>
@@ -71,10 +73,18 @@ const RewardsPage = () => {
                     </div>
                     <div className='reward-info'>
                       <span className='reward-header'>{reward.reward_name}</span>
-                      <span>{reward.task}</span>
-                      <span>Details: {reward.reward_detail}</span>
-                      <span>Motivation: {reward.reward_reason}</span>
-
+                      <div>
+                      <span className='fas fa-th-list' style={{color: colorHex[`${reward.color_id}`]}}></span>
+                      <span> {reward.task}</span>
+                      </div>
+                      <div>
+                      <span className='fas fa-clock' style={{color:`${colorHex[reward.color_id]}`}}>  </span>
+                      <span> {reward.reward_detail}</span>
+                      </div>
+                      <div>
+                        <span className='fas fa-sticky-note' style={{color:`${colorHex[reward.color_id]}`}}> </span>
+                        <span> {reward.reward_reason}</span>
+                      </div>
 
 
 
@@ -107,10 +117,18 @@ const RewardsPage = () => {
                     </div>
                     <div className='reward-info'>
                       <span className='reward-header'>{reward.reward_name}</span>
-                      <span>{reward.task}</span>
-                      <span>Details: {reward.reward_detail}</span>
-                      <span>Motivation: {reward.reward_reason}</span>
-
+                      <div>
+                      <span className='fas fa-th-list' style={{color: colorHex[`${reward.color_id}`]}}></span>
+                      <span> {reward.task}</span>
+                      </div>
+                      <div>
+                      <span className='fas fa-clock' style={{color:`${colorHex[reward.color_id]}`}}>  </span>
+                      <span> {reward.reward_detail}</span>
+                      </div>
+                      <div>
+                        <span className='fas fa-sticky-note' style={{color:`${colorHex[reward.color_id]}`}}> </span>
+                        <span> {reward.reward_reason}</span>
+                      </div>
 
 
 

@@ -41,7 +41,7 @@ const DeleteTaskModal = ({setReloadTaskPage,taskId, setShowModal, taskName}) => 
       {showMenu && (
         <Modal>
              <div className='delete-task-form'>
-                <p>Are you sure you want to delete <span>{taskName}</span> ?</p>
+                <p>Are you sure you want to delete <span>"{taskName}"</span> ?</p>
                 <button onClick={deleteTask}>yes</button>
                 <button onClick={cancel}>no</button>
               </div>

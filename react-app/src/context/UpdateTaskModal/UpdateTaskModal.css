@@ -67,7 +67,8 @@
   border: 1px solid#6475a0;
   border-radius: 5px;
   color: rgb(255, 255, 255);
-  font-size: 20px
+  font-size: 20px;
+  box-shadow: 0px 1px 1px 1px rgb(106, 106, 106)
 }
 
 .edit-form-container button:hover{
@@ -97,6 +98,7 @@
   width:25px;
   margin:0px;
   padding:5px 6px 5px 4px;
+  box-shadow: 0px 1px 2px 0.5px rgb(114, 114, 114);
 }
 .update-dots span{
   margin:0px 0px 25px 0px;

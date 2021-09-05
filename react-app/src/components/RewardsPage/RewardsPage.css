@@ -14,7 +14,8 @@
   border-right: 1px solid rgb(226, 226, 226);
   overflow-y: scroll;
   overflow-x: hidden;
-  margin-left: 20px
+  margin-left: 20px;
+
 
 
 }
@@ -62,12 +63,13 @@
   margin:20px 10px 20px 10px;
   padding: 20px;
   border-radius: 5px;
-  box-shadow: 0px 0px 10px 1px rgb(206, 204, 204);
+  box-shadow: 0px 1px 2px 1px rgb(206, 204, 204);
 }
 
 .fas.fa-medal{
   font-size: 50px;
   margin-right: 20px;
+  text-shadow:  0px 1px 1px rgb(87, 86, 86);
 }
 
 .reward-card div{
@@ -89,8 +91,19 @@
 .reward-info{
   display:flex;
   flex-direction:column;
-  margin-top: -5px
+  margin-top: -5px;
+  width: 100%
 
+}
+
+.fas.fa-th-list,
+.fas.fa-clock,
+.fas.fa-sticky-note{
+  margin: 4px 5px 0px 0px;
+  text-shadow:  0px 1px 1px rgb(87, 86, 86);
+}
+.reward-info div span{
+  margin: 1px 5px 0px 0px
 }
 .reward-header{
   font-size: 20px;
@@ -101,6 +114,10 @@
   margin-top: -2px;
   padding: 0px
 } */
+
+.reward-labels{
+  font-weight: bold;
+}
 .rewards-progress{
   /* border: 1px solid black; */
   margin: 10px 0px 0px 0px;

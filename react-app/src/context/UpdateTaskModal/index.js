@@ -54,20 +54,6 @@ const UpdateTaskModal = ({setReloadTaskPage, reloadTaskPage, habitId}) => {
 
 
 
-  // const [taskName, setTaskName] = useState(singleTask[0]?.task_name)
-  // const [taskDetail, setTaskDetail] = useState(singleTask[0]?.task_detail)
-  // const [taskReason, setTaskReason] = useState(singleTask[0]?.task_reason)
-  // const [targetNum, setTargetNum] = useState(singleTask[0]?.target_num)
-  // const [taskPoints, setTaskPoints] = useState(singleTask[0]?.task_points)
-  // const [colorId, setColorId] = useState(singleTask[0]?.color_id)
-
-  // const [taskName, setTaskName] = useState(singleTask?.task_name || "")
-  // const [taskDetail, setTaskDetail] = useState(singleTask?.task_detail)
-  // const [taskReason, setTaskReason] = useState(singleTask?.task_reason)
-  // const [targetNum, setTargetNum] = useState(singleTask?.target_num)
-  // const [taskPoints, setTaskPoints] = useState(singleTask?.task_points)
-  // const [colorId, setColorId] = useState(singleTask?.color_id)
-  // const [showDeleteMsg, setShowDeleteMsg] = useState(false);
 
 
   const colorsList =  [
@@ -158,7 +144,7 @@ const UpdateTaskModal = ({setReloadTaskPage, reloadTaskPage, habitId}) => {
           <div className='edit-form-container'>
           <DeleteTaskModal setReloadTaskPage={setReloadTaskPage} setShowModal={setShowModal} taskId={singleTask.id} taskName={singleTask.task_name} />
             {/* <button onClick={cancel}>Cancel</button> */}
-            <h2>Upadate Habit</h2>
+            <h2>Update Habit</h2>
             <div >
               {errors.map((error, ind) => (
                 <div className='error-message' key={ind}>{error}</div>

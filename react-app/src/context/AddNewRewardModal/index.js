@@ -10,13 +10,14 @@ import { getAllColors} from '../../store/colors'
 import CancelButton from './CancelButton';
 import { addNewReward } from '../../store/rewards';
 
-const AddNewRewardModal = ({setReloadTaskPage}) => {
+const AddNewRewardModal = ({setReloadTaskPage, reloadTaskPage}) => {
   const dispatch = useDispatch();
   const history = useHistory();
 
   const sessionUser = useSelector(state => state.session.user)
   const colors = useSelector(state => state.colors.colors)//mappable
-  const singleTask = useSelector(state => state.singleTask)
+  let singleTask = useSelector(state => state.singleTask)
+  singleTask = {id: '', task_name: 'Choose a Task', color_hue:'#FFFFFF'}
   const allTasks = useSelector(state => state.tasks)
   const rewards = useSelector(state => state.rewards.rewards)
   // console.log('jjjjjjjj',colors)
@@ -25,7 +26,7 @@ const AddNewRewardModal = ({setReloadTaskPage}) => {
   const [rewardDetail, setRewardDetail] = useState('')
   const [rewardReason, setRewardReason] = useState('')
   const [rewardPoints, setRewardPoints] = useState('')
-  const [taskId, setTaskId] = useState(1)
+  const [taskId, setTaskId] = useState('')
   const [errors, setErrors] = useState([])
   // const [selectColor, setSelectColor] = useState('')
   console.log('name', rewardName,'detail', rewardDetail, 'reason',rewardReason, 'pts', rewardPoints, 'taskid', taskId)
@@ -42,7 +43,7 @@ const AddNewRewardModal = ({setReloadTaskPage}) => {
 
   ]
   // const blankTask = {id: '', task_name: 'Choose a Task', color_hue:'#FFFFFF'}
-  // allTasks?tasks?.unshift(blankTask)
+  // allTasks?.tasks?.unshift(blankTask)
 
 
   const colorHex ={
@@ -63,6 +64,8 @@ const AddNewRewardModal = ({setReloadTaskPage}) => {
     await dispatch(loadAllTasks(sessionUser.id))
     await dispatch(loadSingleTask(taskId))
 
+    // const blankTask = {id: '', task_name: 'Choose a Task', color_hue:'#FFFFFF'}
+    // allTasks?.tasks?.unshift(blankTask)
   }, [showModal, taskId])
 
 
@@ -99,7 +102,7 @@ const AddNewRewardModal = ({setReloadTaskPage}) => {
       setRewardPoints('');
 
       setShowModal(false)
-      setReloadTaskPage(true)
+      reloadTaskPage? setReloadTaskPage(false): setReloadTaskPage(true)
     }
 
 
@@ -164,7 +167,7 @@ const AddNewRewardModal = ({setReloadTaskPage}) => {
 
                               <select
                               onChange={e=>setTaskId(e.target.value)}
-
+                              select='select a task'
 
                               style={{backgroundColor:`${singleTask.color_hue}`}}
                               >
@@ -173,7 +176,7 @@ const AddNewRewardModal = ({setReloadTaskPage}) => {
                                   <option
                                     key={item.id}
                                     value={item.id}
-                                    placeholder='select a task'
+
                                     style={{backgroundColor:`${item.color_hue}`}}
 
                                   >
