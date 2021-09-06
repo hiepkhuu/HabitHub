@@ -1,14 +1,16 @@
 import React, {useState} from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { NavLink, Redirect } from 'react-router-dom'
+import { NavLink, Redirect , useHistory} from 'react-router-dom'
 import './SplashPage.css'
 import { login } from '../../store/session';
 // import './habithub-logo.png'
 
 const SplashPage = () =>{
+  const history=useHistory()
   const dispatch = useDispatch()
-
+  const sessionUser = useSelector(state => state.user)
   const [errors, setErrors] = useState([])
+
   const onLogin = async (e) => {
     e.preventDefault();
     const email = 'demo@aa.io'
@@ -17,7 +19,14 @@ const SplashPage = () =>{
     if (data) {
       setErrors(data);
     }
+    history.push('/greeting')
+    return <Redirect to={'/greeting'} />
   };
+
+
+  if (sessionUser) {
+    return <Redirect to={'/greeting'} />;
+  }
   return (
     <div className='splash-page'>
        <div className='signed-out-navbar'>
@@ -43,13 +52,15 @@ const SplashPage = () =>{
           </div>
           <div className='splash-photo-container'>
             <h1>Build Golden Habits, Recieve Rewards, Unlock your Potential</h1>
-            <h3>Focus on what truly matters with Habitify. Build the best version of yourself by mastering your habits.</h3>
+            <h3>Focus on what truly matters with HabitHub. Build the best version of yourself by mastering your habits.</h3>
             <div  >
               {errors.map((error, ind) => (
                 <div className='error-message' key={ind}>{error}</div>
               ))}
             </div>
-            <button onClick={onLogin}>Demo Login</button>
+            <form onSubmit={onLogin}>
+            <button type='submit'>Demo Login</button>
+            </form>
           </div>
     </div>
   )
