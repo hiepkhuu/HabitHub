@@ -10,6 +10,7 @@ const LoginForm = () => {
   const [password, setPassword] = useState('');
   const sessionUser = useSelector(state => state.session.user);
   const dispatch = useDispatch();
+  console.log(email, password)
 
   const onLogin = async (e) => {
     e.preventDefault();
@@ -36,7 +37,7 @@ const LoginForm = () => {
     <div className='login-page'>
 
           <div className='signed-out-navbar'>
-              
+
                 <div  className='splash-button'>
                   <NavLink   to='/' exact={true} activeClassName='active'>
                     <div className='' >
@@ -58,35 +59,39 @@ const LoginForm = () => {
                 </NavLink>
               </div>
           </div>
+      <div className='form-container'>
+          <form className='login-form' onSubmit={onLogin}>
 
-    <form onSubmit={onLogin}>
-      <div  >
-        {errors.map((error, ind) => (
-          <div className='error-message' key={ind}>{error}</div>
-        ))}
+            <div className='short-logo'></div>
+            <div  >
+              {errors.map((error, ind) => (
+                <div className='error-message' key={ind}>{error}</div>
+              ))}
+            </div>
+            <div>
+              <label htmlFor='email'>Email</label>
+              <input
+                name='email'
+                type='text'
+                placeholder='Email'
+                value={email}
+                onChange={updateEmail}
+              />
+            </div>
+            <div>
+              <label htmlFor='password'>Password</label>
+              <input
+                name='password'
+                type='password'
+                placeholder='Password'
+                value={password}
+                onChange={updatePassword}
+              />
+              <button type='submit' >Login</button>
+            </div>
+
+          </form>
       </div>
-      <div>
-        <label htmlFor='email'>Email</label>
-        <input
-          name='email'
-          type='text'
-          placeholder='Email'
-          value={email}
-          onChange={updateEmail}
-        />
-      </div>
-      <div>
-        <label htmlFor='password'>Password</label>
-        <input
-          name='password'
-          type='password'
-          placeholder='Password'
-          value={password}
-          onChange={updatePassword}
-        />
-        <button type='submit'>Login</button>
-      </div>
-    </form>
     </div>
     </>
 

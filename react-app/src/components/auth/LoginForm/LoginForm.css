@@ -1,5 +1,5 @@
 .login-page{
-  width: 100vw
+  width: 100vw;
 }
 .signed-out-navbar{
   display: flex;
@@ -14,5 +14,66 @@
 .NavLink{
   text-decoration: none;
   margin: 0px 5px;
-  
+
+}
+
+.form-container{
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+.login-form{
+
+  padding: 40px 20px;
+  border-radius:10px;
+  box-shadow: 0px 1px 1px 1px gray;
+  display:flex;
+  flex-direction: column;
+  /* justify-content:center; */
+  align-items: center;
+  width: 30%;
+  /* height: 50% */
+}
+.short-logo{
+  background-image: url('./habithub-short-logo.png');
+  background-size: cover;
+  width: 70px;
+  height: 40px;
+  margin-bottom: 60px
+}
+.login-form input{
+  height: 3.5em;
+  width: 20em;
+  /* color: lightblue; */
+  font-size: 16px;
+  padding-left: 10px;
+  border: 1px solid lightgray;
+  border-radius: 5px
+
+}
+.login-form div{
+  margin-bottom: .5em
+}
+.login-form button{
+  text-decoration: none;
+  margin: 10px 5px;
+  color: black;
+  background-color: rgb(144, 186, 232);
+  width: 89px;
+  border-radius: 5px;
+  box-shadow: 0px 1px 1px 1px gray;
+  transition:  all 0.3s ease 0s;
+  font-size: 20px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor:pointer
+}
+
+.login-form button:hover{
+  transform: translateY(-5px)
 }

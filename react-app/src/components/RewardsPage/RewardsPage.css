@@ -71,8 +71,12 @@
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0px 1px 2px 1px rgb(206, 204, 204);
+  transition:  all 0.3s ease 0s;
 }
 
+.reward-card:hover{
+  transform: translateY(-5px)
+}
 .fas.fa-medal{
   font-size: 50px;
   margin-right: 20px;
