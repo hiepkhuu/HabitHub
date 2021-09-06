@@ -6,13 +6,18 @@ body {
   font-family: 'Lato', sans-serif !important;
   margin: 0px;
   color: black;
-
+  height:90vh;
+  width: 90vw;
+  border:0px;
+  margin:0px
 
 }
 #root{
   display: flex;
   flex-direction: row;
-  height: 100vh
+  height: 90vh;
+  width: 90vw;
+  border:0px
 
 }
 /* #app{
