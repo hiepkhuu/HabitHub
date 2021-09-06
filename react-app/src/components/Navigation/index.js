@@ -14,30 +14,33 @@ const Navigation = ({ isLoaded }) => {
   if (sessionUser){
     sessionLinks = (
        <>
-          <div className='nav-links profile'>
-            <ProfileButton />
-          </div>
-          <div className='nav-links'>
-            <NavLink  className='nav-links btn' to={`/dashboard`} exact={true} activeClassName='active'>
-              <div className='home-logo'>
-              <span>habit dashboard</span>
+       <div id='signed-in'>
+          <div className='navbar'>
+              <div className='nav-links profile'>
+                <ProfileButton />
               </div>
-            </NavLink>
-          </div>
-          {/* <div className='nav-links'>
-            <NavLink to={`/greeting`} exact={true} activeClassName='active'>
-              <div className='home-logo'></div>
-              <button>greeting</button>
-            </NavLink>
-          </div> */}
-          <div className='nav-links'>
-            <NavLink className='nav-links btn' to={`/rewards`} exact={true} activeClassName='active'>
-              <div className='home-logo'>
-              <span>Rewards</span>
+              <div className='nav-links'>
+                <NavLink  className='nav-links btn' to={`/dashboard`} exact={true} activeClassName='active'>
+                  <div className='home-logo'>
+                  <span>habit dashboard</span>
+                  </div>
+                </NavLink>
               </div>
-            </NavLink>
+              {/* <div className='nav-links'>
+                <NavLink to={`/greeting`} exact={true} activeClassName='active'>
+                  <div className='home-logo'></div>
+                  <button>greeting</button>
+                </NavLink>
+              </div> */}
+              <div className='nav-links'>
+                <NavLink className='nav-links btn' to={`/rewards`} exact={true} activeClassName='active'>
+                  <div className='home-logo'>
+                  <span>Rewards</span>
+                  </div>
+                </NavLink>
+              </div>
           </div>
-
+       </div>
 
        </>
     )
@@ -45,18 +48,22 @@ const Navigation = ({ isLoaded }) => {
   } else {
       sessionLinks = (
         <>
-          <div className='entry'>
-            <NavLink className='NavLink' to='/login' exact={true} activeClassName='active'>
-              <div className='entry logout' >
-                   <p className=''>Login</p>
+        {/* <div id='signed-out'>
+          <div className='signed-out-navbar'>
+              <div className='entry'>
+                <NavLink className='NavLink' to='/login' exact={true} activeClassName='active'>
+                  <div className='entry logout' >
+                      <p className=''>Login</p>
+                  </div>
+                </NavLink>
+                <NavLink className='NavLink' to='/sign-up' exact={true} activeClassName='active'>
+                  <div className='entry logout' >
+                      <p className='entry p'>Sign Up</p>
+                  </div>
+                </NavLink>
               </div>
-            </NavLink>
-            <NavLink className='NavLink' to='/sign-up' exact={true} activeClassName='active'>
-              <div className='entry logout' >
-                  <p className='entry p'>Sign Up</p>
-              </div>
-            </NavLink>
           </div>
+        </div> */}
         </>
       );
   }
@@ -64,10 +71,11 @@ const Navigation = ({ isLoaded }) => {
 
   return (
     <>
-    <div className='navbar'>
+
         {isLoaded && sessionLinks}
-    </div>
-    <div className='rainbow-div'></div>
+
+    {/* <div className='rainbow-div'></div> */}
+
 
     </>
   );

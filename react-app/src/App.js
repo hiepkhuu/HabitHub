@@ -12,7 +12,7 @@ import GreetingPage from './components/GreetingPage';
 import DashboardPage from './components/DashboardPage';
 import RewardsPage from './components/RewardsPage';
 
-
+import SplashPage from './components/SplashPage'
 function App() {
   const sessionUser = useSelector(state => state.user)
   const [isLoaded, setisLoaded] = useState(false);
@@ -34,9 +34,15 @@ function App() {
     <>
       {/* if BrowserRouter ends up inside Navlink or Navigation, it will thorugh an error */}
       <BrowserRouter>
+        {/* <Switch>
+
+        </Switch> */}
         <Navigation isLoaded={isLoaded} />
         {isLoaded && (
           <Switch>
+            <Route path='/' exact={true}>
+              <SplashPage />
+            </Route>
             <Route path='/login' exact={true}>
               <LoginForm />
             </Route>

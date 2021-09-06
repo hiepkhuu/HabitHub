@@ -1,0 +1,18 @@
+.login-page{
+  width: 100vw
+}
+.signed-out-navbar{
+  display: flex;
+  justify-content: space-between;
+  height: 65px;
+  align-items: center
+}
+.entry{
+  display: flex;
+
+}
+.NavLink{
+  text-decoration: none;
+  margin: 0px 5px;
+  
+}

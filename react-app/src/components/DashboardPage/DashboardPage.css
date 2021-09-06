@@ -31,8 +31,12 @@
 
 .habit-card-container{
   margin: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
 }
-
+.habit-card-container:hover{
+  transform: translateY(-3px)
+}
 
 .habit-name{
   height: 60px;
@@ -54,7 +58,8 @@
 .add-habit-button{
   display: flex;
   align-self: flex-end;
-  margin:15px;
+  margin:15px 15px 5px 15px;
+  
 }
 
 .right-dashboard{

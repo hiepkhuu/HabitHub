@@ -112,20 +112,27 @@ const RewardsPage = () => {
        </div>
      </div>
      <div className='rewards-right-container'>
-            <div>
+            <div className='rewards-header'>
                   <h2>Completed!</h2>
               </div>
               <div className='rewards-card-container'>
               {allRewards?.rewards?.map(reward => (
                 <>
-                <div className='reward-card'>
+               <div className='reward-card'>
                   <div>
                     <div className='reward-icon-container'>
+                        {/* <div className='fas fa-medal' style={{color:`${colorHex[reward.color_id]}`}}></div> */}
                         <div className='fas fa-medal' style={{color:`${colorHex[reward.color_id]}`}}></div>
                         <span> {getDaysElapsed(`${reward.created_at}`)} days ago</span>
                     </div>
                     <div className='reward-info'>
-                      <span className='reward-header'>{reward.reward_name}</span>
+                      <div className='reward-header-container'>
+                          <span className='reward-header'>{reward.reward_name}</span>
+                          <div onClick={() => setRewardId(reward.id)}className='edit-button'>
+                            <UpdateRewardModal setReloadTaskPage={setReloadTaskPage} rewardId={rewardId} rewardColor={reward.color_id} />
+                          {/* <UpdateTaskModal setReloadTaskPage={setReloadTaskPage} habitId={habitId} /> */}
+                          </div>
+                      </div>
                       <div>
                       <span className='fas fa-th-list' style={{color: colorHex[`${reward.color_id}`]}}></span>
                       <span> {reward.task}</span>

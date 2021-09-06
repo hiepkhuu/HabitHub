@@ -35,6 +35,10 @@
 
 }
 
+.rewards-header h2{
+  margin-left: 10px
+}
+
 
 .rewards-right-container{
   display:flex;

@@ -1,0 +1,92 @@
+.splash-page{
+  width: 100vw
+}
+.signed-out-navbar{
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  align-items: center;
+  box-shadow: 0px 1px 5px 1px gray;
+  border-bottom: none !important;
+}
+.entry{
+  display: flex;
+
+}
+.NavLink{
+  text-decoration: none;
+  margin: 0px 5px;
+  color: black;
+  background-color: rgb(144, 186, 232);
+  width: 89px;
+  border-radius: 5px;
+  box-shadow: 0px 1px 1px 1px gray;
+  transition:  all 0.3s ease 0s;
+  font-size: 20px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center
+
+}
+.NavLink:hover{
+  transform: translateY(-5px)
+}
+
+.splash-photo-container{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  height: 100vh
+}
+.splash-photo-container h1{
+  margin-top: 80px;
+  font-size: 40px;
+  font-weight: bolder;
+  width: 600px;
+  text-align: center
+}
+.splash-photo-container h3{
+  /* margin-top: -450px; */
+  font-size: 25px;
+  font-weight: 100;
+  width: 700px;
+  margin-top: -20px;
+  text-align: center
+}
+
+.splash-photo-container button{
+  height: 50px;
+  border-radius: 5px;
+  font-size: 25px;
+  box-shadow: 0px 1px 1px 1px gray;
+  transition:  all 0.3s ease 0s;
+  cursor: pointer;
+}
+
+.splash-photo-container button:hover{
+  transform: translateY(-5px)
+}
+.splash-button{
+  border-radius: 5px;
+
+  transition:  all 0.3s ease 0s;
+  /* font-size: 20px; */
+
+}
+.splash-button:hover{
+  transform: translateY(-4px);
+  box-shadow: 0px 1px 1px 1px gray;
+}
+.splash-button div{
+  background-image: url('./habithub-logo.png');
+  height: 30px;
+  width:200px;
+  background-size: cover;
+  margin-bottom: 10px;
+  margin-top: -5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+

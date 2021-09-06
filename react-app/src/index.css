@@ -12,7 +12,12 @@ body {
 #root{
   display: flex;
   flex-direction: row;
-  /* background-image: url('./images/cloud-light.jpg') */
   height: 100vh
 
 }
+/* #app{
+  display: flex;
+  flex-direction: row;
+
+  height: 100vh
+} */

@@ -43,7 +43,7 @@ function ProfileButton() {
             <div className='profile-image'>
               <span className='far fa-smile'></span>
             </div>
-            <span className='account-username'>{sessionUser.username}</span>
+            <span className='account-username'>{sessionUser?.username}</span>
             <span className='fas fa-chevron-down'></span>
           </div>
         </div>
