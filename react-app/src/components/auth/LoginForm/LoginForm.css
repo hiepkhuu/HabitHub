@@ -35,6 +35,7 @@
   align-items: center;
   width: 30%;
   /* height: 50% */
+  margin-top: -40px
 }
 .short-logo{
   background-image: url('./habithub-short-logo.png');
@@ -75,5 +76,6 @@
 }
 
 .login-form button:hover{
-  transform: translateY(-5px)
+  transform: translateY(-5px);
+  background-color: rgb(150, 197, 247);
 }

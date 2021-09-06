@@ -1,5 +1,9 @@
 .splash-page{
-  width: 100vw
+  width: 93%;
+  background-image: url('./anime-garden.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 93%;
 }
 .signed-out-navbar{
   display: flex;
@@ -38,22 +42,24 @@
   flex-direction: column;
   /* justify-content: center; */
   align-items: center;
-  height: 100vh
+  /* height: 100vh */
 }
 .splash-photo-container h1{
   margin-top: 80px;
   font-size: 40px;
-  font-weight: bolder;
+  font-weight:1000;
   width: 600px;
-  text-align: center
+  text-align: center;
+  text-shadow: 0px 2px 2px rgb(179, 180, 179);
 }
 .splash-photo-container h3{
   /* margin-top: -450px; */
   font-size: 25px;
-  font-weight: 100;
+  font-weight: 600;
   width: 700px;
   margin-top: -20px;
-  text-align: center
+  text-align: center;
+  text-shadow: 0px 2px 2px rgb(179, 180, 179);
 }
 
 .splash-photo-container button{
@@ -80,7 +86,7 @@
   box-shadow: 0px 1px 1px 1px gray;
 }
 .splash-button div{
-  background-image: url('./habithub-logo.png');
+  background-image: url('./habithub-greenhouse.png');
   height: 30px;
   width:200px;
   background-size: cover;
