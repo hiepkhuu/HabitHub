@@ -13,11 +13,11 @@
 }
 
 .greet-image{
-  background-image: url('./mrs-sun.png');
+  background-image: url('./sprout.png');
   background-position:cover;
   background-size: cover;
   height:200px;
-  width: 200px;
+  width: 230px;
 
 }
 .greet-card{

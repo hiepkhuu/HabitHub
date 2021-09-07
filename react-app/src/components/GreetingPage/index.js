@@ -22,8 +22,8 @@ const GreetingPage = () => {
   return (
     <div className='greet-card'>
       <div className='greet-image'></div>
-      <h1>Hey {sessionUser.first_name}, You Got This!</h1>
-      <h3>Fuel yourself with an inspiring message:</h3>
+      <h1>Hey {sessionUser.first_name}! Great to have you back.</h1>
+      <h3>Ready to do some gardening?</h3>
       <div className='greeting'>
 
       <div>

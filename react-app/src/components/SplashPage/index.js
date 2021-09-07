@@ -30,13 +30,15 @@ const SplashPage = () =>{
   return (
     <div className='splash-page'>
        <div className='signed-out-navbar'>
-              <div  className='splash-button'>
+
                 <NavLink   to='/' exact={true} activeClassName='active'>
-                  <div className='' >
-                      <p className=''></p>
+                  <div  className='splash-button'>
+                    <div className='' >
+                        <p className=''></p>
+                    </div>
                   </div>
                 </NavLink>
-              </div>
+
               <div className='entry'>
                 <NavLink className='NavLink' to='/login' exact={true} activeClassName='active'>
                   <div className='entry logout' >
@@ -51,7 +53,7 @@ const SplashPage = () =>{
               </div>
           </div>
           <div className='splash-photo-container'>
-            <h1>Build Golden Habits, Recieve Rewards, Unlock your Potential</h1>
+            <h1>Build Green Habits, Recieve Rewards, Grow Your Garden</h1>
             <h3>Focus on what truly matters with HabitHub. Build the best version of yourself by mastering your habits.</h3>
             <div  >
               {errors.map((error, ind) => (

@@ -46,13 +46,13 @@ const SignUpForm = () => {
   return (
     <div className='signup-page'>
          <div className='signed-out-navbar'>
-              <div  className='splash-button'>
-                <NavLink   to='/' exact={true} activeClassName='active'>
-                  <div className='' >
-                      <p className=''></p>
+              <NavLink   to='/' exact={true} activeClassName='active'>
+                  <div  className='splash-button'>
+                    <div className='' >
+                        <p className=''></p>
+                    </div>
                   </div>
                 </NavLink>
-              </div>
               <div className='entry'>
                 <NavLink className='NavLink' to='/login' exact={true} activeClassName='active'>
                   <div className='entry logout' >
@@ -118,6 +118,7 @@ const SignUpForm = () => {
             ></input>
           </div>
           <button type='submit'>Sign Up</button>
+          <div>Already have an account? <NavLink className='nav-links' to='login'>Log in</NavLink></div>
         </form>
       </div>
     </div>
