@@ -12,6 +12,7 @@ from .api.task_routes import task_routes
 from .api.reward_routes import reward_routes
 from .api.quote_routes import qoute_routes
 from .api.color_routes import color_routes
+from .api.log_routes import log_routes
 
 from .seeds import seed_commands
 
@@ -39,6 +40,7 @@ app.register_blueprint(task_routes, url_prefix='/api/tasks')
 app.register_blueprint(reward_routes, url_prefix='/api/rewards')
 app.register_blueprint(qoute_routes, url_prefix='/api/quotes')
 app.register_blueprint(color_routes, url_prefix='/api/colors')
+app.register_blueprint(log_routes, url_prefix='/api/logs')
 db.init_app(app)
 Migrate(app, db)
 
