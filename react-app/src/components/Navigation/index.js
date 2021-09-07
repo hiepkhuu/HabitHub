@@ -21,7 +21,7 @@ const Navigation = ({ isLoaded }) => {
               </div>
               <div className='nav-links'>
                 <NavLink  className='nav-links btn' to={`/dashboard`} exact={true} activeClassName='active'>
-                  <div  id="dashboard-btn" className='home-logo'>
+                  <div  id="dashboard-btn" className='home-logo dashboard'>
                   <span>habit dashboard</span>
                   </div>
                 </NavLink>
@@ -34,7 +34,7 @@ const Navigation = ({ isLoaded }) => {
               </div> */}
               <div className='nav-links'>
                 <NavLink className='nav-links btn' to={`/rewards`} exact={true} activeClassName='active'>
-                  <div id="rewards-btn" className='home-logo'>
+                  <div id="rewards-btn" className='home-logo rewards'>
                   <span >Rewards</span>
                   </div>
                 </NavLink>
