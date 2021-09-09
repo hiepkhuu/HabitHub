@@ -116,12 +116,12 @@ const RewardsPage = () => {
                   <h2>Completed!</h2>
               </div>
               <div className='rewards-card-container'>
-              {allRewards?.rewards?.map(reward => (
+              {/* {allRewards?.rewards?.map(reward => (
                 <>
                <div className='reward-card'>
                   <div>
                     <div className='reward-icon-container'>
-                        {/* <div className='fas fa-medal' style={{color:`${colorHex[reward.color_id]}`}}></div> */}
+
                         <div className='fas fa-medal' style={{color:`${colorHex[reward.color_id]}`}}></div>
                         <span> {getDaysElapsed(`${reward.created_at}`)} days ago</span>
                     </div>
@@ -130,7 +130,7 @@ const RewardsPage = () => {
                           <span className='reward-header'>{reward.reward_name}</span>
                           <div onClick={() => setRewardId(reward.id)}className='edit-button'>
                             <UpdateRewardModal setReloadTaskPage={setReloadTaskPage} rewardId={rewardId} rewardColor={reward.color_id} />
-                          {/* <UpdateTaskModal setReloadTaskPage={setReloadTaskPage} habitId={habitId} /> */}
+
                           </div>
                       </div>
                       <div>
@@ -158,7 +158,8 @@ const RewardsPage = () => {
 
                 </div>
               </>
-              ))}
+              ))} */}
+              Log your habits to unloack rewards!
             </div>
 
        </div>
