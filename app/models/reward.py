@@ -22,6 +22,7 @@ class Reward(db.Model):
         'id': self.id,
         'user_id': self.user_id,
         'task': self.task.task_name,
+        'task_points': self.task.task_points,
         'task_id': self.task_id,
         'color_id': self.task.color_id,
         'reward_name': self.reward_name,

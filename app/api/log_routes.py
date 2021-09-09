@@ -23,7 +23,8 @@ def get_logs(id):
 @log_routes.route('/completed/<int:id>')
 def get_complete_logs(id):
     """
-    Get all logs that are true or completed
+    Get all logs that are true and completed by user
     """
-    logs = Log.query.filter(Log.task_id == id, Log.completed == True).all()
-    return {'completed logs': [log.to_dict() for log in logs]}
+    # logs = Log.query.filter(Log.task_id == id, Log.completed == True).all()
+    logs = Log.query.filter(Log.completed == True, Log.user_id == id).all()
+    return {'completed': [log.to_dict() for log in logs]}

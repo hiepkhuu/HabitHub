@@ -133,10 +133,21 @@
   /* border: 1px solid black; */
   margin: 10px 0px 0px 0px;
   height: 20px;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  background-color: rgb(240, 240, 240);
+  border-radius: 5px
+}
+
+.rewards-progress div{
+  margin:0px;
+  height:18px;
+  /* width: 100%; */
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(240, 240, 240);
+  background-color: red;
   border-radius: 5px
 }
 

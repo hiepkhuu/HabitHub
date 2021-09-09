@@ -11,13 +11,13 @@ const getTrueLogs = (log) => ({
   payload: log
 })
 
- export const getTaskLog = (id) => async (dispatch) => {
+ export const getAllLogs = (id) => async (dispatch) => {
   const res = await fetch(`/api/logs/${id}`)
   let data = await res.json();
   dispatch(getLogs(data))
 }
 
-export const getTrueLogs = (id) => async (dispatchEvent) =>{
+export const getAllCompletedLogs = (id) => async (dispatch) =>{
   const res = await fetch(`/api/logs/completed/${id}`)
   let data = await res.json();
   dispatch(getTrueLogs(data))

@@ -5,6 +5,7 @@ import './RewardsPage.css'
 
 import { loadAllRewards } from '../../store/rewards'
 import { getAllColors } from '../../store/colors'
+import { getAllCompletedLogs } from '../../store/logs'
 // import AddNewHabitModal from '../../context/AddNewTaskModal'
 import AddNewRewardModal from '../../context/AddNewRewardModal'
 import UpdateRewardModal from '../../context/UpdateRewardModal'
@@ -14,13 +15,19 @@ const RewardsPage = () => {
   const dispatch = useDispatch()
   const sessionUser = useSelector(state => state.session.user)
   const allRewards = useSelector(state => state.rewards)
+  const allTrueLogs = useSelector(state => state.logs.true_logs)
 
+
+  //  const rewardLogs = allTrueLogs.filter(log => log.task_id == 1)
+  //   console.log('thisthis', rewardLogs)
+    // console.log('sfasdfds', allTrueLogs)
   const [reloadTaskPage, setReloadTaskPage] = useState(false)
   const [rewardId, setRewardId] = useState('')
 
   useEffect(async() => {
     await dispatch(loadAllRewards(sessionUser.id))
     await dispatch(getAllColors())
+    await dispatch(getAllCompletedLogs(sessionUser.id))
     setReloadTaskPage(false)
 
   },[reloadTaskPage])
@@ -37,16 +44,31 @@ const RewardsPage = () => {
   }
 
 
+
   const getDaysElapsed = (start) =>{
     let startDate = new Date(start)
     let currentDate = new Date()
 
-    console.log('stare', startDate, 'current', currentDate)
+    // console.log('stare', startDate, 'current', currentDate)
 
     const diffInTime =  currentDate.getTime() - startDate.getTime()
     return (diffInTime / (1000 * 3600 * 24)).toFixed(0)
   }
 
+
+  const getPercentage = (task_id, task_points, reward_points) =>{
+  //  await dispatch(getAllCompletedLogs(reward_id))
+    const rewardLogs = allTrueLogs?.completed.filter(log => log.task_id == task_id)
+    const count = rewardLogs?.length
+    const progressPoints = count * task_points
+    console.log('progress',progressPoints,'reward_points', reward_points)
+
+    // const cat = [1,1,1,1,1,1,1]
+    // console.log(cat.length)
+    const percentage = progressPoints/reward_points * 100
+
+    return `${percentage.toFixed(0)}%`
+  }
 
 
   return (
@@ -101,8 +123,10 @@ const RewardsPage = () => {
                   </div>
 
                   <div className='rewards-progress'>
-                    <p>{reward.reward_points} pts</p>
 
+                    <div style={{backgroundColor:'orange', width: getPercentage(reward.task_id, reward.task_points, reward.reward_points)}}>
+                    <p>{getPercentage(reward.task_id, reward.task_points, reward.reward_points)}</p>
+                    </div>
                   </div>
 
                 </div>

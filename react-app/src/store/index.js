@@ -6,6 +6,7 @@ import quotes from './quotes';
 import colors from './colors';
 import singleTask from './singletask'
 import rewards from './rewards'
+import logs from './logs'
 
 const rootReducer = combineReducers({
   session,
@@ -13,7 +14,8 @@ const rootReducer = combineReducers({
   quotes,
   colors,
   singleTask,
-  rewards
+  rewards,
+  logs
 });
 
 
