@@ -20,3 +20,10 @@ def get_logs(id):
     logs = Log.query.filter(Log.task_id == id).all()
     return {'logs': [log.to_dict() for log in logs]}
 
+@log_routes.route('/completed/<int:id>')
+def get_complete_logs(id):
+    """
+    Get all logs that are true or completed
+    """
+    logs = Log.query.filter(Log.task_id == id, Log.completed == True).all()
+    return {'completed logs': [log.to_dict() for log in logs]}
