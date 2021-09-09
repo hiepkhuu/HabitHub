@@ -34,13 +34,8 @@ function App() {
     <>
       {/* if BrowserRouter ends up inside Navlink or Navigation, it will thorugh an error */}
       <BrowserRouter>
-        {/* <Switch>
-
-        </Switch> */}
-        <Navigation isLoaded={isLoaded} />
-        {isLoaded && (
-          <Switch>
-            <Route path='/' exact={true}>
+        <Switch>
+          <Route path='/' exact={true}>
               <SplashPage />
             </Route>
             <Route path='/login' exact={true}>
@@ -49,6 +44,11 @@ function App() {
             <Route path='/sign-up' exact={true}>
               <SignUpForm />
             </Route>
+        </Switch>
+        <Navigation isLoaded={isLoaded} />
+        {isLoaded && (
+          <Switch>
+
             <ProtectedRoute path={`/greeting`} exact={true} >
               {/* don't put stuff here or else it will show up twice */}
               {/* <GreetingPage /> */}

@@ -69,7 +69,9 @@ const DashboardPage = () => {
                           <div className='habit-name'>
                             <div className='habit-name-header'>
                               {task.task_name}
-
+                              <div>
+                                0/{task.target_num} times
+                              </div>
                             </div>
                             <div className='edit-button'>
                               {/* <UpdateTaskModal reloadTaskPage={reloadTaskPage} setReloadTaskPage={setReloadTaskPage} taskId={task.id} /> */}

@@ -52,7 +52,12 @@
 
 .habit-name-header{
   padding-left: 20px;
+  display:flex;
 
+}
+
+.habit-name-header div{
+  margin-left: 15px
 }
 
 .add-habit-button{
