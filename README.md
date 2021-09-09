@@ -1,134 +1,52 @@
-# Flask React Project
+# Welcome to Habithub!
+![image](https://user-images.githubusercontent.com/78452452/132393056-60cfd19a-6f6a-45f7-aed2-c064da4cbe4d.png)
+Habihub is a place where you may build green habits, see your results and unlock rewards. The layout concept is inspired by the simplicity of the app, Habitify, and with reward system that reflects gamified Habit app, Habitica. In habithub, users may log habits and grow a beutiful garden grid aimed at positive motivation to keep them going. 
 
-This is the starter for the Flask React project.
+### Live Link: [*Habithub*](https://habithub-app.herokuapp.com/)
 
-## Getting started
+## Technologies
+* <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="https://img.shields.io/badge/-JavaScript-F7DF1E?logo=JavaScript&logoColor=333333" /></a>
+* <a href="https://www.postgresql.org/"><img src="https://img.shields.io/badge/-PostgreSQL-336791?logo=PostgreSQL&logoColor=white" /></a>
+* <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-43853D?style=flat&logo=node.js&logoColor=white"></a>
+* <a href="https://reactjs.org/"><img src="https://img.shields.io/badge/react-%2320232a.svg?style=flat&logo=react&logoColor=%2361DAFB"></a>
+* <a href="https://redux.js.org/"><img src="https://img.shields.io/badge/redux-%23593d88.svg?style=flat&logo=redux&logoColor=white"></a>
+* <a href="https://developer.mozilla.org/en-US/docs/Web/CSS"><img src="https://img.shields.io/badge/-CSS3-1572B6?logo=CSS3" /></a>
+* <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" /></a>
+* <a href="https://flask.palletsprojects.com/"><img src="https://img.shields.io/badge/Flask-000000?style=flat&logo=flask&logoColor=white" /></a>
+* <a href="https://www.heroku.com/home"><img src="https://img.shields.io/badge/Heroku-430098?style=flat&logo=heroku&logoColor=white" /></a>
 
-1. Clone this repository (only this branch)
+## Features
 
-   ```bash
-   git clone https://github.com/appacademy-starters/python-project-starter.git
-   ```
+### User log in and sign up
+![image](https://user-images.githubusercontent.com/78452452/132447354-4dd22230-f7d5-4495-ab9e-8486641e706e.png)
+![image](https://user-images.githubusercontent.com/78452452/132447396-8a16fafc-3776-4efe-abf5-3793afd739fe.png)
 
-2. Install dependencies
+### View tasks and greeting message
+![image](https://user-images.githubusercontent.com/78452452/132447597-c5ba8230-1420-4631-a9b9-c4d4dab8c1a8.png)
+![image](https://user-images.githubusercontent.com/78452452/132447669-b551e117-865a-466b-993b-c4d466cebb84.png)
 
-      ```bash
-      pipenv install --dev -r dev-requirements.txt && pipenv install -r requirements.txt
-      ```
+### create, update and delete a task
+![image](https://user-images.githubusercontent.com/78452452/132447718-cdc83685-6baa-492c-86f2-0a3bbcc2e431.png)
+![image](https://user-images.githubusercontent.com/78452452/132447773-92f9fe49-05a8-4118-a61a-d0f61b7738fe.png)
+![image](https://user-images.githubusercontent.com/78452452/132447817-4531c330-39fd-489c-b3d6-4d0c5a27c254.png)
 
-3. Create a **.env** file based on the example with proper settings for your
-   development environment
-4. Setup your PostgreSQL user, password and database and make sure it matches your **.env** file
 
-5. Get into your pipenv, migrate your database, seed your database, and run your flask app
+### View rewards (inprogress and completed)
+![image](https://user-images.githubusercontent.com/78452452/132448109-4f31c237-6e34-48c8-a795-38996ebe8f01.png)
 
-   ```bash
-   pipenv shell
-   ```
+### create, update and delete a reward
+![image](https://user-images.githubusercontent.com/78452452/132448179-99ed2dd2-8e66-4513-b632-ec99aff6c469.png)
+![image](https://user-images.githubusercontent.com/78452452/132448212-792094af-f5c0-4502-b6ed-14d7b61efe6e.png)
+![image](https://user-images.githubusercontent.com/78452452/132448250-692d2de9-ea4f-48a9-b796-04ba531f58a8.png)
 
-   ```bash
-   flask db upgrade
-   ```
 
-   ```bash
-   flask seed all
-   ```
 
-   ```bash
-   flask run
-   ```
 
-6. To run the React App in development, checkout the [README](./react-app/README.md) inside the `react-app` directory.
+# Challenges 
+Understanding react hooks was always always challenging for me until this project. I was able to trace back from each page and truly understand how useEffect and useState can help me with rerendering my pages and update asyncronously. I'll never drop this nifty tool!
 
-***
-*IMPORTANT!*
-   If you add any python dependencies to your pipfiles, you'll need to regenerate your requirements.txt before deployment.
-   You can do this by running:
+# Stretch Goals 
+* log each habit
+* create grid garden to show users a visualization of their hard work 
 
-   ```bash
-   pipenv lock -r > requirements.txt
-   ```
 
-*ALSO IMPORTANT!*
-   psycopg2-binary MUST remain a dev dependency because you can't install it on apline-linux.
-   There is a layer in the Dockerfile that will install psycopg2 (not binary) for us.
-***
-
-## Deploy to Heroku
-
-1. Before you deploy, don't forget to run the following command in order to
-ensure that your production environment has all of your up-to-date
-dependencies. You only have to run this command when you have installed new
-Python packages since your last deployment, but if you aren't sure, it won't
-hurt to run it again.
-
-   ```bash
-   pipenv lock -r > requirements.txt
-   ```
-
-2. Create a new project on Heroku
-3. Under Resources click "Find more add-ons" and add the add on called "Heroku Postgres"
-4. Install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-command-line)
-5. Run
-
-   ```bash
-   heroku login
-   ```
-
-6. Login to the heroku container registry
-
-   ```bash
-   heroku container:login
-   ```
-
-7. Update the `REACT_APP_BASE_URL` variable in the Dockerfile.
-   This should be the full URL of your Heroku app: i.e. "https://flask-react-aa.herokuapp.com"
-8. Push your docker container to heroku from the root directory of your project.
-   (If you are using an M1 mac, follow [these steps below](#for-m1-mac-users) instead, then continue on to step 9.)
-   This will build the Dockerfile and push the image to your heroku container registry.
-
-   ```bash
-   heroku container:push web -a {NAME_OF_HEROKU_APP}
-   ```
-
-9. Release your docker container to heroku
-
-      ```bash
-      heroku container:release web -a {NAME_OF_HEROKU_APP}
-      ```
-
-10. set up your database
-
-      ```bash
-      heroku run -a {NAME_OF_HEROKU_APP} flask db upgrade
-      heroku run -a {NAME_OF_HEROKU_APP} flask seed all
-      ```
-
-11. Under Settings find "Config Vars" and add any additional/secret .env
-variables.
-
-12. profit
-
-### For M1 Mac users
-
-(Replaces **Step 8**)
-
-1. Build image with linux platform for heroku servers. Replace
-{NAME_OF_HEROKU_APP} with your own tag:
-
-   ```bash=
-   docker buildx build --platform linux/amd64 -t {NAME_OF_HEROKU_APP} .
-   ```
-
-2. Tag your app with the url for your apps registry. Make sure to use the name
-of your Heroku app in the url and tag name:
-
-   ```bash=2
-   docker tag {NAME_OF_HEROKU_APP} registry.heroku.com/{NAME_OF_HEROKU_APP}/web
-   ```
-
-3. Use docker to push the image to the Heroku container registry:
-
-   ```bash=3
-   docker push registry.heroku.com/{NAME_OF_HEROKU_APP}/web
-   ```
