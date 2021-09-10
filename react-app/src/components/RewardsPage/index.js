@@ -24,10 +24,10 @@ const RewardsPage = () => {
   const [reloadTaskPage, setReloadTaskPage] = useState(false)
   const [rewardId, setRewardId] = useState('')
 
-  useEffect(async() => {
-    await dispatch(loadAllRewards(sessionUser.id))
-    await dispatch(getAllColors())
-    await dispatch(getAllCompletedLogs(sessionUser.id))
+  useEffect(() => {
+    dispatch(loadAllRewards(sessionUser.id))
+    dispatch(getAllColors())
+    dispatch(getAllCompletedLogs(sessionUser.id))
     setReloadTaskPage(false)
 
   },[reloadTaskPage])
@@ -58,13 +58,11 @@ const RewardsPage = () => {
 
   const getPercentage = (task_id, task_points, reward_points) =>{
   //  await dispatch(getAllCompletedLogs(reward_id))
-    const rewardLogs = allTrueLogs?.completed.filter(log => log.task_id == task_id)
+    const rewardLogs = allTrueLogs?.completed.filter(log => log.task_id == task_id) // filter to get logs with certain task's id
     const count = rewardLogs?.length
     const progressPoints = count * task_points
-    console.log('progress',progressPoints,'reward_points', reward_points)
+    // console.log('progress',progressPoints,'reward_points', reward_points)
 
-    // const cat = [1,1,1,1,1,1,1]
-    // console.log(cat.length)
     const percentage = progressPoints/reward_points * 100
 
     return `${percentage.toFixed(0)}%`
@@ -116,8 +114,6 @@ const RewardsPage = () => {
                         <span className='fas fa-sticky-note' style={{color:`${colorHex[reward.color_id]}`}}> </span>
                         <span> {reward.reward_reason}</span>
                       </div>
-
-
 
                     </div>
                   </div>
