@@ -8,9 +8,11 @@
 .signed-out-navbar{
   display: flex;
   justify-content: space-between;
-  height: 70px;
+  height: 75px;
   align-items: center;
-  box-shadow: 0px 1px 5px 1px gray !important;
+  /* position: fixed;
+  width: 100%; */
+  /* box-shadow: 0px 1px 1px 1px gray !important; */
   border-bottom: none !important;
 }
 .entry{
