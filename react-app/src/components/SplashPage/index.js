@@ -4,6 +4,7 @@ import { NavLink, Redirect , useHistory} from 'react-router-dom'
 import './SplashPage.css'
 import { login } from '../../store/session';
 // import './habithub-logo.png'
+import Footer from '../Footer';
 
 const SplashPage = () =>{
   const history=useHistory()
@@ -55,7 +56,7 @@ const SplashPage = () =>{
           <div className='splash-photo-container'>
 
             <div>
-              <h1>Hit your Targets, Recieve Rewards, Grow Your Garden</h1>
+              <h1>Hit your Targets, Receive Rewards, Grow Your Garden</h1>
               <h3>Focus on what truly matters with HabitHub. Build the best version of yourself by mastering your habits.</h3>
                 <div  >
                   {errors.map((error, ind) => (
@@ -65,9 +66,11 @@ const SplashPage = () =>{
               <form onSubmit={onLogin}>
               <button type='submit'>Demo Login</button>
               </form>
+            </div>
+            <div className='splash-photo'></div>
+
           </div>
-          <div className='splash-photo'></div>
-          </div>
+          < Footer />
 
 
     </div>

@@ -74,6 +74,7 @@ const SignUpForm = () => {
 
 
     <div className='form-container'>
+        <div className='signup-photo'></div>
         <form className='signup-form' onSubmit={onSignUp}>
           <div className='logo-container'>
              <div className='short-logo'></div>
@@ -116,7 +117,7 @@ const SignUpForm = () => {
               value={email}
             ></input>
           </div>
-          <div>
+          <div id='date-div'>
             <input
               type='date'
               name='birthday'

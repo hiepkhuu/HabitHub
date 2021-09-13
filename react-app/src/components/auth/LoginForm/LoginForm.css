@@ -65,7 +65,8 @@
   width: 30%;
   background-color: white;
   opacity: 0.9;
-  margin-top: -40px
+  margin-top: -40px;
+  margin-left: 30px
 }
 .short-logo{
   /* background-image: url('./sprout-logo.png'); */

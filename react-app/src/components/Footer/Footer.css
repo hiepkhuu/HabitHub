@@ -1,0 +1,13 @@
+.footer{
+  width: 100%;
+  background-color: #647dee;
+
+  height: 80px;
+}
+.footer-link{
+  color: white;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  font-size: 25px;
+}
