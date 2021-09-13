@@ -55,9 +55,9 @@ const SplashPage = () =>{
           </div>
           <div className='splash-photo-container'>
 
-            <div>
+            <div className='splash-photo'>
               <h1>Hit your Targets, Receive Rewards, Grow Your Garden</h1>
-              <h3>Focus on what truly matters with HabitHub. Build the best version of yourself by mastering your habits.</h3>
+              <p>Focus on what truly matters with HabitHub. Build the best version of yourself by mastering your habits.</p>
                 <div  >
                   {errors.map((error, ind) => (
                     <div className='error-message' key={ind}>{error}</div>
@@ -67,10 +67,32 @@ const SplashPage = () =>{
               <button type='submit'>Demo Login</button>
               </form>
             </div>
-            <div className='splash-photo'></div>
 
+            <div className='how-div'>
+              <h1>How it Works</h1>
+              <p>Habit building in its essential steps: choose a habit, actually remember to do it and track your development.</p>
+              <div className='steps-container'>
+                    <div className='steps'>
+                      <div className='step-img1'></div>
+                      <div className='step-header'>1. Set up your Habits</div>
+                      <div className='step-detail'>String together a list of habits to create your daily routines and start your journey.</div>
+                    </div>
+                    <div className='steps'>
+                      <div className='step-img2'></div>
+                      <div className='step-header'>2. Get The Cue</div>
+                      <div className='step-detail'>String together a list of habits to create your daily routines and start your journey.</div>
+                    </div>
+                    <div className='steps'>
+                      <div className='step-img3'></div>
+                      <div className='step-header'>3. Track Your Progress</div>
+                      <div className='step-detail'>String together a list of habits to create your daily routines and start your journey.</div>
+                    </div>
+
+              </div>
+            </div>
+            {/* < Footer /> */}
           </div>
-          < Footer />
+
 
 
     </div>

@@ -1,8 +1,11 @@
 .footer{
   width: 100%;
   background-color: #647dee;
-
+  display:flex;
+  justify-content: flex-end;
   height: 80px;
+  position:absolute;
+  left: 0 ; right: 0; bottom: 0; 
 }
 .footer-link{
   color: white;
@@ -10,4 +13,5 @@
   display: flex;
   justify-content: space-between;
   font-size: 25px;
+
 }
