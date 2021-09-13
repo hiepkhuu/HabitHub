@@ -62,6 +62,7 @@ const LoginForm = () => {
               </div>
           </div>
       <div className='form-container'>
+          <div className='login-photo'></div>
           <form className='login-form' onSubmit={onLogin}>
 
             <div className='short-logo'></div>
