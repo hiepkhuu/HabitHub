@@ -4,6 +4,7 @@
   background-size: cover;
   background-position: center; */
   height: 100vh;
+
 }
 .signed-out-navbar{
   display: flex;
@@ -38,18 +39,31 @@
   transform: translateY(-5px);
   background-color: rgb(171, 231, 137);
 }
-
 .splash-photo-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+.splash-photo-container div{
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
   align-items: center;
   /* height: 100vh */
-  /* background-image: url('./greenhouse-filter.png'); */
+  /* background-image: url('./5095140.jpg'); */
   background-size: cover;
   background-position: center;
-  height: 100vh;
-  width: 100vw
+  /* height: 100vh;
+  width: 100vw */
+}
+
+.splash-photo{
+  background-image: url('./20943653.jpg');
+  height: auto;
+  width: 50%;
+  background-size: cover;
 }
 .splash-photo-container h1{
   margin-top: 120px;
@@ -72,11 +86,11 @@
 .splash-photo-container button{
   text-decoration: none;
   margin: 0px 5px;
-  color: black;
-  background-color: rgb(153, 204, 123);
+  color: rgb(255, 255, 255);
+  background-color: rgb(75, 87, 250);
   width: 150px;
   border-radius: 40px;
-  box-shadow: 0px 1px 1px 1px rgb(91, 117, 85);
+  /* box-shadow: 0px 1px 1px 1px rgb(11, 25, 63); */
   transition:  all 0.3s ease 0s;
   font-size: 20px;
   height: 45px;
@@ -94,12 +108,12 @@
 .splash-button{
   border-radius: 5px;
   width: 150px;
-  height: 50px;
+  height: 35px;
   margin-left: 10px;
   margin-bottom: 5px;
   transition:  all 0.3s ease 0s;
   /* font-size: 20px; */
-  background-image: url('./habithub-sprout-logo-PhotoRoom.png');
+  background-image: url('./logo-forest-leaf-PhotoRoom.png');
   /* height: 100%;
   width:100%; */
   background-size: cover;

@@ -53,17 +53,23 @@ const SplashPage = () =>{
               </div>
           </div>
           <div className='splash-photo-container'>
-            <h1>Build Green Habits, Recieve Rewards, Grow Your Garden</h1>
-            <h3>Focus on what truly matters with HabitHub. Build the best version of yourself by mastering your habits.</h3>
-            <div  >
-              {errors.map((error, ind) => (
-                <div className='error-message' key={ind}>{error}</div>
-              ))}
-            </div>
-            <form onSubmit={onLogin}>
-            <button type='submit'>Demo Login</button>
-            </form>
+
+            <div>
+              <h1>Build Green Habits, Recieve Rewards, Grow Your Garden</h1>
+              <h3>Focus on what truly matters with HabitHub. Build the best version of yourself by mastering your habits.</h3>
+                <div  >
+                  {errors.map((error, ind) => (
+                    <div className='error-message' key={ind}>{error}</div>
+                  ))}
+                </div>
+              <form onSubmit={onLogin}>
+              <button type='submit'>Demo Login</button>
+              </form>
           </div>
+          <div className='splash-photo'></div>
+          </div>
+
+
     </div>
   )
 }
