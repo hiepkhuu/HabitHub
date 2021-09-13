@@ -21,13 +21,13 @@
 .NavLink{
   text-decoration: none;
   margin: 0px 5px;
-  color: black;
-  background-color: rgb(153, 204, 123);
+  color: rgb(255, 255, 255);
+  background-color: rgb(75, 87, 250);
   width: 89px;
   border-radius: 40px;
-  box-shadow: 0px 1px 1px 1px rgb(91, 117, 85);
+  /* box-shadow: 0px 1px 1px 1px rgb(91, 117, 85); */
   transition:  all 0.3s ease 0s;
-  font-size: 20px;
+  font-size: 18px;
   height: 40px;
   display: flex;
   justify-content: center;
@@ -36,8 +36,8 @@
 
 }
 .NavLink:hover{
-  transform: translateY(-5px);
-  background-color: rgb(171, 231, 137);
+  /* transform: translateY(-1px); */
+  background-color: rgb(47, 61, 255);
 }
 .splash-photo-container{
   display: flex;
@@ -49,20 +49,19 @@
 .splash-photo-container div{
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  align-items: center;
-  /* height: 100vh */
-  /* background-image: url('./5095140.jpg'); */
+  padding-top: 4em;
+
+  /* align-items: center; */
+
   background-size: cover;
   background-position: center;
-  /* height: 100vh;
-  width: 100vw */
+
 }
 
 .splash-photo{
   background-image: url('./20943653.jpg');
   height: auto;
-  width: 50%;
+  width: 40%;
   background-size: cover;
 }
 .splash-photo-container h1{
@@ -70,7 +69,7 @@
   font-size: 40px;
   font-weight:1000;
   width: 600px;
-  text-align: center;
+  text-align: left;
   text-shadow: 0px 2px 2px rgb(179, 180, 179);
 }
 .splash-photo-container h3{
@@ -79,7 +78,7 @@
   font-weight: 600;
   width: 700px;
   margin-top: -20px;
-  text-align: center;
+  text-align: left;
   text-shadow: 0px 2px 2px rgb(179, 180, 179);
 }
 
@@ -87,12 +86,12 @@
   text-decoration: none;
   margin: 0px 5px;
   color: rgb(255, 255, 255);
-  background-color: rgb(75, 87, 250);
+  background-color: #647dee;
   width: 150px;
   border-radius: 40px;
   /* box-shadow: 0px 1px 1px 1px rgb(11, 25, 63); */
   transition:  all 0.3s ease 0s;
-  font-size: 20px;
+  font-size: 18px;
   height: 45px;
   display: flex;
   justify-content: center;
@@ -102,8 +101,9 @@
 }
 
 .splash-photo-container button:hover{
-  transform: translateY(-5px);
-  background-color: rgb(171, 231, 137);
+    /* transform: translateY(-1px); */
+    background-color: #7f53ac;
+    background-image: linear-gradient(315deg, #7f53ac 0%, #647dee 74%);
 }
 .splash-button{
   border-radius: 5px;
@@ -113,7 +113,7 @@
   margin-bottom: 5px;
   transition:  all 0.3s ease 0s;
   /* font-size: 20px; */
-  background-image: url('./logo-forest-leaf-PhotoRoom.png');
+  background-image: url('./habithub-plain-PhotoRoom.png');
   /* height: 100%;
   width:100%; */
   background-size: cover;

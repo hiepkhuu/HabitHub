@@ -55,7 +55,7 @@ const SplashPage = () =>{
           <div className='splash-photo-container'>
 
             <div>
-              <h1>Build Green Habits, Recieve Rewards, Grow Your Garden</h1>
+              <h1>Hit your Targets, Recieve Rewards, Grow Your Garden</h1>
               <h3>Focus on what truly matters with HabitHub. Build the best version of yourself by mastering your habits.</h3>
                 <div  >
                   {errors.map((error, ind) => (

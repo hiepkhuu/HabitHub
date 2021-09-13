@@ -21,12 +21,12 @@
   text-decoration: none;
   margin: 0px 5px;
   color: rgb(255, 255, 255);
-  background-color: rgb(75, 87, 250);
+  background-color: #647dee;
   width: 89px;
   border-radius: 40px;
-  box-shadow: 0px 1px 1px 1px rgb(91, 117, 85);
+  /* box-shadow: 0px 1px 1px 1px rgb(91, 117, 85); */
   transition:  all 0.3s ease 0s;
-  font-size: 20px;
+  font-size: 18px;
   height: 40px;
   display: flex;
   justify-content: center;
@@ -35,15 +35,15 @@
 
 }
 .NavLink:hover{
-  transform: translateY(-5px);
-  background-color: rgb(171, 231, 137);
+  background-color: #7f53ac;
+  background-image: linear-gradient(315deg, #7f53ac 0%, #647dee 74%);
 }
 
 .form-container{
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url('./greenhouse-signup.jpg');
+  /* background-image: url('./greenhouse-signup.jpg'); */
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -64,7 +64,7 @@
   margin-top: -40px
 }
 .short-logo{
-  background-image: url('./sprout-logo.png');
+  /* background-image: url('./sprout-logo.png'); */
   background-size: cover;
   width: 70px;
   height: 40px;
@@ -87,25 +87,27 @@
   text-decoration: none;
   margin: 0px 5px;
   color: black;
-  background-color: rgb(153, 204, 123);
+  color: rgb(255, 255, 255);
+  background-color: #647dee ;
   width: 89px;
   border-radius: 40px;
-  box-shadow: 0px 1px 1px 1px rgb(97, 92, 92);
+  /* box-shadow: 0px 1px 1px 1px rgb(97, 92, 92); */
   transition:  all 0.3s ease 0s;
-  font-size: 20px;
+  font-size: 18px;
   height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border:none
+  border:none;
+  cursor: pointer;
 }
 
 .login-form button:hover{
-  transform: translateY(-5px);
-  background-color: rgb(171, 231, 137);
+  background-color: #7f53ac;
+  background-image: linear-gradient(315deg, #7f53ac 0%, #647dee 74%);
 }
 
 .nav-links{
 text-decoration: none;
-color: rgb(116, 153, 95);
+color:  rgb(75, 87, 250);
 }
