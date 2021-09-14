@@ -142,7 +142,7 @@
 
 .rewards-progress div{
   margin:0px;
-  height:18px;
+  height:19px;
   /* width: 100%; */
   display: flex;
   justify-content: center;
@@ -150,7 +150,9 @@
   background-color: red;
   border-radius: 5px
 }
-
+.rewards-progress p {
+  font-size: 13px
+}
 #rewards-btn{
   background-color: rgb(60, 145, 35)
   }

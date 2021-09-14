@@ -88,9 +88,61 @@ const RewardsPage = () => {
 
   let board;
 
-  if (completedRewards.lenth >=1){
+  if (completedRewards.length >=1){
     board = (
+              <div className='rewards-card-container'>
+                {completedRewards.map(reward => (
+                <>
+                  <div className='reward-card'>
+                    <div>
+                      <div className='reward-icon-container'>
 
+                          <div className='fas fa-medal' style={{color:`${colorHex[reward.color_id]}`}}></div>
+                          <span> {getDaysElapsed(`${reward.created_at}`)} days ago</span>
+                      </div>
+                      <div className='reward-info'>
+                        <div className='reward-header-container'>
+                            <span className='reward-header'>{reward.reward_name}</span>
+                            <div onClick={() => setRewardId(reward.id)}className='edit-button'>
+                              <UpdateRewardModal setReloadTaskPage={setReloadTaskPage} rewardId={rewardId} rewardColor={reward.color_id} />
+
+                            </div>
+                        </div>
+                        <div>
+                        <span className='fas fa-th-list' style={{color: colorHex[`${reward.color_id}`]}}></span>
+                        <span> {reward.task}</span>
+                        </div>
+                        <div>
+                        <span className='fas fa-clock' style={{color:`${colorHex[reward.color_id]}`}}>  </span>
+                        <span> {reward.reward_detail}</span>
+                        </div>
+                        <div>
+                          <span className='fas fa-sticky-note' style={{color:`${colorHex[reward.color_id]}`}}> </span>
+                          <span> {reward.reward_reason}</span>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div className='rewards-progress'>
+
+                      <div style={{backgroundColor:`${colorHex[reward.color_id]}`, width: getPercentage(reward.task_id, reward.task_points, reward.reward_points)}}>
+                      <p>Congratulations!</p>
+                      {/* <p>{getPercentage(reward.task_id, reward.task_points, reward.reward_points)}</p> */}
+                      </div>
+                    </div>
+
+                  </div>
+                </>
+              ))}
+
+            </div>
+    )
+  } else {
+    board = (
+      <div className='rewards-card-container'>
+        Log your habits to unloack rewards!
+      </div>
     )
   }
   return (
@@ -144,7 +196,7 @@ const RewardsPage = () => {
 
                   <div className='rewards-progress'>
 
-                    <div style={{backgroundColor:'orange', width: getPercentage(reward.task_id, reward.task_points, reward.reward_points)}}>
+                    <div style={{backgroundColor:`${colorHex[reward.color_id]}`, width: getPercentage(reward.task_id, reward.task_points, reward.reward_points)}}>
                     <p>{getPercentage(reward.task_id, reward.task_points, reward.reward_points)}</p>
                     </div>
                   </div>
@@ -159,52 +211,7 @@ const RewardsPage = () => {
             <div className='rewards-header'>
                   <h2>Completed!</h2>
               </div>
-              <div className='rewards-card-container'>
-                {completedRewards.map(reward => (
-                <>
-                  <div className='reward-card'>
-                    <div>
-                      <div className='reward-icon-container'>
-                         
-                          <div className='fas fa-medal' style={{color:`${colorHex[reward.color_id]}`}}></div>
-                          <span> {getDaysElapsed(`${reward.created_at}`)} days ago</span>
-                      </div>
-                      <div className='reward-info'>
-                        <div className='reward-header-container'>
-                            <span className='reward-header'>{reward.reward_name}</span>
-                            <div onClick={() => setRewardId(reward.id)}className='edit-button'>
-                              <UpdateRewardModal setReloadTaskPage={setReloadTaskPage} rewardId={rewardId} rewardColor={reward.color_id} />
-
-                            </div>
-                        </div>
-                        <div>
-                        <span className='fas fa-th-list' style={{color: colorHex[`${reward.color_id}`]}}></span>
-                        <span> {reward.task}</span>
-                        </div>
-                        <div>
-                        <span className='fas fa-clock' style={{color:`${colorHex[reward.color_id]}`}}>  </span>
-                        <span> {reward.reward_detail}</span>
-                        </div>
-                        <div>
-                          <span className='fas fa-sticky-note' style={{color:`${colorHex[reward.color_id]}`}}> </span>
-                          <span> {reward.reward_reason}</span>
-                        </div>
-
-                      </div>
-                    </div>
-
-                    <div className='rewards-progress'>
-
-                      <div style={{backgroundColor:'orange', width: getPercentage(reward.task_id, reward.task_points, reward.reward_points)}}>
-                      <p>{getPercentage(reward.task_id, reward.task_points, reward.reward_points)}</p>
-                      </div>
-                    </div>
-
-                  </div>
-                </>
-              ))}
-              Log your habits to unloack rewards!
-            </div>
+              {board}
 
        </div>
 
