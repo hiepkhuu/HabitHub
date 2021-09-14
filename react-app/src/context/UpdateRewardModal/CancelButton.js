@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './UpdateRewardModal.css'
 
 const CancelButton = ({setShowModal, setRewardDetail, setRewardName, setErrors,setRewardPoints,setTaskId, setRewardReason}) =>{
   const cancel = () =>{

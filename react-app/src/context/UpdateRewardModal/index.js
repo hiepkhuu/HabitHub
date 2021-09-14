@@ -3,6 +3,7 @@ import { Modal } from '../Modal';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect, useHistory, useParams } from 'react-router-dom';
 import Select, {components} from 'react-select';
+import './UpdateRewardModal.css'
 
 
 import { loadAllRewards } from '../../store/rewards';
@@ -134,9 +135,10 @@ const UpdateRewardModal = ({setReloadTaskPage, reloadTaskPage, rewardId, rewardC
 
 
             <div className='edit-form-container'>
-            <DeleteTaskModal setReloadTaskPage={setReloadTaskPage} reloadTaskPage={reloadTaskPage} setShowModal={setShowModal} rewardId={rewardId} rewardName={targetedReward[0].reward_name} />
-              {/* <button onClick={cancel}>Cancel</button> */}
-              <h2>New Reward</h2>
+                <div className='delete-button'>
+                  <DeleteTaskModal setReloadTaskPage={setReloadTaskPage} reloadTaskPage={reloadTaskPage} setShowModal={setShowModal} rewardId={rewardId} rewardName={targetedReward[0].reward_name} />
+                </div>
+              <h2>Update Reward</h2>
               <div >
                 {errors.map((error, ind) => (
                   <div className='error-message' key={ind}>{error}</div>

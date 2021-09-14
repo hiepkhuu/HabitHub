@@ -20,6 +20,7 @@
 }
 
 .delete-task-form button{
+
   margin: 20px 5px 0px 0px;
   height: 50px;
   width: 120px;
@@ -33,4 +34,9 @@
 }
  .delete-task-form button:hover{
   background-color:#485575;
+ }
+
+ .delete-button{
+   padding: 11px 15px ;
+  
  }

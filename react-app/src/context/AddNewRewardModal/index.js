@@ -120,7 +120,7 @@ const AddNewRewardModal = ({setReloadTaskPage, reloadTaskPage}) => {
           <Modal>
             <div className='edit-form-container'>
 
-              {/* <button onClick={cancel}>Cancel</button> */}
+        
               <h2>New Reward</h2>
               <div >
                 {errors.map((error, ind) => (

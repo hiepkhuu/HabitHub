@@ -36,3 +36,8 @@ select{
   border-radius: 5px;
 
 }
+
+.form-button{
+  display: flex;
+  justify-content: flex-end
+}

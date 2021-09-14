@@ -58,3 +58,13 @@ select{
   padding-bottom: 11px;
 
 }
+
+.form-button{
+  display: flex;
+  justify-content: flex-end
+}
+
+.delete-button{
+  display: flex;
+  justify-content: flex-end
+}
