@@ -141,7 +141,7 @@ const RewardsPage = () => {
   } else {
     board = (
       <div className='rewards-card-container'>
-        Log your habits to unloack rewards!
+        Log your habits to unlock rewards!
       </div>
     )
   }

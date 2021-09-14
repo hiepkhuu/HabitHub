@@ -53,7 +53,7 @@ const DashboardPage = () => {
         <div className='left-dashboard'>
           <div className='habit-list-container'>
             <div className='habit-header'>
-              <h3>Active Goals</h3><span onClick={() => {  setShowHabitInfo(false) }} >greeting ➜</span>
+              <h3>THIS WEEK - Active Goals</h3><span onClick={() => {  setShowHabitInfo(false) }} >greeting ➜</span>
             </div>
             <div className='habit-log'>
                     {allTasks?.tasks?.map(task => (
@@ -63,7 +63,7 @@ const DashboardPage = () => {
                             // onClick={() => { showHabitInfo? setShowHabitInfo(false): setShowHabitInfo(true) }}
                             onClick={() => {  setShowHabitInfo(true) }}
                             // onClick={() => {  setShowHabitInfo(false) }}
-                            style={{ backgroundColor: `${task.color_hue}` }}
+                            style={{ backgroundColor: ` ${task.color_hue}`}}
 
                             >
                           <div className='habit-name'>
@@ -71,6 +71,9 @@ const DashboardPage = () => {
                               {task.task_name}
                               <div>
                                 0/{task.target_num} times
+                              </div>
+                              <div>
+                                {task.task_detail}
                               </div>
                             </div>
                             <div className='edit-button'>

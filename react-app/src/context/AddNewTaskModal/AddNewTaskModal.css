@@ -43,9 +43,7 @@ option{
   color:white;
   text-shadow: 2px 2px 2px black;
 }
-/* option:hover{
-  background-color: rgb(153, 196, 233)
-} */
+
 select{
   height: 45px;
   font-size: 20px;
