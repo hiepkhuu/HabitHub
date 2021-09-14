@@ -185,16 +185,18 @@ const AddNewHabitModal = ({setReloadTaskPage, reloadTaskPage}) => {
                       value={taskReason}
                       onChange={e=> setTaskReason(e.target.value)}
                       ></input>
-                      <CancelButton setShowModal={setShowModal}
-                      setTaskName={setTaskName}
-                      setTaskDetail={setTaskDetail}
-                      setTaskReason={setTaskReason}
-                      setTargetNum={setTargetNum}
-                      setTaskPoints={setTaskPoints}
-                      setErrors={setErrors}
-                      setColorId={setColorId}
-                      />
-                    <button  onClick={submitTask} >Save</button>
+                      <div className='form-button'>
+                          <CancelButton setShowModal={setShowModal}
+                          setTaskName={setTaskName}
+                          setTaskDetail={setTaskDetail}
+                          setTaskReason={setTaskReason}
+                          setTargetNum={setTargetNum}
+                          setTaskPoints={setTaskPoints}
+                          setErrors={setErrors}
+                          setColorId={setColorId}
+                          />
+                        <button  onClick={submitTask} >Save</button>
+                    </div>
                   </div>
               </form>
 

@@ -55,3 +55,12 @@ select{
   border-radius: 5px;
 
 }
+
+.cancel-button{
+  background-color: #ffffff !important;
+  color: gray !important;
+}
+
+.cancel-button:hover{
+  background-color: #f1f1f1 !important
+}

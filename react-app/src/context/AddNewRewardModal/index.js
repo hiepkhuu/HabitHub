@@ -194,8 +194,10 @@ const AddNewRewardModal = ({setReloadTaskPage, reloadTaskPage}) => {
                       value={rewardReason}
                       onChange={e=> setRewardReason(e.target.value)}
                       ></input>
-                      <CancelButton setShowModal={setShowModal} setRewardDetail={setRewardDetail} setRewardName={setRewardName} setRewardPoints={setRewardPoints} setTaskId={setTaskId} setRewardReason={setRewardReason} setErrors={setErrors}/>
-                    <button  onClick={submitReward} >Save</button>
+                      <div className='form-button'>
+                        <CancelButton setShowModal={setShowModal} setRewardDetail={setRewardDetail} setRewardName={setRewardName} setRewardPoints={setRewardPoints} setTaskId={setTaskId} setRewardReason={setRewardReason} setErrors={setErrors}/>
+                        <button  onClick={submitReward} >Save</button>
+                      </div>
                   </div>
               </form>
 

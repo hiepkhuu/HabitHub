@@ -13,7 +13,7 @@ const CancelButton = ({setShowModal, setRewardDetail, setRewardName, setErrors,s
     setErrors([])
   }
 return (
-  <button className='cancel-buton' onClick={cancel} >Cancel</button>
+  <button className='cancel-button' onClick={cancel} >Cancel</button>
 )
 }
 

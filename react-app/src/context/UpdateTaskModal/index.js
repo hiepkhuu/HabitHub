@@ -142,8 +142,9 @@ const UpdateTaskModal = ({setReloadTaskPage, reloadTaskPage, habitId}) => {
       {showModal && (
         <Modal>
           <div className='edit-form-container'>
-          <DeleteTaskModal setReloadTaskPage={setReloadTaskPage} setShowModal={setShowModal} taskId={singleTask.id} taskName={singleTask.task_name} />
-            {/* <button onClick={cancel}>Cancel</button> */}
+            <div className='form-button'>
+               <DeleteTaskModal setReloadTaskPage={setReloadTaskPage} setShowModal={setShowModal} taskId={singleTask.id} taskName={singleTask.task_name} />
+            </div>
             <h2>Update Habit</h2>
             <div >
               {errors.map((error, ind) => (
@@ -153,7 +154,7 @@ const UpdateTaskModal = ({setReloadTaskPage, reloadTaskPage, habitId}) => {
             <form className='add-task-form' onSubmit={submitTask} >
               <div>
 
-                  <div>NAME *</div>
+                  <div className='label'>NAME *</div>
                     <input
                     type='text'
                     rows='1'
@@ -181,7 +182,7 @@ const UpdateTaskModal = ({setReloadTaskPage, reloadTaskPage, habitId}) => {
                             />
                       </div>
                   </div>
-                  <div className='section'>
+                  <div className='section pts color'>
                       <div>
                           <div>POINTS *</div>
                             <input
@@ -223,16 +224,17 @@ const UpdateTaskModal = ({setReloadTaskPage, reloadTaskPage, habitId}) => {
                             </select>
                       </div>
                     </div>
-                    <div>MOTIVATING REMINDER</div>
-                    <input
-                    type='text'
-                    rows='2'
-                    value={taskReason}
-                    onChange={e=> setTaskReason(e.target.value)}
-                    ></input>
+                    <div className='form-label'>MOTIVATING REMINDER</div>
+                      <input
+                      type='text'
+                      rows='2'
+                      value={taskReason}
+                      onChange={e=> setTaskReason(e.target.value)}
+                      ></input>
+                  <div className='form-button'>
                     <CancelButton setShowModal={setShowModal}/>
-                  <button  onClick={submitTask} >Save</button>
-
+                    <button  onClick={submitTask} >Save</button>
+                  </div>
                 </div>
             </form>
 

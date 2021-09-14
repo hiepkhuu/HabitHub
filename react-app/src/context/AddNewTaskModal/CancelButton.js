@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './AddNewTaskModal.css'
 
 const CancelButton = ({setShowModal, setTaskName, setTaskReason,setTaskDetail, setTaskPoints, setErrors, setColorId, setTargetNum}) =>{
   const cancel = () =>{
@@ -14,7 +14,7 @@ const CancelButton = ({setShowModal, setTaskName, setTaskReason,setTaskDetail, s
 
   }
 return (
-  <button className='cancel-buton' onClick={cancel} >Cancel</button>
+  <button className='cancel-button' onClick={cancel} >Discard</button>
 )
 }
 
