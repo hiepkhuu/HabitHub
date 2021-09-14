@@ -2,7 +2,7 @@
 .edit-form-container{
   padding: 25px;
   background-color: #ffffff;
-  width: 600px;
+  width: 500px;
   box-shadow: 0px 0px 15px 2px rgb(190, 190, 190);
   border-radius: 10px;
 
@@ -113,9 +113,9 @@
   display: flex;
 }
 .section input {
-  width: 280px;
+  width: 97%;
 }
 .css-2b097c-container{
-  width: 250px;
+  width: 50%;
   /* height: 10px */
 }
