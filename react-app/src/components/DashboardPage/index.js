@@ -46,6 +46,9 @@ const DashboardPage = () => {
     return newDate
   }
 
+  const logHabit = () => {
+    
+  }
 
 
   return (
@@ -60,27 +63,32 @@ const DashboardPage = () => {
                       <>
                         <div onClick={()=> {setHabitId(task.id)}}>
                         <div className='habit-card-container'
-                            // onClick={() => { showHabitInfo? setShowHabitInfo(false): setShowHabitInfo(true) }}
                             onClick={() => {  setShowHabitInfo(true) }}
-                            // onClick={() => {  setShowHabitInfo(false) }}
                             style={{ backgroundColor: ` ${task.color_hue}`}}
-
                             >
                           <div className='habit-name'>
                             <div className='habit-name-header'>
-                              {task.task_name}
-                              <div>
-                                0/{task.target_num} times
-                              </div>
-                              <div>
-                                {task.task_detail}
-                              </div>
-                            </div>
-                            <div className='edit-button'>
-                              {/* <UpdateTaskModal reloadTaskPage={reloadTaskPage} setReloadTaskPage={setReloadTaskPage} taskId={task.id} /> */}
-                            </div>
-                          </div>
+                                <div className='habit-bar-header'>
+                                  <span>{task.task_name.toUpperCase()}</span>
+                                  <span className='habit-target'>0/{task.target_num} times</span>
+                                </div>
 
+                                {/* <div>
+                                  {task.task_detail}
+                                </div> */}
+                                <div className='log-form'>
+                                    {/* <div  >
+                                      {errors.map((error, ind) => (
+                                        <div className='error-message' key={ind}>{error}</div>
+                                      ))}
+                                    </div> */}
+                                    <form onSubmit={logHabit}>
+                                      <button  type='submit'>Log it!</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div className='edit-button'></div>
+                          </div>
                         </div>
                         </div>
                       </>

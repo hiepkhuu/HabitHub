@@ -125,6 +125,7 @@ const SignUpForm = () => {
               onChange={(e)=> setBirthday(e.target.value)}
               value={birthday}
             ></input>
+            <input className='invisible-input'></input>
           </div>
           <div>
             <input

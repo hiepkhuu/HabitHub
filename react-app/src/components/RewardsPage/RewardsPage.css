@@ -147,11 +147,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: red;
-  border-radius: 5px
+  /* background-color: red; */
+  border-radius: 5px;
+
 }
 .rewards-progress p {
-  font-size: 13px
+  font-size: 13px;
+  padding-left: 25px;
 }
 #rewards-btn{
   background-color: rgb(60, 145, 35)
