@@ -41,7 +41,7 @@ def create_log():
         log = Log()
         form.populate_obj(log)
         db.session.add(log)
-        db.session.commit(log)
+        db.session.commit()
 
         return log.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401

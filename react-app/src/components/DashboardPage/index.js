@@ -67,7 +67,7 @@ console.log('endOfWeek', endOfWeek)
     }
 
     const data = await dispatch(addCompletedLog(log))
-
+    console.log('did it pass')
     if (data) {
       setErrors(data);
     } else {
