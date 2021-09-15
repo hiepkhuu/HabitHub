@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { loadAllTasks} from '../../store/tasks'
 import { loadSingleTask } from '../../store/singletask'
 import { getAllColors } from '../../store/colors'
+import { addCompletedLog } from '../../store/logs'
 import './DashboardPage.css'
 import moment from 'moment'
 import AddNewHabitModal from '../../context/AddNewTaskModal'
@@ -23,6 +24,7 @@ const DashboardPage = () => {
   const [color, setColor] = useState('')
   const [showHabitInfo, setShowHabitInfo] = useState(false)
   const [habitId, setHabitId] = useState('')
+  const [errors, setErrors] = useState([])
 
   useEffect(async () => {
 
@@ -55,8 +57,22 @@ const endOfWeek   = moment().endOf('week').toDate();
 console.log('startOfWeek', startOfWeek);
 console.log('endOfWeek', endOfWeek)
 
-  const logHabit = () => {
+  const logHabit = async (e) => {
+    e.preventDefault()
 
+    const log = {
+      task_id: habitId,
+      user_id: sessionUser.id,
+      completed: true
+    }
+
+    const data = await dispatch(addCompletedLog(log))
+
+    if (data) {
+      setErrors(data);
+    } else {
+
+    }
   }
 
 
@@ -88,11 +104,11 @@ console.log('endOfWeek', endOfWeek)
                                   {task.task_detail}
                                 </div> */}
                                 <div className='log-form'>
-                                    {/* <div  >
+                                    <div  >
                                       {errors.map((error, ind) => (
                                         <div className='error-message' key={ind}>{error}</div>
                                       ))}
-                                    </div> */}
+                                    </div>
                                     <form onSubmit={logHabit}>
                                       <button  type='submit'>Log it!</button>
                                     </form>
