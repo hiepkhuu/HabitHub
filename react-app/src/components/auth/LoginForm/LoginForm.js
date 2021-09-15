@@ -11,7 +11,7 @@ const LoginForm = () => {
   const [password, setPassword] = useState('');
   const sessionUser = useSelector(state => state.session.user);
   const dispatch = useDispatch();
-  console.log(email, password)
+  // console.log(email, password)
 
   const onLogin = async (e) => {
     e.preventDefault();

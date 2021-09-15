@@ -29,7 +29,7 @@ const AddNewRewardModal = ({setReloadTaskPage, reloadTaskPage}) => {
   const [taskId, setTaskId] = useState('')
   const [errors, setErrors] = useState([])
   // const [selectColor, setSelectColor] = useState('')
-  console.log('name', rewardName,'detail', rewardDetail, 'reason',rewardReason, 'pts', rewardPoints, 'taskid', taskId)
+  // console.log('name', rewardName,'detail', rewardDetail, 'reason',rewardReason, 'pts', rewardPoints, 'taskid', taskId)
 
   const colorsList =  [
     { value: '', label: 'Choose here', menuColor: 'darkgray' },
@@ -120,7 +120,7 @@ const AddNewRewardModal = ({setReloadTaskPage, reloadTaskPage}) => {
           <Modal>
             <div className='edit-form-container'>
 
-        
+
               <h2>New Reward</h2>
               <div >
                 {errors.map((error, ind) => (

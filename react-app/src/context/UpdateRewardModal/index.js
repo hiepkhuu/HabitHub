@@ -40,7 +40,7 @@ const UpdateRewardModal = ({setReloadTaskPage, reloadTaskPage, rewardId, rewardC
   const [taskId, setTaskId] = useState('')
   const [errors, setErrors] = useState([])
   // const [selectColor, setSelectColor] = useState('')
-  console.log('name', rewardName,'detail', rewardDetail, 'reason',rewardReason, 'pts', rewardPoints, 'taskid', taskId)
+  // console.log('name', rewardName,'detail', rewardDetail, 'reason',rewardReason, 'pts', rewardPoints, 'taskid', taskId)
 
   const colorsList =  [
     { value: '', label: 'Choose here', menuColor: 'darkgray' },

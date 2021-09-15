@@ -24,7 +24,7 @@ const AddNewHabitModal = ({setReloadTaskPage, reloadTaskPage}) => {
   const [colorId, setColorId] = useState('')
   const [selectColor, setSelectColor] = useState('')
   const [errors, setErrors] = useState([])
-  console.log('name', taskName,'detail', taskDetail, 'reason',taskReason,'num', targetNum, 'pts', taskPoints, 'id', colorId)
+  // console.log('name', taskName,'detail', taskDetail, 'reason',taskReason,'num', targetNum, 'pts', taskPoints, 'id', colorId)
 
   const colorsList =  [
     { value: '', label: 'Choose here', menuColor: 'darkgray' },

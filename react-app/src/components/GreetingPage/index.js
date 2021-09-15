@@ -13,7 +13,7 @@ const GreetingPage = () => {
 
   // const singleQuote = quote
   // console.log('singl', quote)
-  console.log(sessionUser)
+  // console.log(sessionUser)
   useEffect(async() => {
     await dispatch(getSingleQuote())
   }, [])

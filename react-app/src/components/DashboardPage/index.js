@@ -31,12 +31,12 @@ const DashboardPage = () => {
     await dispatch(loadSingleTask(habitId))
     setReloadTaskPage(false)
 
-    // if (!showHabitInfo) return;
-    // setShowHabitInfo(false)
 
   }, [reloadTaskPage, habitId])
 
   function convert(input) {
+  
+
     return moment(input, 'HH:mm:ss').format('h:mm A');
     // .format('h:mm:ss A')
   }
@@ -46,9 +46,17 @@ const DashboardPage = () => {
     return newDate
   }
 
+  const startOfWeek = moment().startOf('week').toDate();
+const endOfWeek   = moment().endOf('week').toDate();
+
+console.log('startOfWeek', startOfWeek);
+console.log('endOfWeek', endOfWeek)
+
   const logHabit = () => {
-    
+
   }
+
+
 
 
   return (

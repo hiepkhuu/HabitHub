@@ -13,7 +13,7 @@ const UpdateTaskModal = ({setReloadTaskPage, reloadTaskPage, habitId}) => {
   const allTasks = useSelector(state => state.tasks)
  const singleTask = useSelector(state=> state.singleTask)
 
-  console.log('THISTHISHTIS', singleTask)
+  // console.log('THISTHISHTIS', singleTask)
   const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
   const [taskName, setTaskName] = useState()
