@@ -61,7 +61,7 @@ function ProfileButton() {
                 </div>
                 <div onClick={logout}>
                   <span className='fas fa-sign-out-alt'></span>
-                  <button className='profile-link' to='/'>Log Out</button>
+                  <span className='profile-link' to='/'>Log Out</span>
                 </div>
 
             </div>

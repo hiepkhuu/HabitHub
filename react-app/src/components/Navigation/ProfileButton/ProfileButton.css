@@ -70,6 +70,10 @@
   /* position: absolute  */
   /* position:relative; */
 }
+
+.profile-dropdown button{
+  
+}
 .profile-dropdown div{
   padding: 15px 20px;
   display: flex;
