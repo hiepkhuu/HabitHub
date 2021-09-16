@@ -58,17 +58,29 @@ const SplashPage = () =>{
           <div className='splash-photo-container'>
 
             <div className='splash-photo'>
-              <h1>Hit your Targets, Receive Rewards, Grow Your Garden</h1>
-              <p>Focus on what truly matters with HabitHub. Build the best version of yourself by mastering your habits.</p>
+              <div className='msg-1'>
+                  <p >MOTIVATION GETS YOU STARTED...</p>
+                  {/* <p >GETS YOU </p>
+                  <p >STARTED</p> */}
+                  <p className='habithub-msg'>HABITHUB</p>
+                  <p className='habithub-sub'>KEEPS YOU GOING</p>
+              </div>
+              <div className='msg-2'>
+
+                <h1>HIT YOUR TARGETS, RECEIVE REWARDS</h1>
+                <p>Focus on what truly matters with HabitHub. Build the best version of yourself by mastering your habits.</p>
                 <div  >
-                  {errors.map((error, ind) => (
-                    <div className='error-message' key={ind}>{error}</div>
-                  ))}
+                      {errors.map((error, ind) => (
+                        <div className='error-message' key={ind}>{error}</div>
+                      ))}
                 </div>
-              <form onSubmit={onLogin}>
-              <button type='submit'>Demo Login</button>
-              </form>
+                <form onSubmit={onLogin}>
+                      <button type='submit'>Demo Login</button>
+                </form>
+              </div>
             </div>
+
+
 
             <div className='how-div'>
               <h1>How it Works</h1>
