@@ -39,8 +39,8 @@ const SplashPage = () =>{
                     </div>
                   </div>
                 </NavLink>
-                <div></div>
-                <div></div>
+                {/* <div></div>
+                <div></div> */}
 
               <div className='entry'>
                 <NavLink className='NavLink' to='/login' exact={true} activeClassName='active'>
