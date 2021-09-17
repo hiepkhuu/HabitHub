@@ -64,12 +64,8 @@ border: 1px solid white;
 .splash-photo-container{
   display: flex;
   flex-direction: column;
-/* background-image: url('./mountain\ with\ red\ flag.png'); */
   width: 100%;
-
   margin-top: 100px;
-
-
 }
 
 
@@ -79,7 +75,6 @@ border: 1px solid white;
   align-items: center;
   background-size: cover;
   background-position: center;
-
 }
 
 .splash-photo{
@@ -88,7 +83,6 @@ border: 1px solid white;
   justify-content: space-between;
   padding: 50px 50px !important;
 }
-
 
 .msg-1{
 margin-top:-250px;
@@ -99,8 +93,6 @@ text-align: center;
 font-weight: 300;
 font-family: 'Raleway', sans-serif !important;
 color:rgb(51, 78, 109);
-/* letter-spacing: 1.5px */
-
 }
 
 .msg-1 p{
@@ -117,12 +109,10 @@ color:rgb(51, 78, 109);
 }
 .habithub-sub{
   font-size: 60px;
-  /* padding-top: 50px; */
 }
 
 .msg-2{
   margin-top: 170px;
-
   font-size: 22px;
   font-family: 'Raleway';
   width:40%;
@@ -130,9 +120,9 @@ color:rgb(51, 78, 109);
   letter-spacing: 1px;
   margin-right: 20px;
   color: white;
-
-  /* text-shadow: 0px 2px 2px rgb(91, 127, 228); */
 }
+
+
 /* .splash-photo-container p{
 
   font-size: 22px;

@@ -16,12 +16,28 @@
   align-items: center;
   margin-bottom: 10px;
 
+
 }
-.nav-links.btn{
-  text-decoration: none;
-  color: white;
+
+.navigation-btn{
+  width: 100%;
+  background-color: #2f5579;
+  border: none;
+  height: 70px;
   font-size: 20px;
-  font-weight: 500;
+  color:white;
+  cursor: pointer;
+}
+
+.navigation-btn:focus{
+  background-color: #eaf3f7 ;
+  color:#2f5579
+}
+
+
+.nav-links.link{
+  text-decoration: none;
+
 
 }
 .home-logo{
@@ -51,3 +67,5 @@
   width: 100%;
   height: 100vh
 } */
+
+

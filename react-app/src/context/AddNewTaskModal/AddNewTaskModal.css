@@ -16,7 +16,7 @@ for all error messages!!! */
 
 .button-circle{
   cursor: pointer;
-  background-color: rgb(114, 161, 250);
+  background-color:  #3d6e9c;
   font-size: 70px;
   height: 70px;
   width: 70px;
@@ -27,15 +27,11 @@ for all error messages!!! */
   color: white;
   cursor: pointer;
   margin-top:20px
-
-
 }
 
 .button-circle:hover{
-  background-color: rgb(103, 146, 226);
+  background-color:  #5b9fdf
 }
-
-
 
 option{
   width: 250px;
@@ -51,7 +47,6 @@ select{
   margin-top: 5px;
   border: 1px solid rgb(67, 110, 138);
   border-radius: 5px;
-
 }
 
 .cancel-button{

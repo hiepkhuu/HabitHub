@@ -1,7 +1,7 @@
 
 .button-circle{
   cursor: pointer;
-  background-color: rgb(114, 161, 250);
+  background-color:  #3d6e9c;
   font-size: 50px;
   height: 50px;
   width: 50px;
@@ -17,8 +17,8 @@
   box-shadow: 0px 1px 1px 1px gray
 }
 .button-circle:hover{
-  background-color: rgb(103, 146, 226);
-  transform: translateY(-3px)
+  background-color:  #5b9fdf
+  /* transform: translateY(-3px) */
 }
 
 option{
