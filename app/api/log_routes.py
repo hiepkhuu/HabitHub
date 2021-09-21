@@ -28,7 +28,8 @@ month = {
 
 def convert_date(date):
     #YYYY      MM    DD
-    return f"{date[3]}-{month[date[2]]}-{date[1]}"
+    dateSplit = date.split(' ')
+    return f"{dateSplit[3]}-{month[dateSplit[2]]}-{dateSplit[1]}"
 
 # print(convert_date('Sat, 21 Aug 2021 12:00:00 GMT'))
 
@@ -46,17 +47,22 @@ def get_this_week():
     # print('endOfWeek', end);
 
     today = date.today()
-    # start = today - timedelta(days=today.weekday())
-    # end = start + timedelta(days=6)
-    # print("Today: " + str(today))
-    # print("Start: " + str(start))
-    # print("End: " + str(end))
+    start = today - timedelta(days=today.weekday())
+    end = start + timedelta(days=6)
+
+    # print("Todayh: " + today.strftime("%a, %d %m"))
+    print("Start: " + str(start))
+    print("End: " + str(end))
 
     # logs = Log.query.filter(convert_date(Log.created_at) == str(today)).all()
-    datet = 'Sat, 21 Aug 2021 12:00:00 GMT'
-    print(f"{datet[3]}-{month[datet[2]]}-{datet[1]}")
+
+    # blurb = 'Sat, 21 Aug 2021 12:00:00 GMT'
+    # blurbb = blurb.split(' ')
+    # datedate = f"{blurbb[3]}-{month[blurbb[2]]}-{blurbb[1]}"
+
     # may do this in front end becasue filters are difficutl
-    logs = Log.query.filter(Log.user_id == 1).all()
+    # 2021-08-26
+    logs = Log.query.filter(Log.created_at=='Sat, 21 Aug 2021 12:00:00 GMT').all()
     return {'logs': [log.to_dict() for log in logs]}
     # logs = Log.query.filter()
 
