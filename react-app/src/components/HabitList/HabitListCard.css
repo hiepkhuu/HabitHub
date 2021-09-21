@@ -44,9 +44,7 @@ background-color: rgb(245, 245, 245)
   height: auto;
   overflow-y: auto;
   overflow-x: hidden;
-  /* height:100%; */
-  /* border-bottom-right-radius: 15px;
-  border-bottom-left-radius: 15px */
+
 
 }
 .task-card::-webkit-scrollbar {
