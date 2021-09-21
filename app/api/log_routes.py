@@ -51,8 +51,8 @@ def get_this_week():
     end = start + timedelta(days=6)
 
     # print("Todayh: " + today.strftime("%a, %d %m"))
-    print("Start: " + str(start))
-    print("End: " + str(end))
+    # print("Start: " + str(start))
+    # print("End: " + str(end))
 
     # logs = Log.query.filter(convert_date(Log.created_at) == str(today)).all()
 
@@ -62,7 +62,9 @@ def get_this_week():
 
     # may do this in front end becasue filters are difficutl
     # 2021-08-26
-    logs = Log.query.filter(Log.created_at=='Sat, 21 Aug 2021 12:00:00 GMT').all()
+
+    logs = Log.query.filter(Log.created_at <= end).\
+            filter(Log.created_at >= start)
     return {'logs': [log.to_dict() for log in logs]}
     # logs = Log.query.filter()
 
