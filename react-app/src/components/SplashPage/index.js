@@ -60,8 +60,6 @@ const SplashPage = () =>{
             <div className='splash-photo'>
               <div className='msg-1'>
                   <p >MOTIVATION GETS YOU STARTED...</p>
-                  {/* <p >GETS YOU </p>
-                  <p >STARTED</p> */}
                   <p className='habithub-msg'>HABITHUB</p>
                   <p className='habithub-sub'>KEEPS YOU GOING</p>
               </div>
@@ -69,12 +67,12 @@ const SplashPage = () =>{
 
                 <h1>HIT YOUR TARGETS, RECEIVE REWARDS</h1>
                 <p>Focus on what truly matters with HabitHub. Build the best version of yourself by mastering your habits.</p>
-                <div  >
+                <div  style={{visibility:'visible'}}>
                       {errors.map((error, ind) => (
                         <div className='error-message' key={ind}>{error}</div>
                       ))}
                 </div>
-                <form onSubmit={onLogin}>
+                <form style={{visibility:'visible'}} onSubmit={onLogin}>
                       <button type='submit'>Demo Login</button>
                 </form>
               </div>
