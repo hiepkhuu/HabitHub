@@ -6,7 +6,6 @@ from app.forms import LogForm
 from app.api.auth_routes import validation_errors_to_error_messages
 from flask import Blueprint, jsonify, request
 from flask_login import login_required
-import pendulum
 from datetime import date, timedelta
 
 log_routes = Blueprint('logs', __name__)
