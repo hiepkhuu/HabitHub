@@ -7,14 +7,14 @@
   /* background-color: rgb(242, 248, 250); */
 
   padding: 20px;
-  box-shadow: 0px 1px 1px 1px rgb(224, 224, 224);
+  box-shadow: 0px 0px 5px 1px rgb(224, 224, 224);
   border-radius: 5px;
   text-align: center;
 
 }
 
 .greet-image{
-  background-image: url('./sprout.png');
+  background-image: url('');
   background-position:cover;
   background-size: cover;
   height:200px;
