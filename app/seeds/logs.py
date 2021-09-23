@@ -22,6 +22,16 @@ def seed_logs():
     a18 = Log(task_id=1, user_id=1, completed=False, created_at= '2021-08-08 12:00:00')
     a19 = Log(task_id=1, user_id=1, completed=True, created_at= '2021-08-07 12:00:00')
     a20 = Log(task_id=1, user_id=1, completed=False, created_at= '2021-08-06 12:00:00')
+    a21 = Log(task_id=1, user_id=1, completed=False, created_at= '2021-09-20 12:00:00')
+    a22 = Log(task_id=1, user_id=1, completed=True, created_at= '2021-09-22 12:00:00')
+    a23 = Log(task_id=1, user_id=1, completed=False, created_at= '2021-09-24 12:00:00')
+    a24 = Log(task_id=1, user_id=1, completed=True, created_at= '2021-09-26 12:00:00')
+    a25 = Log(task_id=1, user_id=1, completed=True, created_at= '2021-09-27 12:00:00')
+    a26 = Log(task_id=1, user_id=1, completed=True, created_at= '2021-09-29 12:00:00')
+    a27 = Log(task_id=1, user_id=1, completed=False, created_at= '2021-09-30 12:00:00')
+    a28 = Log(task_id=1, user_id=1, completed=True, created_at= '2021-10-01 12:00:00')
+    a29 = Log(task_id=1, user_id=1, completed=False, created_at= '2021-10-02 12:00:00')
+    a30 = Log(task_id=1, user_id=1, completed=True, created_at= '2021-10-03 12:00:00')
 
     b1 = Log(task_id=2, user_id=1, completed=True,created_at= '2021-08-26 12:00:00')
     b2 = Log(task_id=2, user_id=1, completed=True,created_at= '2021-08-25 12:00:00')
@@ -43,6 +53,16 @@ def seed_logs():
     b18 = Log(task_id=2, user_id=1, completed=True, created_at= '2021-08-08 12:00:00')
     b19 = Log(task_id=2, user_id=1, completed=True, created_at= '2021-08-07 12:00:00')
     b20 = Log(task_id=2, user_id=1, completed=True, created_at= '2021-08-06 12:00:00')
+    b21 = Log(task_id=2, user_id=1, completed=False, created_at= '2021-09-20 12:00:00')
+    b22 = Log(task_id=2, user_id=1, completed=True, created_at= '2021-09-22 12:00:00')
+    b23 = Log(task_id=2, user_id=1, completed=True, created_at= '2021-09-24 12:00:00')
+    b24 = Log(task_id=2, user_id=1, completed=True, created_at= '2021-09-26 12:00:00')
+    b25 = Log(task_id=2, user_id=1, completed=True, created_at= '2021-09-27 12:00:00')
+    b26 = Log(task_id=2, user_id=1, completed=True, created_at= '2021-09-29 12:00:00')
+    b27 = Log(task_id=2, user_id=1, completed=False, created_at= '2021-09-30 12:00:00')
+    b28 = Log(task_id=2, user_id=1, completed=True, created_at= '2021-10-01 12:00:00')
+    b29 = Log(task_id=2, user_id=1, completed=True, created_at= '2021-10-02 12:00:00')
+    b30 = Log(task_id=2, user_id=1, completed=True, created_at= '2021-10-03 12:00:00')
 
     c1 = Log(task_id=3, user_id=1, completed=True,created_at= '2021-08-26 12:00:00')
     c2 = Log(task_id=3, user_id=1, completed=False,created_at= '2021-08-25 12:00:00')
@@ -64,6 +84,16 @@ def seed_logs():
     c18 = Log(task_id=3, user_id=1, completed=True, created_at= '2021-08-08 12:00:00')
     c19 = Log(task_id=3, user_id=1, completed=False, created_at= '2021-08-07 12:00:00')
     c20 = Log(task_id=3, user_id=1, completed=True, created_at= '2021-08-06 12:00:00')
+    c21 = Log(task_id=3, user_id=1, completed=False, created_at= '2021-09-20 12:00:00')
+    c22 = Log(task_id=3, user_id=1, completed=True, created_at= '2021-09-22 12:00:00')
+    c23 = Log(task_id=3, user_id=1, completed=False, created_at= '2021-09-24 12:00:00')
+    c24 = Log(task_id=3, user_id=1, completed=True, created_at= '2021-09-26 12:00:00')
+    c25 = Log(task_id=3, user_id=1, completed=True, created_at= '2021-09-27 12:00:00')
+    c26 = Log(task_id=3, user_id=1, completed=False, created_at= '2021-09-29 12:00:00')
+    c27 = Log(task_id=3, user_id=1, completed=False, created_at= '2021-09-30 12:00:00')
+    c28 = Log(task_id=3, user_id=1, completed=True, created_at= '2021-10-01 12:00:00')
+    c29 = Log(task_id=3, user_id=1, completed=True, created_at= '2021-10-02 12:00:00')
+    c30 = Log(task_id=3, user_id=1, completed=False, created_at= '2021-10-03 12:00:00')
 
     d1 = Log(task_id=4, user_id=1, completed=True,created_at= '2021-08-26 12:00:00')
     d2 = Log(task_id=4, user_id=1, completed=True,created_at= '2021-08-25 12:00:00')
@@ -85,6 +115,16 @@ def seed_logs():
     d18 = Log(task_id=4, user_id=1, completed=True, created_at= '2021-08-08 12:00:00')
     d19 = Log(task_id=4, user_id=1, completed=True, created_at= '2021-08-07 12:00:00')
     d20 = Log(task_id=4, user_id=1, completed=True, created_at= '2021-08-06 12:00:00')
+    d21 = Log(task_id=4, user_id=1, completed=False, created_at= '2021-09-20 12:00:00')
+    d22 = Log(task_id=4, user_id=1, completed=True, created_at= '2021-09-22 12:00:00')
+    d23 = Log(task_id=4, user_id=1, completed=True, created_at= '2021-09-24 12:00:00')
+    d24 = Log(task_id=4, user_id=1, completed=True, created_at= '2021-09-26 12:00:00')
+    d25 = Log(task_id=4, user_id=1, completed=True, created_at= '2021-09-27 12:00:00')
+    d26 = Log(task_id=4, user_id=1, completed=True, created_at= '2021-09-29 12:00:00')
+    d27 = Log(task_id=4, user_id=1, completed=False, created_at= '2021-09-30 12:00:00')
+    d28 = Log(task_id=4, user_id=1, completed=True, created_at= '2021-10-01 12:00:00')
+    d29 = Log(task_id=4, user_id=1, completed=True, created_at= '2021-10-02 12:00:00')
+    d30 = Log(task_id=4, user_id=1, completed=True, created_at= '2021-10-03 12:00:00')
 
 
     logs= [
@@ -108,6 +148,16 @@ def seed_logs():
            a18,
            a19,
            a20,
+           a21,
+           a22,
+           a23,
+           a24,
+           a25,
+           a26,
+           a27,
+           a28,
+           a29,
+           a30,
 
            b1,
            b2,
@@ -129,6 +179,16 @@ def seed_logs():
            b18,
            b19,
            b20,
+           b21,
+           b22,
+           b23,
+           b24,
+           b25,
+           b26,
+           b27,
+           b28,
+           b29,
+           b30,
 
            c1,
            c2,
@@ -150,6 +210,16 @@ def seed_logs():
            c18,
            c19,
            c20,
+           c21,
+           c22,
+           c23,
+           c24,
+           c25,
+           c26,
+           c27,
+           c28,
+           c29,
+           c30,
 
            d1,
            d2,
@@ -170,7 +240,17 @@ def seed_logs():
            d17,
            d18,
            d19,
-           d20
+           d20,
+           d21,
+           d22,
+           d23,
+           d24,
+           d25,
+           d26,
+           d27,
+           d28,
+           d29,
+           d30,
            ]
 
     # i = 1
