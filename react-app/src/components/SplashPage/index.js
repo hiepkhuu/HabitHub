@@ -85,17 +85,20 @@ const SplashPage = () =>{
               <p>Habit building in its essential steps: choose a habit, actually remember to do it and track your development.</p>
               <div className='steps-container'>
                     <div className='steps'>
-                      <div className='step-img1'></div>
+                      {/* <div className='step-img1'></div> */}
+                      <div className="far fa-list-alt"></div>
                       <div className='step-header'>1. Set up your Habits</div>
                       <div className='step-detail'>String together a list of habits to create your daily routines and start your journey.</div>
                     </div>
                     <div className='steps'>
-                      <div className='step-img2'></div>
+                      {/* <div className='step-img2'></div> */}
+                      <i class="far fa-bell"></i>
                       <div className='step-header'>2. Get The Cue</div>
                       <div className='step-detail'>String together a list of habits to create your daily routines and start your journey.</div>
                     </div>
                     <div className='steps'>
-                      <div className='step-img3'></div>
+                      {/* <div className='step-img3'></div> */}
+                      <div className='far fa-chart-bar'></div>
                       <div className='step-header'>3. Track Your Progress</div>
                       <div className='step-detail'>String together a list of habits to create your daily routines and start your journey.</div>
                     </div>
