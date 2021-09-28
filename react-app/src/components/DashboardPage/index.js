@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { loadAllTasks} from '../../store/tasks'
 import { loadSingleTask } from '../../store/singletask'
 import { getAllColors } from '../../store/colors'
-import { addCompletedLog } from '../../store/logs'
+import { addCompletedLog, getAllWeeklyLogs} from '../../store/logs'
 import './DashboardPage.css'
 import moment from 'moment'
 import AddNewHabitModal from '../../context/AddNewTaskModal'
@@ -17,6 +17,7 @@ const DashboardPage = () => {
   const sessionUser = useSelector(state => state.session.user)
   const allTasks = useSelector(state => state.tasks)
   const singleTask = useSelector(state => state.singleTask)
+  const weeklyLogs = useSelector(state => state.logs.weekly_logs)
   const dispatch = useDispatch()
 
 
@@ -26,22 +27,17 @@ const DashboardPage = () => {
   const [habitId, setHabitId] = useState('')
   const [errors, setErrors] = useState([])
 
-  useEffect(async () => {
-
-    await dispatch(loadAllTasks(sessionUser.id))
-    await dispatch(getAllColors())
-    await dispatch(loadSingleTask(habitId))
+  useEffect(() => {
+    dispatch(loadAllTasks(sessionUser.id))
+    dispatch(getAllColors())
+    dispatch(loadSingleTask(habitId))
+    dispatch(getAllWeeklyLogs())
     setReloadTaskPage(false)
-
 
   }, [reloadTaskPage, habitId])
 
 
-
-
   function convert(input) {
-
-
     return moment(input, 'HH:mm:ss').format('h:mm A');
     // .format('h:mm:ss A')
   }
@@ -71,12 +67,17 @@ console.log('endOfWeek', endOfWeek)
     if (data) {
       setErrors(data);
     } else {
-
     }
   }
 
+  const loggedHowManyTimes = (id) => {
+    const filteredLogsByTaskId = weeklyLogs.logs.filter( log => log.task_id === id)
+    const trueLogs = filteredLogsByTaskId.filter(log => log.completed === true)
+    // console.log('XXX',trueLogs)/
+    return trueLogs.length
+  }
 
-
+  
 
   return (
     <>
@@ -97,7 +98,7 @@ console.log('endOfWeek', endOfWeek)
                             <div className='habit-name-header'>
                                 <div className='habit-bar-header'>
                                   <span>{task.task_name.toUpperCase()}</span>
-                                  <span className='habit-target'>0/{task.target_num} times</span>
+                                  <span className='habit-target'>{loggedHowManyTimes(task.id)}/{task.target_num} times</span>
                                 </div>
 
                                 {/* <div>
@@ -109,8 +110,8 @@ console.log('endOfWeek', endOfWeek)
                                         <div className='error-message' key={ind}>{error}</div>
                                       ))}
                                     </div>
-                                    <form onSubmit={logHabit}>
-                                      <button  type='submit'>Log it!</button>
+                                    <form style={{visibility: isItCompleted()}}onSubmit={logHabit}>
+                                      <button type='submit'>Log it!</button>
                                     </form>
                                 </div>
                             </div>
