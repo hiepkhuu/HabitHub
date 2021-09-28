@@ -72,12 +72,27 @@ console.log('endOfWeek', endOfWeek)
 
   const loggedHowManyTimes = (taskId) => {
     const filteredLogsByTaskId = weeklyLogs?.logs?.filter( log => log.task_id === taskId)
-    const trueLogs = filteredLogsByTaskId.filter(log => log.completed === true)
+    const trueLogs = filteredLogsByTaskId?.filter(log => log.completed === true)
     // console.log('XXX',trueLogs)/
-    return trueLogs.length
+    if (trueLogs) {
+      return trueLogs.length
+    } else {
+      return 0
+    }
+
   }
 
-  const isItCompleted = (taskId, targetNum) => {
+  const dimmedColors = {
+    '#E2F0CB':'#d2dfbe',
+    '#FF9AA2':'#e68c93',
+    '#FFDAC1':'#e6c2ab',
+    '#B5EAD7':'#a8d8c6',
+    '#C7CEEA':'#bac0da',
+    '#bae1ff':'#aed1ec',
+    '#FFB7B2':'#e6a39f',
+  }
+
+  const isItCompleted = (taskId, targetNum, color_hue) => {
     const timesCompleted = loggedHowManyTimes(taskId)
 
     if (timesCompleted < targetNum){
@@ -88,34 +103,18 @@ console.log('endOfWeek', endOfWeek)
             <div className='error-message' key={ind}>{error}</div>
           ))}
         </div>
-        <form onSubmit={logHabit}>
-          <button type='submit'>Log it!</button>
+        <form onSubmit={logHabit} >
+          <button className='habit-incomplete' style={{backgroundColor:`${dimmedColors[color_hue]}`}} type='submit'>Log it!</button>
         </form>
       </div>
       )
     } else {
       return (
-        <div >Good Job! You're Done this Week!</div>
+        // <div >Completed!</div>
+        <button className='habit-complete' style={{backgroundColor:`${color_hue}`}} type='submit'>Done!</button>
       )
     }
   }
-
-  // let logForm;
-  // if (isItCompleted){
-  //   logForm = (
-  //     <div className='log-form'>
-  //       <div  >
-  //         {errors.map((error, ind) => (
-  //           <div className='error-message' key={ind}>{error}</div>
-  //         ))}
-  //       </div>
-  //       <form onSubmit={logHabit}>
-  //         <button type='submit'>Log it!</button>
-  //       </form>
-  //     </div>
-  //   )
-
-  // }
 
 
 
@@ -152,9 +151,9 @@ console.log('endOfWeek', endOfWeek)
                                       <button type='submit'>Log it!</button>
                                     </form>
                                 </div> */}
-                                {isItCompleted(task.id, task.target_num)}
+                                {isItCompleted(task.id, task.target_num, task.color_hue)}
                             </div>
-                            <div className='edit-button'></div>
+                            {/* <div className='edit-button'></div> */}
                           </div>
                         </div>
                         </div>

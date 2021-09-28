@@ -60,10 +60,26 @@
 }
 .habit-name-header{
   padding-left: 20px;
+  padding-right: 20px;
   display:flex;
-
+  justify-content: space-between !important;
+  width: 100%
 }
 
+.habit-name-header button{
+  border-radius: 10px;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.habit-complete{
+  cursor: not-allowed !important;
+}
+
+.habit-incomplete{
+/* background-color: 	#e6a39f !important; */
+}
 .habit-target{
   font-size: small;
 }
