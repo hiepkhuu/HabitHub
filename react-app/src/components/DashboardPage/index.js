@@ -47,7 +47,7 @@ const DashboardPage = () => {
     return newDate
   }
 
-  const startOfWeek = moment().startOf('week').toDate();
+const startOfWeek = moment().startOf('week').toDate();
 const endOfWeek   = moment().endOf('week').toDate();
 
 console.log('startOfWeek', startOfWeek);
@@ -63,11 +63,14 @@ console.log('endOfWeek', endOfWeek)
     }
 
     const data = await dispatch(addCompletedLog(log))
-    console.log('did it pass')
+    // console.log('did it pass')
     if (data) {
       setErrors(data);
     } else {
     }
+
+    reloadTaskPage ? setReloadTaskPage(false): setReloadTaskPage(true)
+
   }
 
   const loggedHowManyTimes = (taskId) => {
