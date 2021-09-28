@@ -92,15 +92,15 @@ const SplashPage = () =>{
                     </div>
                     <div className='steps'>
                       {/* <div className='step-img2'></div> */}
-                      <i class="far fa-bell"></i>
+                      <div class="far fa-bell"></div>
                       <div className='step-header'>2. Get The Cue</div>
-                      <div className='step-detail'>String together a list of habits to create your daily routines and start your journey.</div>
+                      <div className='step-detail'>Stay accountable and never forget your habits with multiple reminders.</div>
                     </div>
                     <div className='steps'>
                       {/* <div className='step-img3'></div> */}
                       <div className='far fa-chart-bar'></div>
                       <div className='step-header'>3. Track Your Progress</div>
-                      <div className='step-detail'>String together a list of habits to create your daily routines and start your journey.</div>
+                      <div className='step-detail'>View your habit development through the weeks and months with detailed reports.</div>
                     </div>
 
               </div>

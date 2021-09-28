@@ -205,6 +205,13 @@ visibility: hidden;
   background-color: #d5e9f0;
 }
 
+.how-div p{
+  font-size: 20px;
+  color:gray;
+  text-align: center;
+  width: 500px;
+}
+
 .steps-container{
   display:flex !important;
   flex-direction: row !important;
@@ -245,7 +252,7 @@ font-size: 22px;
 }
 .step-detail{
   padding-left: 1em;
-  font-size: 20px;
+  font-size: 18px;
   color:gray
 }
 /* .step-img2{
