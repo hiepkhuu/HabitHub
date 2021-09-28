@@ -70,14 +70,54 @@ console.log('endOfWeek', endOfWeek)
     }
   }
 
-  const loggedHowManyTimes = (id) => {
-    const filteredLogsByTaskId = weeklyLogs.logs.filter( log => log.task_id === id)
+  const loggedHowManyTimes = (taskId) => {
+    const filteredLogsByTaskId = weeklyLogs?.logs?.filter( log => log.task_id === taskId)
     const trueLogs = filteredLogsByTaskId.filter(log => log.completed === true)
     // console.log('XXX',trueLogs)/
     return trueLogs.length
   }
 
-  
+  const isItCompleted = (taskId, targetNum) => {
+    const timesCompleted = loggedHowManyTimes(taskId)
+
+    if (timesCompleted < targetNum){
+      return (
+        <div className='log-form'>
+        <div  >
+          {errors.map((error, ind) => (
+            <div className='error-message' key={ind}>{error}</div>
+          ))}
+        </div>
+        <form onSubmit={logHabit}>
+          <button type='submit'>Log it!</button>
+        </form>
+      </div>
+      )
+    } else {
+      return (
+        <div >Good Job! You're Done this Week!</div>
+      )
+    }
+  }
+
+  // let logForm;
+  // if (isItCompleted){
+  //   logForm = (
+  //     <div className='log-form'>
+  //       <div  >
+  //         {errors.map((error, ind) => (
+  //           <div className='error-message' key={ind}>{error}</div>
+  //         ))}
+  //       </div>
+  //       <form onSubmit={logHabit}>
+  //         <button type='submit'>Log it!</button>
+  //       </form>
+  //     </div>
+  //   )
+
+  // }
+
+
 
   return (
     <>
@@ -101,19 +141,18 @@ console.log('endOfWeek', endOfWeek)
                                   <span className='habit-target'>{loggedHowManyTimes(task.id)}/{task.target_num} times</span>
                                 </div>
 
-                                {/* <div>
-                                  {task.task_detail}
-                                </div> */}
-                                <div className='log-form'>
+
+                                {/* <div className='log-form'>
                                     <div  >
                                       {errors.map((error, ind) => (
                                         <div className='error-message' key={ind}>{error}</div>
                                       ))}
                                     </div>
-                                    <form style={{visibility: isItCompleted()}}onSubmit={logHabit}>
+                                    <form style={{visibility: isItCompleted(task.id, task.target_num)}}onSubmit={logHabit}>
                                       <button type='submit'>Log it!</button>
                                     </form>
-                                </div>
+                                </div> */}
+                                {isItCompleted(task.id, task.target_num)}
                             </div>
                             <div className='edit-button'></div>
                           </div>
