@@ -203,7 +203,7 @@ visibility: hidden;
   flex-direction: column;
   margin-top: 0px;
   /* background-color: #d5e9f0; */
-  background-color: #e4f1f5;
+  /* background-color: #e4f1f5; */
 }
 
 .how-div h1{
@@ -211,7 +211,7 @@ visibility: hidden;
 }
 .how-div p{
   font-size: 20px;
-  color:gray;
+  color:rgb(83, 83, 83);
   text-align: center;
   width: 500px;
   margin: 0px;
@@ -246,7 +246,7 @@ visibility: hidden;
   height: 70%;
   font-size: 150px;
   color: white;
-  text-shadow: 0px 1px 1px #2a5a7c;
+  text-shadow: 1px 1px 1px #2a5a7c;
 }
 .step-header{
 margin-top: 0px;
@@ -256,9 +256,9 @@ font-weight: 600;
 font-size: 22px;
 }
 .step-detail{
-  padding-left: 1em;
+  padding-left: 1.2em;
   font-size: 18px;
-  color:gray
+  color:rgb(83, 83, 83)
 }
 /* .step-img2{
   background-image: url('./step2.png');
@@ -271,7 +271,7 @@ font-size: 22px;
   height: 70%;
   font-size: 150px;
   color: white;
-  text-shadow: 0px 1px 1px #2a5a7c;
+  text-shadow: 1px 1px 1px #2a5a7c;
 }
 
 /* .step-img3{
@@ -285,5 +285,5 @@ font-size: 22px;
   height: 70%;
   font-size: 150px;
   color: white;
-  text-shadow: 0px 1px 1px #2a5a7c;
+  text-shadow: 1px 1px 1px #2a5a7c;
 }

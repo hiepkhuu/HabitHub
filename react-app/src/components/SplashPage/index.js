@@ -81,7 +81,7 @@ const SplashPage = () =>{
 
 
             <div className='how-div'>
-              <h1>How it Works</h1>
+              <h1>How it Works?</h1>
               <p>Habit building in its essential steps: choose a habit, actually remember to do it and track your development.</p>
               <div className='steps-container'>
                     <div className='steps'>
