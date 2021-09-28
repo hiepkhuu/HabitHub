@@ -7,20 +7,20 @@
   /* background-color: rgb(242, 248, 250); */
 
   padding: 20px;
-  box-shadow: 0px 0px 5px 1px rgb(224, 224, 224);
+  box-shadow: 0px 0px 10px 1px rgb(224, 224, 224);
   border-radius: 5px;
   text-align: center;
 
 }
 
-.greet-image{
+/* .greet-image{
   background-image: url('');
   background-position:cover;
   background-size: cover;
   height:200px;
   width: 230px;
 
-}
+} */
 .greet-card{
   display:flex;
   justify-content: center;
