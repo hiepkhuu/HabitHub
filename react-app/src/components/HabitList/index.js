@@ -28,7 +28,7 @@ const HabitListCard = ({habitId, setShowHabitInfo, setReloadTaskPage}) => {
   }, [])
 
   function convert(input) {
-   
+
     return moment(input, 'HH:mm:ss').format('h:mm A');
     // .format('h:mm:ss A')
   }
@@ -70,11 +70,10 @@ const HabitListCard = ({habitId, setShowHabitInfo, setReloadTaskPage}) => {
 
                     </div>
                     <div className='task-points'>
-                      <span className="fas fa-heart " style={{ color: `${singleTask.color_hue}` }}></span> {singleTask.task_points} pts
+                      <span className="fas fa-heart " style={{ color: `${singleTask.color_hue}` }}> </span> {singleTask.task_points} pts
                     </div>
                     <div className='task-created'>
-                      <span className='fas fa-calendar-day' style={{ color: `${singleTask.color_hue}` }}> </span>
-                        {turnDateIntoReadable(`${singleTask.created_at}`)}
+                      <span className='fas fa-calendar-day' style={{ color: `${singleTask.color_hue}` }}> </span> {turnDateIntoReadable(`${singleTask.created_at}`)}
                     </div>
                   </div>
            </div>
