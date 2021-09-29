@@ -18,25 +18,30 @@
   color: rgb(2, 2, 2);
   /* text-decoration: underline */
 }
-
 .delete-task-form button{
-
   margin: 20px 5px 0px 0px;
-  height: 50px;
-  width: 120px;
+  height: 40px;
+  width: 80px;
   cursor: pointer;
-  background-color:#6485a0;
-  border: 1px solid#6475a0;
+  background-color: #647dee;
+  border: none;
   border-radius: 5px;
   color: rgb(255, 255, 255);
-  font-size: 20px;
-  box-shadow: 0px 1px 1px 1px rgb(106, 106, 106)
+  font-size: 16px;
 }
  .delete-task-form button:hover{
-  background-color:#485575;
+  background-color:#dde2ec;
+ }
+
+ .yes-button{
+  background-color: rgb(219, 95, 91) !important;
+ }
+
+ .no-button{
+  background-color: rgb(219, 218, 218) !important;
  }
 
  .delete-button{
    padding: 11px 15px ;
-  
+
  }

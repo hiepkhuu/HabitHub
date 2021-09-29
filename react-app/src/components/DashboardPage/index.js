@@ -107,14 +107,14 @@ console.log('endOfWeek', endOfWeek)
           ))}
         </div>
         <form onSubmit={logHabit} >
-          <button className='habit-incomplete' style={{backgroundColor:`${dimmedColors[color_hue]}`}} type='submit'>Log it!</button>
+          <button className='habit-incomplete' style={{backgroundColor:`${dimmedColors[color_hue]}`}} type='submit'>Log it</button>
         </form>
       </div>
       )
     } else {
       return (
         // <div >Completed!</div>
-        <button className='habit-complete' style={{backgroundColor:`${color_hue}`}} type='submit'>Done!</button>
+        <button className='habit-complete' style={{backgroundColor:`${color_hue}`}} type='submit'>Completed!</button>
       )
     }
   }
@@ -144,16 +144,7 @@ console.log('endOfWeek', endOfWeek)
                                 </div>
 
 
-                                {/* <div className='log-form'>
-                                    <div  >
-                                      {errors.map((error, ind) => (
-                                        <div className='error-message' key={ind}>{error}</div>
-                                      ))}
-                                    </div>
-                                    <form style={{visibility: isItCompleted(task.id, task.target_num)}}onSubmit={logHabit}>
-                                      <button type='submit'>Log it!</button>
-                                    </form>
-                                </div> */}
+    
                                 {isItCompleted(task.id, task.target_num, task.color_hue)}
                             </div>
                             {/* <div className='edit-button'></div> */}

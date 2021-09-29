@@ -42,8 +42,8 @@ const DeleteTaskModal = ({setReloadTaskPage,rewardId, setShowModal, rewardName, 
         <Modal>
              <div className='delete-task-form'>
                 <p>Are you sure you want to delete <span>"{rewardName}"</span> ?</p>
-                <button onClick={deleteReward}>yes</button>
-                <button onClick={cancel}>no</button>
+                <button className='yes-button' onClick={deleteReward}>yes</button>
+                <button className='no-button' onClick={cancel}>no</button>
               </div>
         </Modal>
       )}
