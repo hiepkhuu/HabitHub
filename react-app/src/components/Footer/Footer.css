@@ -1,11 +1,16 @@
-.footer{
-  width: 100%;
+#footer{
+  /* width: 100%;
   background-color: #647dee;
   display:flex;
   justify-content: flex-end;
   height: 80px;
   position:absolute;
-  left: 0 ; right: 0; bottom: 0; 
+  bottom: 0; */
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 5rem;
+  background-color: black
 }
 .footer-link{
   color: white;

@@ -76,7 +76,7 @@ console.log('endOfWeek', endOfWeek)
   const loggedHowManyTimes = (taskId) => {
     const filteredLogsByTaskId = weeklyLogs?.logs?.filter( log => log.task_id === taskId)
     const trueLogs = filteredLogsByTaskId?.filter(log => log.completed === true)
-    // console.log('XXX',trueLogs)/
+
     if (trueLogs) {
       return trueLogs.length
     } else {
@@ -144,7 +144,7 @@ console.log('endOfWeek', endOfWeek)
                                 </div>
 
 
-    
+
                                 {isItCompleted(task.id, task.target_num, task.color_hue)}
                             </div>
                             {/* <div className='edit-button'></div> */}
@@ -164,7 +164,7 @@ console.log('endOfWeek', endOfWeek)
         {showHabitInfo ?
             <div className='info-board'>
               <div></div>
-              <HabitListCard habitId ={habitId} setShowHabitInfo={setShowHabitInfo} setReloadTaskPage={setReloadTaskPage}/>
+              <HabitListCard habitId ={habitId} setShowHabitInfo={setShowHabitInfo} setReloadTaskPage={setReloadTaskPage} reloadTaskPage={reloadTaskPage}/>
             </div>
             :
             <div className='greeting-dashboard'>

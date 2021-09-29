@@ -1,31 +1,34 @@
 import React, {useEffect, useState} from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-// import { loadAllTasks } from '../../store/tasks'
+
 import { loadSingleTask } from '../../store/singletask';
 import { getAllColors } from '../../store/colors'
+import { addCompletedLog, getAllWeeklyLogs} from '../../store/logs'
 
-import moment from 'moment'
 import AddNewHabitModal from '../../context/AddNewTaskModal'
 import UpdateTaskModal from '../../context/UpdateTaskModal'
+
+import moment from 'moment'
 import './HabitListCard.css'
 
 
-const HabitListCard = ({habitId, setShowHabitInfo, setReloadTaskPage}) => {
+const HabitListCard = ({habitId, setShowHabitInfo, reloadTaskPage, setReloadTaskPage}) => {
   const sessionUser = useSelector(state => state.session.user)
   const singleTask = useSelector(state => state.singleTask)
-
+  const weeklyLogs = useSelector(state => state.logs.weekly_logs)
   const dispatch = useDispatch()
 
   // const [reloadTaskPage, setReloadTaskPage] = useState(false)
   const [color, setColor] = useState('')
+  const [errors, setErrors] = useState([])
 
 
-  useEffect(async () => {
-    await dispatch(loadSingleTask(habitId))
-    await dispatch(getAllColors())
-    // setReloadTaskPage(false)
+  useEffect(() => {
+    dispatch(loadSingleTask(habitId))
+    dispatch(getAllColors())
+    dispatch(getAllWeeklyLogs())
 
-  }, [])
+  }, [dispatch])
 
   function convert(input) {
 
@@ -38,6 +41,47 @@ const HabitListCard = ({habitId, setShowHabitInfo, setReloadTaskPage}) => {
     return newDate
   }
 
+  const loggedHowManyTimes = (taskId) => {
+    const filteredLogsByTaskId = weeklyLogs?.logs?.filter( log => log.task_id === taskId)
+    const trueLogs = filteredLogsByTaskId?.filter(log => log.completed === true)
+
+    if (trueLogs) {
+      return trueLogs.length
+    } else {
+      return 0
+    }
+
+  }
+
+  const dimmedColors = {
+    '#E2F0CB':'#d2dfbe',
+    '#FF9AA2':'#e68c93',
+    '#FFDAC1':'#e6c2ab',
+    '#B5EAD7':'#a8d8c6',
+    '#C7CEEA':'#bac0da',
+    '#bae1ff':'#aed1ec',
+    '#FFB7B2':'#e6a39f',
+  }
+
+  const logHabit = async (e) => {
+    e.preventDefault()
+
+    const log = {
+      task_id: habitId,
+      user_id: sessionUser.id,
+      completed: true
+    }
+
+    const data = await dispatch(addCompletedLog(log))
+    // console.log('did it pass')
+    if (data) {
+      setErrors(data);
+    } else {
+    }
+
+    reloadTaskPage ? setReloadTaskPage(false): setReloadTaskPage(true)
+
+  }
 
 
 
@@ -82,7 +126,10 @@ const HabitListCard = ({habitId, setShowHabitInfo, setReloadTaskPage}) => {
               CURRENT STREAK
             </div>
             <div>
-                THIS WEEK: {`${singleTask.target_num}`} TIMES
+                THIS WEEK: {loggedHowManyTimes(singleTask.id)} TIMES
+                <form onSubmit={logHabit} >
+                  <button className='habit-logit' style={{backgroundColor:`${dimmedColors[singleTask.color_hue]}`}} type='submit'>Log it!</button>
+                </form>
             </div>
         </div>
         </div>
