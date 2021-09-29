@@ -10,14 +10,14 @@ const LogoutButton = () => {
   const onLogout = async (e) => {
     await dispatch(logout());
     history.push('/')
-    // return <Redirect to={'/'} />
+    return <Redirect to={'/'} />
   };
 
 
   if (sessionUser) {
-    return <Redirect to={'/greeting'} />;
+    return <Redirect to={'/dashboard'} />;
   }
-  return <button onClick={onLogout}>Logout</button>;
+  return (<button onClick={onLogout}>Logout</button>);
 };
 
 export default LogoutButton;

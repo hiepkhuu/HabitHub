@@ -87,20 +87,20 @@ const SplashPage = () =>{
                     <div className='steps'>
                       {/* <div className='step-img1'></div> */}
                       <div className="far fa-list-alt"></div>
-                      <div className='step-header'>1. Set up your Habits</div>
-                      <div className='step-detail'>String together a list of habits to create your daily routines and start your journey.</div>
+                      <div className='step-header'>#1 Set up Habits</div>
+                      <div className='step-detail'>Create a list of habits to create your daily routine and start your journey.</div>
                     </div>
                     <div className='steps'>
                       {/* <div className='step-img2'></div> */}
                       <div class="far fa-bell"></div>
-                      <div className='step-header'>2. Get The Cue</div>
-                      <div className='step-detail'>Stay accountable and never forget your habits with multiple reminders.</div>
+                      <div className='step-header'>#2 Track Your Progress</div>
+                      <div className='step-detail'>See your habits develop over time with streaks and a garden. </div>
                     </div>
                     <div className='steps'>
                       {/* <div className='step-img3'></div> */}
-                      <div className='far fa-chart-bar'></div>
-                      <div className='step-header'>3. Track Your Progress</div>
-                      <div className='step-detail'>View your habit development through the weeks and months with detailed reports.</div>
+                      <div className='fas fa-medal'></div>
+                      <div className='step-header'>#3 Unlock Rewards</div>
+                      <div className='step-detail'>Keep yourself accountable with rewards you choose for yourself.</div>
                     </div>
 
               </div>

@@ -234,6 +234,7 @@ visibility: hidden;
   flex-direction: column;
   align-items: flex-start !important;
   margin-top: 40px;
+
 }
 
 /* .step-img1{
@@ -246,6 +247,7 @@ visibility: hidden;
   width: 70%;
   height: 70%;
   font-size: 150px;
+  /* align-self: center; */
   color: white;
   text-shadow: 1px 1px 1px #2a5a7c;
 }
@@ -271,6 +273,7 @@ font-size: 22px;
   width: 70%;
   height: 70%;
   font-size: 150px;
+  /* align-self: center; */
   color: white;
   text-shadow: 1px 1px 1px #2a5a7c;
 }
@@ -281,10 +284,11 @@ font-size: 22px;
   height: 70%;
 } */
 
-.far.fa-chart-bar{
+.fas.fa-medal{
   width: 70%;
   height: 70%;
   font-size: 150px;
+  /* align-self: center; */
   color: white;
   text-shadow: 1px 1px 1px #2a5a7c;
 }
