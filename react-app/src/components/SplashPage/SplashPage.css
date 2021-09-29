@@ -170,13 +170,13 @@ visibility: hidden;
 }
 .splash-button{
   border-radius: 5px;
-  width: 150px;
-  height: 35px;
+  width: 185px;
+  height: 45px;
   margin-left: 10px;
   margin-bottom: 5px;
   transition:  all 0.3s ease 0s;
   /* font-size: 20px; */
-  background-image: url('./habithub-plain-PhotoRoom.png');
+  background-image: url('./HabitHub-logos_transparent.png');
   /* height: 100%;
   width:100%; */
   background-size: cover;

@@ -10,7 +10,14 @@
   bottom: 0;
   width: 100%;
   height: 5rem;
-  background-color: black
+
+
+}
+
+.footer {
+  background-color: #2f5579;
+  display:flex;
+
 }
 .footer-link{
   color: white;
