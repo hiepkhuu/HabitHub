@@ -1,5 +1,5 @@
 import React from 'react'
-// import {a} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import './Footer.css'
 
 
@@ -7,11 +7,13 @@ const Footer = () => {
 
   return (
     <footer className="footer">
-      <div className='footer-icon'>
-
-      </div>
-      <div className='feature-links'>
-
+      <div className='feature-container'>
+          <div className='footer-icon'></div>
+          <div className='feature-links'>
+              <Link className='footer-link' to='/login'>Login</Link>
+              <Link className='footer-link' to='/signup'>Signup</Link>
+              <Link></Link>
+          </div>
       </div>
       <div className='font-awesome'>
 
