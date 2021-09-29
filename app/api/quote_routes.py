@@ -15,7 +15,7 @@ def get_qoute():
     """
     Get all quotes
     """
-    num = randrange(28)
+    num = randrange(27)
     print(num)
     quote = Quotes.query.filter(Quotes.id == num).one()
     return  quote.to_dict()

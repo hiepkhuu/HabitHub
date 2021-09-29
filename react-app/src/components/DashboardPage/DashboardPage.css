@@ -75,6 +75,7 @@
 
 .habit-complete{
   cursor: not-allowed !important;
+  padding-right: 0px !important
 }
 
 .habit-incomplete{

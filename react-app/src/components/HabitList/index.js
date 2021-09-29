@@ -90,12 +90,12 @@ const HabitListCard = ({habitId, setShowHabitInfo, reloadTaskPage, setReloadTask
 
     if (timesCompleted < targetNum){
       return (
-        <div className='log-form'>
-        <div>
+      <div className='log-form'>
+        {/* <div>
           {errors.map((error, ind) => (
             <div className='error-message' key={ind}>{error}</div>
           ))}
-        </div>
+        </div> */}
         <form onSubmit={logHabit} >
           <button className='habit-logit' style={{backgroundColor:`${dimmedColors[singleTask.color_hue]}`}} type='submit'>Log it!</button>
         </form>
@@ -104,7 +104,7 @@ const HabitListCard = ({habitId, setShowHabitInfo, reloadTaskPage, setReloadTask
     } else {
       return (
         // <div >Completed!</div>
-        <button className='habit-complete'  type='submit'>Completed!</button>
+        <button className='habit-logit-complete'  type='submit'>Completed!</button>
       )
     }
   }
