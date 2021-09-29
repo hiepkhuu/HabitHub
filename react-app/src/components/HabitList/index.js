@@ -148,7 +148,8 @@ const HabitListCard = ({habitId, setShowHabitInfo, reloadTaskPage, setReloadTask
            </div>
         <div className='task-streak-container'>
             <div>
-              CURRENT STREAK
+              CURRENT STREAK:
+              <p> Coming Soon</p>
             </div>
             <div>
                 THIS WEEK: {loggedHowManyTimes(singleTask.id)} TIMES
