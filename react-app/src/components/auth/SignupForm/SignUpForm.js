@@ -74,7 +74,7 @@ const SignUpForm = () => {
 
 
     <div className='form-container'>
-        <div className='signup-photo'></div>
+        {/* <div className='signup-photo'></div> */}
         <form className='signup-form' onSubmit={onSignUp}>
           <div className='logo-container'>
              <div className='short-logo'></div>

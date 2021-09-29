@@ -2,10 +2,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import LogoutButton from './ProfileButton/LogoutButton';
 import ProfileButton from './ProfileButton';
 import './NavBar.css'
-import GreetingPage from '../GreetingPage';
+
 
 const Navigation = ({ isLoaded }) => {
   const sessionUser = useSelector(state => state.session.user );

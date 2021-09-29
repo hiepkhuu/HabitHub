@@ -6,6 +6,7 @@ import { getAllColors } from '../../store/colors'
 import { addCompletedLog, getAllWeeklyLogs} from '../../store/logs'
 import './DashboardPage.css'
 import moment from 'moment'
+import Footer from '../Footer';
 import AddNewHabitModal from '../../context/AddNewTaskModal'
 import UpdateTaskModal from '../../context/UpdateTaskModal'
 import HabitListCard from '../HabitList'
@@ -172,6 +173,7 @@ console.log('endOfWeek', endOfWeek)
             </div>
         }
         </div>
+        < Footer />
   </>
   )
 }

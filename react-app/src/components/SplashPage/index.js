@@ -98,7 +98,7 @@ const SplashPage = () =>{
                     </div>
                     <div className='steps'>
                       {/* <div className='step-img3'></div> */}
-                      <div className='fas fa-medal'></div>
+                      <div className='fas fa-medal big'></div>
                       <div className='step-header'>#3 Unlock Rewards</div>
                       <div className='step-detail'>Keep yourself accountable with rewards you choose for yourself.</div>
                     </div>

@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import moment from 'moment'
 import './RewardsPage.css'
 
+import Footer from '../Footer';
 import { loadAllRewards } from '../../store/rewards'
 import { getAllColors } from '../../store/colors'
 import { getAllCompletedLogs } from '../../store/logs'
@@ -148,7 +149,8 @@ const RewardsPage = () => {
   return (
     <>
 
-    {/* <div className='rewards-log-container'> */}
+    {/* <div className='rewards-page-container'> */}
+      {/* <div className='rewards-log-container' > */}
         <div className='rewards-left-container'>
             <div className='rewards-header'>
 
@@ -215,8 +217,10 @@ const RewardsPage = () => {
 
        </div>
 
+       {/* </div> */}
+       {/* < Footer /> */}
     {/* </div> */}
-    </>
+ </>
   )
 }
 
