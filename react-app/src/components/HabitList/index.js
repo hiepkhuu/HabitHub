@@ -85,6 +85,31 @@ const HabitListCard = ({habitId, setShowHabitInfo, reloadTaskPage, setReloadTask
 
 
 
+  const isItCompleted = (taskId, targetNum, color_hue) => {
+    const timesCompleted = loggedHowManyTimes(taskId)
+
+    if (timesCompleted < targetNum){
+      return (
+        <div className='log-form'>
+        <div>
+          {errors.map((error, ind) => (
+            <div className='error-message' key={ind}>{error}</div>
+          ))}
+        </div>
+        <form onSubmit={logHabit} >
+          <button className='habit-logit' style={{backgroundColor:`${dimmedColors[singleTask.color_hue]}`}} type='submit'>Log it!</button>
+        </form>
+      </div>
+      )
+    } else {
+      return (
+        // <div >Completed!</div>
+        <button className='habit-complete'  type='submit'>Completed!</button>
+      )
+    }
+  }
+
+
   return (
     <>
 
@@ -127,9 +152,10 @@ const HabitListCard = ({habitId, setShowHabitInfo, reloadTaskPage, setReloadTask
             </div>
             <div>
                 THIS WEEK: {loggedHowManyTimes(singleTask.id)} TIMES
-                <form onSubmit={logHabit} >
+                {/* <form onSubmit={logHabit} >
                   <button className='habit-logit' style={{backgroundColor:`${dimmedColors[singleTask.color_hue]}`}} type='submit'>Log it!</button>
-                </form>
+                </form> */}
+                {isItCompleted(singleTask.id, singleTask.target_num, singleTask.color_hue)}
             </div>
         </div>
         </div>
