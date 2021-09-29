@@ -173,7 +173,7 @@ console.log('endOfWeek', endOfWeek)
             </div>
         }
         </div>
-        < Footer />
+        {/* < Footer /> */}
   </>
   )
 }
