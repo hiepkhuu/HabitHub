@@ -198,11 +198,12 @@ visibility: hidden;
 
 .how-div{
   /* margin-top: 400px; */
-  height: 500px;
+  height: 600px;
   display: flex;
   flex-direction: column;
   margin-top: 0px;
   background-color: #d5e9f0;
+  border-top: .25em solid white;
   /* background-color: #e4f1f5; */
 }
 
