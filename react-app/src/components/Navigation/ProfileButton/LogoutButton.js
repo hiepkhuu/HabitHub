@@ -16,6 +16,8 @@ const LogoutButton = () => {
 
   if (sessionUser) {
     return <Redirect to={'/dashboard'} />;
+  }else {
+    return <Redirect to={'/'} />;
   }
   return (<button onClick={onLogout}>Logout</button>);
 };

@@ -19,7 +19,7 @@ const LoginForm = () => {
     if (data) {
       setErrors(data);
     }
-    return <Redirect to={'/greeting'} />
+    return <Redirect to={'/dashboard'} />
   };
 
   const updateEmail = (e) => {
@@ -31,7 +31,9 @@ const LoginForm = () => {
   };
 
   if (sessionUser) {
-    return <Redirect to={'/greeting'} />;
+    return <Redirect to={'/dashboard'} />;
+  }else {
+    return <Redirect to={'/'} />;
   }
 
   return (

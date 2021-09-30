@@ -26,8 +26,12 @@ const SplashPage = () =>{
 
 
   if (sessionUser) {
-    return <Redirect to={'/greeting'} />;
+    return <Redirect to={'/dashboard'} />;
+  } else {
+    return <Redirect to={'/'} />;
   }
+
+
   return (
     <div className='splash-page'>
        <div className='signed-out-navbar'>

@@ -8,6 +8,10 @@
   /* position: relative; */
   /* z-index: -1 */
   /* position:relative; */
+  color:white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
 }
 .nav-links.profile{
@@ -68,4 +72,19 @@
   height: 100vh
 } */
 
+.navbar-footer{
+  position: absolute;
+  bottom: 1em;
+  font-size: 12px !important;
+  display: inherit;
+  flex-direction: column;
+  align-items: center;
+}
+.navbar-footer div{
+  display: flex;
 
+
+}
+.dev-name{
+  margin-top: 0px;
+}

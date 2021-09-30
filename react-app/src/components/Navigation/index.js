@@ -30,6 +30,15 @@ const Navigation = ({ isLoaded }) => {
                     <span >Rewards</span>
                   </button>
                 </NavLink>
+                <div className='navbar-footer'>
+                  <div className='footer-icon'></div>
+                  <h3>DEVELOPED BY:</h3>
+                  <h3 className='dev-name'>Hiep Khuu</h3>
+                  <div>
+                    <a className='footer-link' href='https://www.aedin.com/in/hiep-khuu-380111201/'> <i class="fab fa-linkedin-in"></i></a>
+                    <a className='footer-link' href='https://github.com/hiepkhuu'><i class="fab fa-github"></i></a>
+                  </div>
+                </div>
 
           </div>
        </div>
