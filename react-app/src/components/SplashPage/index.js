@@ -25,7 +25,7 @@ const SplashPage = () =>{
   };
 
 
-  if (sessionUser) {
+  if (!sessionUser) {
     return <Redirect to={'/dashboard'} />;
   }
 
