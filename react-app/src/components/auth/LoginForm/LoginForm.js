@@ -32,9 +32,10 @@ const LoginForm = () => {
 
   if (sessionUser) {
     return <Redirect to={'/dashboard'} />;
-  }else {
-    return <Redirect to={'/'} />;
   }
+  //  if (!sessionUser){
+  //   return <Redirect to={'/'} />;
+  // }
 
   return (
     <>
