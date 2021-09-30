@@ -24,7 +24,7 @@
 }
 
 .navigation-btn{
-  width: 100%;
+  width: 100% !important;
   background-color: #2f5579;
   border: none;
   height: 70px;
@@ -35,7 +35,8 @@
 
 .navigation-btn:focus{
   background-color: #eaf3f7 ;
-  color:#2f5579
+  color:#2f5579;
+  width: 100% 
 }
 
 

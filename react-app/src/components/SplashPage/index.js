@@ -25,13 +25,13 @@ const SplashPage = () =>{
   };
 
 
-  if (!sessionUser) {
-    return <Redirect to={'/dashboard'} />;
-  }
-
-  // if (!sessionUser){
+  // if (!sessionUser) {
   //   return <Redirect to={'/'} />;
   // }
+
+  if (!sessionUser){
+    return <Redirect to={'/dashboard'} />;
+  }
 
   return (
     <div className='splash-page'>

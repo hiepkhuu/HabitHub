@@ -83,11 +83,11 @@ const UpdateRewardModal = ({setReloadTaskPage, reloadTaskPage, rewardId, rewardC
   }, [showModal, rewardId])
 
 
-  if (!sessionUser) {
-    return (
-      <Redirect to='/login' />
-    )
-  }
+  // if (!sessionUser) {
+  //   return (
+  //     <Redirect to='/login' />
+  //   )
+  // }
 
 
 

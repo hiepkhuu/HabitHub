@@ -30,9 +30,9 @@ const LoginForm = () => {
     setPassword(e.target.value);
   };
 
-  if (sessionUser) {
-    return <Redirect to={'/dashboard'} />;
-  }
+  // if (sessionUser) {
+  //   return <Redirect to={'/dashboard'} />;
+  // }
   //  if (!sessionUser){
   //   return <Redirect to={'/'} />;
   // }

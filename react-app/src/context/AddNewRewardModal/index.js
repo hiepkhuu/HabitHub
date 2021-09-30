@@ -69,11 +69,11 @@ const AddNewRewardModal = ({setReloadTaskPage, reloadTaskPage}) => {
   }, [showModal, taskId])
 
 
-  if (!sessionUser) {
-    return (
-      <Redirect to='/login' />
-    )
-  }
+  // if (!sessionUser) {
+  //   return (
+  //     <Redirect to='/login' />
+  //   )
+  // }
 
 
 

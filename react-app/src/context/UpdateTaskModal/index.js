@@ -88,11 +88,11 @@ const UpdateTaskModal = ({setReloadTaskPage, reloadTaskPage, habitId}) => {
   }
 
 
-  if (!sessionUser) {
-    return (
-      <Redirect to='/login' />
-    )
-  }
+  // if (!sessionUser) {
+  //   return (
+  //     <Redirect to='/login' />
+  //   )
+  // }
 
   const cancel = (e) =>{
     e.preventDefault()

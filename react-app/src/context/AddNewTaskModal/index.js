@@ -58,11 +58,11 @@ const AddNewHabitModal = ({setReloadTaskPage, reloadTaskPage}) => {
   }, [showModal])
 
 
-  if (!sessionUser) {
-    return (
-      <Redirect to='/login' />
-    )
-  }
+  // if (!sessionUser) {
+  //   return (
+  //     <Redirect to='/login' />
+  //   )
+  // }
 
 
 

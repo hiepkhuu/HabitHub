@@ -35,9 +35,9 @@ function ProfileButton() {
     return <Redirect to={'/'}/>
   };
 
-  if (!sessionUser) {
-    return <Redirect to={'/'} />;
-  }
+  // if (!sessionUser) {
+  //   return <Redirect to={'/'} />;
+  // }
   // await dispatch(logout());
   //   history.push('/')
   //   return <Redirect to={'/'} />
