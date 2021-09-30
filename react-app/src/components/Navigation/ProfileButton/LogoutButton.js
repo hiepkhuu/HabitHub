@@ -14,9 +14,7 @@ const LogoutButton = () => {
   };
 
 
-  // if (sessionUser) {
-  //   return <Redirect to={'/dashboard'} />;
-  // }
+
   // if (!sessionUser){
   //   return <Redirect to={'/'} />;
   // }

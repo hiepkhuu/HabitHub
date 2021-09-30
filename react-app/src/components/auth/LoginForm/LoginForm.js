@@ -20,7 +20,7 @@ const LoginForm = () => {
     if (data) {
       setErrors(data);
     }
-    history.push('/')
+    history.push('/greeting')
   };
 
   const updateEmail = (e) => {

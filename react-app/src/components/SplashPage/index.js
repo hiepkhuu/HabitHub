@@ -9,7 +9,7 @@ import Footer from '../Footer';
 const SplashPage = () =>{
   const history=useHistory()
   const dispatch = useDispatch()
-  const sessionUser = useSelector(state => state.user)
+  const sessionUser = useSelector(state => state.session)
   const [errors, setErrors] = useState([])
 
   const onLogin = async (e) => {
@@ -23,6 +23,11 @@ const SplashPage = () =>{
     history.push('/greeting')
     return <Redirect to={'/greeting'} />
   };
+
+
+    // if (sessionUser) {
+    //   history.push('/greeting')
+    // }
 
 
   // if (!sessionUser) {

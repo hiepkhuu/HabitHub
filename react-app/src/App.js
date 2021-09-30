@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import LoginForm from './components/auth/LoginForm/LoginForm';
 import SignUpForm from './components/auth/SignupForm/SignUpForm';
 import Navigation from './components/Navigation';
-// import ProtectedRoute from './components/auth/ProtectedRoute';
+import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
@@ -49,16 +49,16 @@ function App() {
         {isLoaded && (
           <Switch>
 
-            {/* <ProtectedRoute path={`/greeting`} exact={true} > */}
+            <ProtectedRoute path={`/greeting`} exact={true} >
               {/* don't put stuff here or else it will show up twice */}
               {/* <GreetingPage /> */}
-            {/* </ProtectedRoute> */}
-            <Route path={`/dashboard`} exact={true}>
+            </ProtectedRoute>
+            <ProtectedRoute path={`/dashboard`} exact={true}>
               <DashboardPage />
-            </Route>
-            <Route path='/rewards' exact={true}>
+            </ProtectedRoute>
+            <ProtectedRoute path='/rewards' exact={true}>
               <RewardsPage />
-            </Route>
+            </ProtectedRoute>
             {/* <ProtectedRoute path='/users' exact={true} >
               <UsersList/>
             </ProtectedRoute>
