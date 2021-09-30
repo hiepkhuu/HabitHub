@@ -155,6 +155,7 @@ background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
 .nav-links{
   text-decoration: none;
   color:  rgb(75, 87, 250);
+  width: 100%;
   }
 
   .bottom-form{
