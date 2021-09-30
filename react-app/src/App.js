@@ -49,16 +49,16 @@ function App() {
         {isLoaded && (
           <Switch>
 
-            <ProtectedRoute path={`/greeting`} exact={true} >
+            <Route path={`/greeting`} exact={true} >
               {/* don't put stuff here or else it will show up twice */}
               <GreetingPage />
-            </ProtectedRoute>
-            <ProtectedRoute path={`/dashboard`} exact={true}>
+            </Route>
+            <Route path={`/dashboard`} exact={true}>
               <DashboardPage />
-            </ProtectedRoute>
-            <ProtectedRoute path='/rewards' exact={true}>
+            </Route>
+            <Route path='/rewards' exact={true}>
               <RewardsPage />
-            </ProtectedRoute>
+            </Route>
             {/* <ProtectedRoute path='/users' exact={true} >
               <UsersList/>
             </ProtectedRoute>
