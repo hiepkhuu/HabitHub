@@ -10,7 +10,7 @@ const LogoutButton = () => {
   const onLogout = async (e) => {
     await dispatch(logout());
     history.push('/')
-    return <Redirect to={'/'} />
+    // return <Redirect to={'/'} />
   };
 
 

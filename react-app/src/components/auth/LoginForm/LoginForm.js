@@ -14,12 +14,13 @@ const LoginForm = () => {
   // console.log(email, password)
 
   const onLogin = async (e) => {
+
     e.preventDefault();
     const data = await dispatch(login(email, password));
     if (data) {
       setErrors(data);
     }
-    return <Redirect to={'/dashboard'} />
+    history.push('/')
   };
 
   const updateEmail = (e) => {
@@ -30,9 +31,9 @@ const LoginForm = () => {
     setPassword(e.target.value);
   };
 
-  // if (sessionUser) {
-  //   return <Redirect to={'/dashboard'} />;
-  // }
+  if (sessionUser) {
+    return <Redirect to={'/dashboard'} />;
+  }
   //  if (!sessionUser){
   //   return <Redirect to={'/'} />;
   // }
