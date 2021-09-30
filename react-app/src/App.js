@@ -51,7 +51,7 @@ function App() {
 
             <ProtectedRoute path={`/greeting`} exact={true} >
               {/* don't put stuff here or else it will show up twice */}
-              {/* <GreetingPage /> */}
+              <GreetingPage />
             </ProtectedRoute>
             <ProtectedRoute path={`/dashboard`} exact={true}>
               <DashboardPage />
