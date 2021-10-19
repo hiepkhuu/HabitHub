@@ -53,6 +53,14 @@ const SplashPage = () =>{
                 <div></div> */}
 
               <div className='entry'>
+                    <div  style={{visibility:'visible'}}>
+                            {errors.map((error, ind) => (
+                              <div className='error-message' key={ind}>{error}</div>
+                            ))}
+                      </div>
+                      <form style={{visibility:'visible'}} onSubmit={onLogin}>
+                            <button type='submit'>Demo Login</button>
+                      </form>
                 <NavLink className='NavLink' to='/login' exact={true} activeClassName='active'>
                   <div className='entry logout' >
                       <p className=''>Login</p>
@@ -77,14 +85,7 @@ const SplashPage = () =>{
 
                 <h1>HIT YOUR TARGETS, RECEIVE REWARDS</h1>
                 <p>Focus on what truly matters with HabitHub. Build the best version of yourself by mastering your habits.</p>
-                <div  style={{visibility:'visible'}}>
-                      {errors.map((error, ind) => (
-                        <div className='error-message' key={ind}>{error}</div>
-                      ))}
-                </div>
-                <form style={{visibility:'visible'}} onSubmit={onLogin}>
-                      <button type='submit'>Demo Login</button>
-                </form>
+
               </div>
             </div>
 

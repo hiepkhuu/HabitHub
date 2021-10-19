@@ -8,6 +8,8 @@
 
 
 }
+
+
 .signed-out-navbar{
   display: flex;
   justify-content: space-between;
@@ -43,23 +45,13 @@
 
 }
 .NavLink:hover{
-  /* background-color: #7f53ac;
-  background-image: linear-gradient(315deg, #7f53ac 0%, #647dee 74%); */
+
   background-color: #537895;
   color:white;
-background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
-border: 1px solid white;
+  background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
+  border: 1px solid white;
 }
-/* .splash-photo-container{
-  display: flex;
-  flex-direction: column;
-  background-image: url('./mountain\ with\ red\ flag.png');
-  width: 100vw;
-  height: 100vh;
-  background-size: cover;
-  margin-top: 100px;
 
-} */
 
 .splash-photo-container{
   display: flex;
@@ -125,26 +117,15 @@ visibility: hidden;
 }
 
 
-/* .splash-photo-container p{
 
-  font-size: 22px;
-
-  margin-top: -20px;
-  text-align:  center;
-  letter-spacing: 1.5px;
-  color: gray;
-
-} */
-
-.splash-photo-container button{
+.entry button{
   text-decoration: none;
-  margin: 25px 5px -20px 5px;
+  margin: 1px 10px -0px 5px;
   color: rgb(255, 255, 255);
   background-color: #2a5a7c;
   border: 1px solid white;
   width: 150px;
   border-radius: 40px;
-  /* box-shadow: 0px 1px 1px 1px rgb(11, 25, 63); */
   transition:  all 0.3s ease 0s;
   font-size: 18px;
   height: 45px;
@@ -156,7 +137,7 @@ visibility: hidden;
 
 }
 
-.splash-photo-container button:hover{
+.entry button:hover{
 
     background-color: white;
     color:#2a5a7c;
