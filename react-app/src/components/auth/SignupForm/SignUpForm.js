@@ -146,7 +146,11 @@ const SignUpForm = () => {
           </div>
           <div className='bottom-form'>
               <button type='submit'>Sign Up</button>
-              <div>Already have an account? <NavLink className='nav-links' to='login'>Log in</NavLink></div>
+              <div>
+                  <span>Already have an account? </span>
+                  <div><NavLink className='nav-links' to='login'> Log in</NavLink></div>
+
+              </div>
           </div>
         </form>
       </div>
