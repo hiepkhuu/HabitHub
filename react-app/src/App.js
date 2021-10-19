@@ -35,7 +35,7 @@ function App() {
       {/* if BrowserRouter ends up inside Navlink or Navigation, it will thorugh an error */}
       <BrowserRouter>
         <Switch>
-          <Route path='/' exact={true}>
+           <Route path='/' exact={true}>
               <SplashPage />
             </Route>
             <Route path='/login' exact={true}>
@@ -48,7 +48,6 @@ function App() {
         <Navigation isLoaded={isLoaded} />
         {isLoaded && (
           <Switch>
-
             <Route path={`/greeting`} exact={true} >
               {/* don't put stuff here or else it will show up twice */}
               <GreetingPage />
@@ -59,12 +58,6 @@ function App() {
             <Route path='/rewards' exact={true}>
               <RewardsPage />
             </Route>
-            {/* <ProtectedRoute path='/users' exact={true} >
-              <UsersList/>
-            </ProtectedRoute>
-            <ProtectedRoute path='/users/:userId' exact={true} >
-              <User />
-            </ProtectedRoute> */}
 
           </Switch>
         )}

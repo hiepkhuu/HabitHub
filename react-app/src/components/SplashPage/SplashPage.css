@@ -3,7 +3,7 @@
 
   background-image: url('./habit-keeps-you-going-\ wallpaper-fixed.jpg');
   width:100%;
-  height: 100%;
+  max-height: 100% !important;
   background-size: cover;
 
 
@@ -113,7 +113,7 @@ visibility: hidden;
 }
 
 .msg-2{
-  margin-top: 170px;
+  margin-top: 15%;
   font-size: 22px;
   font-family: 'Raleway';
   width:40%;
@@ -157,11 +157,7 @@ visibility: hidden;
 }
 
 .splash-photo-container button:hover{
-    /* transform: translateY(-1px); */
-    /* background-color: #7f53ac;
-    background-image: linear-gradient(315deg, #7f53ac 0%, #647dee 74%); */
-    /* background-color: #537895;
-    background-image: linear-gradient(315deg, #537895 0%, #09203f 74%); */
+
     background-color: white;
     color:#2a5a7c;
     background-color: #ffffff;
@@ -169,42 +165,33 @@ visibility: hidden;
 
 }
 .splash-button{
+
   border-radius: 5px;
   width: 185px;
   height: 45px;
   margin-left: 10px;
   margin-bottom: 5px;
+
   transition:  all 0.3s ease 0s;
-  /* font-size: 20px; */
   background-image: url('./HabitHub-logos_transparent.png');
-  /* height: 100%;
-  width:100%; */
   background-size: cover;
   cursor: pointer;
+  bottom: 1em;
 
 }
 .splash-button:hover{
   transform: translateY(-4px);
   box-shadow: 0px 1px 1px 1px gray;
 }
-.splash-button div{
-
-  /* background-position: cover; */
-  /* margin-bottom: 10px;
-  margin-top: -5px;
-  margin-left: 5px;
-  margin-right: 5px; */
-}
 
 .how-div{
-  /* margin-top: 400px; */
   height: 600px;
   display: flex;
   flex-direction: column;
   margin-top: 0px;
   background-color: #d5e9f0;
   border-top: .25em solid white;
-  /* background-color: #e4f1f5; */
+
 }
 
 .how-div h1{
@@ -237,11 +224,15 @@ visibility: hidden;
 
 }
 
-/* .step-img1{
-  background-image: url('./step1.png');
-  width: 70%;
-  height: 70%;
-} */
+.msg-2 button{
+  float: right;
+
+  margin-right: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+
+  overflow:auto;
+}
 
 .far.fa-list-alt{
   width: 70%;
