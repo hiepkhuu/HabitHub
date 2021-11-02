@@ -1,6 +1,6 @@
 # Welcome to Habithub!
 ![image](https://user-images.githubusercontent.com/78452452/132393056-60cfd19a-6f6a-45f7-aed2-c064da4cbe4d.png)
-Habihub is a place where you may build green habits, see your results and unlock rewards. The layout concept is inspired by the simplicity of the app, Habitify, and with reward system that reflects gamified Habit app, Habitica. In habithub, users may log habits and grow a beutiful garden grid aimed at positive motivation to keep them going. 
+Habihub is a place where you may build habits, see your results and unlock rewards. In habithub, users may log habits and unlock self created rewards to keep them going. 
 
 ### Live Link: [*Habithub*](https://habithub-app.herokuapp.com/)
 
