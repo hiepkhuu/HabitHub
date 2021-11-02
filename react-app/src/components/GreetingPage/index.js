@@ -12,12 +12,17 @@ const GreetingPage = () => {
   const sessionUser = useSelector(state => state.session.user)
   const quote = useSelector(state => state.quotes)
 
+
   // const singleQuote = quote
   // console.log('singl', quote)
   // console.log(sessionUser)
   useEffect(async() => {
     await dispatch(getSingleQuote())
   }, [])
+
+  if (!sessionUser){
+    return <Redirect to={'/'} />;
+  }
 
   function convert(input) {
     return moment(input, 'HH:mm:ss').format('h:mm A');
@@ -32,6 +37,8 @@ const GreetingPage = () => {
     return newDate
 
   }
+
+
 
 
 
