@@ -143,6 +143,7 @@ const UpdateTaskModal = ({setReloadTaskPage, reloadTaskPage, habitId}) => {
           <div className='edit-form-container'>
             <div className='form-button'>
                <DeleteTaskModal setReloadTaskPage={setReloadTaskPage} setShowModal={setShowModal} taskId={singleTask.id} taskName={singleTask.task_name} />
+              
             </div>
             <h2>Update Habit</h2>
             <div >

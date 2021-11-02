@@ -49,15 +49,7 @@ def get_this_week():
     start = today - timedelta(days=today.weekday())
     end = start + timedelta(days=6)
 
-    # print("Todayh: " + today.strftime("%a, %d %m"))
-    # print("Start: " + str(start))
-    # print("End: " + str(end))
-
-    # logs = Log.query.filter(convert_date(Log.created_at) == str(today)).all()
-
-    # blurb = 'Sat, 21 Aug 2021 12:00:00 GMT'
-    # blurbb = blurb.split(' ')
-    # datedate = f"{blurbb[3]}-{month[blurbb[2]]}-{blurbb[1]}"
+ 
 
     # may do this in front end becasue filters are difficutl
     # 2021-08-26
