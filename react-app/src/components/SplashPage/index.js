@@ -25,18 +25,6 @@ const SplashPage = () =>{
   };
 
 
-    // if (sessionUser) {
-    //   history.push('/greeting')
-    // }
-
-
-  // if (!sessionUser) {
-  //   return <Redirect to={'/'} />;
-  // }
-
-  // if (!sessionUser){
-  //   return <Redirect to={'/dashboard'} />;
-  // }
 
   return (
     <div className='splash-page'>
