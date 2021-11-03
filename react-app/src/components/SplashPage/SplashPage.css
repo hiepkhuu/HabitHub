@@ -17,13 +17,16 @@
     display: flex !important;
     flex-direction: column !important;
     background-image: none !important;
-    padding-bottom: 0px !important
+    padding-bottom: 0px !important;
+    padding: 0px !important;
 
   }
 
   .splash-photo-container{
     display: flex !important;
     flex-direction: column !important;
+    background-color: #d5e9f0;
+    
   }
   #steps-container{
     display:flex !important;
@@ -93,7 +96,7 @@
 
 
 .msg-1{
-  margin-top:0px;
+  margin-top:30px;
   color: black;
   font-size: 20px;
   width: 80%;
@@ -123,7 +126,7 @@
     /* margin-top: 15%; */
     background-color: #537895 ;
     border: 2.5em solid #537895 ;
-    border-bottom: 5em solid #537895  !important;
+
     font-size: 20px;
     font-family: 'Raleway';
     width:100%;
