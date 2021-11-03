@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { NavLink, Redirect , useHistory} from 'react-router-dom'
 import './SplashPage.css'
 import { login } from '../../store/session';
-// import './habithub-logo.png'
+
 import Footer from '../Footer';
 
 const SplashPage = () =>{
@@ -37,8 +37,7 @@ const SplashPage = () =>{
                     </div>
                   </div>
                 </NavLink>
-                {/* <div></div>
-                <div></div> */}
+
 
               <div className='entry'>
                     <div  style={{visibility:'visible'}}>
