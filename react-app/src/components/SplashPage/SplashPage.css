@@ -10,15 +10,8 @@
   height: auto;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 900px) {
   #splash-photo{
-    /* background-image: url('./habit-keeps-you-going-\ wallpaper-fixed.jpg');
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    max-width: 50% !important;
-    max-height: 50vh !important;
-    margin-top: 75px; */
     background-color: #537895 ;
     background-color: #d5e9f0;
     display: flex !important;
@@ -149,6 +142,7 @@
     width: 0px !important
   }
   #demo-button button{
+    visibility: visible !important;
     text-decoration: none;
     margin: 10px 10px -0px 5px;
     color: #2a5a7c;
@@ -228,14 +222,15 @@
   margin-top: 30px; */
 }
 
-.splash-photo{
+#splash-photo{
   background-image: url('./habit-keeps-you-going-\ wallpaper-fixed.jpg');
-  background-size: cover;
+  background-size: cover !important;
   display: flex;
   flex-direction: column;
-  max-width: 100% !important;
-  max-height: 100vh !important;
-  margin-top: 75px;
+  width: 92.5vw !important;
+  height: 88vh !important;
+  margin-top: 30px;
+
 }
 
 .splash-photo-container div{
@@ -286,6 +281,9 @@ visibility: hidden;
 }
 
 
+.demo-button button{
+  visibility: hidden
+}
 
 .entry button{
   text-decoration: none;

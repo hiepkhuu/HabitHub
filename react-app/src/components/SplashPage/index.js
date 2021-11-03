@@ -72,7 +72,7 @@ const SplashPage = () =>{
 
                 <h1>HIT YOUR TARGETS, RECEIVE REWARDS</h1>
                 <p>Focus on what truly matters with HabitHub. Build the best version of yourself by mastering your habits.</p>
-                <form id="demo-button" style={{visibility:'visible'}} onSubmit={onLogin}>
+                <form id="demo-button" className="demo-button" style={{visibility:'visible'}} onSubmit={onLogin}>
                    <button type='submit'>Demo Login</button>
                 </form>
               </div>
