@@ -45,7 +45,7 @@ const SplashPage = () =>{
                               <div className='error-message' key={ind}>{error}</div>
                             ))}
                       </div>
-                      <form style={{visibility:'visible'}} onSubmit={onLogin}>
+                      <form id="demo-button-hide" style={{visibility:'visible'}} onSubmit={onLogin}>
                             <button type='submit'>Demo Login</button>
                       </form>
                 <NavLink className='NavLink' to='/login' exact={true} activeClassName='active'>

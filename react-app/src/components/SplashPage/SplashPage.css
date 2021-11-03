@@ -143,6 +143,11 @@
     visibility:visible !important;
   }
 
+
+  #demo-button-hide{
+    visibility: hidden !important;
+    width: 0px !important
+  }
   #demo-button button{
     text-decoration: none;
     margin: 10px 10px -0px 5px;
