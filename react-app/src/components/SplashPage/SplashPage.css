@@ -7,6 +7,167 @@
 
   /* height: 100vh !important; */
   /* height: 1500px; */
+  height: auto;
+}
+
+@media screen and (max-width: 500px) {
+  #splash-photo{
+    /* background-image: url('./habit-keeps-you-going-\ wallpaper-fixed.jpg');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    max-width: 50% !important;
+    max-height: 50vh !important;
+    margin-top: 75px; */
+    background-color: #537895 ;
+    background-color: #d5e9f0;
+    display: flex !important;
+    flex-direction: column !important;
+    background-image: none !important;
+    padding-bottom: 0px !important
+
+  }
+
+  .splash-photo-container{
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  #steps-container{
+    display:flex !important;
+    flex-direction: column !important;
+
+
+  }
+  .steps {
+    width: 80% !important;
+    height: 100px;
+    padding:1em;
+    display:flex;
+    flex-direction: column;
+    align-items: center !important;
+    margin-top: 40px;
+
+  }
+  .far.fa-bell{
+    width: 40%;
+    height: 42%;
+    font-size:8em !important;
+    /* align-self: center; */
+    color: white;
+    text-shadow: 1px 1px 1px #2a5a7c;
+  }
+
+  .fas.fa-medal.big{
+    width: 40%;
+    height: 50%;
+    font-size:8em !important;
+    /* align-self: center; */
+    color: white;
+    text-shadow: 1px 1px 1px #2a5a7c;
+  }
+
+  .far.fa-list-alt{
+    width: 40%;
+    height: 50%;
+    font-size:8em !important;
+   /* justify-content: center !important; */
+    color: white;
+    text-shadow: 1px 1px 1px #2a5a7c;
+  }
+
+  .step-header{
+    font-size: 18px !important;
+  }
+
+  .how-div{
+    height: auto !important
+  }
+
+  .steps{
+    height: 250px !important;
+    margin-top: 10px !important;
+  }
+
+  .step-header{
+    /* display: flex !important;
+    justify-content: center !important */
+  }
+
+  .step-detail{
+    /* display: flex !important;
+    justify-content: center !important */
+  }
+
+
+.msg-1{
+  margin-top:0px;
+  color: black;
+  font-size: 20px;
+  width: 80%;
+  text-align: center;
+  font-weight: 300;
+  font-family: 'Raleway', sans-serif !important;
+  color:rgb(51, 78, 109);
+  visibility: visible !important;
+  }
+
+  .msg-1 p{
+    margin: 0px;
+    padding: 0px;
+    height: 70px
+  }
+  .habithub-msg{
+    font-size: 70px;
+    font-weight: 1000;
+    height: 90px !important;
+
+  }
+  .habithub-sub{
+    font-size: 25px;
+  }
+
+  .msg-2{
+    /* margin-top: 15%; */
+    background-color: #537895 ;
+    border: 2.5em solid #537895 ;
+    border-bottom: 5em solid #537895  !important;
+    font-size: 20px;
+    font-family: 'Raleway';
+    width:100%;
+
+    text-align: center;
+    letter-spacing: 1px;
+    /* margin-right: 20px; */
+    padding-top: 0px;
+    color: white;
+    visibility:visible !important;
+  }
+
+  #demo-button button{
+    text-decoration: none;
+    margin: 10px 10px -0px 5px;
+    color: #2a5a7c;
+    background-color: #d5e9f0;
+    border: 1px solid #2a5a7c;
+    width: 150px;
+    border-radius: 40px;
+    transition:  all 0.3s ease 0s;
+    font-size: 18px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: sticky;
+  }
+
+ #demo-button button:hover{
+  background-color: #537895;
+  color:white;
+  background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
+  border: 1px solid white;
+
+}
 }
 
 
@@ -88,14 +249,14 @@
 }
 
 .msg-1{
-margin-top:-250px;
+/* margin-top:-250px;
 color: black;
 font-size: 30px;
 width: 50%;
 text-align: center;
 font-weight: 300;
 font-family: 'Raleway', sans-serif !important;
-color:rgb(51, 78, 109);
+color:rgb(51, 78, 109); */
 visibility: hidden;
 }
 
@@ -105,25 +266,17 @@ visibility: hidden;
   height: 70px
 }
 
-.habithub-msg{
-  font-size: 120px;
-  font-weight: 1000;
-  height: 120px !important;
 
-}
-.habithub-sub{
-  font-size: 60px;
-}
 
 .msg-2{
-  margin-top: 15%;
+  /* margin-top: 15%;
   font-size: 22px;
   font-family: 'Raleway';
   width:40%;
   text-align: center;
   letter-spacing: 1px;
   margin-right: 20px;
-  color: white;
+  color: white; */
   visibility:hidden;
 }
 
@@ -247,11 +400,7 @@ align-self: flex-start !important
   font-size: 18px;
   color:rgb(83, 83, 83)
 }
-/* .step-img2{
-  background-image: url('./step2.png');
-  width: 70%;
-  height: 70%;
-} */
+
 
 .far.fa-bell{
   width: 70%;
@@ -262,11 +411,7 @@ align-self: flex-start !important
   text-shadow: 1px 1px 1px #2a5a7c;
 }
 
-/* .step-img3{
-  background-image: url('./step3.png');
-  width: 70%;
-  height: 70%;
-} */
+
 
 .fas.fa-medal.big{
   width: 70%;

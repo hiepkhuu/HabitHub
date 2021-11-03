@@ -62,7 +62,7 @@ const SplashPage = () =>{
           </div>
           <div className='splash-photo-container'>
 
-            <div className='splash-photo'>
+            <div className='splash-photo' id='splash-photo'>
               <div className='msg-1'>
                   <p >MOTIVATION GETS YOU STARTED...</p>
                   <p className='habithub-msg'>HABITHUB</p>
@@ -72,7 +72,9 @@ const SplashPage = () =>{
 
                 <h1>HIT YOUR TARGETS, RECEIVE REWARDS</h1>
                 <p>Focus on what truly matters with HabitHub. Build the best version of yourself by mastering your habits.</p>
-
+                <form id="demo-button" style={{visibility:'visible'}} onSubmit={onLogin}>
+                   <button type='submit'>Demo Login</button>
+                </form>
               </div>
             </div>
 
@@ -80,7 +82,7 @@ const SplashPage = () =>{
             <div className='how-div'>
               <h1>How it Works?</h1>
               <p>Habit building in its essential steps: choose a habit, actually remember to do it and track your development.</p>
-              <div className='steps-container'>
+              <div className='steps-container' id='steps-container'>
                     <div className='steps'>
                       {/* <div className='step-img1'></div> */}
                       <div className="far fa-list-alt"></div>
