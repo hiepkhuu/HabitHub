@@ -7,6 +7,7 @@
 
   /* height: 100vh !important; */
   /* height: 1500px; */
+
   height: auto;
 }
 
@@ -19,6 +20,7 @@
     background-image: none !important;
     padding-bottom: 0px !important;
     padding: 0px !important;
+    height: 5em !important
 
   }
 
@@ -26,7 +28,8 @@
     display: flex !important;
     flex-direction: column !important;
     background-color: #d5e9f0;
-    
+    height:120em !important
+
   }
   #steps-container{
     display:flex !important;
@@ -96,7 +99,7 @@
 
 
 .msg-1{
-  margin-top:30px;
+  margin-top:100px;
   color: black;
   font-size: 20px;
   width: 80%;
@@ -122,10 +125,10 @@
     font-size: 25px;
   }
 
-  .msg-2{
+  #msg-2{
     /* margin-top: 15%; */
     background-color: #537895 ;
-    border: 2.5em solid #537895 ;
+    /* border: 2.3em solid #537895 ; */
 
     font-size: 20px;
     font-family: 'Raleway';
@@ -136,6 +139,7 @@
     /* margin-right: 20px; */
     padding-top: 0px;
     color: white;
+    height: auto !important;
     visibility:visible !important;
   }
 
@@ -223,6 +227,7 @@
   width: 100% !important;
   max-height: 100vh !important;
   margin-top: 30px; */
+  margin-top: 70px;
 }
 
 #splash-photo{
@@ -231,7 +236,7 @@
   display: flex;
   flex-direction: column;
   width: 92.5vw !important;
-  height: 88vh !important;
+  height: 60vh !important;
   /* margin-top: 30px; */
 
 }
@@ -248,7 +253,7 @@
   display: flex;
   flex-direction: row !important;
   justify-content: space-between;
-  padding: 50px 50px !important;
+  padding: 60px 50px !important;
 }
 
 .msg-1{
@@ -281,6 +286,7 @@ visibility: hidden;
   margin-right: 20px;
   color: white; */
   visibility:hidden;
+  height: 0px
 }
 
 

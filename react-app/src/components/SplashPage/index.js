@@ -68,7 +68,9 @@ const SplashPage = () =>{
                   <p className='habithub-msg'>HABITHUB</p>
                   <p className='habithub-sub'>KEEPS YOU GOING</p>
               </div>
-              <div className='msg-2'>
+
+            </div>
+            <div className='msg-2' id="msg-2">
 
                 <h1>HIT YOUR TARGETS, RECEIVE REWARDS</h1>
                 <p>Focus on what truly matters with HabitHub. Build the best version of yourself by mastering your habits.</p>
@@ -76,7 +78,6 @@ const SplashPage = () =>{
                    <button type='submit'>Demo Login</button>
                 </form>
               </div>
-            </div>
 
 
             <div className='how-div'>
