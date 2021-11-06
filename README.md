@@ -1,5 +1,7 @@
 # Welcome to Habithub!
-![image](https://user-images.githubusercontent.com/78452452/132393056-60cfd19a-6f6a-45f7-aed2-c064da4cbe4d.png)
+<!-- ![image](https://user-images.githubusercontent.com/78452452/132393056-60cfd19a-6f6a-45f7-aed2-c064da4cbe4d.png) -->
+[image]![habithub-splashpage](https://user-images.githubusercontent.com/78452452/140599615-2b6ee871-ec14-49e2-9b81-d4c31be04a4e.jpg)
+
 Habith\Hub is a place where you may build habits, see your results and unlock rewards. In habithub, users may log habits and unlock self created rewards to keep them going. 
 
 ### Live Link: [*Habithub*](https://habithub-app.herokuapp.com/)
