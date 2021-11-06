@@ -20,8 +20,8 @@ Habith\Hub is a place where you may build habits, see your results and unlock re
 ## Features
 
 ### User log in and sign up
-![image](https://user-images.githubusercontent.com/78452452/132447354-4dd22230-f7d5-4495-ab9e-8486641e706e.png)
-![image](https://user-images.githubusercontent.com/78452452/132447396-8a16fafc-3776-4efe-abf5-3793afd739fe.png)
+<!-- ![image](https://user-images.githubusercontent.com/78452452/132447354-4dd22230-f7d5-4495-ab9e-8486641e706e.png)
+![image](https://user-images.githubusercontent.com/78452452/132447396-8a16fafc-3776-4efe-abf5-3793afd739fe.png) -->
 
 ### View tasks and greeting message
 ![image](https://user-images.githubusercontent.com/78452452/132447597-c5ba8230-1420-4631-a9b9-c4d4dab8c1a8.png)
