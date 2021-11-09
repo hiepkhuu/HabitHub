@@ -13,9 +13,7 @@ const GreetingPage = () => {
   const quote = useSelector(state => state.quotes)
 
 
-  // const singleQuote = quote
-  // console.log('singl', quote)
-  // console.log(sessionUser)
+
   useEffect(async() => {
     await dispatch(getSingleQuote())
   }, [])

@@ -103,7 +103,6 @@ const HabitListCard = ({habitId, setShowHabitInfo, reloadTaskPage, setReloadTask
       )
     } else {
       return (
-        // <div >Completed!</div>
         <button className='habit-logit-complete'  type='submit'>Completed!</button>
       )
     }
@@ -124,7 +123,6 @@ const HabitListCard = ({habitId, setShowHabitInfo, reloadTaskPage, setReloadTask
                   </div>
           <div className='task-info-box'>
             <div className='task-card-container'
-                  // style={{ border: `4px solid ${singleTask.color_hue}` }}
                   >
                   <div className='task-card'    >
 
