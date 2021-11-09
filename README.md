@@ -1,6 +1,8 @@
 # Welcome to Habithub!
-![image](https://user-images.githubusercontent.com/78452452/132393056-60cfd19a-6f6a-45f7-aed2-c064da4cbe4d.png)
-Habihub is a place where you may build habits, see your results and unlock rewards. In habithub, users may log habits and unlock self created rewards to keep them going. 
+<!-- ![image](https://user-images.githubusercontent.com/78452452/132393056-60cfd19a-6f6a-45f7-aed2-c064da4cbe4d.png) -->
+[image]![habithub-splashpage](https://user-images.githubusercontent.com/78452452/140599615-2b6ee871-ec14-49e2-9b81-d4c31be04a4e.jpg)
+
+Habith\Hub is a place where you may build habits, see your results and unlock rewards. In habithub, users may log habits and unlock self created rewards to keep them going. 
 
 ### Live Link: [*Habithub*](https://habithub-app.herokuapp.com/)
 
@@ -18,8 +20,8 @@ Habihub is a place where you may build habits, see your results and unlock rewar
 ## Features
 
 ### User log in and sign up
-![image](https://user-images.githubusercontent.com/78452452/132447354-4dd22230-f7d5-4495-ab9e-8486641e706e.png)
-![image](https://user-images.githubusercontent.com/78452452/132447396-8a16fafc-3776-4efe-abf5-3793afd739fe.png)
+<!-- ![image](https://user-images.githubusercontent.com/78452452/132447354-4dd22230-f7d5-4495-ab9e-8486641e706e.png)
+![image](https://user-images.githubusercontent.com/78452452/132447396-8a16fafc-3776-4efe-abf5-3793afd739fe.png) -->
 
 ### View tasks and greeting message
 ![image](https://user-images.githubusercontent.com/78452452/132447597-c5ba8230-1420-4631-a9b9-c4d4dab8c1a8.png)
