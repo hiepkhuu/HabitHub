@@ -6,13 +6,11 @@ import { getAllColors } from '../../store/colors'
 import { addCompletedLog, getAllWeeklyLogs} from '../../store/logs'
 import './DashboardPage.css'
 import moment from 'moment'
-import Footer from '../Footer';
 import AddNewHabitModal from '../../context/AddNewTaskModal'
 import UpdateTaskModal from '../../context/UpdateTaskModal'
 import HabitListCard from '../HabitList'
 import GreetingPage from '../GreetingPage'
-// import ColorCircle from './ColorCircle'
-// import {showModal} from '../../context/AddNewTask'
+
 
 const DashboardPage = () => {
   const sessionUser = useSelector(state => state.session.user)
@@ -64,7 +62,6 @@ console.log('endOfWeek', endOfWeek)
     }
 
     const data = await dispatch(addCompletedLog(log))
-    // console.log('did it pass')
     if (data) {
       setErrors(data);
     } else {
@@ -114,7 +111,6 @@ console.log('endOfWeek', endOfWeek)
       )
     } else {
       return (
-        // <div >Completed!</div>
         <button className='habit-complete' style={{backgroundColor:`${color_hue}`}} type='submit'>Completed!</button>
       )
     }
@@ -148,7 +144,6 @@ console.log('endOfWeek', endOfWeek)
 
                                 {isItCompleted(task.id, task.target_num, task.color_hue)}
                             </div>
-                            {/* <div className='edit-button'></div> */}
                           </div>
                         </div>
                         </div>
