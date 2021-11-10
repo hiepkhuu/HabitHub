@@ -14,19 +14,19 @@ const ProtectedRoute = props => {
     session = (
       <DashboardPage />
     )
-    // <Redirect to='/dashboard' />
+
   } else {
     session = (
       <SplashPage />
     )
-    // <Redirect to='./login' />
+
   }
 
 
 
   return (
     <Route {...props}>
-      {/* {(sessionUser)? props.children  : <Redirect to='/login' />} */}
+
 
       {session}
     </Route>
