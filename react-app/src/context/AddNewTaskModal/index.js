@@ -116,45 +116,49 @@ const AddNewHabitModal = ({setReloadTaskPage, reloadTaskPage}) => {
               </div>
               <form className='add-task-form' onSubmit={submitTask} >
                  <div>
-                    <div>NAME *</div>
+                    <div>NAME <span style={{display:'inline', color:'red'}}>*</span></div>
                       <input
                       type='text'
                       rows='1'
                       value={taskName}
                       onChange={e=> setTaskName(e.target.value)}
                       required={true}
+                      placeholder='Make the bed'
                       />
                     <div className='section'>
                         <div>
-                            <div>GOAL</div>
+                            <div>DESCRIPTION</div>
                               <input
                               type='text'
                               rows='2'
                               value={taskDetail}
                               onChange={e=> setTaskDetail(e.target.value)}
                               required={true}
+                              placeholder='Tuck in corners'
                               ></input>
                         </div>
                         <div>
-                            <div>TARGET WEEKLY *</div>
+                            <div>TARGET WEEKLY <span style={{display:'inline', color:'red'}}>*</span></div>
                               <input
                               type='number'
                               value={targetNum}
                               onChange={e=> setTargetNum(e.target.value)}
+                              placeholder='5'
                               />
                         </div>
                      </div>
                     <div className='section'>
                         <div>
-                            <div>POINTS *</div>
+                            <div>POINTS <span style={{display:'inline', color:'red'}}>*</span></div>
                               <input
                               type='number'
                               value={taskPoints}
                               onChange={e=> setTaskPoints(e.target.value)}
+                              placeholder='3'
                               />
                         </div>
                         <div>
-                            <div>COLOR *</div>
+                            <div>COLOR <span style={{display:'inline', color:'red'}}>*</span></div>
 
                               <select
                               onChange={e=>setColorId(e.target.value)}
@@ -184,6 +188,7 @@ const AddNewHabitModal = ({setReloadTaskPage, reloadTaskPage}) => {
                       rows='2'
                       value={taskReason}
                       onChange={e=> setTaskReason(e.target.value)}
+                      placeholder='To start off the day with an accomplishment'
                       ></input>
                       <div className='form-button'>
                           <CancelButton setShowModal={setShowModal}
